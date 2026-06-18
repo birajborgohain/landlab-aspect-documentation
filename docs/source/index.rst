@@ -11,7 +11,7 @@ benchmark recreations, and implementation.
 
 .. toctree::
    :maxdepth: 2
-   :caption: 
+  
 
 
    
