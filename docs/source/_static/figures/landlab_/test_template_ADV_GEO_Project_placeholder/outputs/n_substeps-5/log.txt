@@ -1,0 +1,572 @@
+-----------------------------------------------------------------------------
+--                             This is ASPECT                              --
+-- The Advanced Solver for Planetary Evolution, Convection, and Tectonics. --
+-----------------------------------------------------------------------------
+--     . version 3.1.0-pre (pr43, 41f098d71)
+--     . using deal.II 9.7.0
+--     .       with 32 bit indices
+--     .       with vectorization level 1 (SSE2, 2 doubles, 128 bits)
+--     . using Trilinos 16.2.0
+--     . using p4est 2.8.7
+--     . using Geodynamic World Builder 1.0.0
+--     . running in OPTIMIZED mode
+--     . running with 17 MPI processes
+-----------------------------------------------------------------------------
+
+importing 'import' ...
+Python: running sequentially!
+-----------------------------------------------------------------------------
+-- For information on how to cite ASPECT, see:
+--   https://aspect.geodynamics.org/citing.html?ver=3.1.0-pre&mf=1&sha=41f098d71&src=code
+-----------------------------------------------------------------------------
+Number of active cells: 171 (on 1 levels)
+Number of degrees of freedom: 9,292 (6,669+400+2,223)
+
+Number of mesh deformation degrees of freedom: 6,669
+* Creating RasterModelGrid ...
+* Creating topographic elevation ...
+* Done
+   Solving mesh displacement system... 0 iterations.
+*** Timestep 0:  t=0 seconds, dt=0 seconds
+[Landlab] cwd: /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/test_template_ADV_GEO_Project_placeholder/outputs/n_substeps-5
+[Landlab] outputs_root: /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/test_template_ADV_GEO_Project_placeholder/outputs/n_substeps-5/outputs
+[Landlab] Candidate ASPECT output directories:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/test_template_ADV_GEO_Project_placeholder/outputs/n_substeps-5/outputs/Landlab_defined_uplift_subset_1_trace
+[Landlab] Selected ASPECT output directory:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/test_template_ADV_GEO_Project_placeholder/outputs/n_substeps-5/outputs/Landlab_defined_uplift_subset_1_trace
+[Landlab] Writing VTK:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/test_template_ADV_GEO_Project_placeholder/outputs/n_substeps-5/outputs/Landlab_defined_uplift_subset_1_trace/landlab/landlab_0001.vtk
+[Landlab] Updated series file:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/test_template_ADV_GEO_Project_placeholder/outputs/n_substeps-5/outputs/Landlab_defined_uplift_subset_1_trace/landlab/landlab.vtk.series
+
+================ ASPECT TIMESTEP 1 SUMMARY ================
+
+[STEP 1 | LINE 567]
+Total loops = 5
+
+[STEP 2 | LINE 571]
+Final elapsed_time = 0.0
+
+[STEP 3 | LINE 576]
+Final max elevation = 0.0
+
+   Solving mesh displacement system... 0 iterations.
+
+   Postprocessing:
+     Writing graphical output: outputs/Landlab_defined_uplift_subset_1_trace/solution/solution-00000
+     Topography min/max:       0 m, 0 m
+
+*** Timestep 1:  t=1 seconds, dt=1 seconds
+
+================ LOOP 1 ================
+
+[STEP 4 | LINE 362]
+elapsed_time_before = 0.0
+
+[STEP 5 | LINE 367]
+dt = 0.2
+
+[STEP 6 | LINE 410]
+max diffusion_change = 0.0
+
+[STEP 7 | LINE 415]
+max elevation after diffusion = 0.0
+
+[STEP 8 | LINE 481]
+max uplift_change = 0.0028000000000000004
+
+[STEP 9 | LINE 486]
+max elevation after uplift = 0.0028000000000000004
+
+[STEP 10 | LINE 512]
+elapsed_time_after = 0.2
+
+[STEP 11 | LINE 517]
+max deposition_erosion = 0.0028000000000000004
+
+
+================ LOOP 2 ================
+
+[STEP 12 | LINE 362]
+elapsed_time_before = 0.2
+
+[STEP 13 | LINE 367]
+dt = 0.2
+
+[STEP 14 | LINE 410]
+max diffusion_change = 0.0021528031084375003
+
+[STEP 15 | LINE 415]
+max elevation after diffusion = 0.0022544552259375003
+
+[STEP 16 | LINE 481]
+max uplift_change = 0.0028000000000000004
+
+[STEP 17 | LINE 486]
+max elevation after uplift = 0.0046544552259375005
+
+[STEP 18 | LINE 512]
+elapsed_time_after = 0.4
+
+[STEP 19 | LINE 517]
+max deposition_erosion = 0.0046544552259375005
+
+
+================ LOOP 3 ================
+
+[STEP 20 | LINE 362]
+elapsed_time_before = 0.4
+
+[STEP 21 | LINE 367]
+dt = 0.2
+
+[STEP 22 | LINE 410]
+max diffusion_change = 0.002454242302000471
+
+[STEP 23 | LINE 415]
+max elevation after diffusion = 0.004129971749162176
+
+[STEP 24 | LINE 481]
+max uplift_change = 0.0028000000000000004
+
+[STEP 25 | LINE 486]
+max elevation after uplift = 0.006503495837218857
+
+[STEP 26 | LINE 512]
+elapsed_time_after = 0.6000000000000001
+
+[STEP 27 | LINE 517]
+max deposition_erosion = 0.006503495837218857
+
+
+================ LOOP 4 ================
+
+[STEP 28 | LINE 362]
+elapsed_time_before = 0.6000000000000001
+
+[STEP 29 | LINE 367]
+dt = 0.2
+
+[STEP 30 | LINE 410]
+max diffusion_change = 0.002570237911812089
+
+[STEP 31 | LINE 415]
+max elevation after diffusion = 0.005751693915534434
+
+[STEP 32 | LINE 481]
+max uplift_change = 0.002800000000000001
+
+[STEP 33 | LINE 486]
+max elevation after uplift = 0.007969467342384181
+
+[STEP 34 | LINE 512]
+elapsed_time_after = 0.8
+
+[STEP 35 | LINE 517]
+max deposition_erosion = 0.007969467342384181
+
+
+================ LOOP 5 ================
+
+[STEP 36 | LINE 362]
+elapsed_time_before = 0.8
+
+[STEP 37 | LINE 367]
+dt = 0.2
+
+[STEP 38 | LINE 410]
+max diffusion_change = 0.0026324546822706924
+
+[STEP 39 | LINE 415]
+max elevation after diffusion = 0.007080738471676868
+
+[STEP 40 | LINE 481]
+max uplift_change = 0.0028000000000000004
+
+[STEP 41 | LINE 486]
+max elevation after uplift = 0.009280738471676868
+
+[STEP 42 | LINE 512]
+elapsed_time_after = 1.0
+
+[STEP 43 | LINE 517]
+max deposition_erosion = 0.009280738471676868
+
+[Landlab] cwd: /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/test_template_ADV_GEO_Project_placeholder/outputs/n_substeps-5
+[Landlab] outputs_root: /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/test_template_ADV_GEO_Project_placeholder/outputs/n_substeps-5/outputs
+[Landlab] Candidate ASPECT output directories:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/test_template_ADV_GEO_Project_placeholder/outputs/n_substeps-5/outputs/Landlab_defined_uplift_subset_1_trace
+[Landlab] Selected ASPECT output directory:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/test_template_ADV_GEO_Project_placeholder/outputs/n_substeps-5/outputs/Landlab_defined_uplift_subset_1_trace
+[Landlab] Writing VTK:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/test_template_ADV_GEO_Project_placeholder/outputs/n_substeps-5/outputs/Landlab_defined_uplift_subset_1_trace/landlab/landlab_0002.vtk
+[Landlab] Updated series file:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/test_template_ADV_GEO_Project_placeholder/outputs/n_substeps-5/outputs/Landlab_defined_uplift_subset_1_trace/landlab/landlab.vtk.series
+
+================ ASPECT TIMESTEP 2 SUMMARY ================
+
+[STEP 44 | LINE 567]
+Total loops = 5
+
+[STEP 45 | LINE 571]
+Final elapsed_time = 1.0
+
+[STEP 46 | LINE 576]
+Final max elevation = 0.009280738471676868
+
+   Solving mesh displacement system... 2 iterations.
+
+   Postprocessing:
+     Writing graphical output: outputs/Landlab_defined_uplift_subset_1_trace/solution/solution-00001
+     Topography min/max:       0 m, 0.009281 m
+
+*** Timestep 2:  t=2 seconds, dt=1 seconds
+
+================ LOOP 6 ================
+
+[STEP 47 | LINE 362]
+elapsed_time_before = 1.0
+
+[STEP 48 | LINE 367]
+dt = 0.2
+
+[STEP 49 | LINE 410]
+max diffusion_change = 0.0026719447968391293
+
+[STEP 50 | LINE 415]
+max elevation after diffusion = 0.008167684968080867
+
+[STEP 51 | LINE 481]
+max uplift_change = 0.0028000000000000004
+
+[STEP 52 | LINE 486]
+max elevation after uplift = 0.010367684968080867
+
+[STEP 53 | LINE 512]
+elapsed_time_after = 1.2
+
+[STEP 54 | LINE 517]
+max deposition_erosion = 0.0011625457295497323
+
+
+================ LOOP 7 ================
+
+[STEP 55 | LINE 362]
+elapsed_time_before = 1.2
+
+[STEP 56 | LINE 367]
+dt = 0.2
+
+[STEP 57 | LINE 410]
+max diffusion_change = 0.002699459377610425
+
+[STEP 58 | LINE 415]
+max elevation after diffusion = 0.00908907103774837
+
+[STEP 59 | LINE 481]
+max uplift_change = 0.0028000000000000004
+
+[STEP 60 | LINE 486]
+max elevation after uplift = 0.011259176402111236
+
+[STEP 61 | LINE 512]
+elapsed_time_after = 1.4
+
+[STEP 62 | LINE 517]
+max deposition_erosion = 0.0021484932979511026
+
+
+================ LOOP 8 ================
+
+[STEP 63 | LINE 362]
+elapsed_time_before = 1.4
+
+[STEP 64 | LINE 367]
+dt = 0.2
+
+[STEP 65 | LINE 410]
+max diffusion_change = 0.0027196958447181325
+
+[STEP 66 | LINE 415]
+max elevation after diffusion = 0.009896242622364142
+
+[STEP 67 | LINE 481]
+max uplift_change = 0.0028000000000000004
+
+[STEP 68 | LINE 486]
+max elevation after uplift = 0.011993387665297558
+
+[STEP 69 | LINE 512]
+elapsed_time_after = 1.5999999999999999
+
+[STEP 70 | LINE 517]
+max deposition_erosion = 0.0029825724305582915
+
+
+================ LOOP 9 ================
+
+[STEP 71 | LINE 362]
+elapsed_time_before = 1.6
+
+[STEP 72 | LINE 367]
+dt = 0.2
+
+[STEP 73 | LINE 410]
+max diffusion_change = 0.002735087357841921
+
+[STEP 74 | LINE 415]
+max elevation after diffusion = 0.010570997368490223
+
+[STEP 75 | LINE 481]
+max uplift_change = 0.002800000000000001
+
+[STEP 76 | LINE 486]
+max elevation after uplift = 0.012600606808312853
+
+[STEP 77 | LINE 512]
+elapsed_time_after = 1.8
+
+[STEP 78 | LINE 517]
+max deposition_erosion = 0.0036876333752135573
+
+
+================ LOOP 10 ================
+
+[STEP 79 | LINE 362]
+elapsed_time_before = 1.8
+
+[STEP 80 | LINE 367]
+dt = 0.2
+
+[STEP 81 | LINE 410]
+max diffusion_change = 0.0027470596515007262
+
+[STEP 82 | LINE 415]
+max elevation after diffusion = 0.011136140155847884
+
+[STEP 83 | LINE 481]
+max uplift_change = 0.002800000000000001
+
+[STEP 84 | LINE 486]
+max elevation after uplift = 0.013136140155847884
+
+[STEP 85 | LINE 512]
+elapsed_time_after = 2.0
+
+[STEP 86 | LINE 517]
+max deposition_erosion = 0.004283705519032658
+
+[Landlab] cwd: /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/test_template_ADV_GEO_Project_placeholder/outputs/n_substeps-5
+[Landlab] outputs_root: /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/test_template_ADV_GEO_Project_placeholder/outputs/n_substeps-5/outputs
+[Landlab] Candidate ASPECT output directories:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/test_template_ADV_GEO_Project_placeholder/outputs/n_substeps-5/outputs/Landlab_defined_uplift_subset_1_trace
+[Landlab] Selected ASPECT output directory:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/test_template_ADV_GEO_Project_placeholder/outputs/n_substeps-5/outputs/Landlab_defined_uplift_subset_1_trace
+[Landlab] Writing VTK:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/test_template_ADV_GEO_Project_placeholder/outputs/n_substeps-5/outputs/Landlab_defined_uplift_subset_1_trace/landlab/landlab_0003.vtk
+[Landlab] Updated series file:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/test_template_ADV_GEO_Project_placeholder/outputs/n_substeps-5/outputs/Landlab_defined_uplift_subset_1_trace/landlab/landlab.vtk.series
+
+================ ASPECT TIMESTEP 3 SUMMARY ================
+
+[STEP 87 | LINE 567]
+Total loops = 5
+
+[STEP 88 | LINE 571]
+Final elapsed_time = 2.0
+
+[STEP 89 | LINE 576]
+Final max elevation = 0.013136140155847884
+
+   Solving mesh displacement system... 2 iterations.
+
+   Postprocessing:
+     Writing graphical output: outputs/Landlab_defined_uplift_subset_1_trace/solution/solution-00002
+     Topography min/max:       0 m, 0.01314 m
+
+*** Timestep 3:  t=3 seconds, dt=1 seconds
+
+================ LOOP 11 ================
+
+[STEP 90 | LINE 362]
+elapsed_time_before = 2.0
+
+[STEP 91 | LINE 367]
+dt = 0.2
+
+[STEP 92 | LINE 410]
+max diffusion_change = 0.0027565231335598362
+
+[STEP 93 | LINE 415]
+max elevation after diffusion = 0.011610422094994593
+
+[STEP 94 | LINE 481]
+max uplift_change = 0.002800000000000001
+
+[STEP 95 | LINE 486]
+max elevation after uplift = 0.013610422094994593
+
+[STEP 96 | LINE 512]
+elapsed_time_after = 2.2
+
+[STEP 97 | LINE 517]
+max deposition_erosion = 0.0005118729735613236
+
+
+================ LOOP 12 ================
+
+[STEP 98 | LINE 362]
+elapsed_time_before = 2.2
+
+[STEP 99 | LINE 367]
+dt = 0.2
+
+[STEP 100 | LINE 410]
+max diffusion_change = 0.0027640947511424954
+
+[STEP 101 | LINE 415]
+max elevation after diffusion = 0.01200922454839935
+
+[STEP 102 | LINE 481]
+max uplift_change = 0.0028000000000000004
+
+[STEP 103 | LINE 486]
+max elevation after uplift = 0.01400922454839935
+
+[STEP 104 | LINE 512]
+elapsed_time_after = 2.4000000000000004
+
+[STEP 105 | LINE 517]
+max deposition_erosion = 0.0009483191660091192
+
+
+================ LOOP 13 ================
+
+[STEP 106 | LINE 362]
+elapsed_time_before = 2.4
+
+[STEP 107 | LINE 367]
+dt = 0.2
+
+[STEP 108 | LINE 410]
+max diffusion_change = 0.0027702105713597784
+
+[STEP 109 | LINE 415]
+max elevation after diffusion = 0.012345175041294934
+
+[STEP 110 | LINE 481]
+max uplift_change = 0.0028000000000000004
+
+[STEP 111 | LINE 486]
+max elevation after uplift = 0.014345175041294934
+
+[STEP 112 | LINE 512]
+elapsed_time_after = 2.6
+
+[STEP 113 | LINE 517]
+max deposition_erosion = 0.001320482439608639
+
+
+================ LOOP 14 ================
+
+[STEP 114 | LINE 362]
+elapsed_time_before = 2.6
+
+[STEP 115 | LINE 367]
+dt = 0.2
+
+[STEP 116 | LINE 410]
+max diffusion_change = 0.0027751885353012986
+
+[STEP 117 | LINE 415]
+max elevation after diffusion = 0.012628662830295533
+
+[STEP 118 | LINE 481]
+max uplift_change = 0.0028000000000000004
+
+[STEP 119 | LINE 486]
+max elevation after uplift = 0.014628662830295533
+
+[STEP 120 | LINE 512]
+elapsed_time_after = 2.8000000000000003
+
+[STEP 121 | LINE 517]
+max deposition_erosion = 0.0016379105001835727
+
+
+================ LOOP 15 ================
+
+[STEP 122 | LINE 362]
+elapsed_time_before = 2.8
+
+[STEP 123 | LINE 367]
+dt = 0.2
+
+[STEP 124 | LINE 410]
+max diffusion_change = 0.0027792660455482872
+
+[STEP 125 | LINE 415]
+max elevation after diffusion = 0.012868258726234828
+
+[STEP 126 | LINE 481]
+max uplift_change = 0.002800000000000001
+
+[STEP 127 | LINE 486]
+max elevation after uplift = 0.014868258726234828
+
+[STEP 128 | LINE 512]
+elapsed_time_after = 3.0
+
+[STEP 129 | LINE 517]
+max deposition_erosion = 0.0019087503587599305
+
+[Landlab] cwd: /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/test_template_ADV_GEO_Project_placeholder/outputs/n_substeps-5
+[Landlab] outputs_root: /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/test_template_ADV_GEO_Project_placeholder/outputs/n_substeps-5/outputs
+[Landlab] Candidate ASPECT output directories:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/test_template_ADV_GEO_Project_placeholder/outputs/n_substeps-5/outputs/Landlab_defined_uplift_subset_1_trace
+[Landlab] Selected ASPECT output directory:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/test_template_ADV_GEO_Project_placeholder/outputs/n_substeps-5/outputs/Landlab_defined_uplift_subset_1_trace
+[Landlab] Writing VTK:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/test_template_ADV_GEO_Project_placeholder/outputs/n_substeps-5/outputs/Landlab_defined_uplift_subset_1_trace/landlab/landlab_0004.vtk
+[Landlab] Updated series file:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/test_template_ADV_GEO_Project_placeholder/outputs/n_substeps-5/outputs/Landlab_defined_uplift_subset_1_trace/landlab/landlab.vtk.series
+
+================ ASPECT TIMESTEP 4 SUMMARY ================
+
+[STEP 130 | LINE 567]
+Total loops = 5
+
+[STEP 131 | LINE 571]
+Final elapsed_time = 3.0
+
+[STEP 132 | LINE 576]
+Final max elevation = 0.014868258726234828
+
+   Solving mesh displacement system... 2 iterations.
+
+   Postprocessing:
+     Writing graphical output: outputs/Landlab_defined_uplift_subset_1_trace/solution/solution-00003
+     Topography min/max:       0 m, 0.01487 m
+
+Termination requested by criterion: end time
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |       1.6s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Initialization                  |         1 |      1.39s |        87% |
+| Mesh deformation                |         4 |    0.0378s |       2.4% |
+| Mesh deformation initialize     |         1 |    0.0635s |         4% |
+| Postprocessing                  |         4 |    0.0769s |       4.8% |
+| Setup dof systems               |         1 |    0.0715s |       4.5% |
+| Setup initial conditions        |         1 |    0.0022s |      0.14% |
+| Setup matrices                  |         1 |   0.00204s |      0.13% |
++---------------------------------+-----------+------------+------------+
+
+-- Total wallclock time elapsed including restarts: 2s
+-----------------------------------------------------------------------------
+-- For information on how to cite ASPECT, see:
+--   https://aspect.geodynamics.org/citing.html?ver=3.1.0-pre&mf=1&sha=41f098d71&src=code
+-----------------------------------------------------------------------------
