@@ -598,11 +598,13 @@ Figure C3: Ideal case scenario
 
 Figure C4: Coupled Landlab defined uplift (No difusion) uniform Uplift
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 .. figure:: /_static/figures/landlab_/bug_landlab_folder/ASPECT_driven_uplift_mismatch_Standalone_Landlab_debuging/Landlab_driven_uplift_operator_splitting_error_diffrent_sequence_uplift_diffusion_diffrent_node_overlaping/outputs/Only_uplift_No_diffusion_random_initial_Topo_opertor_spliting_error_n_substeps-1/results_benchmark/cross_section_all_times.png
    :align: center
 
 Figure C5: ASPECT defined uplift (No difusion) uniform Uplift
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 .. figure:: /_static/figures/landlab_/bug_landlab_folder/ASPECT_driven_uplift_mismatch_Standalone_Landlab_debuging/ASPECT_driven_uplift_case/outputs/ASPECT_defined_uplift_No_Diffusion_subset_1_global_velocity_boundary_refin-0_x_9_y_19-repition_Diffusion_5e4_m2_per_Year_Set_Year-false_x-900_y-1900_z-1000_single_Advection_single_Stokes/results_benchmark/cross_section_all_times.png
    :align: center
 
