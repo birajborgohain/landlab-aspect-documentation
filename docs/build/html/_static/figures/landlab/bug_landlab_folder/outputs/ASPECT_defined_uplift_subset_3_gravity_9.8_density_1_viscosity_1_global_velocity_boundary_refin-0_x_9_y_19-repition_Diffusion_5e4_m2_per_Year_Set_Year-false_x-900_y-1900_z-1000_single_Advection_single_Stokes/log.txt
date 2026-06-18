@@ -1,0 +1,30 @@
+-----------------------------------------------------------------------------
+--                             This is ASPECT                              --
+-- The Advanced Solver for Planetary Evolution, Convection, and Tectonics. --
+-----------------------------------------------------------------------------
+--     . version 3.1.0-pre (pr43, 41f098d71)
+--     . using deal.II 9.7.0
+--     .       with 32 bit indices
+--     .       with vectorization level 1 (SSE2, 2 doubles, 128 bits)
+--     . using Trilinos 16.2.0
+--     . using p4est 2.8.7
+--     . using Geodynamic World Builder 1.0.0
+--     . running in OPTIMIZED mode
+--     . running with 17 MPI processes
+-----------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------
+-- For information on how to cite ASPECT, see:
+--   https://aspect.geodynamics.org/citing.html?ver=3.1.0-pre&sha=41f098d71&src=code
+-----------------------------------------------------------------------------
+Number of active cells: 171 (on 1 levels)
+Number of degrees of freedom: 9,292 (7,069+2,223)
+
+Number of mesh deformation degrees of freedom: 6,669
+   Solving mesh displacement system... 8 iterations.
+*** Timestep 0:  t=0 seconds, dt=0 seconds
+   Solving mesh displacement system... 0 iterations.
+   Solving temperature system... 0 iterations.
+   Solving Stokes system (direct)... done.
+
+   Postprocessing:

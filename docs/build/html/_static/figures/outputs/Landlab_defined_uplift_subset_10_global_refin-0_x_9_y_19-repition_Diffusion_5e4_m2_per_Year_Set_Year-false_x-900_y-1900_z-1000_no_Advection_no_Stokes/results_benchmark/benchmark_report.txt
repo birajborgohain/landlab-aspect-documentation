@@ -1,0 +1,109 @@
+================================================
+BENCHMARK REPORT
+================================================
+
+================================================
+COMPARISON: standalone_landlab
+================================================
+
+You compare:
+
+z_standalone - z_reference
+
+where:
+
+z_reference   = analytical or target reference topography
+z_standalone  = Landlab-only simulation result
+
+This comparison evaluates how accurately the standalone Landlab simulation reproduces the reference topography.
+
+STATUS: PASS
+
+PASS/FAIL criterion:
+
+max(|z_test - z_reference|) < absolute_tolerance
+
+absolute_tolerance = 1.0e-10
+
+Result: PASS because the maximum absolute error is smaller than the prescribed absolute tolerance.
+
+Maximum absolute error : 4.9e-11
+
+Mean absolute error    : 1.0e-11
+
+RMSE                   : 1.7e-11
+
+L2 norm                : 2.5e-10
+
+Mass difference        : -1.4e-10
+
+================================================
+COMPARISON: coupled_landlab
+================================================
+
+You compare:
+
+z_coupled - z_reference
+
+where:
+
+z_reference = analytical or target reference topography
+z_coupled   = coupled ASPECT-Landlab simulation result
+
+This comparison evaluates how closely the coupled ASPECT-Landlab simulation matches the reference topography.
+
+STATUS: FAIL
+
+PASS/FAIL criterion:
+
+max(|z_test - z_reference|) < absolute_tolerance
+
+absolute_tolerance = 1.0e-10
+
+Result: FAIL because the maximum absolute error exceeds the prescribed absolute tolerance.
+
+Maximum absolute error : 0.0e+00
+
+Mean absolute error    : 0.0e+00
+
+RMSE                   : 0.0e+00
+
+L2 norm                : 0.0e+00
+
+Mass difference        : 0.0e+00
+
+================================================
+COMPARISON: aspect_topography
+================================================
+
+You compare:
+
+z_ASPECT - z_reference
+
+where:
+
+z_reference = analytical or target reference topography
+z_ASPECT    = ASPECT free-surface topography
+
+This comparison evaluates the difference between the ASPECT free-surface topography and the reference topography.
+
+STATUS: FAIL
+
+PASS/FAIL criterion:
+
+max(|z_test - z_reference|) < absolute_tolerance
+
+absolute_tolerance = 1.0e-10
+
+Result: FAIL because the maximum absolute error exceeds the prescribed absolute tolerance.
+
+Maximum absolute error : 4.9e-08
+
+Mean absolute error    : 1.1e-08
+
+RMSE                   : 1.8e-08
+
+L2 norm                : 2.6e-07
+
+Mass difference        : 3.5e-07
+

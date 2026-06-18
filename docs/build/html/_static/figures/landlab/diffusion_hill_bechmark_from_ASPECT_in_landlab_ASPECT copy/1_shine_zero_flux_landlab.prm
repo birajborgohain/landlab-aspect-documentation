@@ -1,0 +1,64 @@
+# =========================================================
+# Landlab-ASPECT version of diffusion_of_hill benchmark
+# =========================================================
+
+include $ASPECT_SOURCE_DIR/benchmarks/diffusion_of_hill/1_sine_zero_flux.prm
+
+
+# ---------------------------------------------------------
+# Override geometry
+# ---------------------------------------------------------
+
+subsection Geometry model
+  subsection Box
+    set X extent = 3
+    set Y extent = 3
+  end
+end
+
+
+# ---------------------------------------------------------
+# Disable analytical sinusoidal initial topography
+# ---------------------------------------------------------
+
+# subsection Initial topography model
+#   set Model name = function
+#
+#   subsection Function
+#     set Function constants = A=0.075, L=1.
+#     set Function expression = \
+#                               A * sin(x*pi)
+#   end
+# end
+
+
+# ---------------------------------------------------------
+# Replace ASPECT diffusion with Landlab
+# ---------------------------------------------------------
+
+subsection Mesh deformation
+  set Mesh deformation boundary indicators = top: Landlab
+  set Additional tangential mesh velocity boundary indicators =
+
+
+
+# ---------------------------------------------------------
+# Disable ASPECT diffusion model
+# ---------------------------------------------------------
+
+# subsection Diffusion
+#   set Hillslope transport coefficient = 0.25
+# end
+
+
+# ---------------------------------------------------------
+# Landlab surface process model
+# ---------------------------------------------------------
+
+  subsection Landlab
+    set MPI ranks for Landlab = 1
+    set Script name           = 1_shine_zero_flux_landlab_import-template
+    set Script path           = .
+    set Script argument       =
+  end
+end

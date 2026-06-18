@@ -1,0 +1,123 @@
+-----------------------------------------------------------------------------
+--                             This is ASPECT                              --
+-- The Advanced Solver for Planetary Evolution, Convection, and Tectonics. --
+-----------------------------------------------------------------------------
+--     . version 3.1.0-pre (pr43, 23ad3f3ba)
+--     . using deal.II 9.7.0
+--     .       with 32 bit indices
+--     .       with vectorization level 1 (SSE2, 2 doubles, 128 bits)
+--     . using Trilinos 16.2.0
+--     . using p4est 2.8.7
+--     . using Geodynamic World Builder 1.0.0
+--     . running in OPTIMIZED mode
+--     . running with 25 MPI processes
+-----------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------
+-- For information on how to cite ASPECT, see:
+--   https://aspect.geodynamics.org/citing.html?ver=3.1.0-pre&mf=1&sha=23ad3f3ba&src=code
+-----------------------------------------------------------------------------
+Number of active cells: 1 (on 1 levels)
+Number of degrees of freedom: 116 (81+8+27)
+
+Number of mesh deformation degrees of freedom: 81
+   Solving mesh displacement system... 4 iterations.
+*** Timestep 0:  t=0 years, dt=0 years
+   Solving mesh displacement system... 0 iterations.
+   Solving temperature system... 0 iterations.
+   Solving Stokes system (GMG)... 89+0 iterations.
+
+   Postprocessing:
+     Writing graphical output: outputs/updated_code_Linear_slope_substep_10_z-1000_xy-repition_5_only_Landlab_x-900_y-1900_no_Advection_no_Stokes/solution/solution-00000
+     Topography min/max:       0 m, 450 m
+
+*** Timestep 1:  t=2.04606e-29 years, dt=2.04606e-29 years
+   Solving mesh displacement system... 0 iterations.
+   Solving temperature system... 2 iterations.
+   Solving Stokes system (GMG)... 98+0 iterations.
+
+   Postprocessing:
+     Writing graphical output: outputs/updated_code_Linear_slope_substep_10_z-1000_xy-repition_5_only_Landlab_x-900_y-1900_no_Advection_no_Stokes/solution/solution-00001
+     Topography min/max:       0 m, 450 m
+
+*** Timestep 2:  t=4.55392e-29 years, dt=2.50786e-29 years
+   Solving mesh displacement system... 0 iterations.
+   Solving temperature system... 1 iterations.
+   Solving Stokes system (GMG)... 99+0 iterations.
+
+   Postprocessing:
+     Writing graphical output: outputs/updated_code_Linear_slope_substep_10_z-1000_xy-repition_5_only_Landlab_x-900_y-1900_no_Advection_no_Stokes/solution/solution-00002
+     Topography min/max:       0 m, 450 m
+
+*** Timestep 3:  t=8.04287e-29 years, dt=3.48895e-29 years
+   Solving mesh displacement system... 0 iterations.
+   Solving temperature system... 1 iterations.
+   Solving Stokes system (GMG)... 87+0 iterations.
+
+   Postprocessing:
+     Writing graphical output: outputs/updated_code_Linear_slope_substep_10_z-1000_xy-repition_5_only_Landlab_x-900_y-1900_no_Advection_no_Stokes/solution/solution-00003
+     Topography min/max:       0 m, 450 m
+
+*** Timestep 4:  t=8.10474e-29 years, dt=6.18679e-31 years
+   Solving mesh displacement system... 0 iterations.
+   Solving temperature system... 1 iterations.
+   Solving Stokes system (GMG)... 90+0 iterations.
+
+   Postprocessing:
+     Writing graphical output: outputs/updated_code_Linear_slope_substep_10_z-1000_xy-repition_5_only_Landlab_x-900_y-1900_no_Advection_no_Stokes/solution/solution-00004
+     Topography min/max:       0 m, 450 m
+
+*** Timestep 5:  t=8.16562e-29 years, dt=6.08769e-31 years
+   Solving mesh displacement system... 0 iterations.
+   Solving temperature system... 1 iterations.
+   Solving Stokes system (GMG)... 99+0 iterations.
+
+   Postprocessing:
+     Writing graphical output: outputs/updated_code_Linear_slope_substep_10_z-1000_xy-repition_5_only_Landlab_x-900_y-1900_no_Advection_no_Stokes/solution/solution-00005
+     Topography min/max:       0 m, 450 m
+
+*** Timestep 6:  t=8.22467e-29 years, dt=5.90568e-31 years
+   Solving mesh displacement system... 0 iterations.
+   Solving temperature system... 2 iterations.
+   Solving Stokes system (GMG)... 87+0 iterations.
+
+   Postprocessing:
+     Writing graphical output: outputs/updated_code_Linear_slope_substep_10_z-1000_xy-repition_5_only_Landlab_x-900_y-1900_no_Advection_no_Stokes/solution/solution-00006
+     Topography min/max:       0 m, 450 m
+
+*** Timestep 7:  t=8.28213e-29 years, dt=5.74536e-31 years
+   Solving mesh displacement system... 0 iterations.
+   Solving temperature system... 1 iterations.
+   Solving Stokes system (GMG)... 97+0 iterations.
+
+   Postprocessing:
+     Writing graphical output: outputs/updated_code_Linear_slope_substep_10_z-1000_xy-repition_5_only_Landlab_x-900_y-1900_no_Advection_no_Stokes/solution/solution-00007
+     Topography min/max:       0 m, 450 m
+
+*** Timestep 8:  t=8.33925e-29 years, dt=5.71204e-31 years
+   Solving mesh displacement system... 0 iterations.
+   Solving temperature system... 1 iterations.
+   Solving Stokes system (GMG)... 93+0 iterations.
+
+   Postprocessing:
+     Writing graphical output: outputs/updated_code_Linear_slope_substep_10_z-1000_xy-repition_5_only_Landlab_x-900_y-1900_no_Advection_no_Stokes/solution/solution-00008
+     Topography min/max:       0 m, 450 m
+
+*** Timestep 9:  t=8.39596e-29 years, dt=5.67071e-31 years
+   Solving mesh displacement system... 0 iterations.
+   Solving temperature system... 1 iterations.
+   Solving Stokes system (GMG)... 86+0 iterations.
+
+   Postprocessing:
+     Writing graphical output: outputs/updated_code_Linear_slope_substep_10_z-1000_xy-repition_5_only_Landlab_x-900_y-1900_no_Advection_no_Stokes/solution/solution-00009
+     Topography min/max:       0 m, 450 m
+
+*** Timestep 10:  t=8.45308e-29 years, dt=5.71267e-31 years
+   Solving mesh displacement system... 0 iterations.
+   Solving temperature system... 2 iterations.
+   Solving Stokes system (GMG)... 88+0 iterations.
+
+   Postprocessing:
+     Writing graphical output: outputs/updated_code_Linear_slope_substep_10_z-1000_xy-repition_5_only_Landlab_x-900_y-1900_no_Advection_no_Stokes/solution/solution-00010
+     Topography min/max:       0 m, 450 m
+
