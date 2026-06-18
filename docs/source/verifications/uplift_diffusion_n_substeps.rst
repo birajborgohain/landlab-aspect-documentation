@@ -696,13 +696,19 @@ Figure C7: Uplift Implementation difference
 Figure C8: ``n_substeps = 10`` scenario: Crosssection of each time step (total of 4)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. figure:: /_static/figures/landlab/bug_landlab_folder/outputs/Landlab_defined_uplift_subset_10_global_refin-0_x_9_y_19-repition_Diffusion_5e4_m2_per_Year_Set_Year-false_x-900_y-1900_z-1000_no_Advection_no_Stokes/results_benchmark/cross_section_all_times.png
+.. .. figure:: /_static/figures/landlab/bug_landlab_folder/outputs/Landlab_defined_uplift_subset_10_global_refin-0_x_9_y_19-repition_Diffusion_5e4_m2_per_Year_Set_Year-false_x-900_y-1900_z-1000_no_Advection_no_Stokes/results_benchmark/cross_section_all_times.png
+..    :align: center
+
+.. figure:: /_static/figures/landlab_/Landlab_defined_uplift_subset_10_global_refin-0_x_9_y_19-repition_Diffusion_5e4_m2_per_Year_Set_Year-false_x-900_y-1900_z-1000_no_Advection_no_Stokes/results_benchmark/cross_section_all_times.png
    :align: center
 
 Figure C9: ``n_substeps = 1`` scenario: Crosssection of each time step (total of 4)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. figure:: /_static/figures/landlab/bug_landlab_folder/outputs/Landlab_defined_uplift_subset_1_global_refin-0_x_9_y_19-repition_Diffusion_5e4_m2_per_Year_Set_Year-false_x-900_y-1900_z-1000_no_Advection_no_Stokes/results_benchmark/cross_section_all_times.png
+.. .. figure:: /_static/figures/landlab/bug_landlab_folder/outputs/Landlab_defined_uplift_subset_1_global_refin-0_x_9_y_19-repition_Diffusion_5e4_m2_per_Year_Set_Year-false_x-900_y-1900_z-1000_no_Advection_no_Stokes/results_benchmark/cross_section_all_times.png
+..    :align: center
+
+.. figure:: /_static/figures/landlab_/Landlab_defined_uplift_subset_1_global_refin-0_x_9_y_19-repition_Diffusion_5e4_m2_per_Year_Set_Year-false_x-900_y-1900_z-1000_no_Advection_no_Stokes/results_benchmark/cross_section_all_times.png
    :align: center
 
 
@@ -713,7 +719,10 @@ Figure C9: ``n_substeps = 1`` scenario: Crosssection of each time step (total of
 Figure C10: ``n_substeps = 1`` scenario: Diffusion and Uplift effect on Elevation Changes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. figure:: /_static/figures/landlab/bug_landlab_folder/n_substeps_issue_analysis/test_template_ADV_GEO_Project_placeholder/analysis_substeps_figures/loop_vs_max_uplift_diffusion_change_n_substeps_1.png
+.. .. figure:: /_static/figures/landlab/bug_landlab_folder/n_substeps_issue_analysis/test_template_ADV_GEO_Project_placeholder/analysis_substeps_figures/loop_vs_max_uplift_diffusion_change_n_substeps_1.png
+..    :align: center
+
+.. figure:: /_static/figures/landlab_/test_template_ADV_GEO_Project_placeholder/analysis_substeps_figures/loop_vs_max_uplift_diffusion_change_n_substeps_1.png
    :align: center
 
 
@@ -723,27 +732,35 @@ Figure C10: ``n_substeps = 1`` scenario: Diffusion and Uplift effect on Elevatio
 Figure C11: ``n_substeps = 2`` scenario: Diffusion and Uplift effect on Elevation Changes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. figure:: /_static/figures/landlab/bug_landlab_folder/n_substeps_issue_analysis/test_template_ADV_GEO_Project_placeholder/analysis_substeps_figures/loop_vs_max_uplift_diffusion_change_n_substeps_2.png
+.. .. figure:: /_static/figures/landlab/bug_landlab_folder/n_substeps_issue_analysis/test_template_ADV_GEO_Project_placeholder/analysis_substeps_figures/loop_vs_max_uplift_diffusion_change_n_substeps_2.png
+..    :align: center
+
+.. figure:: /_static/figures/landlab_/test_template_ADV_GEO_Project_placeholder/analysis_substeps_figures/loop_vs_max_uplift_diffusion_change_n_substeps_2.png
    :align: center
 
 Figure C12: ``n_substeps = 3`` scenario: Diffusion and Uplift effect on Elevation Changes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. figure:: /_static/figures/landlab/bug_landlab_folder/n_substeps_issue_analysis/test_template_ADV_GEO_Project_placeholder/analysis_substeps_figures/loop_vs_max_uplift_diffusion_change_n_substeps_3.png
+.. .. figure:: /_static/figures/landlab/bug_landlab_folder/n_substeps_issue_analysis/test_template_ADV_GEO_Project_placeholder/analysis_substeps_figures/loop_vs_max_uplift_diffusion_change_n_substeps_2.png
+..    :align: center
+.. figure:: /_static/figures/landlab_/test_template_ADV_GEO_Project_placeholder/analysis_substeps_figures/loop_vs_max_uplift_diffusion_change_n_substeps_2.png
    :align: center
 
 Figure C13: ``n_substeps = 6`` scenario: Diffusion and Uplift effect on Elevation Changes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. figure:: /_static/figures/landlab/bug_landlab_folder/n_substeps_issue_analysis/test_template_ADV_GEO_Project_placeholder/analysis_substeps_figures/loop_vs_max_uplift_diffusion_change_n_substeps_6.png
-   :align: center
-
+.. .. figure:: /_static/figures/landlab/bug_landlab_folder/n_substeps_issue_analysis/test_template_ADV_GEO_Project_placeholder/analysis_substeps_figures/loop_vs_max_uplift_diffusion_change_n_substeps_6.png
+..    :align: center
+.. figure:: /_static/figures/landlab_/test_template_ADV_GEO_Project_placeholder/analysis_substeps_figures/loop_vs_max_uplift_diffusion_change_n_substeps_6.png
+   :align: cente
 Figure C14: ``n_substeps = 20`` scenario: Diffusion and Uplift effect on Elevation Changes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. figure:: /_static/figures/landlab/bug_landlab_folder/n_substeps_issue_analysis/test_template_ADV_GEO_Project_placeholder/analysis_substeps_figures/loop_vs_max_uplift_diffusion_change_n_substeps_20.png
-   :align: center
+.. .. figure:: /_static/figures/landlab/bug_landlab_folder/n_substeps_issue_analysis/test_template_ADV_GEO_Project_placeholder/analysis_substeps_figures/loop_vs_max_uplift_diffusion_change_n_substeps_20.png
+..    :align: center
 
+.. figure:: /_static/figures/landlab_/test_template_ADV_GEO_Project_placeholder/analysis_substeps_figures/loop_vs_max_uplift_diffusion_change_n_substeps_20.png
+   :align: center
 .. by 
 .. ASPECT and exchanged with Landlab only at discrete coupling intervals. 
 .. When `n_substeps = 1`, diffusion responds only once to the total uplift 
