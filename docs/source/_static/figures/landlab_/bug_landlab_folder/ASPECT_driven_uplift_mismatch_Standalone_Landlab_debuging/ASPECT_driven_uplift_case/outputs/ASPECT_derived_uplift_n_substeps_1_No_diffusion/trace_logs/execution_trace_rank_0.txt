@@ -1,6 +1,0 @@
-=====================================
-ASPECT-Landlab Execution Trace
-MPI Rank: 0
-Trace File: /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/ASPECT_driven_uplift_mismatch_Standalone_Landlab_debuging/ASPECT_driven_uplift_case/outputs/ASPECT_derived_uplift_n_substeps_1_No_diffusion/trace_logs/execution_trace_rank_0.txt
-=====================================
-
