@@ -752,7 +752,8 @@ Figure C13: ``n_substeps = 6`` scenario: Diffusion and Uplift effect on Elevatio
 .. .. figure:: /_static/figures/landlab/bug_landlab_folder/n_substeps_issue_analysis/test_template_ADV_GEO_Project_placeholder/analysis_substeps_figures/loop_vs_max_uplift_diffusion_change_n_substeps_6.png
 ..    :align: center
 .. figure:: /_static/figures/landlab_/test_template_ADV_GEO_Project_placeholder/analysis_substeps_figures/loop_vs_max_uplift_diffusion_change_n_substeps_6.png
-   :align: cente
+   :align: center
+
 Figure C14: ``n_substeps = 20`` scenario: Diffusion and Uplift effect on Elevation Changes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
