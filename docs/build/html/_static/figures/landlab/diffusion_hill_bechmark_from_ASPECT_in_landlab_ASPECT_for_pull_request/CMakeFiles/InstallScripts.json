@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/diffusion_hill_bechmark_from_ASPECT_in_landlab_ASPECT_for_pull_request/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

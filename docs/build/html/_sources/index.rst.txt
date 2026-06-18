@@ -1,0 +1,17 @@
+
+:orphan:
+
+Geodynamics Surface Processes Notes
+=====================================
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Core
+
+
+   
+   installation/index
+   verifications/index
+   implementation/index
+   open_questions/index
+

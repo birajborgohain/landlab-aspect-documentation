@@ -1,0 +1,193 @@
+-----------------------------------------------------------------------------
+--                             This is ASPECT                              --
+-- The Advanced Solver for Planetary Evolution, Convection, and Tectonics. --
+-----------------------------------------------------------------------------
+--     . version 3.1.0-pre (pr43, 41f098d71)
+--     . using deal.II 9.7.0
+--     .       with 32 bit indices
+--     .       with vectorization level 1 (SSE2, 2 doubles, 128 bits)
+--     . using Trilinos 16.2.0
+--     . using p4est 2.8.7
+--     . using Geodynamic World Builder 1.0.0
+--     . running in OPTIMIZED mode
+--     . running with 17 MPI processes
+-----------------------------------------------------------------------------
+
+importing 'import' ...
+Python: running sequentially!
+-----------------------------------------------------------------------------
+-- For information on how to cite ASPECT, see:
+--   https://aspect.geodynamics.org/citing.html?ver=3.1.0-pre&sha=41f098d71&src=code
+-----------------------------------------------------------------------------
+Number of active cells: 171 (on 1 levels)
+Number of degrees of freedom: 9,292 (7,069+2,223)
+
+Number of mesh deformation degrees of freedom: 6,669
+   Solving mesh displacement system... 8 iterations.
+*** Timestep 0:  t=0 seconds, dt=0 seconds
+[debug] dt: 0.0
+[debug] vertical_velocity size: 200
+[debug] vertical_velocity_core size: 144
+[debug] vertical_velocity_core min,max,mean: 0.0 0.0 0.0
+[debug] vertical_velocity_core all_zero: True
+[debug] no year-to-second conversion applied; assuming vertical velocity units match ASPECT time units
+[Landlab] cwd: /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30
+[Landlab] outputs_root: /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30/outputs
+[Landlab] Candidate ASPECT output directories:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30/outputs/ASPECT_derived_uplift
+[Landlab] Selected ASPECT output directory:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30/outputs/ASPECT_derived_uplift
+[Landlab] Writing VTK:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30/outputs/ASPECT_derived_uplift/landlab/landlab_0001.vtk
+[Landlab] Updated series file:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30/outputs/ASPECT_derived_uplift/landlab/landlab.vtk.series
+[Landlab] cwd: /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30
+[Landlab] outputs_root: /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30/outputs
+[Landlab] Candidate ASPECT output directories:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30/outputs/ASPECT_derived_uplift
+[Landlab] Selected ASPECT output directory:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30/outputs/ASPECT_derived_uplift
+[Landlab] Writing VTK:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30/outputs/ASPECT_derived_uplift/landlab/landlab_0001.vtk
+[Landlab] Updated series file:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30/outputs/ASPECT_derived_uplift/landlab/landlab.vtk.series
+   Solving mesh displacement system... 0 iterations.
+   Solving temperature system... 0 iterations.
+   Solving Stokes system (direct)... done.
+
+   Postprocessing:
+     Writing graphical output: outputs/ASPECT_derived_uplift/solution/solution-00000
+     Topography min/max:       4.695e-06 m, 0.0009988 m
+
+*** Timestep 1:  t=1 seconds, dt=1 seconds
+[debug] dt: 1.0
+[debug] vertical_velocity size: 200
+[debug] vertical_velocity_core size: 144
+[debug] vertical_velocity_core min,max,mean: 0.000999999997421844 0.018000000006725927 0.009500000000015968
+[debug] vertical_velocity_core all_zero: False
+[debug] no year-to-second conversion applied; assuming vertical velocity units match ASPECT time units
+[Landlab] cwd: /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30
+[Landlab] outputs_root: /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30/outputs
+[Landlab] Candidate ASPECT output directories:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30/outputs/ASPECT_derived_uplift
+[Landlab] Selected ASPECT output directory:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30/outputs/ASPECT_derived_uplift
+[Landlab] Writing VTK:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30/outputs/ASPECT_derived_uplift/landlab/landlab_0002.vtk
+[Landlab] Updated series file:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30/outputs/ASPECT_derived_uplift/landlab/landlab.vtk.series
+[Landlab] cwd: /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30
+[Landlab] outputs_root: /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30/outputs
+[Landlab] Candidate ASPECT output directories:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30/outputs/ASPECT_derived_uplift
+[Landlab] Selected ASPECT output directory:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30/outputs/ASPECT_derived_uplift
+[Landlab] Writing VTK:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30/outputs/ASPECT_derived_uplift/landlab/landlab_0002.vtk
+[Landlab] Updated series file:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30/outputs/ASPECT_derived_uplift/landlab/landlab.vtk.series
+   Solving mesh displacement system... 0 iterations.
+   Solving temperature system... 20 iterations.
+   Solving Stokes system (direct)... done.
+
+   Postprocessing:
+     Writing graphical output: outputs/ASPECT_derived_uplift/solution/solution-00001
+     Topography min/max:       4.695e-06 m, 0.0009988 m
+
+*** Timestep 2:  t=2 seconds, dt=1 seconds
+[debug] dt: 1.0
+[debug] vertical_velocity size: 200
+[debug] vertical_velocity_core size: 144
+[debug] vertical_velocity_core min,max,mean: 0.000999999997421844 0.018000000006725927 0.009500000000015968
+[debug] vertical_velocity_core all_zero: False
+[debug] no year-to-second conversion applied; assuming vertical velocity units match ASPECT time units
+[Landlab] cwd: /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30
+[Landlab] outputs_root: /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30/outputs
+[Landlab] Candidate ASPECT output directories:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30/outputs/ASPECT_derived_uplift
+[Landlab] Selected ASPECT output directory:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30/outputs/ASPECT_derived_uplift
+[Landlab] Writing VTK:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30/outputs/ASPECT_derived_uplift/landlab/landlab_0003.vtk
+[Landlab] Updated series file:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30/outputs/ASPECT_derived_uplift/landlab/landlab.vtk.series
+[Landlab] cwd: /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30
+[Landlab] outputs_root: /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30/outputs
+[Landlab] Candidate ASPECT output directories:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30/outputs/ASPECT_derived_uplift
+[Landlab] Selected ASPECT output directory:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30/outputs/ASPECT_derived_uplift
+[Landlab] Writing VTK:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30/outputs/ASPECT_derived_uplift/landlab/landlab_0003.vtk
+[Landlab] Updated series file:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30/outputs/ASPECT_derived_uplift/landlab/landlab.vtk.series
+   Solving mesh displacement system... 0 iterations.
+   Solving temperature system... 20 iterations.
+   Solving Stokes system (direct)... done.
+
+   Postprocessing:
+     Writing graphical output: outputs/ASPECT_derived_uplift/solution/solution-00002
+     Topography min/max:       4.695e-06 m, 0.0009988 m
+
+*** Timestep 3:  t=3 seconds, dt=1 seconds
+[debug] dt: 1.0
+[debug] vertical_velocity size: 200
+[debug] vertical_velocity_core size: 144
+[debug] vertical_velocity_core min,max,mean: 0.000999999997421844 0.018000000006725927 0.009500000000015968
+[debug] vertical_velocity_core all_zero: False
+[debug] no year-to-second conversion applied; assuming vertical velocity units match ASPECT time units
+[Landlab] cwd: /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30
+[Landlab] outputs_root: /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30/outputs
+[Landlab] Candidate ASPECT output directories:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30/outputs/ASPECT_derived_uplift
+[Landlab] Selected ASPECT output directory:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30/outputs/ASPECT_derived_uplift
+[Landlab] Writing VTK:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30/outputs/ASPECT_derived_uplift/landlab/landlab_0004.vtk
+[Landlab] Updated series file:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30/outputs/ASPECT_derived_uplift/landlab/landlab.vtk.series
+[Landlab] cwd: /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30
+[Landlab] outputs_root: /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30/outputs
+[Landlab] Candidate ASPECT output directories:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30/outputs/ASPECT_derived_uplift
+[Landlab] Selected ASPECT output directory:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30/outputs/ASPECT_derived_uplift
+[Landlab] Writing VTK:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30/outputs/ASPECT_derived_uplift/landlab/landlab_0004.vtk
+[Landlab] Updated series file:
+    /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/bug_landlab_folder/n_substeps_issue_analysis/extract_elevation_change_ASPECT_derived_uplift/outputs/n_substeps-30/outputs/ASPECT_derived_uplift/landlab/landlab.vtk.series
+   Solving mesh displacement system... 0 iterations.
+   Solving temperature system... 20 iterations.
+   Solving Stokes system (direct)... done.
+
+   Postprocessing:
+     Writing graphical output: outputs/ASPECT_derived_uplift/solution/solution-00003
+     Topography min/max:       4.695e-06 m, 0.0009988 m
+
+Termination requested by criterion: end time
+
+
++----------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start     |      1.93s |            |
+|                                              |            |            |
+| Section                          | no. calls |  wall time | % of total |
++----------------------------------+-----------+------------+------------+
+| Assemble Stokes system           |         4 |    0.0185s |      0.96% |
+| Assemble temperature system      |         4 |    0.0096s |       0.5% |
+| Build temperature preconditioner |         4 |  0.000846s |         0% |
+| Initialization                   |         1 |      1.36s |        71% |
+| Mesh deformation                 |         4 |     0.114s |       5.9% |
+| Mesh deformation initialize      |         1 |     0.083s |       4.3% |
+| Postprocessing                   |         4 |    0.0751s |       3.9% |
+| Setup dof systems                |         1 |    0.0876s |       4.5% |
+| Setup initial conditions         |         1 |   0.00299s |      0.16% |
+| Setup matrices                   |         1 |   0.00267s |      0.14% |
+| Solve Stokes system              |         4 |     0.235s |        12% |
+| Solve temperature system         |         4 |   0.00462s |      0.24% |
++----------------------------------+-----------+------------+------------+
+
+-- Total wallclock time elapsed including restarts: 2s
+-----------------------------------------------------------------------------
+-- For information on how to cite ASPECT, see:
+--   https://aspect.geodynamics.org/citing.html?ver=3.1.0-pre&sha=41f098d71&src=code
+-----------------------------------------------------------------------------

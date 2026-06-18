@@ -1,0 +1,144 @@
+# =========================================================
+# velocity_with_thermal_driving.prm
+# =========================================================
+
+set Dimension                              = 3
+set Use years instead of seconds           = true
+set End time                               = 3
+set Maximum time step                      = 1
+set Output directory                       = outputs/z-100_xy-repition_1_only_Landlab_x-900_y-1900_no_Advection_no_Stokes
+set Nonlinear solver scheme                =  no Advection, no Stokes
+set Surface pressure                       = 0
+
+# ---------------------------------------------------------
+# GEOMETRY (small + fast)
+# ---------------------------------------------------------
+subsection Geometry model
+  set Model name = box
+  subsection Box
+    set X extent = 900
+    set Y extent = 1900
+    set Z extent = 100
+
+    set X repetitions = 1
+    set Y repetitions = 1
+    set Z repetitions = 1
+  end
+end
+
+# ---------------------------------------------------------
+# MESH
+# ---------------------------------------------------------
+subsection Mesh refinement
+  set Initial global refinement = 2
+end
+
+# ---------------------------------------------------------
+# GRAVITY (REQUIRED for buoyancy)
+# ---------------------------------------------------------
+subsection Gravity model
+  set Model name = vertical
+  subsection Vertical
+    set Magnitude = 1
+  end
+end
+
+# ---------------------------------------------------------
+# TEMPERATURE (THIS IS THE DRIVING FORCE)
+# ---------------------------------------------------------
+subsection Initial temperature model
+  set Model name = function
+  subsection Function
+    set Variable names = x,y,z
+    set Function expression = 273+ 1600*(1 - z/5000)
+  end
+end
+
+subsection Boundary temperature model
+  set Fixed temperature boundary indicators = bottom, top
+
+  subsection Box
+    set Bottom temperature = 1600
+    set Top temperature    = 273
+  end
+end
+
+# ---------------------------------------------------------
+# VELOCITY BOUNDARY (free slip)
+# ---------------------------------------------------------
+# 
+# subsection Boundary velocity model
+#   set Prescribed velocity boundary indicators = top: function
+#   set Tangential velocity boundary indicators = left, right, front, back, bottom
+
+#   # subsection Function
+#   #   set Coordinate system   = cartesian
+#   #   set Variable names      = x,y,z,t
+
+#   #   # constants: center (x0,y0), width sigma, peak velocity v0
+#   #   set Function constants  = x0=2500, y0=2500, sigma=1000, v0=1e-7
+
+#   #   # vx = 0, vy = 0, vz = Gaussian dome
+#   #   set Function expression = 0; 0; v0*exp(-((x-x0)^2+(y-y0)^2)/(2*sigma^2))
+#   # end
+# end
+
+# ---------------------------------------------------------
+# LANDLAB COUPLING
+# ---------------------------------------------------------
+subsection Mesh deformation
+  set Mesh deformation boundary indicators = top: Landlab
+  set Additional tangential mesh velocity boundary indicators = left, right, front, back
+
+  subsection Landlab
+    set MPI ranks for Landlab = 1
+    set Script name           = import-template
+    set Script path           = .
+    set Script argument       =
+  end
+end
+
+# ---------------------------------------------------------
+# MATERIAL MODEL (ACTIVATES BUOYANCY)
+# ---------------------------------------------------------
+subsection Material model
+  set Model name = simple
+
+  subsection Simple model
+    set Reference density             = 3300
+    set Reference specific heat       = 1250
+    set Reference temperature         = 273
+    set Thermal conductivity          = 3.0
+    set Thermal expansion coefficient = 1e-4
+    set Viscosity                     = 1e20
+  end
+end
+
+# ---------------------------------------------------------
+# FORMULATION
+# ---------------------------------------------------------
+subsection Formulation
+  set Formulation = Boussinesq approximation
+end
+
+# ---------------------------------------------------------
+# OUTPUT
+# ---------------------------------------------------------
+subsection Postprocess
+  set List of postprocessors = visualization, topography
+
+  subsection Visualization
+    set List of output variables = surface elevation
+    set Time between graphical output = 100
+    set Output mesh velocity = true
+    set Output mesh displacement = true
+    set Output undeformed mesh = false
+    set Interpolate output = false
+  end
+
+  subsection Topography
+    set Output to file = true
+    set Time between text output = 1
+    
+  end
+end

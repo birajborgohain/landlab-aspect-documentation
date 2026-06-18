@@ -1,0 +1,15 @@
+# 1: Time step number
+# 2: Time (seconds)
+# 3: Time step size (seconds)
+# 4: Number of mesh cells
+# 5: Number of Stokes degrees of freedom
+# 6: Number of temperature degrees of freedom
+# 7: Number of nonlinear iterations
+# 8: Visualization file name
+# 9: Surface visualization file name
+# 10: Minimum topography (m)
+# 11: Maximum topography (m)
+0 0.000000000000e+00 0.000000000000e+00 200 6978 2205 0 outputs/global_refin-1_Diffusion_5e4_m2-YEAR_substep_10_xy-repition_5_x-900_y-1900_z-1000_no_Advection_no_Stokes/solution/solution-00000 outputs/global_refin-1_Diffusion_5e4_m2-YEAR_substep_10_xy-repition_5_x-900_y-1900_z-1000_no_Advection_no_Stokes/solution_surface/solution_surface-00000 1.85217945e-05 9.78618342e-04 
+1 1.000000000000e+00 1.000000000000e+00 200 6978 2205 0 outputs/global_refin-1_Diffusion_5e4_m2-YEAR_substep_10_xy-repition_5_x-900_y-1900_z-1000_no_Advection_no_Stokes/solution/solution-00001 outputs/global_refin-1_Diffusion_5e4_m2-YEAR_substep_10_xy-repition_5_x-900_y-1900_z-1000_no_Advection_no_Stokes/solution_surface/solution_surface-00001 3.18389295e-05 9.51607758e-03 
+2 2.000000000000e+00 1.000000000000e+00 200 6978 2205 0 outputs/global_refin-1_Diffusion_5e4_m2-YEAR_substep_10_xy-repition_5_x-900_y-1900_z-1000_no_Advection_no_Stokes/solution/solution-00002 outputs/global_refin-1_Diffusion_5e4_m2-YEAR_substep_10_xy-repition_5_x-900_y-1900_z-1000_no_Advection_no_Stokes/solution_surface/solution_surface-00002 3.18389295e-05 1.31399659e-02 
+3 3.000000000000e+00 1.000000000000e+00 200 6978 2205 0 outputs/global_refin-1_Diffusion_5e4_m2-YEAR_substep_10_xy-repition_5_x-900_y-1900_z-1000_no_Advection_no_Stokes/solution/solution-00003 outputs/global_refin-1_Diffusion_5e4_m2-YEAR_substep_10_xy-repition_5_x-900_y-1900_z-1000_no_Advection_no_Stokes/solution_surface/solution_surface-00003 3.18389295e-05 1.47949796e-02 

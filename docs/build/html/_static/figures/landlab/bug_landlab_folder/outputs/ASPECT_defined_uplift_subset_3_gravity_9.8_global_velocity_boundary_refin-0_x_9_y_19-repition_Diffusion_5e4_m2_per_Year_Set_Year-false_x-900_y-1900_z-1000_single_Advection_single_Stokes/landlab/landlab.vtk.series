@@ -1,0 +1,73 @@
+{
+  "file-series-version": "1.0",
+  "files": [
+    {
+      "name": "landlab_0001.vtk",
+      "time": 0.0
+    },
+    {
+      "name": "landlab_0002.vtk",
+      "time": 0.003307368973218002
+    },
+    {
+      "name": "landlab_0003.vtk",
+      "time": 0.004627140064681361
+    },
+    {
+      "name": "landlab_0004.vtk",
+      "time": 0.005902375914653883
+    },
+    {
+      "name": "landlab_0005.vtk",
+      "time": 0.006979885286485511
+    },
+    {
+      "name": "landlab_0006.vtk",
+      "time": 0.009037928186683919
+    },
+    {
+      "name": "landlab_0007.vtk",
+      "time": 0.01296879012606288
+    },
+    {
+      "name": "landlab_0008.vtk",
+      "time": 0.0204767364302767
+    },
+    {
+      "name": "landlab_0009.vtk",
+      "time": 0.034816913871325086
+    },
+    {
+      "name": "landlab_0010.vtk",
+      "time": 0.062206652783727515
+    },
+    {
+      "name": "landlab_0011.vtk",
+      "time": 0.11452105410641615
+    },
+    {
+      "name": "landlab_0012.vtk",
+      "time": 0.21444156063275144
+    },
+    {
+      "name": "landlab_0013.vtk",
+      "time": 0.40528972809805186
+    },
+    {
+      "name": "landlab_0014.vtk",
+      "time": 0.7698097279567757
+    },
+    {
+      "name": "landlab_0015.vtk",
+      "time": 1.4660429276869382
+    },
+    {
+      "name": "landlab_0016.vtk",
+      "time": 2.4660429276869382
+    },
+    {
+      "name": "landlab_0017.vtk",
+      "time": 3.0
+    }
+  ]
+}

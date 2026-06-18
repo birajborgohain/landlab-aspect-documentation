@@ -1,0 +1,207 @@
+-----------------------------------------------------------------------------
+--                             This is ASPECT                              --
+-- The Advanced Solver for Planetary Evolution, Convection, and Tectonics. --
+-----------------------------------------------------------------------------
+--     . version 3.1.0-pre (pr43, 41f098d71)
+--     . using deal.II 9.7.0
+--     .       with 32 bit indices
+--     .       with vectorization level 1 (SSE2, 2 doubles, 128 bits)
+--     . using Trilinos 16.2.0
+--     . using p4est 2.8.7
+--     . using Geodynamic World Builder 1.0.0
+--     . running in OPTIMIZED mode
+--     . running with 17 MPI processes
+-----------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------
+-- For information on how to cite ASPECT, see:
+--   https://aspect.geodynamics.org/citing.html?ver=3.1.0-pre&sha=41f098d71&src=code
+-----------------------------------------------------------------------------
+Number of active cells: 171 (on 1 levels)
+Number of degrees of freedom: 9,292 (7,069+2,223)
+
+Number of mesh deformation degrees of freedom: 6,669
+   Solving mesh displacement system... 8 iterations.
+*** Timestep 0:  t=0 seconds, dt=0 seconds
+   Solving mesh displacement system... 0 iterations.
+   Solving temperature system... 0 iterations.
+   Solving Stokes system (direct)... done.
+
+   Postprocessing:
+     Writing graphical output: outputs/ASPECT_defined_uplift_subset_3_gravity_9.8_global_velocity_boundary_refin-0_x_9_y_19-repition_Diffusion_5e4_m2_per_Year_Set_Year-false_x-900_y-1900_z-1000_single_Advection_single_Stokes/solution/solution-00000
+     Topography min/max:       4.695e-06 m, 0.0009988 m
+
+*** Timestep 1:  t=0.00330737 seconds, dt=0.00330737 seconds
+   Solving mesh displacement system... 3 iterations.
+   Solving temperature system... 21 iterations.
+   Solving Stokes system (direct)... done.
+
+   Postprocessing:
+     Writing graphical output: outputs/ASPECT_defined_uplift_subset_3_gravity_9.8_global_velocity_boundary_refin-0_x_9_y_19-repition_Diffusion_5e4_m2_per_Year_Set_Year-false_x-900_y-1900_z-1000_single_Advection_single_Stokes/solution/solution-00001
+     Topography min/max:       -0.001153 m, 0.00188 m
+
+*** Timestep 2:  t=0.00462714 seconds, dt=0.00131977 seconds
+   Solving mesh displacement system... 2 iterations.
+   Solving temperature system... 22 iterations.
+   Solving Stokes system (direct)... done.
+
+   Postprocessing:
+     Writing graphical output: outputs/ASPECT_defined_uplift_subset_3_gravity_9.8_global_velocity_boundary_refin-0_x_9_y_19-repition_Diffusion_5e4_m2_per_Year_Set_Year-false_x-900_y-1900_z-1000_single_Advection_single_Stokes/solution/solution-00002
+     Topography min/max:       -0.4362 m, 0.03084 m
+
+*** Timestep 3:  t=0.00590238 seconds, dt=0.00127524 seconds
+   Solving mesh displacement system... 2 iterations.
+   Solving temperature system... 23 iterations.
+   Solving Stokes system (direct)... done.
+
+   Postprocessing:
+     Writing graphical output: outputs/ASPECT_defined_uplift_subset_3_gravity_9.8_global_velocity_boundary_refin-0_x_9_y_19-repition_Diffusion_5e4_m2_per_Year_Set_Year-false_x-900_y-1900_z-1000_single_Advection_single_Stokes/solution/solution-00003
+     Topography min/max:       -0.4404 m, 0.02607 m
+
+*** Timestep 4:  t=0.00697989 seconds, dt=0.00107751 seconds
+   Solving mesh displacement system... 2 iterations.
+   Solving temperature system... 24 iterations.
+   Solving Stokes system (direct)... done.
+
+   Postprocessing:
+     Writing graphical output: outputs/ASPECT_defined_uplift_subset_3_gravity_9.8_global_velocity_boundary_refin-0_x_9_y_19-repition_Diffusion_5e4_m2_per_Year_Set_Year-false_x-900_y-1900_z-1000_single_Advection_single_Stokes/solution/solution-00004
+     Topography min/max:       -0.4981 m, 0.03756 m
+
+*** Timestep 5:  t=0.00903793 seconds, dt=0.00205804 seconds
+   Solving mesh displacement system... 2 iterations.
+   Solving temperature system... 24 iterations.
+   Solving Stokes system (direct)... done.
+
+   Postprocessing:
+     Writing graphical output: outputs/ASPECT_defined_uplift_subset_3_gravity_9.8_global_velocity_boundary_refin-0_x_9_y_19-repition_Diffusion_5e4_m2_per_Year_Set_Year-false_x-900_y-1900_z-1000_single_Advection_single_Stokes/solution/solution-00005
+     Topography min/max:       -0.5136 m, 0.05725 m
+
+*** Timestep 6:  t=0.0129688 seconds, dt=0.00393086 seconds
+   Solving mesh displacement system... 2 iterations.
+   Solving temperature system... 23 iterations.
+   Solving Stokes system (direct)... done.
+
+   Postprocessing:
+     Writing graphical output: outputs/ASPECT_defined_uplift_subset_3_gravity_9.8_global_velocity_boundary_refin-0_x_9_y_19-repition_Diffusion_5e4_m2_per_Year_Set_Year-false_x-900_y-1900_z-1000_single_Advection_single_Stokes/solution/solution-00006
+     Topography min/max:       -0.4964 m, 0.05462 m
+
+*** Timestep 7:  t=0.0204767 seconds, dt=0.00750795 seconds
+   Solving mesh displacement system... 2 iterations.
+   Solving temperature system... 23 iterations.
+   Solving Stokes system (direct)... done.
+
+   Postprocessing:
+     Writing graphical output: outputs/ASPECT_defined_uplift_subset_3_gravity_9.8_global_velocity_boundary_refin-0_x_9_y_19-repition_Diffusion_5e4_m2_per_Year_Set_Year-false_x-900_y-1900_z-1000_single_Advection_single_Stokes/solution/solution-00007
+     Topography min/max:       -0.4478 m, 0.03159 m
+
+*** Timestep 8:  t=0.0348169 seconds, dt=0.0143402 seconds
+   Solving mesh displacement system... 3 iterations.
+   Solving temperature system... 23 iterations.
+   Solving Stokes system (direct)... done.
+
+   Postprocessing:
+     Writing graphical output: outputs/ASPECT_defined_uplift_subset_3_gravity_9.8_global_velocity_boundary_refin-0_x_9_y_19-repition_Diffusion_5e4_m2_per_Year_Set_Year-false_x-900_y-1900_z-1000_single_Advection_single_Stokes/solution/solution-00008
+     Topography min/max:       -0.3868 m, 0.02374 m
+
+*** Timestep 9:  t=0.0622067 seconds, dt=0.0273897 seconds
+   Solving mesh displacement system... 3 iterations.
+   Solving temperature system... 23 iterations.
+   Solving Stokes system (direct)... done.
+
+   Postprocessing:
+     Writing graphical output: outputs/ASPECT_defined_uplift_subset_3_gravity_9.8_global_velocity_boundary_refin-0_x_9_y_19-repition_Diffusion_5e4_m2_per_Year_Set_Year-false_x-900_y-1900_z-1000_single_Advection_single_Stokes/solution/solution-00009
+     Topography min/max:       -0.3526 m, 0.0009988 m
+
+*** Timestep 10:  t=0.114521 seconds, dt=0.0523144 seconds
+   Solving mesh displacement system... 2 iterations.
+   Solving temperature system... 23 iterations.
+   Solving Stokes system (direct)... done.
+
+   Postprocessing:
+     Writing graphical output: outputs/ASPECT_defined_uplift_subset_3_gravity_9.8_global_velocity_boundary_refin-0_x_9_y_19-repition_Diffusion_5e4_m2_per_Year_Set_Year-false_x-900_y-1900_z-1000_single_Advection_single_Stokes/solution/solution-00010
+     Topography min/max:       -0.3124 m, 0.0009988 m
+
+Skipping mesh refinement, because the mesh did not change.
+
+*** Timestep 11:  t=0.214442 seconds, dt=0.0999205 seconds
+   Solving mesh displacement system... 2 iterations.
+   Solving temperature system... 23 iterations.
+   Solving Stokes system (direct)... done.
+
+   Postprocessing:
+     Writing graphical output: outputs/ASPECT_defined_uplift_subset_3_gravity_9.8_global_velocity_boundary_refin-0_x_9_y_19-repition_Diffusion_5e4_m2_per_Year_Set_Year-false_x-900_y-1900_z-1000_single_Advection_single_Stokes/solution/solution-00011
+     Topography min/max:       -0.3103 m, 0.0009988 m
+
+*** Timestep 12:  t=0.40529 seconds, dt=0.190848 seconds
+   Solving mesh displacement system... 2 iterations.
+   Solving temperature system... 23 iterations.
+   Solving Stokes system (direct)... done.
+
+   Postprocessing:
+     Writing graphical output: outputs/ASPECT_defined_uplift_subset_3_gravity_9.8_global_velocity_boundary_refin-0_x_9_y_19-repition_Diffusion_5e4_m2_per_Year_Set_Year-false_x-900_y-1900_z-1000_single_Advection_single_Stokes/solution/solution-00012
+     Topography min/max:       -0.2654 m, 0.0009988 m
+
+*** Timestep 13:  t=0.76981 seconds, dt=0.36452 seconds
+   Solving mesh displacement system... 2 iterations.
+   Solving temperature system... 22 iterations.
+   Solving Stokes system (direct)... done.
+
+   Postprocessing:
+     Writing graphical output: outputs/ASPECT_defined_uplift_subset_3_gravity_9.8_global_velocity_boundary_refin-0_x_9_y_19-repition_Diffusion_5e4_m2_per_Year_Set_Year-false_x-900_y-1900_z-1000_single_Advection_single_Stokes/solution/solution-00013
+     Topography min/max:       -0.1891 m, 0.0009988 m
+
+*** Timestep 14:  t=1.46604 seconds, dt=0.696233 seconds
+   Solving mesh displacement system... 2 iterations.
+   Solving temperature system... 23 iterations.
+   Solving Stokes system (direct)... done.
+
+   Postprocessing:
+     Writing graphical output: outputs/ASPECT_defined_uplift_subset_3_gravity_9.8_global_velocity_boundary_refin-0_x_9_y_19-repition_Diffusion_5e4_m2_per_Year_Set_Year-false_x-900_y-1900_z-1000_single_Advection_single_Stokes/solution/solution-00014
+     Topography min/max:       -0.1117 m, 0.008899 m
+
+*** Timestep 15:  t=2.46604 seconds, dt=1 seconds
+   Solving mesh displacement system... 2 iterations.
+   Solving temperature system... 23 iterations.
+   Solving Stokes system (direct)... done.
+
+   Postprocessing:
+     Writing graphical output: outputs/ASPECT_defined_uplift_subset_3_gravity_9.8_global_velocity_boundary_refin-0_x_9_y_19-repition_Diffusion_5e4_m2_per_Year_Set_Year-false_x-900_y-1900_z-1000_single_Advection_single_Stokes/solution/solution-00015
+     Topography min/max:       -0.04869 m, 0.01185 m
+
+*** Timestep 16:  t=3 seconds, dt=0.533957 seconds
+   Solving mesh displacement system... 2 iterations.
+   Solving temperature system... 22 iterations.
+   Solving Stokes system (direct)... done.
+
+   Postprocessing:
+     Writing graphical output: outputs/ASPECT_defined_uplift_subset_3_gravity_9.8_global_velocity_boundary_refin-0_x_9_y_19-repition_Diffusion_5e4_m2_per_Year_Set_Year-false_x-900_y-1900_z-1000_single_Advection_single_Stokes/solution/solution-00016
+     Topography min/max:       -0.0243 m, 0.004479 m
+
+Termination requested by criterion: end time
+
+
++----------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start     |      3.52s |            |
+|                                              |            |            |
+| Section                          | no. calls |  wall time | % of total |
++----------------------------------+-----------+------------+------------+
+| Assemble Stokes system           |        17 |    0.0783s |       2.2% |
+| Assemble temperature system      |        17 |     0.037s |       1.1% |
+| Build temperature preconditioner |        17 |   0.00256s |         0% |
+| Initialization                   |         1 |       1.4s |        40% |
+| Mesh deformation                 |        17 |     0.419s |        12% |
+| Mesh deformation initialize      |         1 |    0.0821s |       2.3% |
+| Postprocessing                   |        17 |     0.392s |        11% |
+| Refine mesh structure, part 1    |         1 |   0.00139s |         0% |
+| Setup dof systems                |         1 |    0.0866s |       2.5% |
+| Setup initial conditions         |         1 |   0.00291s |         0% |
+| Setup matrices                   |         1 |   0.00277s |         0% |
+| Solve Stokes system              |        17 |      1.01s |        29% |
+| Solve temperature system         |        17 |    0.0291s |      0.83% |
++----------------------------------+-----------+------------+------------+
+
+-- Total wallclock time elapsed including restarts: 4s
+-----------------------------------------------------------------------------
+-- For information on how to cite ASPECT, see:
+--   https://aspect.geodynamics.org/citing.html?ver=3.1.0-pre&sha=41f098d71&src=code
+-----------------------------------------------------------------------------
