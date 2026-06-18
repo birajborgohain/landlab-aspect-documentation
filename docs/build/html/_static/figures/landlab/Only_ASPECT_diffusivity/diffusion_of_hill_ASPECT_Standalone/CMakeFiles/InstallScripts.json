@@ -1,7 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"/Users/biraj/software/template_Landlab_denial_90296f6_test/aspect/cookbooks/landlab/test_ASPECT_Landllab/Only_ASPECT_diffusivity/diffusion_of_hill_ASPECT_Standalone/cmake_install.cmake"
-	],
-	"Parallel" : false
-}

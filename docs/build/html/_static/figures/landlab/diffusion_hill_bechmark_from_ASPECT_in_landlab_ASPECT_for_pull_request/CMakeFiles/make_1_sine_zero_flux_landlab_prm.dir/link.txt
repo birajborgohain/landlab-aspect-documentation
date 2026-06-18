@@ -1,1 +1,0 @@
-/usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/make_1_sine_zero_flux_landlab_prm.dir/make_1_sine_zero_flux_landlab_prm.cc.o -o make_1_sine_zero_flux_landlab_prm
