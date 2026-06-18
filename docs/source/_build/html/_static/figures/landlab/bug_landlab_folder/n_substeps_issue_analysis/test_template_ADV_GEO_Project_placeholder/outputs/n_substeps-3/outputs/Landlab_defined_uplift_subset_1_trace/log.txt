@@ -1,0 +1,74 @@
+-----------------------------------------------------------------------------
+--                             This is ASPECT                              --
+-- The Advanced Solver for Planetary Evolution, Convection, and Tectonics. --
+-----------------------------------------------------------------------------
+--     . version 3.1.0-pre (pr43, 41f098d71)
+--     . using deal.II 9.7.0
+--     .       with 32 bit indices
+--     .       with vectorization level 1 (SSE2, 2 doubles, 128 bits)
+--     . using Trilinos 16.2.0
+--     . using p4est 2.8.7
+--     . using Geodynamic World Builder 1.0.0
+--     . running in OPTIMIZED mode
+--     . running with 17 MPI processes
+-----------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------
+-- For information on how to cite ASPECT, see:
+--   https://aspect.geodynamics.org/citing.html?ver=3.1.0-pre&mf=1&sha=41f098d71&src=code
+-----------------------------------------------------------------------------
+Number of active cells: 171 (on 1 levels)
+Number of degrees of freedom: 9,292 (6,669+400+2,223)
+
+Number of mesh deformation degrees of freedom: 6,669
+   Solving mesh displacement system... 0 iterations.
+*** Timestep 0:  t=0 seconds, dt=0 seconds
+   Solving mesh displacement system... 0 iterations.
+
+   Postprocessing:
+     Writing graphical output: outputs/Landlab_defined_uplift_subset_1_trace/solution/solution-00000
+     Topography min/max:       0 m, 0 m
+
+*** Timestep 1:  t=1 seconds, dt=1 seconds
+   Solving mesh displacement system... 2 iterations.
+
+   Postprocessing:
+     Writing graphical output: outputs/Landlab_defined_uplift_subset_1_trace/solution/solution-00001
+     Topography min/max:       0 m, 0.009604 m
+
+*** Timestep 2:  t=2 seconds, dt=1 seconds
+   Solving mesh displacement system... 2 iterations.
+
+   Postprocessing:
+     Writing graphical output: outputs/Landlab_defined_uplift_subset_1_trace/solution/solution-00002
+     Topography min/max:       0 m, 0.01367 m
+
+*** Timestep 3:  t=3 seconds, dt=1 seconds
+   Solving mesh displacement system... 2 iterations.
+
+   Postprocessing:
+     Writing graphical output: outputs/Landlab_defined_uplift_subset_1_trace/solution/solution-00003
+     Topography min/max:       0 m, 0.01544 m
+
+Termination requested by criterion: end time
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |       1.6s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Initialization                  |         1 |      1.37s |        86% |
+| Mesh deformation                |         4 |    0.0335s |       2.1% |
+| Mesh deformation initialize     |         1 |    0.0879s |       5.5% |
+| Postprocessing                  |         4 |    0.0779s |       4.9% |
+| Setup dof systems               |         1 |    0.0963s |         6% |
+| Setup initial conditions        |         1 |   0.00228s |      0.14% |
+| Setup matrices                  |         1 |   0.00204s |      0.13% |
++---------------------------------+-----------+------------+------------+
+
+-- Total wallclock time elapsed including restarts: 2s
+-----------------------------------------------------------------------------
+-- For information on how to cite ASPECT, see:
+--   https://aspect.geodynamics.org/citing.html?ver=3.1.0-pre&mf=1&sha=41f098d71&src=code
+-----------------------------------------------------------------------------

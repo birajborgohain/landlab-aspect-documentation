@@ -1,0 +1,101 @@
+=====================================
+Standalone Landlab Execution Trace
+=====================================
+
+
+================ LOOP 1 ================
+elapsed_time_before = 0.0
+dt = 1.0
+max diffusion_change = 0.013999999806507527
+max elevation after diffusion = 0.010854235761686804
+max uplift_change = 0.014000000000000002
+max elevation after uplift = 0.020854235761686803
+elapsed_time_after = 1.0
+
+================ LOOP 2 ================
+elapsed_time_before = 1.0
+dt = 1.0
+max diffusion_change = 0.0139999999084011
+max elevation after diffusion = 0.010854237103070572
+max uplift_change = 0.014000000000000002
+max elevation after uplift = 0.02085423710307057
+elapsed_time_after = 2.0
+
+================ LOOP 3 ================
+elapsed_time_before = 2.0
+dt = 1.0
+max diffusion_change = 0.013999999956635973
+max elevation after diffusion = 0.010854237738114477
+max uplift_change = 0.014000000000000002
+max elevation after uplift = 0.020854237738114477
+elapsed_time_after = 3.0
+
+================ LOOP 4 ================
+elapsed_time_before = 3.0
+dt = 1.0
+max diffusion_change = 0.013999999979470533
+max elevation after diffusion = 0.010854238038763135
+max uplift_change = 0.014000000000000002
+max elevation after uplift = 0.020854238038763136
+elapsed_time_after = 4.0
+
+================ LOOP 5 ================
+elapsed_time_before = 4.0
+dt = 1.0
+max diffusion_change = 0.01399999999028078
+max elevation after diffusion = 0.010854238181100187
+max uplift_change = 0.014000000000000002
+max elevation after uplift = 0.020854238181100188
+elapsed_time_after = 5.0
+
+================ LOOP 6 ================
+elapsed_time_before = 5.0
+dt = 1.0
+max diffusion_change = 0.01399999999539861
+max elevation after diffusion = 0.010854238248487597
+max uplift_change = 0.014
+max elevation after uplift = 0.020854238248487596
+elapsed_time_after = 6.0
+
+================ LOOP 7 ================
+elapsed_time_before = 6.0
+dt = 1.0
+max diffusion_change = 0.013999999997821543
+max elevation after diffusion = 0.010854238280391285
+max uplift_change = 0.014000000000000002
+max elevation after uplift = 0.020854238280391284
+elapsed_time_after = 7.0
+
+================ LOOP 8 ================
+elapsed_time_before = 7.0
+dt = 1.0
+max diffusion_change = 0.01399999999896864
+max elevation after diffusion = 0.010854238295495705
+max uplift_change = 0.014000000000000002
+max elevation after uplift = 0.020854238295495705
+elapsed_time_after = 8.0
+
+================ LOOP 9 ================
+elapsed_time_before = 8.0
+dt = 1.0
+max diffusion_change = 0.013999999999511716
+max elevation after diffusion = 0.010854238302646719
+max uplift_change = 0.014000000000000002
+max elevation after uplift = 0.020854238302646717
+elapsed_time_after = 9.0
+
+================ LOOP 10 ================
+elapsed_time_before = 9.0
+dt = 1.0
+max diffusion_change = 0.013999999999768828
+max elevation after diffusion = 0.010854238306032287
+max uplift_change = 0.014000000000000002
+max elevation after uplift = 0.020854238306032287
+elapsed_time_after = 10.0
+
+=====================================
+FINAL SUMMARY
+=====================================
+Total loops = 10
+Final elapsed_time = 10.0
+Final max elevation = 0.020854238306032287

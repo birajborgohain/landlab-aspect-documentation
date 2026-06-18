@@ -1,0 +1,6 @@
+=====================================
+ASPECT-Landlab Execution Trace
+MPI Rank: 0
+Trace File: trace_logs_default/trace_logs/execution_trace_rank_0.txt
+=====================================
+

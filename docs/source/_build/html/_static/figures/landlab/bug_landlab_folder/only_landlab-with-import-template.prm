@@ -1,0 +1,161 @@
+# =========================================================
+# velocity_with_thermal_driving.prm
+# =========================================================
+
+set Dimension                              = 3
+set Use years instead of seconds           = false
+set End time                               = 3
+set Maximum time step                      = 1
+set Output directory                       = outputs/ASPECT_defined_uplift_subset_3_gravity_9.8_new_global_velocity_boundary_refin-0_x_9_y_19-repition_Diffusion_5e4_m2_per_Year_Set_Year-false_x-900_y-1900_z-1000_single_Advection_single_Stokes
+set Nonlinear solver scheme                =  single Advection, single Stokes   
+set Surface pressure                       = 0
+
+# ---------------------------------------------------------
+# GEOMETRY (small + fast)
+# ---------------------------------------------------------
+subsection Geometry model
+  set Model name = box
+  subsection Box
+    set X extent = 900
+    set Y extent = 1900
+    set Z extent = 1
+
+    set X repetitions = 9
+    set Y repetitions = 19
+    set Z repetitions = 1
+  end
+end
+
+# ---------------------------------------------------------
+# MESH
+# ---------------------------------------------------------
+subsection Mesh refinement
+  set Initial global refinement = 0
+end
+
+# ---------------------------------------------------------
+# GRAVITY (REQUIRED for buoyancy)
+# ---------------------------------------------------------
+subsection Gravity model
+  set Model name = vertical
+  subsection Vertical
+    set Magnitude = 9.8
+  end
+end
+
+# ---------------------------------------------------------
+# TEMPERATURE (THIS IS THE DRIVING FORCE)
+# ---------------------------------------------------------
+subsection Initial temperature model
+  set Model name = function
+  subsection Function
+    set Variable names = x,y,z
+    set Function expression = 273 + (1600-273)*(1-z/100)
+  end
+end
+
+subsection Boundary temperature model
+  set Fixed temperature boundary indicators = bottom, top
+
+  subsection Box
+    set Bottom temperature = 1600
+    set Top temperature    = 273
+  end
+end
+
+# ---------------------------------------------------------
+# VELOCITY BOUNDARY (free slip)
+# ---------------------------------------------------------
+# 
+subsection Boundary velocity model
+  
+  set Prescribed velocity boundary indicators = left: function, right: function, bottom: function
+
+  subsection Function
+    set Coordinate system   = cartesian
+    set Variable names      = x,y,z,t
+
+  #   # constants: center (x0,y0), width sigma, peak velocity v0
+  #   set Function constants  = x0=2500, y0=2500, sigma=1000, v0=1e-7
+
+  #   # vx = 0, vy = 0, vz = Gaussian dome
+    set Function expression = 0; 0; y/1e5
+  end
+end
+
+# ---------------------------------------------------------
+# MESH DEFORMATION
+# ---------------------------------------------------------
+subsection Mesh deformation
+  set Mesh deformation boundary indicators = top: Landlab
+  set Additional tangential mesh velocity boundary indicators = left, right, front, back
+
+  subsection Landlab
+    set MPI ranks for Landlab = 1
+    set Script name = import-template
+    set Script path = .
+    set Script argument =
+  end
+end
+
+# ---------------------------------------------------------
+# MATERIAL MODEL (ACTIVATES BUOYANCY)
+# ---------------------------------------------------------
+subsection Material model
+  set Model name = simple
+
+  subsection Simple model
+    set Reference density             = 1
+    set Reference specific heat       = 1250
+    set Reference temperature         = 273
+    set Thermal conductivity          = 3.0
+    set Thermal expansion coefficient = 1e-4
+    set Viscosity                     = 1e5
+  end
+end
+
+# ---------------------------------------------------------
+# FORMULATION
+# ---------------------------------------------------------
+subsection Formulation
+  set Formulation = Boussinesq approximation
+end
+
+
+subsection Solver parameters
+  subsection Stokes solver parameters
+    set Stokes solver type = default solver
+    set Number of cheap Stokes solver steps = 0
+    set Maximum number of expensive Stokes solver steps = 10000
+    set Stokes GMG type = local smoothing
+    set Use direct solver for Stokes system = true
+    set Linear solver tolerance = 1e-2
+  end
+
+  subsection Newton solver parameters
+    set Maximum linear Stokes solver tolerance = 1e-2
+  end
+end
+# ---------------------------------------------------------
+# OUTPUT
+# ---------------------------------------------------------
+subsection Postprocess
+  set List of postprocessors = visualization, topography
+
+  subsection Visualization
+    set List of output variables = surface elevation
+    set Time between graphical output = 0
+    set Output mesh velocity = true
+    set Output mesh displacement = true
+    set Output undeformed mesh = false
+    set Interpolate output = false
+  end
+
+  subsection Topography
+    set Output to file = true
+    set Time between text output = 1
+    
+  end
+end
+
+

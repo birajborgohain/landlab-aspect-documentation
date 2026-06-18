@@ -1,0 +1,1658 @@
+=====================================
+ASPECT-Landlab Execution Trace
+MPI Rank: 0
+Trace File: outputs/Landlab_defined_uplift_subset_30_trace/trace_logs/execution_trace_rank_0.txt
+=====================================
+
+
+================ ASPECT TIMESTEP 1 SUMMARY ================
+[STEP 1 | LINE 567]
+Total loops = 30
+[STEP 2 | LINE 571]
+Final elapsed_time = 0.0
+[STEP 3 | LINE 576]
+Final max elevation = 0.0
+
+================ LOOP 1 ================
+[STEP 4 | LINE 362]
+elapsed_time_before = 0.0
+[STEP 5 | LINE 367]
+dt = 0.03333333333333333
+[STEP 6 | LINE 410]
+max diffusion_change = 0.0
+[STEP 7 | LINE 415]
+max elevation after diffusion = 0.0
+[STEP 8 | LINE 481]
+max uplift_change = 0.00046666666666666666
+[STEP 9 | LINE 486]
+max elevation after uplift = 0.00046666666666666666
+[STEP 10 | LINE 512]
+elapsed_time_after = 0.03333333333333333
+[STEP 11 | LINE 517]
+max deposition_erosion = 0.00046666666666666666
+
+================ LOOP 2 ================
+[STEP 12 | LINE 362]
+elapsed_time_before = 0.03333333333333333
+[STEP 13 | LINE 367]
+dt = 0.03333333333333333
+[STEP 14 | LINE 410]
+max diffusion_change = 0.00015377777777777775
+[STEP 15 | LINE 415]
+max elevation after diffusion = 0.0004320833333333333
+[STEP 16 | LINE 481]
+max uplift_change = 0.00046666666666666666
+[STEP 17 | LINE 486]
+max elevation after uplift = 0.0008654166666666667
+[STEP 18 | LINE 512]
+elapsed_time_after = 0.06666666666666667
+[STEP 19 | LINE 517]
+max deposition_erosion = 0.0008654166666666667
+
+================ LOOP 3 ================
+[STEP 20 | LINE 362]
+elapsed_time_before = 0.06666666666666667
+[STEP 21 | LINE 367]
+dt = 0.03333333333333333
+[STEP 22 | LINE 410]
+max diffusion_change = 0.00023481726851851852
+[STEP 23 | LINE 415]
+max elevation after diffusion = 0.0008502325
+[STEP 24 | LINE 481]
+max uplift_change = 0.00046666666666666677
+[STEP 25 | LINE 486]
+max elevation after uplift = 0.0012835658333333333
+[STEP 26 | LINE 512]
+elapsed_time_after = 0.1
+[STEP 27 | LINE 517]
+max deposition_erosion = 0.0012835658333333333
+
+================ LOOP 4 ================
+[STEP 28 | LINE 362]
+elapsed_time_before = 0.1
+[STEP 29 | LINE 367]
+dt = 0.03333333333333333
+[STEP 30 | LINE 410]
+max diffusion_change = 0.00028442794564043214
+[STEP 31 | LINE 415]
+max elevation after diffusion = 0.0012479720369984568
+[STEP 32 | LINE 481]
+max uplift_change = 0.00046666666666666666
+[STEP 33 | LINE 486]
+max elevation after uplift = 0.00168130537033179
+[STEP 34 | LINE 512]
+elapsed_time_after = 0.13333333333333333
+[STEP 35 | LINE 517]
+max deposition_erosion = 0.00168130537033179
+
+================ LOOP 5 ================
+[STEP 36 | LINE 362]
+elapsed_time_before = 0.13333333333333333
+[STEP 37 | LINE 367]
+dt = 0.03333333333333333
+[STEP 38 | LINE 410]
+max diffusion_change = 0.00031749453916028487
+[STEP 39 | LINE 415]
+max elevation after diffusion = 0.0016257843184631557
+[STEP 40 | LINE 481]
+max uplift_change = 0.00046666666666666677
+[STEP 41 | LINE 486]
+max elevation after uplift = 0.0020591176517964892
+[STEP 42 | LINE 512]
+elapsed_time_after = 0.16666666666666666
+[STEP 43 | LINE 517]
+max deposition_erosion = 0.0020591176517964892
+
+================ LOOP 6 ================
+[STEP 44 | LINE 362]
+elapsed_time_before = 0.16666666666666666
+[STEP 45 | LINE 367]
+dt = 0.03333333333333333
+[STEP 46 | LINE 410]
+max diffusion_change = 0.0003409174582420598
+[STEP 47 | LINE 415]
+max elevation after diffusion = 0.0019853452184215204
+[STEP 48 | LINE 481]
+max uplift_change = 0.00046666666666666666
+[STEP 49 | LINE 486]
+max elevation after uplift = 0.0024186785517548537
+[STEP 50 | LINE 512]
+elapsed_time_after = 0.19999999999999998
+[STEP 51 | LINE 517]
+max deposition_erosion = 0.0024186785517548537
+
+================ LOOP 7 ================
+[STEP 52 | LINE 362]
+elapsed_time_before = 0.2
+[STEP 53 | LINE 367]
+dt = 0.03333333333333333
+[STEP 54 | LINE 410]
+max diffusion_change = 0.00035829235034092583
+[STEP 55 | LINE 415]
+max elevation after diffusion = 0.002347869759191907
+[STEP 56 | LINE 481]
+max uplift_change = 0.00046666666666666666
+[STEP 57 | LINE 486]
+max elevation after uplift = 0.002759834481778884
+[STEP 58 | LINE 512]
+elapsed_time_after = 0.23333333333333334
+[STEP 59 | LINE 517]
+max deposition_erosion = 0.002759834481778884
+
+================ LOOP 8 ================
+[STEP 60 | LINE 362]
+elapsed_time_before = 0.23333333333333334
+[STEP 61 | LINE 367]
+dt = 0.03333333333333333
+[STEP 62 | LINE 410]
+max diffusion_change = 0.00037165288626321525
+[STEP 63 | LINE 415]
+max elevation after diffusion = 0.002713401366124088
+[STEP 64 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 65 | LINE 486]
+max elevation after uplift = 0.003113401366124088
+[STEP 66 | LINE 512]
+elapsed_time_after = 0.26666666666666666
+[STEP 67 | LINE 517]
+max deposition_erosion = 0.003113401366124088
+
+================ LOOP 9 ================
+[STEP 68 | LINE 362]
+elapsed_time_before = 0.26666666666666666
+[STEP 69 | LINE 367]
+dt = 0.03333333333333333
+[STEP 70 | LINE 410]
+max diffusion_change = 0.000382225452533686
+[STEP 71 | LINE 415]
+max elevation after diffusion = 0.0030680451728305157
+[STEP 72 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 73 | LINE 486]
+max elevation after uplift = 0.003468045172830516
+[STEP 74 | LINE 512]
+elapsed_time_after = 0.3
+[STEP 75 | LINE 517]
+max deposition_erosion = 0.003468045172830516
+
+================ LOOP 10 ================
+[STEP 76 | LINE 362]
+elapsed_time_before = 0.3
+[STEP 77 | LINE 367]
+dt = 0.03333333333333333
+[STEP 78 | LINE 410]
+max diffusion_change = 0.0003907892570260167
+[STEP 79 | LINE 415]
+max elevation after diffusion = 0.0034112879037905748
+[STEP 80 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 81 | LINE 486]
+max elevation after uplift = 0.003811287903790575
+[STEP 82 | LINE 512]
+elapsed_time_after = 0.3333333333333333
+[STEP 83 | LINE 517]
+max deposition_erosion = 0.003811287903790575
+
+================ LOOP 11 ================
+[STEP 84 | LINE 362]
+elapsed_time_before = 0.3333333333333333
+[STEP 85 | LINE 367]
+dt = 0.03333333333333333
+[STEP 86 | LINE 410]
+max diffusion_change = 0.00039786130124785956
+[STEP 87 | LINE 415]
+max elevation after diffusion = 0.0037428736585937493
+[STEP 88 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 89 | LINE 486]
+max elevation after uplift = 0.004142873658593749
+[STEP 90 | LINE 512]
+elapsed_time_after = 0.36666666666666664
+[STEP 91 | LINE 517]
+max deposition_erosion = 0.004142873658593749
+
+================ LOOP 12 ================
+[STEP 92 | LINE 362]
+elapsed_time_before = 0.36666666666666664
+[STEP 93 | LINE 367]
+dt = 0.03333333333333333
+[STEP 94 | LINE 410]
+max diffusion_change = 0.00040379730430912934
+[STEP 95 | LINE 415]
+max elevation after diffusion = 0.004062743940255654
+[STEP 96 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 97 | LINE 486]
+max elevation after uplift = 0.0044627439402556545
+[STEP 98 | LINE 512]
+elapsed_time_after = 0.39999999999999997
+[STEP 99 | LINE 517]
+max deposition_erosion = 0.0044627439402556545
+
+================ LOOP 13 ================
+[STEP 100 | LINE 362]
+elapsed_time_before = 0.4
+[STEP 101 | LINE 367]
+dt = 0.03333333333333333
+[STEP 102 | LINE 410]
+max diffusion_change = 0.00040884964656533293
+[STEP 103 | LINE 415]
+max elevation after diffusion = 0.004370987446494697
+[STEP 104 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 105 | LINE 486]
+max elevation after uplift = 0.004770987446494697
+[STEP 106 | LINE 512]
+elapsed_time_after = 0.43333333333333335
+[STEP 107 | LINE 517]
+max deposition_erosion = 0.004770987446494697
+
+================ LOOP 14 ================
+[STEP 108 | LINE 362]
+elapsed_time_before = 0.43333333333333335
+[STEP 109 | LINE 367]
+dt = 0.03333333333333333
+[STEP 110 | LINE 410]
+max diffusion_change = 0.0004132021243745524
+[STEP 111 | LINE 415]
+max elevation after diffusion = 0.004667799808903245
+[STEP 112 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 113 | LINE 486]
+max elevation after uplift = 0.005067799808903245
+[STEP 114 | LINE 512]
+elapsed_time_after = 0.4666666666666667
+[STEP 115 | LINE 517]
+max deposition_erosion = 0.005067799808903245
+
+================ LOOP 15 ================
+[STEP 116 | LINE 362]
+elapsed_time_before = 0.4666666666666667
+[STEP 117 | LINE 367]
+dt = 0.03333333333333333
+[STEP 118 | LINE 410]
+max diffusion_change = 0.0004169916053573038
+[STEP 119 | LINE 415]
+max elevation after diffusion = 0.004953452147108647
+[STEP 120 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 121 | LINE 486]
+max elevation after uplift = 0.005353452147108647
+[STEP 122 | LINE 512]
+elapsed_time_after = 0.5
+[STEP 123 | LINE 517]
+max deposition_erosion = 0.005353452147108647
+
+================ LOOP 16 ================
+[STEP 124 | LINE 362]
+elapsed_time_before = 0.5
+[STEP 125 | LINE 367]
+dt = 0.03333333333333333
+[STEP 126 | LINE 410]
+max diffusion_change = 0.00042032198146429653
+[STEP 127 | LINE 415]
+max elevation after diffusion = 0.005228266932863324
+[STEP 128 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 129 | LINE 486]
+max elevation after uplift = 0.005628266932863325
+[STEP 130 | LINE 512]
+elapsed_time_after = 0.5333333333333333
+[STEP 131 | LINE 517]
+max deposition_erosion = 0.005628266932863325
+
+================ LOOP 17 ================
+[STEP 132 | LINE 362]
+elapsed_time_before = 0.5333333333333333
+[STEP 133 | LINE 367]
+dt = 0.03333333333333333
+[STEP 134 | LINE 410]
+max diffusion_change = 0.00042327343047212805
+[STEP 135 | LINE 415]
+max elevation after diffusion = 0.005492599700484695
+[STEP 136 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 137 | LINE 486]
+max elevation after uplift = 0.0058925997004846955
+[STEP 138 | LINE 512]
+elapsed_time_after = 0.5666666666666667
+[STEP 139 | LINE 517]
+max deposition_erosion = 0.0058925997004846955
+
+================ LOOP 18 ================
+[STEP 140 | LINE 362]
+elapsed_time_before = 0.5666666666666667
+[STEP 141 | LINE 367]
+dt = 0.03333333333333333
+[STEP 142 | LINE 410]
+max diffusion_change = 0.00042590872810978147
+[STEP 143 | LINE 415]
+max elevation after diffusion = 0.005746825334472971
+[STEP 144 | LINE 481]
+max uplift_change = 0.00046666666666666666
+[STEP 145 | LINE 486]
+max elevation after uplift = 0.006146825334472971
+[STEP 146 | LINE 512]
+elapsed_time_after = 0.6
+[STEP 147 | LINE 517]
+max deposition_erosion = 0.006146825334472971
+
+================ LOOP 19 ================
+[STEP 148 | LINE 362]
+elapsed_time_before = 0.6
+[STEP 149 | LINE 367]
+dt = 0.03333333333333333
+[STEP 150 | LINE 410]
+max diffusion_change = 0.0004282776525621052
+[STEP 151 | LINE 415]
+max elevation after diffusion = 0.0060171919832290735
+[STEP 152 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 153 | LINE 486]
+max elevation after uplift = 0.0063913278935627815
+[STEP 154 | LINE 512]
+elapsed_time_after = 0.6333333333333333
+[STEP 155 | LINE 517]
+max deposition_erosion = 0.0063913278935627815
+
+================ LOOP 20 ================
+[STEP 156 | LINE 362]
+elapsed_time_before = 0.6333333333333333
+[STEP 157 | LINE 367]
+dt = 0.03333333333333333
+[STEP 158 | LINE 410]
+max diffusion_change = 0.000430420122935474
+[STEP 159 | LINE 415]
+max elevation after diffusion = 0.006278909352103426
+[STEP 160 | LINE 481]
+max uplift_change = 0.00046666666666666666
+[STEP 161 | LINE 486]
+max elevation after uplift = 0.006645576018770093
+[STEP 162 | LINE 512]
+elapsed_time_after = 0.6666666666666666
+[STEP 163 | LINE 517]
+max deposition_erosion = 0.006645576018770093
+
+================ LOOP 21 ================
+[STEP 164 | LINE 362]
+elapsed_time_before = 0.6666666666666666
+[STEP 165 | LINE 367]
+dt = 0.03333333333333333
+[STEP 166 | LINE 410]
+max diffusion_change = 0.0004323684776069139
+[STEP 167 | LINE 415]
+max elevation after diffusion = 0.006532168494801963
+[STEP 168 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 169 | LINE 486]
+max elevation after uplift = 0.006898835161468629
+[STEP 170 | LINE 512]
+elapsed_time_after = 0.7
+[STEP 171 | LINE 517]
+max deposition_erosion = 0.006898835161468629
+
+================ LOOP 22 ================
+[STEP 172 | LINE 362]
+elapsed_time_before = 0.7
+[STEP 173 | LINE 367]
+dt = 0.03333333333333333
+[STEP 174 | LINE 410]
+max diffusion_change = 0.00043414915570519634
+[STEP 175 | LINE 415]
+max elevation after diffusion = 0.00677718069922011
+[STEP 176 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 177 | LINE 486]
+max elevation after uplift = 0.007143847365886776
+[STEP 178 | LINE 512]
+elapsed_time_after = 0.7333333333333333
+[STEP 179 | LINE 517]
+max deposition_erosion = 0.007143847365886776
+
+================ LOOP 23 ================
+[STEP 180 | LINE 362]
+elapsed_time_before = 0.7333333333333333
+[STEP 181 | LINE 367]
+dt = 0.03333333333333333
+[STEP 182 | LINE 410]
+max diffusion_change = 0.0004357839563792626
+[STEP 183 | LINE 415]
+max elevation after diffusion = 0.0070141709304747816
+[STEP 184 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 185 | LINE 486]
+max elevation after uplift = 0.007380837597141449
+[STEP 186 | LINE 512]
+elapsed_time_after = 0.7666666666666666
+[STEP 187 | LINE 517]
+max deposition_erosion = 0.007380837597141449
+
+================ LOOP 24 ================
+[STEP 188 | LINE 362]
+elapsed_time_before = 0.7666666666666666
+[STEP 189 | LINE 367]
+dt = 0.03333333333333333
+[STEP 190 | LINE 410]
+max diffusion_change = 0.0004372909941897751
+[STEP 191 | LINE 415]
+max elevation after diffusion = 0.007243372856348544
+[STEP 192 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 193 | LINE 486]
+max elevation after uplift = 0.00761003952301521
+[STEP 194 | LINE 512]
+elapsed_time_after = 0.7999999999999999
+[STEP 195 | LINE 517]
+max deposition_erosion = 0.00761003952301521
+
+================ LOOP 25 ================
+[STEP 196 | LINE 362]
+elapsed_time_before = 0.8
+[STEP 197 | LINE 367]
+dt = 0.03333333333333333
+[STEP 198 | LINE 410]
+max diffusion_change = 0.00043868543236470596
+[STEP 199 | LINE 415]
+max elevation after diffusion = 0.007465024928987616
+[STEP 200 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 201 | LINE 486]
+max elevation after uplift = 0.007831691595654283
+[STEP 202 | LINE 512]
+elapsed_time_after = 0.8333333333333334
+[STEP 203 | LINE 517]
+max deposition_erosion = 0.007831691595654283
+
+================ LOOP 26 ================
+[STEP 204 | LINE 362]
+elapsed_time_before = 0.8333333333333334
+[STEP 205 | LINE 367]
+dt = 0.03333333333333333
+[STEP 206 | LINE 410]
+max diffusion_change = 0.0004399800513909379
+[STEP 207 | LINE 415]
+max elevation after diffusion = 0.007679367321014227
+[STEP 208 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 209 | LINE 486]
+max elevation after uplift = 0.008046033987680893
+[STEP 210 | LINE 512]
+elapsed_time_after = 0.8666666666666667
+[STEP 211 | LINE 517]
+max deposition_erosion = 0.008046033987680893
+
+================ LOOP 27 ================
+[STEP 212 | LINE 362]
+elapsed_time_before = 0.8666666666666667
+[STEP 213 | LINE 367]
+dt = 0.03333333333333333
+[STEP 214 | LINE 410]
+max diffusion_change = 0.00044118569400944255
+[STEP 215 | LINE 415]
+max elevation after diffusion = 0.00788663954992636
+[STEP 216 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 217 | LINE 486]
+max elevation after uplift = 0.008253306216593027
+[STEP 218 | LINE 512]
+elapsed_time_after = 0.9
+[STEP 219 | LINE 517]
+max deposition_erosion = 0.008253306216593027
+
+================ LOOP 28 ================
+[STEP 220 | LINE 362]
+elapsed_time_before = 0.9
+[STEP 221 | LINE 367]
+dt = 0.03333333333333333
+[STEP 222 | LINE 410]
+max diffusion_change = 0.00044231161639470473
+[STEP 223 | LINE 415]
+max elevation after diffusion = 0.00808707865507904
+[STEP 224 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 225 | LINE 486]
+max elevation after uplift = 0.008453745321745707
+[STEP 226 | LINE 512]
+elapsed_time_after = 0.9333333333333333
+[STEP 227 | LINE 517]
+max deposition_erosion = 0.008453745321745707
+
+================ LOOP 29 ================
+[STEP 228 | LINE 362]
+elapsed_time_before = 0.9333333333333333
+[STEP 229 | LINE 367]
+dt = 0.03333333333333333
+[STEP 230 | LINE 410]
+max diffusion_change = 0.0004433657674044059
+[STEP 231 | LINE 415]
+max elevation after diffusion = 0.008280917816971343
+[STEP 232 | LINE 481]
+max uplift_change = 0.00046666666666666645
+[STEP 233 | LINE 486]
+max elevation after uplift = 0.00864758448363801
+[STEP 234 | LINE 512]
+elapsed_time_after = 0.9666666666666667
+[STEP 235 | LINE 517]
+max deposition_erosion = 0.00864758448363801
+
+================ LOOP 30 ================
+[STEP 236 | LINE 362]
+elapsed_time_before = 0.9666666666666667
+[STEP 237 | LINE 367]
+dt = 0.03333333333333333
+[STEP 238 | LINE 410]
+max diffusion_change = 0.0004443550121788478
+[STEP 239 | LINE 415]
+max elevation after diffusion = 0.008468385329558334
+[STEP 240 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 241 | LINE 486]
+max elevation after uplift = 0.008835051996225
+[STEP 242 | LINE 512]
+elapsed_time_after = 1.0
+[STEP 243 | LINE 517]
+max deposition_erosion = 0.008835051996225
+
+================ ASPECT TIMESTEP 2 SUMMARY ================
+[STEP 244 | LINE 567]
+Total loops = 30
+[STEP 245 | LINE 571]
+Final elapsed_time = 1.0
+[STEP 246 | LINE 576]
+Final max elevation = 0.008835051996225
+
+================ LOOP 31 ================
+[STEP 247 | LINE 362]
+elapsed_time_before = 1.0
+[STEP 248 | LINE 367]
+dt = 0.03333333333333333
+[STEP 249 | LINE 410]
+max diffusion_change = 0.000445285312332116
+[STEP 250 | LINE 415]
+max elevation after diffusion = 0.008649703853495647
+[STEP 251 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 252 | LINE 486]
+max elevation after uplift = 0.009016370520162314
+[STEP 253 | LINE 512]
+elapsed_time_after = 1.0333333333333334
+[STEP 254 | LINE 517]
+max deposition_erosion = 0.0001938418034545808
+
+================ LOOP 32 ================
+[STEP 255 | LINE 362]
+elapsed_time_before = 1.0333333333333334
+[STEP 256 | LINE 367]
+dt = 0.03333333333333333
+[STEP 257 | LINE 410]
+max diffusion_change = 0.00044616187203195884
+[STEP 258 | LINE 415]
+max elevation after diffusion = 0.008825089892217036
+[STEP 259 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 260 | LINE 486]
+max elevation after uplift = 0.009191756558883702
+[STEP 261 | LINE 512]
+elapsed_time_after = 1.0666666666666669
+[STEP 262 | LINE 517]
+max deposition_erosion = 0.0003824945493487164
+
+================ LOOP 33 ================
+[STEP 263 | LINE 362]
+elapsed_time_before = 1.0666666666666667
+[STEP 264 | LINE 367]
+dt = 0.03333333333333333
+[STEP 265 | LINE 410]
+max diffusion_change = 0.0004469892570919832
+[STEP 266 | LINE 415]
+max elevation after diffusion = 0.008994753444091994
+[STEP 267 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 268 | LINE 486]
+max elevation after uplift = 0.00936142011075866
+[STEP 269 | LINE 512]
+elapsed_time_after = 1.1
+[STEP 270 | LINE 517]
+max deposition_erosion = 0.000566071485242594
+
+================ LOOP 34 ================
+[STEP 271 | LINE 362]
+elapsed_time_before = 1.1
+[STEP 272 | LINE 367]
+dt = 0.03333333333333333
+[STEP 273 | LINE 410]
+max diffusion_change = 0.0004477714925787651
+[STEP 274 | LINE 415]
+max elevation after diffusion = 0.009158897793088216
+[STEP 275 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 276 | LINE 486]
+max elevation after uplift = 0.009525564459754882
+[STEP 277 | LINE 512]
+elapsed_time_after = 1.1333333333333335
+[STEP 278 | LINE 517]
+max deposition_erosion = 0.0007446874546469008
+
+================ LOOP 35 ================
+[STEP 279 | LINE 362]
+elapsed_time_before = 1.1333333333333333
+[STEP 280 | LINE 367]
+dt = 0.03333333333333333
+[STEP 281 | LINE 410]
+max diffusion_change = 0.0004485121432156523
+[STEP 282 | LINE 415]
+max elevation after diffusion = 0.009317719407774004
+[STEP 283 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 284 | LINE 486]
+max elevation after uplift = 0.00968438607444067
+[STEP 285 | LINE 512]
+elapsed_time_after = 1.1666666666666667
+[STEP 286 | LINE 517]
+max deposition_erosion = 0.0009184581926341053
+
+================ LOOP 36 ================
+[STEP 287 | LINE 362]
+elapsed_time_before = 1.1666666666666667
+[STEP 288 | LINE 367]
+dt = 0.03333333333333333
+[STEP 289 | LINE 410]
+max diffusion_change = 0.0004492143799374659
+[STEP 290 | LINE 415]
+max elevation after diffusion = 0.009471407924472425
+[STEP 291 | LINE 481]
+max uplift_change = 0.00046666666666666645
+[STEP 292 | LINE 486]
+max elevation after uplift = 0.009838074591139091
+[STEP 293 | LINE 512]
+elapsed_time_after = 1.2000000000000002
+[STEP 294 | LINE 517]
+max deposition_erosion = 0.0010874997300880165
+
+================ LOOP 37 ================
+[STEP 295 | LINE 362]
+elapsed_time_before = 1.2
+[STEP 296 | LINE 367]
+dt = 0.03333333333333333
+[STEP 297 | LINE 410]
+max diffusion_change = 0.00044988103523997333
+[STEP 298 | LINE 415]
+max elevation after diffusion = 0.009620146195196074
+[STEP 299 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 300 | LINE 486]
+max elevation after uplift = 0.00998681286186274
+[STEP 301 | LINE 512]
+elapsed_time_after = 1.2333333333333334
+[STEP 302 | LINE 517]
+max deposition_erosion = 0.0012519278918246904
+
+================ LOOP 38 ================
+[STEP 303 | LINE 362]
+elapsed_time_before = 1.2333333333333334
+[STEP 304 | LINE 367]
+dt = 0.03333333333333333
+[STEP 305 | LINE 410]
+max diffusion_change = 0.00045051464941989064
+[STEP 306 | LINE 415]
+max elevation after diffusion = 0.009764110384871993
+[STEP 307 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 308 | LINE 486]
+max elevation after uplift = 0.01013077705153866
+[STEP 309 | LINE 512]
+elapsed_time_after = 1.2666666666666668
+[STEP 310 | LINE 517]
+max deposition_erosion = 0.0014118578756744781
+
+================ LOOP 39 ================
+[STEP 311 | LINE 362]
+elapsed_time_before = 1.2666666666666666
+[STEP 312 | LINE 367]
+dt = 0.03333333333333333
+[STEP 313 | LINE 410]
+max diffusion_change = 0.00045111750937551704
+[STEP 314 | LINE 415]
+max elevation after diffusion = 0.00990347010549158
+[STEP 315 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 316 | LINE 486]
+max elevation after uplift = 0.010270136772158246
+[STEP 317 | LINE 512]
+elapsed_time_after = 1.3
+[STEP 318 | LINE 517]
+max deposition_erosion = 0.0015674039012794714
+
+================ LOOP 40 ================
+[STEP 319 | LINE 362]
+elapsed_time_before = 1.3
+[STEP 320 | LINE 367]
+dt = 0.03333333333333333
+[STEP 321 | LINE 410]
+max diffusion_change = 0.00045169168130543627
+[STEP 322 | LINE 415]
+max elevation after diffusion = 0.010038388577336884
+[STEP 323 | LINE 481]
+max uplift_change = 0.00046666666666666645
+[STEP 324 | LINE 486]
+max elevation after uplift = 0.01040505524400355
+[STEP 325 | LINE 512]
+elapsed_time_after = 1.3333333333333335
+[STEP 326 | LINE 517]
+max deposition_erosion = 0.0017186789188390443
+
+================ LOOP 41 ================
+[STEP 327 | LINE 362]
+elapsed_time_before = 1.3333333333333333
+[STEP 328 | LINE 367]
+dt = 0.03333333333333333
+[STEP 329 | LINE 410]
+max diffusion_change = 0.0004522390383813026
+[STEP 330 | LINE 415]
+max elevation after diffusion = 0.010169022809460351
+[STEP 331 | LINE 481]
+max uplift_change = 0.00046666666666666645
+[STEP 332 | LINE 486]
+max elevation after uplift = 0.010535689476127017
+[STEP 333 | LINE 512]
+elapsed_time_after = 1.3666666666666667
+[STEP 334 | LINE 517]
+max deposition_erosion = 0.0018657943693396479
+
+================ LOOP 42 ================
+[STEP 335 | LINE 362]
+elapsed_time_before = 1.3666666666666667
+[STEP 336 | LINE 367]
+dt = 0.03333333333333333
+[STEP 337 | LINE 410]
+max diffusion_change = 0.00045276128426413684
+[STEP 338 | LINE 415]
+max elevation after diffusion = 0.010295523793225384
+[STEP 339 | LINE 481]
+max uplift_change = 0.00046666666666666645
+[STEP 340 | LINE 486]
+max elevation after uplift = 0.01066219045989205
+[STEP 341 | LINE 512]
+elapsed_time_after = 1.4000000000000001
+[STEP 342 | LINE 517]
+max deposition_erosion = 0.002008859988947939
+
+================ LOOP 43 ================
+[STEP 343 | LINE 362]
+elapsed_time_before = 1.4
+[STEP 344 | LINE 367]
+dt = 0.03333333333333333
+[STEP 345 | LINE 410]
+max diffusion_change = 0.00045325997316961707
+[STEP 346 | LINE 415]
+max elevation after diffusion = 0.010421076173197997
+[STEP 347 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 348 | LINE 486]
+max elevation after uplift = 0.010784703370693042
+[STEP 349 | LINE 512]
+elapsed_time_after = 1.4333333333333333
+[STEP 350 | LINE 517]
+max deposition_erosion = 0.002147983651243886
+
+================ LOOP 44 ================
+[STEP 351 | LINE 362]
+elapsed_time_before = 1.4333333333333333
+[STEP 352 | LINE 367]
+dt = 0.03333333333333333
+[STEP 353 | LINE 410]
+max diffusion_change = 0.0004537365270570271
+[STEP 354 | LINE 415]
+max elevation after diffusion = 0.010551761501372612
+[STEP 355 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 356 | LINE 486]
+max elevation after uplift = 0.010903367774027825
+[STEP 357 | LINE 512]
+elapsed_time_after = 1.4666666666666668
+[STEP 358 | LINE 517]
+max deposition_erosion = 0.002283271241838235
+
+================ LOOP 45 ================
+[STEP 359 | LINE 362]
+elapsed_time_before = 1.4666666666666668
+[STEP 360 | LINE 367]
+dt = 0.03333333333333333
+[STEP 361 | LINE 410]
+max diffusion_change = 0.0004541922504118171
+[STEP 362 | LINE 415]
+max elevation after diffusion = 0.010678594886057588
+[STEP 363 | LINE 481]
+max uplift_change = 0.00046666666666666645
+[STEP 364 | LINE 486]
+max elevation after uplift = 0.011018317832942425
+[STEP 365 | LINE 512]
+elapsed_time_after = 1.5000000000000002
+[STEP 366 | LINE 517]
+max deposition_erosion = 0.0024148265606712283
+
+================ LOOP 46 ================
+[STEP 367 | LINE 362]
+elapsed_time_before = 1.5
+[STEP 368 | LINE 367]
+dt = 0.03333333333333333
+[STEP 369 | LINE 410]
+max diffusion_change = 0.0004546283430074253
+[STEP 370 | LINE 415]
+max elevation after diffusion = 0.010801695779081792
+[STEP 371 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 372 | LINE 486]
+max elevation after uplift = 0.011135029112415125
+[STEP 373 | LINE 512]
+elapsed_time_after = 1.5333333333333334
+[STEP 374 | LINE 517]
+max deposition_erosion = 0.0025427512479409015
+
+================ LOOP 47 ================
+[STEP 375 | LINE 362]
+elapsed_time_before = 1.5333333333333332
+[STEP 376 | LINE 367]
+dt = 0.03333333333333333
+[STEP 377 | LINE 410]
+max diffusion_change = 0.00045504591096405533
+[STEP 378 | LINE 415]
+max elevation after diffusion = 0.010921179978822679
+[STEP 379 | LINE 481]
+max uplift_change = 0.00046666666666666645
+[STEP 380 | LINE 486]
+max elevation after uplift = 0.011254513312156012
+[STEP 381 | LINE 512]
+elapsed_time_after = 1.5666666666666667
+[STEP 382 | LINE 517]
+max deposition_erosion = 0.0026671447301720233
+
+================ LOOP 48 ================
+[STEP 383 | LINE 362]
+elapsed_time_before = 1.5666666666666667
+[STEP 384 | LINE 367]
+dt = 0.03333333333333333
+[STEP 385 | LINE 410]
+max diffusion_change = 0.0004554459763669713
+[STEP 386 | LINE 415]
+max elevation after diffusion = 0.011037159696861405
+[STEP 387 | LINE 481]
+max uplift_change = 0.00046666666666666645
+[STEP 388 | LINE 486]
+max elevation after uplift = 0.011370493030194738
+[STEP 389 | LINE 512]
+elapsed_time_after = 1.6
+[STEP 390 | LINE 517]
+max deposition_erosion = 0.0027881041834223134
+
+================ LOOP 49 ================
+[STEP 391 | LINE 362]
+elapsed_time_before = 1.6
+[STEP 392 | LINE 367]
+dt = 0.03333333333333333
+[STEP 393 | LINE 410]
+max diffusion_change = 0.0004558294856620484
+[STEP 394 | LINE 415]
+max elevation after diffusion = 0.011149743632541216
+[STEP 395 | LINE 481]
+max uplift_change = 0.00046666666666666645
+[STEP 396 | LINE 486]
+max elevation after uplift = 0.011483076965874549
+[STEP 397 | LINE 512]
+elapsed_time_after = 1.6333333333333335
+[STEP 398 | LINE 517]
+max deposition_erosion = 0.002905724511041258
+
+================ LOOP 50 ================
+[STEP 399 | LINE 362]
+elapsed_time_before = 1.6333333333333333
+[STEP 400 | LINE 367]
+dt = 0.03333333333333333
+[STEP 401 | LINE 410]
+max diffusion_change = 0.0004561973170097936
+[STEP 402 | LINE 415]
+max elevation after diffusion = 0.011259037053465136
+[STEP 403 | LINE 481]
+max uplift_change = 0.00046666666666666645
+[STEP 404 | LINE 486]
+max elevation after uplift = 0.01159237038679847
+[STEP 405 | LINE 512]
+elapsed_time_after = 1.6666666666666667
+[STEP 406 | LINE 517]
+max deposition_erosion = 0.0030200983337574094
+
+================ LOOP 51 ================
+[STEP 407 | LINE 362]
+elapsed_time_before = 1.6666666666666665
+[STEP 408 | LINE 367]
+dt = 0.03333333333333333
+[STEP 409 | LINE 410]
+max diffusion_change = 0.00045655028674909453
+[STEP 410 | LINE 415]
+max elevation after diffusion = 0.011365141880312034
+[STEP 411 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 412 | LINE 486]
+max elevation after uplift = 0.011698475213645367
+[STEP 413 | LINE 512]
+elapsed_time_after = 1.7
+[STEP 414 | LINE 517]
+max deposition_erosion = 0.0031313159901806206
+
+================ LOOP 52 ================
+[STEP 415 | LINE 362]
+elapsed_time_before = 1.7
+[STEP 416 | LINE 367]
+dt = 0.03333333333333333
+[STEP 417 | LINE 410]
+max diffusion_change = 0.00045688915509739395
+[STEP 418 | LINE 415]
+max elevation after diffusion = 0.011468156774636539
+[STEP 419 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 420 | LINE 486]
+max elevation after uplift = 0.011801490107969872
+[STEP 421 | LINE 512]
+elapsed_time_after = 1.7333333333333334
+[STEP 422 | LINE 517]
+max deposition_erosion = 0.003239465546072972
+
+================ LOOP 53 ================
+[STEP 423 | LINE 362]
+elapsed_time_before = 1.7333333333333334
+[STEP 424 | LINE 367]
+dt = 0.03333333333333333
+[STEP 425 | LINE 410]
+max diffusion_change = 0.0004572146311937566
+[STEP 426 | LINE 415]
+max elevation after diffusion = 0.011568177228557165
+[STEP 427 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 428 | LINE 486]
+max elevation after uplift = 0.011901510561890498
+[STEP 429 | LINE 512]
+elapsed_time_after = 1.7666666666666668
+[STEP 430 | LINE 517]
+max deposition_erosion = 0.003344632810972253
+
+================ LOOP 54 ================
+[STEP 431 | LINE 362]
+elapsed_time_before = 1.7666666666666666
+[STEP 432 | LINE 367]
+dt = 0.03333333333333333
+[STEP 433 | LINE 410]
+max diffusion_change = 0.00045752737757454465
+[STEP 434 | LINE 415]
+max elevation after diffusion = 0.011665295655436211
+[STEP 435 | LINE 481]
+max uplift_change = 0.00046666666666666645
+[STEP 436 | LINE 486]
+max elevation after uplift = 0.011998628988769544
+[STEP 437 | LINE 512]
+elapsed_time_after = 1.8
+[STEP 438 | LINE 517]
+max deposition_erosion = 0.0034469013609499857
+
+================ LOOP 55 ================
+[STEP 439 | LINE 362]
+elapsed_time_before = 1.8
+[STEP 440 | LINE 367]
+dt = 0.03333333333333333
+[STEP 441 | LINE 410]
+max diffusion_change = 0.00045782801415759217
+[STEP 442 | LINE 415]
+max elevation after diffusion = 0.011759601480821258
+[STEP 443 | LINE 481]
+max uplift_change = 0.00046666666666666645
+[STEP 444 | LINE 486]
+max elevation after uplift = 0.01209293481415459
+[STEP 445 | LINE 512]
+elapsed_time_after = 1.8333333333333335
+[STEP 446 | LINE 517]
+max deposition_erosion = 0.0035463525664564555
+
+================ LOOP 56 ================
+[STEP 447 | LINE 362]
+elapsed_time_before = 1.8333333333333335
+[STEP 448 | LINE 367]
+dt = 0.03333333333333333
+[STEP 449 | LINE 410]
+max diffusion_change = 0.0004581171217992257
+[STEP 450 | LINE 415]
+max elevation after diffusion = 0.011851181233056472
+[STEP 451 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 452 | LINE 486]
+max elevation after uplift = 0.012184514566389805
+[STEP 453 | LINE 512]
+elapsed_time_after = 1.866666666666667
+[STEP 454 | LINE 517]
+max deposition_erosion = 0.0036430656243521802
+
+================ LOOP 57 ================
+[STEP 455 | LINE 362]
+elapsed_time_before = 1.8666666666666667
+[STEP 456 | LINE 367]
+dt = 0.03333333333333333
+[STEP 457 | LINE 410]
+max diffusion_change = 0.0004583952454788919
+[STEP 458 | LINE 415]
+max elevation after diffusion = 0.011940118633087398
+[STEP 459 | LINE 481]
+max uplift_change = 0.00046666666666666645
+[STEP 460 | LINE 486]
+max elevation after uplift = 0.012273451966420731
+[STEP 461 | LINE 512]
+elapsed_time_after = 1.9000000000000001
+[STEP 462 | LINE 517]
+max deposition_erosion = 0.003737117593351689
+
+================ LOOP 58 ================
+[STEP 463 | LINE 362]
+elapsed_time_before = 1.9
+[STEP 464 | LINE 367]
+dt = 0.03333333333333333
+[STEP 465 | LINE 410]
+max diffusion_change = 0.0004586628971581259
+[STEP 466 | LINE 415]
+max elevation after diffusion = 0.012026494683078896
+[STEP 467 | LINE 481]
+max uplift_change = 0.00046666666666666645
+[STEP 468 | LINE 486]
+max elevation after uplift = 0.012359828016412229
+[STEP 469 | LINE 512]
+elapsed_time_after = 1.9333333333333333
+[STEP 470 | LINE 517]
+max deposition_erosion = 0.0038285834322146182
+
+================ LOOP 59 ================
+[STEP 471 | LINE 362]
+elapsed_time_before = 1.9333333333333333
+[STEP 472 | LINE 367]
+dt = 0.03333333333333333
+[STEP 473 | LINE 410]
+max diffusion_change = 0.00045892055835385906
+[STEP 474 | LINE 415]
+max elevation after diffusion = 0.012110387753545874
+[STEP 475 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 476 | LINE 486]
+max elevation after uplift = 0.012443721086879207
+[STEP 477 | LINE 512]
+elapsed_time_after = 1.9666666666666668
+[STEP 478 | LINE 517]
+max deposition_erosion = 0.003917536040113082
+
+================ LOOP 60 ================
+[STEP 479 | LINE 362]
+elapsed_time_before = 1.9666666666666668
+[STEP 480 | LINE 367]
+dt = 0.03333333333333333
+[STEP 481 | LINE 410]
+max diffusion_change = 0.0004591686824604226
+[STEP 482 | LINE 415]
+max elevation after diffusion = 0.012191873668762768
+[STEP 483 | LINE 481]
+max uplift_change = 0.00046666666666666645
+[STEP 484 | LINE 486]
+max elevation after uplift = 0.012525207002096101
+[STEP 485 | LINE 512]
+elapsed_time_after = 2.0
+[STEP 486 | LINE 517]
+max deposition_erosion = 0.004004046298685421
+
+================ ASPECT TIMESTEP 3 SUMMARY ================
+[STEP 487 | LINE 567]
+Total loops = 30
+[STEP 488 | LINE 571]
+Final elapsed_time = 2.0
+[STEP 489 | LINE 576]
+Final max elevation = 0.012525207002096101
+
+================ LOOP 61 ================
+[STEP 490 | LINE 362]
+elapsed_time_before = 2.0
+[STEP 491 | LINE 367]
+dt = 0.03333333333333333
+[STEP 492 | LINE 410]
+max diffusion_change = 0.0004594076968498155
+[STEP 493 | LINE 415]
+max elevation after diffusion = 0.01227102579027289
+[STEP 494 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 495 | LINE 486]
+max elevation after uplift = 0.012604359123606223
+[STEP 496 | LINE 512]
+elapsed_time_after = 2.033333333333333
+[STEP 497 | LINE 517]
+max deposition_erosion = 8.540096210699587e-05
+
+================ LOOP 62 ================
+[STEP 498 | LINE 362]
+elapsed_time_before = 2.033333333333333
+[STEP 499 | LINE 367]
+dt = 0.03333333333333333
+[STEP 500 | LINE 410]
+max diffusion_change = 0.0004596380047758096
+[STEP 501 | LINE 415]
+max elevation after diffusion = 0.01234791509836435
+[STEP 502 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 503 | LINE 486]
+max elevation after uplift = 0.012681248431697684
+[STEP 504 | LINE 512]
+elapsed_time_after = 2.0666666666666664
+[STEP 505 | LINE 517]
+max deposition_erosion = 0.0001685648407797509
+
+================ LOOP 63 ================
+[STEP 506 | LINE 362]
+elapsed_time_before = 2.066666666666667
+[STEP 507 | LINE 367]
+dt = 0.03333333333333333
+[STEP 508 | LINE 410]
+max diffusion_change = 0.00045985998710398575
+[STEP 509 | LINE 415]
+max elevation after diffusion = 0.012422610271417063
+[STEP 510 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 511 | LINE 486]
+max elevation after uplift = 0.012755943604750396
+[STEP 512 | LINE 512]
+elapsed_time_after = 2.1
+[STEP 513 | LINE 517]
+max deposition_erosion = 0.0002495499352546393
+
+================ LOOP 64 ================
+[STEP 514 | LINE 362]
+elapsed_time_before = 2.1
+[STEP 515 | LINE 367]
+dt = 0.03333333333333333
+[STEP 516 | LINE 410]
+max diffusion_change = 0.00046007400388697233
+[STEP 517 | LINE 415]
+max elevation after diffusion = 0.012495177763056387
+[STEP 518 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 519 | LINE 486]
+max elevation after uplift = 0.01282851109638972
+[STEP 520 | LINE 512]
+elapsed_time_after = 2.1333333333333333
+[STEP 521 | LINE 517]
+max deposition_erosion = 0.00032841314225954404
+
+================ LOOP 65 ================
+[STEP 522 | LINE 362]
+elapsed_time_before = 2.1333333333333333
+[STEP 523 | LINE 367]
+dt = 0.03333333333333333
+[STEP 524 | LINE 410]
+max diffusion_change = 0.000460280395801602
+[STEP 525 | LINE 415]
+max elevation after diffusion = 0.012565681877074625
+[STEP 526 | LINE 481]
+max uplift_change = 0.00046666666666666645
+[STEP 527 | LINE 486]
+max elevation after uplift = 0.012899015210407958
+[STEP 528 | LINE 512]
+elapsed_time_after = 2.1666666666666665
+[STEP 529 | LINE 517]
+max deposition_erosion = 0.00040520997590770373
+
+================ LOOP 66 ================
+[STEP 530 | LINE 362]
+elapsed_time_before = 2.1666666666666665
+[STEP 531 | LINE 367]
+dt = 0.03333333333333333
+[STEP 532 | LINE 410]
+max diffusion_change = 0.00046047948546263425
+[STEP 533 | LINE 415]
+max elevation after diffusion = 0.012634184840102472
+[STEP 534 | LINE 481]
+max uplift_change = 0.00046666666666666645
+[STEP 535 | LINE 486]
+max elevation after uplift = 0.012967518173435805
+[STEP 536 | LINE 512]
+elapsed_time_after = 2.1999999999999997
+[STEP 537 | LINE 517]
+max deposition_erosion = 0.00047999458887850073
+
+================ LOOP 67 ================
+[STEP 538 | LINE 362]
+elapsed_time_before = 2.2
+[STEP 539 | LINE 367]
+dt = 0.03333333333333333
+[STEP 540 | LINE 410]
+max diffusion_change = 0.00046067157862585487
+[STEP 541 | LINE 415]
+max elevation after diffusion = 0.012700746872029675
+[STEP 542 | LINE 481]
+max uplift_change = 0.00046666666666666645
+[STEP 543 | LINE 486]
+max elevation after uplift = 0.013034080205363008
+[STEP 544 | LINE 512]
+elapsed_time_after = 2.2333333333333334
+[STEP 545 | LINE 517]
+max deposition_erosion = 0.0005528197946676212
+
+================ LOOP 68 ================
+[STEP 546 | LINE 362]
+elapsed_time_before = 2.2333333333333334
+[STEP 547 | LINE 367]
+dt = 0.03333333333333333
+[STEP 548 | LINE 410]
+max diffusion_change = 0.0004608569652918308
+[STEP 549 | LINE 415]
+max elevation after diffusion = 0.01276542625418797
+[STEP 550 | LINE 481]
+max uplift_change = 0.00046666666666666645
+[STEP 551 | LINE 486]
+max elevation after uplift = 0.013098759587521302
+[STEP 552 | LINE 512]
+elapsed_time_after = 2.2666666666666666
+[STEP 553 | LINE 517]
+max deposition_erosion = 0.0006237370907137933
+
+================ LOOP 69 ================
+[STEP 554 | LINE 362]
+elapsed_time_before = 2.2666666666666666
+[STEP 555 | LINE 367]
+dt = 0.03333333333333333
+[STEP 556 | LINE 410]
+max diffusion_change = 0.00046103592072019436
+[STEP 557 | LINE 415]
+max elevation after diffusion = 0.0128282793953205
+[STEP 558 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 559 | LINE 486]
+max elevation after uplift = 0.013161612728653833
+[STEP 560 | LINE 512]
+elapsed_time_after = 2.3
+[STEP 561 | LINE 517]
+max deposition_erosion = 0.0006927966822311976
+
+================ LOOP 70 ================
+[STEP 562 | LINE 362]
+elapsed_time_before = 2.3
+[STEP 563 | LINE 367]
+dt = 0.03333333333333333
+[STEP 564 | LINE 410]
+max diffusion_change = 0.0004612087063632581
+[STEP 565 | LINE 415]
+max elevation after diffusion = 0.012889360895370844
+[STEP 566 | LINE 481]
+max uplift_change = 0.00046666666666666645
+[STEP 567 | LINE 486]
+max elevation after uplift = 0.013222694228704177
+[STEP 568 | LINE 512]
+elapsed_time_after = 2.333333333333333
+[STEP 569 | LINE 517]
+max deposition_erosion = 0.0007600475065962925
+
+================ LOOP 71 ================
+[STEP 570 | LINE 362]
+elapsed_time_before = 2.3333333333333335
+[STEP 571 | LINE 367]
+dt = 0.03333333333333333
+[STEP 572 | LINE 410]
+max diffusion_change = 0.0004613755707266634
+[STEP 573 | LINE 415]
+max elevation after diffusion = 0.012948723607131741
+[STEP 574 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 575 | LINE 486]
+max elevation after uplift = 0.013282056940465074
+[STEP 576 | LINE 512]
+elapsed_time_after = 2.3666666666666667
+[STEP 577 | LINE 517]
+max deposition_erosion = 0.0008255372581552137
+
+================ LOOP 72 ================
+[STEP 578 | LINE 362]
+elapsed_time_before = 2.3666666666666667
+[STEP 579 | LINE 367]
+dt = 0.03333333333333333
+[STEP 580 | LINE 410]
+max diffusion_change = 0.0004615367501639672
+[STEP 581 | LINE 415]
+max elevation after diffusion = 0.013006418695799079
+[STEP 582 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 583 | LINE 486]
+max elevation after uplift = 0.013339752029132412
+[STEP 584 | LINE 512]
+elapsed_time_after = 2.4
+[STEP 585 | LINE 517]
+max deposition_erosion = 0.0008893124133335078
+
+================ LOOP 73 ================
+[STEP 586 | LINE 362]
+elapsed_time_before = 2.4
+[STEP 587 | LINE 367]
+dt = 0.03333333333333333
+[STEP 588 | LINE 410]
+max diffusion_change = 0.0004616924696112558
+[STEP 589 | LINE 415]
+max elevation after diffusion = 0.01306249569648081
+[STEP 590 | LINE 481]
+max uplift_change = 0.00046666666666666645
+[STEP 591 | LINE 486]
+max elevation after uplift = 0.013395829029814142
+[STEP 592 | LINE 512]
+elapsed_time_after = 2.433333333333333
+[STEP 593 | LINE 517]
+max deposition_erosion = 0.000951418255943793
+
+================ LOOP 74 ================
+[STEP 594 | LINE 362]
+elapsed_time_before = 2.4333333333333336
+[STEP 595 | LINE 367]
+dt = 0.03333333333333333
+[STEP 596 | LINE 410]
+max diffusion_change = 0.00046184294326724867
+[STEP 597 | LINE 415]
+max elevation after diffusion = 0.013117002569713515
+[STEP 598 | LINE 481]
+max uplift_change = 0.00046666666666666645
+[STEP 599 | LINE 486]
+max elevation after uplift = 0.013450335903046848
+[STEP 600 | LINE 512]
+elapsed_time_after = 2.466666666666667
+[STEP 601 | LINE 517]
+max deposition_erosion = 0.001011898902599416
+
+================ LOOP 75 ================
+[STEP 602 | LINE 362]
+elapsed_time_before = 2.466666666666667
+[STEP 603 | LINE 367]
+dt = 0.03333333333333333
+[STEP 604 | LINE 410]
+max diffusion_change = 0.0004619883752237418
+[STEP 605 | LINE 415]
+max elevation after diffusion = 0.013169985755041467
+[STEP 606 | LINE 481]
+max uplift_change = 0.00046666666666666645
+[STEP 607 | LINE 486]
+max elevation after uplift = 0.0135033190883748
+[STEP 608 | LINE 512]
+elapsed_time_after = 2.5
+[STEP 609 | LINE 517]
+max deposition_erosion = 0.0010707973281531957
+
+================ LOOP 76 ================
+[STEP 610 | LINE 362]
+elapsed_time_before = 2.5
+[STEP 611 | LINE 367]
+dt = 0.03333333333333333
+[STEP 612 | LINE 410]
+max diffusion_change = 0.00046212896005075896
+[STEP 613 | LINE 415]
+max elevation after diffusion = 0.013221490222714481
+[STEP 614 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 615 | LINE 486]
+max elevation after uplift = 0.013554823556047814
+[STEP 616 | LINE 512]
+elapsed_time_after = 2.533333333333333
+[STEP 617 | LINE 517]
+max deposition_erosion = 0.0011281553910902093
+
+================ LOOP 77 ================
+[STEP 618 | LINE 362]
+elapsed_time_before = 2.533333333333333
+[STEP 619 | LINE 367]
+dt = 0.03333333333333333
+[STEP 620 | LINE 410]
+max diffusion_change = 0.0004622648833403089
+[STEP 621 | LINE 415]
+max elevation after diffusion = 0.013271559523561575
+[STEP 622 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 623 | LINE 486]
+max elevation after uplift = 0.013604892856894908
+[STEP 624 | LINE 512]
+elapsed_time_after = 2.5666666666666664
+[STEP 625 | LINE 517]
+max deposition_erosion = 0.0011840138588124997
+
+================ LOOP 78 ================
+[STEP 626 | LINE 362]
+elapsed_time_before = 2.5666666666666664
+[STEP 627 | LINE 367]
+dt = 0.03333333333333333
+[STEP 628 | LINE 410]
+max diffusion_change = 0.0004623963222122607
+[STEP 629 | LINE 415]
+max elevation after diffusion = 0.013320235837097825
+[STEP 630 | LINE 481]
+max uplift_change = 0.00046666666666666645
+[STEP 631 | LINE 486]
+max elevation after uplift = 0.013653569170431158
+[STEP 632 | LINE 512]
+elapsed_time_after = 2.5999999999999996
+[STEP 633 | LINE 517]
+max deposition_erosion = 0.0012384124327613592
+
+================ LOOP 79 ================
+[STEP 634 | LINE 362]
+elapsed_time_before = 2.6
+[STEP 635 | LINE 367]
+dt = 0.03333333333333333
+[STEP 636 | LINE 410]
+max diffusion_change = 0.00046252344578549516
+[STEP 637 | LINE 415]
+max elevation after diffusion = 0.013367560017921616
+[STEP 638 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 639 | LINE 486]
+max elevation after uplift = 0.01370089335125495
+[STEP 640 | LINE 512]
+elapsed_time_after = 2.6333333333333333
+[STEP 641 | LINE 517]
+max deposition_erosion = 0.0012913897733300116
+
+================ LOOP 80 ================
+[STEP 642 | LINE 362]
+elapsed_time_before = 2.6333333333333333
+[STEP 643 | LINE 367]
+dt = 0.03333333333333333
+[STEP 644 | LINE 410]
+max diffusion_change = 0.0004626464156171975
+[STEP 645 | LINE 415]
+max elevation after diffusion = 0.013413571640459058
+[STEP 646 | LINE 481]
+max uplift_change = 0.00046666666666666645
+[STEP 647 | LINE 486]
+max elevation after uplift = 0.013746904973792391
+[STEP 648 | LINE 512]
+elapsed_time_after = 2.6666666666666665
+[STEP 649 | LINE 517]
+max deposition_erosion = 0.0013429835245257343
+
+================ LOOP 81 ================
+[STEP 650 | LINE 362]
+elapsed_time_before = 2.6666666666666665
+[STEP 651 | LINE 367]
+dt = 0.03333333333333333
+[STEP 652 | LINE 410]
+max diffusion_change = 0.00046276538611284
+[STEP 653 | LINE 415]
+max elevation after diffusion = 0.013458309042111639
+[STEP 654 | LINE 481]
+max uplift_change = 0.00046666666666666645
+[STEP 655 | LINE 486]
+max elevation after uplift = 0.013791642375444972
+[STEP 656 | LINE 512]
+elapsed_time_after = 2.6999999999999997
+[STEP 657 | LINE 517]
+max deposition_erosion = 0.0013932303383461329
+
+================ LOOP 82 ================
+[STEP 658 | LINE 362]
+elapsed_time_before = 2.7
+[STEP 659 | LINE 367]
+dt = 0.03333333333333333
+[STEP 660 | LINE 410]
+max diffusion_change = 0.0004628805049092218
+[STEP 661 | LINE 415]
+max elevation after diffusion = 0.013501809364862227
+[STEP 662 | LINE 481]
+max uplift_change = 0.00046666666666666645
+[STEP 663 | LINE 486]
+max elevation after uplift = 0.01383514269819556
+[STEP 664 | LINE 512]
+elapsed_time_after = 2.7333333333333334
+[STEP 665 | LINE 517]
+max deposition_erosion = 0.0014421658988392882
+
+================ LOOP 83 ================
+[STEP 666 | LINE 362]
+elapsed_time_before = 2.7333333333333334
+[STEP 667 | LINE 367]
+dt = 0.03333333333333333
+[STEP 668 | LINE 410]
+max diffusion_change = 0.00046299191323265687
+[STEP 669 | LINE 415]
+max elevation after diffusion = 0.013544108595393439
+[STEP 670 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 671 | LINE 486]
+max elevation after uplift = 0.013877441928726772
+[STEP 672 | LINE 512]
+elapsed_time_after = 2.7666666666666666
+[STEP 673 | LINE 517]
+max deposition_erosion = 0.0014898249458220325
+
+================ LOOP 84 ================
+[STEP 674 | LINE 362]
+elapsed_time_before = 2.7666666666666666
+[STEP 675 | LINE 367]
+dt = 0.03333333333333333
+[STEP 676 | LINE 410]
+max diffusion_change = 0.00046309974623423653
+[STEP 677 | LINE 415]
+max elevation after diffusion = 0.013585241603771189
+[STEP 678 | LINE 481]
+max uplift_change = 0.00046666666666666645
+[STEP 679 | LINE 486]
+max elevation after uplift = 0.013918574937104522
+[STEP 680 | LINE 512]
+elapsed_time_after = 2.8
+[STEP 681 | LINE 517]
+max deposition_erosion = 0.0015362412982345558
+
+================ LOOP 85 ================
+[STEP 682 | LINE 362]
+elapsed_time_before = 2.8
+[STEP 683 | LINE 367]
+dt = 0.03333333333333333
+[STEP 684 | LINE 410]
+max diffusion_change = 0.0004632041333039222
+[STEP 685 | LINE 415]
+max elevation after diffusion = 0.013625242180744863
+[STEP 686 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 687 | LINE 486]
+max elevation after uplift = 0.013958575514078196
+[STEP 688 | LINE 512]
+elapsed_time_after = 2.833333333333333
+[STEP 689 | LINE 517]
+max deposition_erosion = 0.001581447877113177
+
+================ LOOP 86 ================
+[STEP 690 | LINE 362]
+elapsed_time_before = 2.8333333333333335
+[STEP 691 | LINE 367]
+dt = 0.03333333333333333
+[STEP 692 | LINE 410]
+max diffusion_change = 0.0004633051983650529
+[STEP 693 | LINE 415]
+max elevation after diffusion = 0.013664143073714208
+[STEP 694 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 695 | LINE 486]
+max elevation after uplift = 0.013997476407047542
+[STEP 696 | LINE 512]
+elapsed_time_after = 2.8666666666666667
+[STEP 697 | LINE 517]
+max deposition_erosion = 0.0016254767281662988
+
+================ LOOP 87 ================
+[STEP 698 | LINE 362]
+elapsed_time_before = 2.8666666666666667
+[STEP 699 | LINE 367]
+dt = 0.03333333333333333
+[STEP 700 | LINE 410]
+max diffusion_change = 0.0004634030601507184
+[STEP 701 | LINE 415]
+max elevation after diffusion = 0.01370197602141156
+[STEP 702 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 703 | LINE 486]
+max elevation after uplift = 0.014035309354744892
+[STEP 704 | LINE 512]
+elapsed_time_after = 2.9
+[STEP 705 | LINE 517]
+max deposition_erosion = 0.0016683590439413587
+
+================ LOOP 88 ================
+[STEP 706 | LINE 362]
+elapsed_time_before = 2.9
+[STEP 707 | LINE 367]
+dt = 0.03333333333333333
+[STEP 708 | LINE 410]
+max diffusion_change = 0.0004634978324633281
+[STEP 709 | LINE 415]
+max elevation after diffusion = 0.013738771787346544
+[STEP 710 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 711 | LINE 486]
+max elevation after uplift = 0.014072105120679877
+[STEP 712 | LINE 512]
+elapsed_time_after = 2.933333333333333
+[STEP 713 | LINE 517]
+max deposition_erosion = 0.0017101251855731955
+
+================ LOOP 89 ================
+[STEP 714 | LINE 362]
+elapsed_time_before = 2.9333333333333336
+[STEP 715 | LINE 367]
+dt = 0.03333333333333333
+[STEP 716 | LINE 410]
+max diffusion_change = 0.00046358962441859575
+[STEP 717 | LINE 415]
+max elevation after diffusion = 0.01377456019205894
+[STEP 718 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 719 | LINE 486]
+max elevation after uplift = 0.014107893525392273
+[STEP 720 | LINE 512]
+elapsed_time_after = 2.966666666666667
+[STEP 721 | LINE 517]
+max deposition_erosion = 0.0017508047041064501
+
+================ LOOP 90 ================
+[STEP 722 | LINE 362]
+elapsed_time_before = 2.966666666666667
+[STEP 723 | LINE 367]
+dt = 0.03333333333333333
+[STEP 724 | LINE 410]
+max diffusion_change = 0.0004636785406750307
+[STEP 725 | LINE 415]
+max elevation after diffusion = 0.013809370144223829
+[STEP 726 | LINE 481]
+max uplift_change = 0.0004666666666666669
+[STEP 727 | LINE 486]
+max elevation after uplift = 0.014142703477557162
+[STEP 728 | LINE 512]
+elapsed_time_after = 3.0
+[STEP 729 | LINE 517]
+max deposition_erosion = 0.001790426361386625
+
+================ ASPECT TIMESTEP 4 SUMMARY ================
+[STEP 730 | LINE 567]
+Total loops = 30
+[STEP 731 | LINE 571]
+Final elapsed_time = 3.0
+[STEP 732 | LINE 576]
+Final max elevation = 0.014142703477557162

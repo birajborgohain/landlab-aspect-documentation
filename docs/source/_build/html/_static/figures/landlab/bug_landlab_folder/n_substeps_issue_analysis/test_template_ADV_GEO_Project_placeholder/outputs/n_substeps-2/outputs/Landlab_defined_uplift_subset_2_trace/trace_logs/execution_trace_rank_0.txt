@@ -1,0 +1,146 @@
+=====================================
+ASPECT-Landlab Execution Trace
+MPI Rank: 0
+Trace File: outputs/Landlab_defined_uplift_subset_2_trace/trace_logs/execution_trace_rank_0.txt
+=====================================
+
+
+================ ASPECT TIMESTEP 1 SUMMARY ================
+[STEP 1 | LINE 567]
+Total loops = 2
+[STEP 2 | LINE 571]
+Final elapsed_time = 0.0
+[STEP 3 | LINE 576]
+Final max elevation = 0.0
+
+================ LOOP 1 ================
+[STEP 4 | LINE 362]
+elapsed_time_before = 0.0
+[STEP 5 | LINE 367]
+dt = 0.5
+[STEP 6 | LINE 410]
+max diffusion_change = 0.0
+[STEP 7 | LINE 415]
+max elevation after diffusion = 0.0
+[STEP 8 | LINE 481]
+max uplift_change = 0.007
+[STEP 9 | LINE 486]
+max elevation after uplift = 0.007
+[STEP 10 | LINE 512]
+elapsed_time_after = 0.5
+[STEP 11 | LINE 517]
+max deposition_erosion = 0.007
+
+================ LOOP 2 ================
+[STEP 12 | LINE 362]
+elapsed_time_before = 0.5
+[STEP 13 | LINE 367]
+dt = 0.5
+[STEP 14 | LINE 410]
+max diffusion_change = 0.006307574076628637
+[STEP 15 | LINE 415]
+max elevation after diffusion = 0.004456762992757603
+[STEP 16 | LINE 481]
+max uplift_change = 0.007000000000000001
+[STEP 17 | LINE 486]
+max elevation after uplift = 0.010119428876316023
+[STEP 18 | LINE 512]
+elapsed_time_after = 1.0
+[STEP 19 | LINE 517]
+max deposition_erosion = 0.010119428876316023
+
+================ ASPECT TIMESTEP 2 SUMMARY ================
+[STEP 20 | LINE 567]
+Total loops = 2
+[STEP 21 | LINE 571]
+Final elapsed_time = 1.0
+[STEP 22 | LINE 576]
+Final max elevation = 0.010119428876316023
+
+================ LOOP 3 ================
+[STEP 23 | LINE 362]
+elapsed_time_before = 1.0
+[STEP 24 | LINE 367]
+dt = 0.5
+[STEP 25 | LINE 410]
+max diffusion_change = 0.006680080704222236
+[STEP 26 | LINE 415]
+max elevation after diffusion = 0.007324595309970043
+[STEP 27 | LINE 481]
+max uplift_change = 0.007000000000000001
+[STEP 28 | LINE 486]
+max elevation after uplift = 0.012673246488364851
+[STEP 29 | LINE 512]
+elapsed_time_after = 1.5
+[STEP 30 | LINE 517]
+max deposition_erosion = 0.0029059137818101717
+
+================ LOOP 4 ================
+[STEP 31 | LINE 362]
+elapsed_time_before = 1.5
+[STEP 32 | LINE 367]
+dt = 0.5
+[STEP 33 | LINE 410]
+max diffusion_change = 0.006819843543072354
+[STEP 34 | LINE 415]
+max elevation after diffusion = 0.009168470175682016
+[STEP 35 | LINE 481]
+max uplift_change = 0.007000000000000001
+[STEP 36 | LINE 486]
+max elevation after uplift = 0.014340899207881666
+[STEP 37 | LINE 512]
+elapsed_time_after = 2.0
+[STEP 38 | LINE 517]
+max deposition_erosion = 0.00482251256383066
+
+================ ASPECT TIMESTEP 3 SUMMARY ================
+[STEP 39 | LINE 567]
+Total loops = 2
+[STEP 40 | LINE 571]
+Final elapsed_time = 2.0
+[STEP 41 | LINE 576]
+Final max elevation = 0.014340899207881666
+
+================ LOOP 5 ================
+[STEP 42 | LINE 362]
+elapsed_time_before = 2.0
+[STEP 43 | LINE 367]
+dt = 0.5
+[STEP 44 | LINE 410]
+max diffusion_change = 0.006891378591771161
+[STEP 45 | LINE 415]
+max elevation after diffusion = 0.010353597872972433
+[STEP 46 | LINE 481]
+max uplift_change = 0.007
+[STEP 47 | LINE 486]
+max elevation after uplift = 0.015390361419684466
+[STEP 48 | LINE 512]
+elapsed_time_after = 2.5
+[STEP 49 | LINE 517]
+max deposition_erosion = 0.001279196875218394
+
+================ LOOP 6 ================
+[STEP 50 | LINE 362]
+elapsed_time_before = 2.5
+[STEP 51 | LINE 367]
+dt = 0.5
+[STEP 52 | LINE 410]
+max diffusion_change = 0.00693211080253523
+[STEP 53 | LINE 415]
+max elevation after diffusion = 0.011124512865955751
+[STEP 54 | LINE 481]
+max uplift_change = 0.007000000000000001
+[STEP 55 | LINE 486]
+max elevation after uplift = 0.016124512865955752
+[STEP 56 | LINE 512]
+elapsed_time_after = 3.0
+[STEP 57 | LINE 517]
+max deposition_erosion = 0.002138018530383215
+
+================ ASPECT TIMESTEP 4 SUMMARY ================
+[STEP 58 | LINE 567]
+Total loops = 2
+[STEP 59 | LINE 571]
+Final elapsed_time = 3.0
+[STEP 60 | LINE 576]
+Final max elevation = 0.016124512865955752

@@ -1,0 +1,78 @@
+runs:
+
+  - run_id: n_substeps-1
+    n_substeps_time: 1
+
+
+  - run_id: n_substeps-2
+    n_substeps_time: 2
+
+  - run_id: n_substeps-3
+    n_substeps_time: 3
+
+
+  - run_id: n_substeps-4
+    n_substeps_time: 4
+
+  - run_id: n_substeps-5
+    n_substeps_time: 5
+
+
+  - run_id: n_substeps-6
+    n_substeps_time: 6
+
+  - run_id: n_substeps-10
+    n_substeps_time: 10
+
+
+  - run_id: n_substeps-15
+    n_substeps_time: 15
+
+  - run_id: n_substeps-20
+    n_substeps_time: 20
+
+
+  - run_id: n_substeps-30
+    n_substeps_time: 30
+
+  - run_id: n_substeps-40
+    n_substeps_time: 40
+
+
+  # - run_id: n_substeps-50
+  #   n_substeps_time: 50
+
+
+  # - run_id: n_substeps-60
+  #   n_substeps_time: 60
+
+
+  # - run_id: n_substeps-70
+  #   n_substeps_time: 70
+
+  #   - run_id: n_substeps-80
+  #   n_substeps_time: 80
+
+
+  # - run_id: n_substeps-90
+  #   n_substeps_time: 90
+
+  # - run_id: n_substeps-100
+  #   n_substeps_time: 100
+
+
+  # - run_id: n_substeps-110
+  #   n_substeps_time: 110
+
+
+
+
+
+
+
+
+aspect:
+  mpi_run: /opt/homebrew/bin/mpirun
+  nproc: 17
+  executable: /Users/biraj/software/landlab_ASPECT_test_2/aspect/build/aspect-release
+
