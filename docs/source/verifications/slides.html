@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Verification of the n_substeps Coupling Algorithm</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^5/dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^5/dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^5/dist/theme/black.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Verification of the <code>n_substeps</code> Coupling
+Algorithm</h1>
+</section>
+
+<section id="objective" class="slide level1">
+<h1>Objective</h1>
+<p>We are investigating the reliability and numerical consistency of the
+<code>n_substeps</code> implementation within the coupled algorithm.
+This effort was motivated by an observed discrepancy whereby the coupled
+simulations fail to reproduce the topographic evolution obtained from
+the prescribed standalone benchmark across a range of
+<code>n_substeps</code> values. The present experimental design aims to
+isolate the source of this discrepancy and determine whether it arises
+from the coupling strategy, timestep partitioning, or another aspect of
+the implementation.</p>
+<p>During the development of an uplift–diffusion benchmark for the
+coupled ASPECT–Landlab framework based on an existing standalone Landlab
+setup, discrepancies were observed between coupled and standalone
+simulations when the temporal coupling parameter <code>n_substeps</code>
+was increased beyond 1. The parameter <code>n_substeps</code> is a
+numerical coupling parameter rather than a physical model parameter. It
+controls the temporal resolution of the coupling by dividing each
+ASPECT–Landlab coupling timestep into multiple substeps. In the coupling
+algorithm, <code>n_substeps</code> is decleared as following
+<code>sub_dt = dt / n_substeps</code>, where <code>dt</code> represents
+the ASPECT time.</p>
+<p><span
+class="math display"><em>d</em><em>t</em> = <em>t</em><sub><em>n</em> + 1</sub><sup>ASPECT</sup> − <em>t</em><sub><em>n</em></sub><sup>ASPECT</sup></span></p>
+<p>where:</p>
+<ul>
+<li><span
+class="math inline"><em>t</em><sub><em>n</em></sub><sup>ASPECT</sup></span>
+is the current ASPECT simulation time.</li>
+<li><span
+class="math inline"><em>t</em><sub><em>n</em> + 1</sub><sup>ASPECT</sup></span>
+is the next ASPECT simulation time.</li>
+</ul>
+<blockquote>
+<p><strong>Code snippet -1:</strong> <em>Snippet of the coupling
+algorithm.</em></p>
+</blockquote>
+<div class="sourceCode" id="cb1" data-linenos=""><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> set_mesh_information(<span class="va">self</span>, ..):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>   <span class="va">self</span>.model_grid <span class="op">=</span> landlab.RasterModelGrid()</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>   <span class="va">self</span>.uplift_rate <span class="op">=</span> (</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>   <span class="va">self</span>.model_grid.node_y[<span class="va">self</span>.model_grid.core_cells]<span class="op">/</span> <span class="fl">1e5</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>   )</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> update_until(<span class="va">self</span>,..):</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>   dt <span class="op">=</span> end_time <span class="op">-</span> <span class="va">self</span>.current_time</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>   <span class="cf">if</span> dt <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>      n_substeps <span class="op">=</span> N</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>      sub_dt <span class="op">=</span> dt <span class="op">/</span> n_substeps</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>         <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n_substeps):</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.linear_diffuser.run_one_step(sub_dt)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.model_grid.at_node[<span class="st">&quot;topographic__elevation&quot;</span>]</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>            [<span class="va">self</span>.model_grid.core_nodes] <span class="op">+=</span> (<span class="va">self</span>.uplift_rate <span class="op">*</span> sub_dt)</span></code></pre></div>
+<p>Although the coupling timestep <code>dt</code> is subdivided into
+smaller timesteps according to</p>
+<p><span class="math display">$$\mathrm{sub\_dt} =
+\frac{\mathrm{dt}}{\mathrm{n\_substeps}}$$</span></p>
+<p>the total elapsed simulation time over a coupling interval remains
+unchanged. Since <code>n_substeps</code> is a numerical coupling
+parameter rather than a physical model parameter, varying its value
+should not substantially alter the model solution for a benchmark with
+constant uplift rate and constant diffusivity. In principle, the same
+amount of uplift is applied over the interval <code>dt</code>, and
+diffusion acts over the same total physical time regardless of how that
+interval is partitioned. However, the predicted topography varied
+systematically as <code>n_substeps</code> increased. This indicates that
+the solution is sensitive to the temporal splitting of uplift and
+diffusion within a coupling timestep. The experiments presented below
+investigate the origin of these differences and identify suitable range
+of <code>n_substeps</code> values for coupled ASPECT–Landlab simulations
+in which surface uplift is prescribed from ASPECT-derived velocity
+fields.</p>
+</section>
+<section id="how-discrepancy-was-identified" class="slide level1">
+<h1>How discrepancy was identified?</h1>
+<p>When uplift is prescribed directly within the Landlab component of
+the coupling algorithm (code snippet-1 line number 5), the coupled
+ASPECT–Landlab model reproduces the standalone Landlab benchmark only
+for <code>n_substeps = 1</code>. Increasing <code>n_substeps</code> to
+<code>2</code>, <code>3</code>, <code>9</code>, <code>15</code>,
+<code>20</code>, and <code>40</code> results in progressively lower
+topography relative to the standalone solution, despite all simulations
+using identical uplift and diffusion parameters.</p>
+</section>
+<section
+id="method-applied-to-investigate-the-origin-of-the-discrepancy"
+class="slide level1">
+<h1>Method applied to investigate the origin of the discrepancy</h1>
+<p>To investigate the origin of this discrepancy, tracer statements were
+inserted immediately before and after the diffusion and uplift
+operations within each coupling substep (code snippet 2 shows the tracer
+implimentation). The tracer output records the maximum surface elevation
+at three stages of the update sequence: (1) before diffusion, (2) after
+diffusion, and (3) after uplift. By tracking the elevation change
+associated with each process independently, it is possible to determine
+how repeated diffusion–uplift interactions introduced by increasing
+<code>n_substeps</code> influence the final topographic evolution.</p>
+<p><strong>Code Snippet 2.</strong> <em>Tracer instrumentation used to
+record elevation changes before diffusion, after diffusion, and after
+uplift during each coupling substep.</em></p>
+<div style="
+   background:#f8f9fa;
+   padding:12px;
+   border-radius:5px;
+   border:1px solid #ddd;
+   margin:10px 0;
+   font-size:0.95em;">
+
+<pre style="
+   margin-top:10px;
+   font-size:0.9em;
+   line-height:1.4;
+   font-family:'Courier New', monospace;">
+
+ 1  for i in range(n_substeps):
+
+ 2      trace(f"Starting substep {i}")
+
+ 3      <span style="
+          background:#fff3cd;
+          color:#856404;
+          font-weight:bold;">
+ 4      # TRACE: elevation before diffusion
+ 5      trace(f"Before diffusion = {np.max(self.elevation)}")
+        </span>
+
+ 6      self.linear_diffuser.run_one_step(sub_dt)
+
+ 7      <span style="
+          background:#d4edda;
+          color:#155724;
+          font-weight:bold;">
+ 8      # TRACE: elevation after diffusion
+ 9      trace(f"After diffusion = {np.max(self.elevation)}")
+        </span>
+
+10      self.model_grid.at_node["topographic__elevation"][
+11          self.model_grid.core_nodes
+12      ] += self.uplift_rate * sub_dt
+
+13      <span style="
+          background:#cce5ff;
+          color:#004085;
+          font-weight:bold;">
+14      # TRACE: elevation after uplift
+15      trace(f"After uplift = {np.max(self.elevation)}")
+        </span>
+
+</pre>
+
+</div>
+</section>
+<section id="model-setup" class="slide level1">
+<h1>Model Setup</h1>
+<p>To evaluate the numerical behavior of the ASPECT–Landlab coupling
+framework, we constructed a benchmark experiment based on the standalone
+Landlab linear diffusion test case. The objective was to determine
+whether the coupled framework could reproduce the reference solution as
+given in tandalone Landlab linear diffusion test. Two scenarios were
+tested in coupled framework:</p>
+<ul>
+<li>Uplift triggered from Landlab by declearing in
+<code>inport-template.py</code></li>
+<li>Uplift driven from ASPECT velocity field by declearing in
+<code>.prm</code></li>
+</ul>
+<h2 id="case-1-landlab-induced-uplift-configuration">Case 1 : Landlab
+induced uplift configuration</h2>
+<p><strong>ASPECT parameter file</strong> <code>.prm</code> :</p>
+<p>The geodynamic component was implemented using ASPECT in a
+three-dimensional rectangular domain with dimensions of 900 × 1900 × 1
+units in the x-, y-, and z-directions, respectively. The domain was
+discretized using a structured mesh consisting of 9 and 19 horizontal
+repetitions in the x- and y-directions and a single element in the
+vertical direction, resulting in a horizontal node spacing of 100 units.
+No additional global mesh refinement was applied. Simulations were
+performed for a total model time of 3 time units (which is in second by
+setting <code>set Use years instead of seconds = false</code>) using a
+maximum timestep of 1.</p>
+<p><code>no Stokes, no Advection</code> non-linear solver used. The
+initial temperature field was prescribed as a linear depth-dependent
+function between a lower boundary temperature of 1600 K and an upper
+boundary temperature of 273 K. Gravity was applied vertically with a
+magnitude of 1, and the incompressible Boussinesq approximation was
+employed. Material properties were represented using ASPECT's simple
+material model with a reference density of 2700 kg m<sup>-3</sup>, a
+thermal expansion coefficient of 3 × 10<sup>-5</sup> K<sup>-1</sup>, a
+thermal conductivity of 3 W m<sup>-1</sup> K<sup>-1</sup>, a specific
+heat capacity of 800 J kg<sup>-1</sup> K<sup>-1</sup>, and a constant
+viscosity of 10<sup>22</sup> Pa s.</p>
+<p>Surface evolution was coupled to ASPECT through the mesh deformation
+framework. The top boundary of the ASPECT domain was assigned to the
+<code>Landlab</code> mesh deformation plugin, allowing surface
+displacements computed by Landlab to be transferred directly to the
+ASPECT mesh. To maintain mesh quality during surface motion, tangential
+mesh velocities were permitted along the lateral boundaries.</p>
+<p>The coupling was activated in the ASPECT parameter file using:</p>
+<pre class="text"><code>subsection Mesh deformation
+  set Mesh deformation boundary indicators = top: Landlab
+  set Additional tangential mesh velocity boundary indicators = left, right, front, back
+
+  subsection Landlab
+    set MPI ranks for Landlab = 1
+    set Script name = import-template
+  end
+end</code></pre>
+<p>Here, the top surface is controlled by the Landlab mesh deformation
+plugin, while one MPI rank is allocated to execute the Landlab model.
+The Python script <code>import-template.py</code> defines the Landlab
+grid, surface-process components, and the data exchange routines used by
+the ASPECT--Landlab coupling framework.</p>
+<p><strong>Landlab parameter file</strong>
+<code>import-template.py</code> :</p>
+<p>The surface-process component was implemented using the Landlab
+landscape evolution framework. The Landlab domain covers an area of 900
+m × 1900 m and is represented by a raster grid with a spacing of 100 m,
+resulting in 20 rows and 10 columns of nodes. All four boundaries were
+assigned fixed-elevation boundary conditions. The initial topography
+consisted of a nearly planar surface with an elevation of 0 m. To ensure
+reproducibility and consistency with the original Landlab benchmark, a
+small-amplitude random perturbation generated using a fixed random seed
+was added to the surface elevation field.</p>
+<p>Surface transport was simulated using Landlab's linear diffusion
+component. A constant linear diffusivity was applied uniformly across
+the domain:</p>
+<p><span
+class="math display"><em>D</em> = 5 × 10<sup>4</sup> m<sup>2</sup> ASPECTtime<sup>−1</sup></span></p>
+<p>The model was advanced using a timestep of 1 year for a total
+simulation duration of 3 years.</p>
+<p>In the standalone Landlab benchmark, uplift was prescribed as</p>
+<p><span class="math display">$$U(y) = \frac{y}{10^5}$$</span></p>
+<p>where <span class="math inline"><em>y</em></span> denotes the
+northward coordinate of each core node. During each timestep, diffusion
+was applied and uplift was subsequently added to the interior nodes.
+This benchmark produces a known reference topography and is commonly
+used to verify the correctness of the diffusion implementation.</p>
+<p>In the coupled ASPECT–Landlab framework, all benchmark parameters,
+including domain geometry, grid spacing, boundary conditions,
+diffusivity, timestep, simulation duration, and initial topography, were
+retained unchanged.</p>
+<p>Surface evolution was handled through the ASPECT–Landlab coupling
+interface, where vertical surface displacement from ASPECT was
+communicated to Landlab at every global timestep. To investigate the
+effect of coupling timescales, the Landlab timestep could be subdivided
+into multiple substeps according to</p>
+<p><span class="math display">$$\Delta t_{\mathrm{sub}}
+=
+\frac{\Delta t}
+     {n_{\mathrm{substeps}}}$$</span></p>
+<p>where <span class="math inline"><em>Δ</em><em>t</em></span> is the
+global ASPECT timestep and <span
+class="math inline"><em>n</em><sub>substeps</sub></span> is the number
+of Landlab substeps executed within each coupling interval.</p>
+<h2 id="case-2-aspect-induced-uplift-configuration">Case 2 : ASPECT
+induced uplift configuration</h2>
+<p>This experiment was designed to isolate the effect of transferring
+uplift from the ASPECT to the coupling interface. All model parameters,
+domain geometry, mesh resolution, boundary conditions, diffusivity, and
+simulation duration were kept identical to the <code>case 1</code>
+above. The only modifications were:</p>
+<ol type="1">
+<li>The uplift term previously prescribed directly within Landlab was
+disabled.</li>
+<li>Surface uplift was instead imposed through ASPECT using a prescribed
+vertical velocity boundary condition.</li>
+<li>The <code>Single Stokes and Single Advection</code> nonlinear solver
+was activated to compute the velocity field used by the mesh deformation
+framework.</li>
+</ol>
+<p>The prescribed velocity boundary condition was defined in the ASPECT
+parameter file as:</p>
+<pre class="text"><code>subsection Boundary velocity model
+
+ set Prescribed velocity boundary indicators =
+   left: function, right: function, bottom: function
+
+ subsection Function
+   set Coordinate system = cartesian
+   set Variable names = x,y,z,t
+   set Function expression = 0; 0; y/1e5
+ end
+end</code></pre>
+<p>This configuration imposes zero horizontal velocity and a spatially
+varying vertical velocity,</p>
+<p><span class="math display">$$v_z = \frac{y}{10^5},$$</span></p>
+<p>which produces uplift that increases linearly in the positive <span
+class="math inline"><em>y</em></span> direction. The resulting velocity
+field is incorporated into the ASPECT mesh deformation framework and
+communicated to Landlab through the coupling interface.</p>
+<p>Unlike the previous benchmark, where uplift was applied directly to
+Landlab nodes, surface elevation changes are now induced by ASPECT
+through mesh deformation. Consequently, the benchmark evaluates the
+ability of the coupling framework to transfer ASPECT-generated surface
+motion to Landlab while preserving the expected uplift--diffusion
+behavior.</p>
+</section>
+<section id="results" class="slide level1">
+<h1>Results</h1>
+<div style="
+   background:#e8f5e9;
+   border-left:6px solid #2e7d32;
+   padding:12px;
+   margin:10px 0;
+   border-radius:4px;
+   line-height:1.7;">
+
+
+
+<b></b> As <code>n_substeps</code> increases, tracer analysis reveals two distinct behaviours:
+
+<br><br>
+
+<b style="color:#1565C0;">Constant Uplift:</b>
+The magnitude of elevation change produced by the uplift code line
+<code>self.uplift_rate * sub_dt</code> (Code Snippet 2, line 10)
+remains essentially constant across all <code>n_substeps</code> scenarios (Figure C10 to C14).
+
+<br><br>
+
+<b style="color:#EF6C00;">Diffusion Response Increased Nonlinearly and Reached a Plateau:</b>
+The magnitude of elevation change produced by the diffusion code line
+<code>self.linear_diffuser.run_one_step(sub_dt)</code> (Code Snippet 2, line 6)
+increases nonlinearly with increasing <code>n_substeps</code> before gradually approaching a plateau (Figure C10 to C14).
+
+</div>
+</section>
+<section id="interpretation" class="slide level1">
+<h1>Interpretation</h1>
+<p>As <code>n_substeps</code> value increases, The effect of diffusion
+code line <code>self.linear_diffuser.run_one_step(sub_dt)</code> becomes
+more pronounced, resulting in a lower topography relative to the
+standalone Landlab benchmark and it stoped lowering upon further
+increase in <code>n_substeps</code> values.</p>
+<p><strong>Interpretation 1:</strong></p>
+<p><strong>Substepping reduces operator-splitting error</strong>
+(indicate <code>n_substeps</code> is working as intented).</p>
+<p>The agreement between the coupled and standalone solutions with
+increasing <code>n_substeps</code> suggests that substepping is
+functioning as intended (as shown in Figure 5 bellow).</p>
+<p><strong>Interpretation 2:</strong></p>
+<p><strong>Residual discrepancies likely originate from the coupling
+strategy itself.</strong></p>
+<p>Although increasing <code>n_substeps</code> improves agreement with
+the reference solution, a small mismatch remains, even for the
+best-performing case (Figure 6, ASPECT-driven uplift case with
+<code>n_substeps = 3</code>). Because the ASPECT and Landlab grids are
+geometrically identical at the coupling interface, the discrepancy
+cannot be attributed to interpolation or grid mismatch. Instead, it most
+likely reflects the numerical characteristics of the coupled framework,
+including mesh deformation, temporal coupling, and model
+synchronization.</p>
+</section>
+<section id="discussion" class="slide level1">
+<h1>Discussion</h1>
+<p>The progressive lowering of topography as <code>n_substeps</code>
+increases and then no further lowering with further increasing
+<code>n_substeps</code>, can be understood as the interaction of two
+temporal subdivision mechanisms acting within the coupled framework.</p>
+<p><strong>In Landlab induced uplift secenario:</strong></p>
+<p>In this benchmark recreation, the closest agreement with the
+standalone Landlab reference solution is obtained when
+<code>n_substeps = 1</code>. This behavior can be understood by
+considering that Landlab's <code>LinearDiffuser</code> component already
+contains an internal timestep subdivision mechanism through <span
+class="title-ref">self._tstep_ratio = dt/self._dt</span> (<span
+class="title-ref">diffusion.py</span>, line 445), where <span
+class="title-ref">self._dt</span> is the CFL-limited stable diffusion
+timestep. Whenever the user-specified timestep exceeds the stability
+limit, the diffusion solver automatically advances the solution using
+multiple stable internal substeps. Consequently, diffusion is already
+temporally well resolved within a single Landlab timestep.</p>
+<p>In the coupled ASPECT--Landlab framework, an additional level of
+temporal subdivision can be introduced through
+<code>n_substeps &gt; 1</code>, which further partitions the ASPECT
+coupling timestep into smaller intervals. Unlike Landlab's internal
+diffusion substepping, which is required for numerical stability,
+<code>n_substeps</code> is intended to improve the temporal resolution
+of the interaction between uplift and diffusion. Increasing
+<code>n_substeps</code> causes diffusion and uplift to interact more
+frequently during a coupling interval, allowing sediment transport to
+respond to intermediate uplifted topographies rather than only the final
+uplifted state.</p>
+<p>As a result, increasing <code>n_substeps</code> modifies the temporal
+coupling behavior relative to the original standalone Landlab benchmark.
+Therefore, for the specific purpose of reproducing the standalone
+Landlab diffusion benchmark within the coupled framework,
+<code>n_substeps = 1</code> provides the most appropriate comparison
+because it preserves the original benchmark's timestep structure. This
+recommendation should not be interpreted as a general guideline for
+coupled simulations, where larger values of <code>n_substeps</code> may
+be beneficial for reducing operator-splitting errors and improving
+temporal coupling accuracy.</p>
+<p><strong>In ASPECT induced uplift secenario:</strong></p>
+<p>In the ASPECT-defined uplift case, uplift is generated indirectly
+from the surface velocity field computed by ASPECT through the Stokes
+and advection solution. Under the simple material-model configuration
+used in this study, the coupled solution exhibited a noticeable
+dependence on the temporal coupling parameter <code>n_substeps</code>.
+Among the tested values, <code>n_substeps = 3</code> produced the
+closest agreement with the reference topography (Figure 6, second row,
+middle panel). This observation suggests that multiple coupling substeps
+may be required to adequately resolve the transfer of ASPECT-derived
+surface motion to the Landlab surface-process model.</p>
+</section>
+<section id="summary" class="slide level1">
+<h1>Summary</h1>
+<div style="background-color:#E8F4FD; border-left:6px solid #1F77B4; padding:15px; border-radius:6px; line-height:1.8;">
+
+The coupled ASPECT–Landlab framework contains multiple levels of temporal discretization. ASPECT controls its timestep according to the requirements of the geodynamic solver, while Landlab's <code>LinearDiffuser</code> component internally subdivides the requested diffusion timestep through <code>self._tstep_ratio = dt/self._dt</code> to satisfy the CFL stability condition. These mechanisms are primarily responsible for the stability and accuracy of their respective numerical solvers.
+
+The parameter <code>n_substeps</code> serves a different purpose. Rather than stabilizing either solver, it improves the temporal accuracy of the uplift–diffusion coupling by subdividing the ASPECT timestep into smaller coupling intervals. This allows diffusion to respond more frequently to intermediate uplifted topographies and reduces the temporal discretization error associated with the operator-split coupling procedure.
+
+Consequently, increasing <code>n_substeps</code> progressively lowers the predicted topography relative to simulations with fewer coupling substeps because diffusion interacts more frequently with evolving uplifted surfaces. The resulting topography approaches a limiting solution as <code>n_substeps</code> increases, indicating convergence of the coupling algorithm. Therefore, the observed lowering should not be interpreted as a consequence of numerical stabilization, but rather as the result of improved temporal resolution of the coupled uplift–diffusion system.
+
+</div>
+<div style="
+   background: linear-gradient(135deg, #E8F8FF, #F0FFF4);
+   border: 3px solid #4A90E2;
+   border-radius: 12px;
+   padding: 15px 20px;
+   margin: 15px 0;
+   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+   line-height: 1.6;
+   font-size: 1.05em;">
+
+<span style="font-si
+ze:1.2em;"> <b>Main Finding</b></span><br><br>
+
+<span style="color:#1F4E79;">
+Increasing <code>n_substeps</code> improves the temporal accuracy of uplift–diffusion coupling. The resulting lower topography reflects a more faithful representation of uplift–diffusion interactions and convergence toward the numerically consistent coupled solution.
+</span>
+
+</div>
+</section>
+<section id="figures" class="slide level1">
+<h1>Figures</h1>
+<h2 id="figure-1-problem-defintion">Figure 1: Problem defintion</h2>
+<h2
+id="discrepancy-in-topographic-response-for-between-coupled-aspectlandlab-and-standalone-landlab-in-n_substeps-1-greater-then-1-scenarios">Discrepancy
+in Topographic Response for Between Coupled ASPECT–Landlab and
+Standalone Landlab in <code>n_substeps &gt; 1</code>
+<code>(Greater then 1)</code> Scenarios</h2>
+<div id="fig_n_steps_problem_definition">
+<figure class="align-center">
+<img
+data-src="/_images/inkscape_readthedoc/n_substeps_problem_defination_intro_ppt.png"
+alt="/_images/inkscape_readthedoc/n_substeps_problem_defination_intro_ppt.png" />
+</figure>
+</div>
+<h2 id="figure-2-n_substeps-purpose">Figure 2: <code>n_substeps</code>
+Purpose</h2>
+<h2 id="coupling-larger-time-with-shorter-time-frame">Coupling Larger
+Time with Shorter Time frame</h2>
+<div id="fig_n_steps_problem_definiti">
+<figure class="align-center">
+<img
+data-src="/_images/benchmark_test_1/n_steps_rate_comparision_geodynamic_landscape_processes.png"
+alt="/_images/benchmark_test_1/n_steps_rate_comparision_geodynamic_landscape_processes.png" />
+</figure>
+</div>
+<h2 id="figure-3-hypothesis">Figure 3 Hypothesis</h2>
+<h2 id="increasing-n_substeps-should-not-change-the-solution">Increasing
+<code>n_substeps</code> Should Not Change the Solution</h2>
+<div id="fig_n_steps_problem_defin">
+<figure class="align-center">
+<img
+data-src="/_images/inkscape_readthedoc/n_step_problem_definition.png"
+alt="/_images/inkscape_readthedoc/n_step_problem_definition.png" />
+</figure>
+</div>
+<h2 id="figure-4-thumbnail">Figure 4: Thumbnail</h2>
+<h2
+id="uplift-diffusion-algorithm-in-coupled-landlab-aspect-framework">Uplift-Diffusion
+Algorithm in coupled Landlab-ASPECT framework</h2>
+<p><strong>Code snippet -1:</strong> <em>Snippet of the coupling
+algorithm.</em></p>
+<div class="sourceCode" id="cb4" data-linenos=""><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> set_mesh_information(<span class="va">self</span>, ..):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>   <span class="va">self</span>.model_grid <span class="op">=</span> landlab.RasterModelGrid()</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>   <span class="va">self</span>.uplift_rate <span class="op">=</span> (</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>   <span class="va">self</span>.model_grid.node_y[<span class="va">self</span>.model_grid.core_cells]<span class="op">/</span> <span class="fl">1e5</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>   )</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> update_until(<span class="va">self</span>,..):</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>   dt <span class="op">=</span> end_time <span class="op">-</span> <span class="va">self</span>.current_time</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>   <span class="cf">if</span> dt <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>      n_substeps <span class="op">=</span> N</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>      sub_dt <span class="op">=</span> dt <span class="op">/</span> n_substeps</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>         <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n_substeps):</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.linear_diffuser.run_one_step(sub_dt)</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.model_grid.at_node[<span class="st">&quot;topographic__elevation&quot;</span>]</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>            [<span class="va">self</span>.model_grid.core_nodes] <span class="op">+=</span> (<span class="va">self</span>.uplift_rate <span class="op">*</span> sub_dt)</span></code></pre></div>
+<figure class="align-center">
+<img
+data-src="/_images/benchmark_test_1/import-landlab_algo_sequence.png"
+alt="/_images/benchmark_test_1/import-landlab_algo_sequence.png" />
+</figure>
+<h2
+id="figure-5-operator-splitting-error-or-non-simultaneous-process-interaction">Figure
+5: Operator Splitting Error (or Non-Simultaneous Process
+Interaction)</h2>
+<h2
+id="isolation-of-diffusion-and-uplift-effects-using-elevation-tracers">Isolation
+of Diffusion and Uplift Effects Using Elevation Tracers</h2>
+<figure class="align-center">
+<img
+data-src="/_images/inkscape_readthedoc/n_sub_steps_tracer_cross-section.png"
+alt="/_images/inkscape_readthedoc/n_sub_steps_tracer_cross-section.png" />
+</figure>
+<h2 id="figure-6-summary">Figure 6: Summary</h2>
+<figure class="align-center">
+<img data-src="/_images/inkscape_readthedoc/n_subsets_summary.png"
+alt="/_images/inkscape_readthedoc/n_subsets_summary.png" />
+</figure>
+<div class="admonition orange-box">
+<p>Key Inetrpretation</p>
+<p><strong>Increasing</strong> <code>n_substeps</code> <strong>improves
+convergence, but exact reproduction of a standalone benchmark solution
+should not necessarily be expected.</strong></p>
+<p>The coupled solution is sensitive to the choice of
+<code>n_substeps</code> because uplift and diffusion are applied as
+separate discrete operations. Increasing <code>n_substeps</code> reduces
+operator-splitting errors and generally improves convergence toward a
+temporally better-resolved coupled solution.</p>
+<p>However, exact agreement with a standalone benchmark cannot
+necessarily be expected. Standalone benchmarks are typically formulated
+and verified within a single numerical framework, whereas the coupled
+ASPECT--Landlab system combines multiple numerical methods, solution
+procedures, and data-exchange operations. Consequently, even when the
+same physical process is represented, differences may arise from the
+numerical pathways through which information is generated, transferred,
+and applied within the coupled framework.</p>
+<p>Therefore, verification of coupled models ultimately requires
+benchmark problems that are explicitly designed for coupled
+geodynamic--surface process systems. Such benchmarks should test the
+numerical behavior of the coupling strategy itself, including temporal
+coupling, data exchange, mesh deformation, and process interactions.
+Developing benchmark problems with analytical or otherwise independently
+verifiable coupled solutions remains an important direction for future
+work.</p>
+</div>
+</section>
+<section id="complementary-experiments" class="slide level1">
+<h1>Complementary Experiments</h1>
+<h2 id="figure-c1-diffusion-first-then-uplift">Figure C1: Diffusion
+first <code>THEN</code> Uplift</h2>
+<figure class="align-center">
+<img
+data-src="/_static/figures/landlab_/bug_landlab_folder/ASPECT_driven_uplift_mismatch_Standalone_Landlab_debuging/Landlab_driven_uplift_operator_splitting_error_diffrent_sequence_uplift_diffusion_diffrent_node_overlaping/outputs/diffusion_first_uplift_opertor_spliting_error_n_substeps-1/results_benchmark/cross_section_all_times.png"
+alt="/_static/figures/landlab_/bug_landlab_folder/ASPECT_driven_uplift_mismatch_Standalone_Landlab_debuging/Landlab_driven_uplift_operator_splitting_error_diffrent_sequence_uplift_diffusion_diffrent_node_overlaping/outputs/diffusion_first_uplift_opertor_spliting_error_n_substeps-1/results_benchmark/cross_section_all_times.png" />
+</figure>
+<h2 id="figure-c2-uplift-first-then-diffusion">Figure C2: Uplift first
+<code>THEN</code> Diffusion</h2>
+<figure class="align-center">
+<img
+data-src="/_static/figures/landlab_/bug_landlab_folder/ASPECT_driven_uplift_mismatch_Standalone_Landlab_debuging/Landlab_driven_uplift_operator_splitting_error_diffrent_sequence_uplift_diffusion_diffrent_node_overlaping/outputs/uplift_first_diffusion_opertor_spliting_error/results_benchmark/cross_section_all_times.png"
+alt="/_static/figures/landlab_/bug_landlab_folder/ASPECT_driven_uplift_mismatch_Standalone_Landlab_debuging/Landlab_driven_uplift_operator_splitting_error_diffrent_sequence_uplift_diffusion_diffrent_node_overlaping/outputs/uplift_first_diffusion_opertor_spliting_error/results_benchmark/cross_section_all_times.png" />
+</figure>
+<h2 id="figure-c3-ideal-case-scenario">Figure C3: Ideal case
+scenario</h2>
+<figure class="align-center">
+<img
+data-src="/_static/figures/landlab_/bug_landlab_folder/ASPECT_driven_uplift_mismatch_Standalone_Landlab_debuging/Landlab_driven_uplift_operator_splitting_error_diffrent_sequence_uplift_diffusion_diffrent_node_overlaping/outputs/diffusion_first_uplift_opertor_spliting_error_n_substeps-1/results_benchmark/cross_section_all_times.png"
+alt="/_static/figures/landlab_/bug_landlab_folder/ASPECT_driven_uplift_mismatch_Standalone_Landlab_debuging/Landlab_driven_uplift_operator_splitting_error_diffrent_sequence_uplift_diffusion_diffrent_node_overlaping/outputs/diffusion_first_uplift_opertor_spliting_error_n_substeps-1/results_benchmark/cross_section_all_times.png" />
+</figure>
+<h2
+id="figure-c4-coupled-landlab-defined-uplift-no-difusion-uniform-uplift">Figure
+C4: Coupled Landlab defined uplift (No difusion) uniform Uplift</h2>
+<figure class="align-center">
+<img
+data-src="/_static/figures/landlab_/bug_landlab_folder/ASPECT_driven_uplift_mismatch_Standalone_Landlab_debuging/Landlab_driven_uplift_operator_splitting_error_diffrent_sequence_uplift_diffusion_diffrent_node_overlaping/outputs/Only_uplift_No_diffusion_random_initial_Topo_opertor_spliting_error_n_substeps-1/results_benchmark/cross_section_all_times.png"
+alt="/_static/figures/landlab_/bug_landlab_folder/ASPECT_driven_uplift_mismatch_Standalone_Landlab_debuging/Landlab_driven_uplift_operator_splitting_error_diffrent_sequence_uplift_diffusion_diffrent_node_overlaping/outputs/Only_uplift_No_diffusion_random_initial_Topo_opertor_spliting_error_n_substeps-1/results_benchmark/cross_section_all_times.png" />
+</figure>
+<h2
+id="figure-c5-aspect-defined-uplift-no-difusion-uniform-uplift">Figure
+C5: ASPECT defined uplift (No difusion) uniform Uplift</h2>
+<figure class="align-center">
+<img
+data-src="/_static/figures/landlab_/bug_landlab_folder/ASPECT_driven_uplift_mismatch_Standalone_Landlab_debuging/ASPECT_driven_uplift_case/outputs/ASPECT_defined_uplift_No_Diffusion_subset_1_global_velocity_boundary_refin-0_x_9_y_19-repition_Diffusion_5e4_m2_per_Year_Set_Year-false_x-900_y-1900_z-1000_single_Advection_single_Stokes/results_benchmark/cross_section_all_times.png"
+alt="/_static/figures/landlab_/bug_landlab_folder/ASPECT_driven_uplift_mismatch_Standalone_Landlab_debuging/ASPECT_driven_uplift_case/outputs/ASPECT_defined_uplift_No_Diffusion_subset_1_global_velocity_boundary_refin-0_x_9_y_19-repition_Diffusion_5e4_m2_per_Year_Set_Year-false_x-900_y-1900_z-1000_single_Advection_single_Stokes/results_benchmark/cross_section_all_times.png" />
+</figure>
+<h2 id="figure-c7-uplift-implementation-difference">Figure C7: Uplift
+Implementation difference</h2>
+<figure class="align-center">
+<img
+data-src="/_images/test_3/test_3_Raster_topography_eq_no_of_ncols_nrows.eps.png"
+width="1000"
+alt="/_images/test_3/test_3_Raster_topography_eq_no_of_ncols_nrows.eps.png" />
+</figure>
+<div class="important">
+<div class="title">
+<p>Important</p>
+</div>
+<p><strong>Most Plausible Explanation: Uplift Implementation
+Differences</strong></p>
+<p>The most likely explanation for the remaining discrepancy between the
+standalone Landlab benchmark and the coupled ASPECT--Landlab solution is
+the fundamentally different manner in which uplift is introduced into
+the two modeling frameworks.</p>
+<p>In the standalone Landlab benchmark, uplift is prescribed explicitly
+and applied directly at individual grid nodes. The imposed uplift field
+therefore enters the surface-evolution calculation without any
+intermediate numerical processes.</p>
+<p>In contrast, within the coupled ASPECT--Landlab framework, uplift is
+generated indirectly through the geodynamic solution. Surface motion is
+first prescribed through the boundary velocity model and then propagated
+through the ASPECT solution procedure, which involves the Stokes and
+advection equations and depends on the evolving pressure, temperature,
+density, and viscosity fields. The resulting surface displacement is
+subsequently transferred to Landlab through the mesh-deformation
+interface.</p>
+<p>Consequently, even when the prescribed boundary velocity is designed
+to reproduce the same uplift pattern, the uplift reaches the landscape
+model through a substantially different numerical pathway. Therefore,
+the remaining mismatch is more likely to reflect differences in uplift
+generation and transfer within the coupled framework than errors arising
+from projection, interpolation, or node-to-node mapping between ASPECT
+and Landlab.</p>
+</div>
+<div style="
+   background: linear-gradient(135deg, #FFF3E0, #FFE0B2);
+   border-left: 8px solid #FF6F00;
+   border-radius: 10px;
+   padding: 18px 22px;
+   margin: 15px 0;
+   box-shadow: 0 3px 8px rgba(0,0,0,0.12);">
+
+<h3 style="
+   margin-top:0;
+   color:#E65100;
+   font-size:1.25em;">
+   Open Questions
+</h3>
+
+<ol style="line-height:1.8; font-size:1.05em; color:#4E342E;">
+
+<li>
+<b>Does the coupled solution converge to a unique solution as
+<code>n_substeps</code> increases?</b>
+<br>
+Determining whether the ASPECT–Landlab solution approaches a
+limiting topography with increasing temporal resolution would
+provide direct evidence that <code>n_substeps</code> functions as a
+convergence parameter rather than introducing numerical artifacts.
+</li>
+
+<br>
+
+<li>
+<b>What <code>n_substeps</code> value is sufficient for practical
+coupled simulations?</b>
+<br>
+Identifying the smallest value of <code>n_substeps</code> that
+produces a converged solution would provide a useful guideline for
+future ASPECT–Landlab studies by balancing numerical accuracy and
+computational cost.
+</li>
+
+</ol>
+
+</div>
+<h2
+id="figure-c8-n_substeps-10-scenario-crosssection-of-each-time-step-total-of-4">Figure
+C8: <code>n_substeps = 10</code> scenario: Crosssection of each time
+step (total of 4)</h2>
+<figure class="align-center">
+<img
+data-src="/_static/figures/landlab_/Landlab_defined_uplift_subset_10_global_refin-0_x_9_y_19-repition_Diffusion_5e4_m2_per_Year_Set_Year-false_x-900_y-1900_z-1000_no_Advection_no_Stokes/results_benchmark/cross_section_all_times.png"
+alt="/_static/figures/landlab_/Landlab_defined_uplift_subset_10_global_refin-0_x_9_y_19-repition_Diffusion_5e4_m2_per_Year_Set_Year-false_x-900_y-1900_z-1000_no_Advection_no_Stokes/results_benchmark/cross_section_all_times.png" />
+</figure>
+<h2
+id="figure-c9-n_substeps-1-scenario-crosssection-of-each-time-step-total-of-4">Figure
+C9: <code>n_substeps = 1</code> scenario: Crosssection of each time step
+(total of 4)</h2>
+<figure class="align-center">
+<img
+data-src="/_static/figures/landlab_/Landlab_defined_uplift_subset_1_global_refin-0_x_9_y_19-repition_Diffusion_5e4_m2_per_Year_Set_Year-false_x-900_y-1900_z-1000_no_Advection_no_Stokes/results_benchmark/cross_section_all_times.png"
+alt="/_static/figures/landlab_/Landlab_defined_uplift_subset_1_global_refin-0_x_9_y_19-repition_Diffusion_5e4_m2_per_Year_Set_Year-false_x-900_y-1900_z-1000_no_Advection_no_Stokes/results_benchmark/cross_section_all_times.png" />
+</figure>
+<h2
+id="figure-c10-n_substeps-1-scenario-diffusion-and-uplift-effect-on-elevation-changes">Figure
+C10: <code>n_substeps = 1</code> scenario: Diffusion and Uplift effect
+on Elevation Changes</h2>
+<figure class="align-center">
+<img
+data-src="/_static/figures/landlab_/test_template_ADV_GEO_Project_placeholder/analysis_substeps_figures/loop_vs_max_uplift_diffusion_change_n_substeps_1.png"
+alt="/_static/figures/landlab_/test_template_ADV_GEO_Project_placeholder/analysis_substeps_figures/loop_vs_max_uplift_diffusion_change_n_substeps_1.png" />
+</figure>
+<h2
+id="figure-c11-n_substeps-2-scenario-diffusion-and-uplift-effect-on-elevation-changes">Figure
+C11: <code>n_substeps = 2</code> scenario: Diffusion and Uplift effect
+on Elevation Changes</h2>
+<figure class="align-center">
+<img
+data-src="/_static/figures/landlab_/test_template_ADV_GEO_Project_placeholder/analysis_substeps_figures/loop_vs_max_uplift_diffusion_change_n_substeps_2.png"
+alt="/_static/figures/landlab_/test_template_ADV_GEO_Project_placeholder/analysis_substeps_figures/loop_vs_max_uplift_diffusion_change_n_substeps_2.png" />
+</figure>
+<h2
+id="figure-c12-n_substeps-3-scenario-diffusion-and-uplift-effect-on-elevation-changes">Figure
+C12: <code>n_substeps = 3</code> scenario: Diffusion and Uplift effect
+on Elevation Changes</h2>
+<figure class="align-center">
+<img
+data-src="/_static/figures/landlab_/test_template_ADV_GEO_Project_placeholder/analysis_substeps_figures/loop_vs_max_uplift_diffusion_change_n_substeps_2.png"
+alt="/_static/figures/landlab_/test_template_ADV_GEO_Project_placeholder/analysis_substeps_figures/loop_vs_max_uplift_diffusion_change_n_substeps_2.png" />
+</figure>
+<h2
+id="figure-c13-n_substeps-6-scenario-diffusion-and-uplift-effect-on-elevation-changes">Figure
+C13: <code>n_substeps = 6</code> scenario: Diffusion and Uplift effect
+on Elevation Changes</h2>
+<figure class="align-center">
+<img
+data-src="/_static/figures/landlab_/test_template_ADV_GEO_Project_placeholder/analysis_substeps_figures/loop_vs_max_uplift_diffusion_change_n_substeps_6.png"
+alt="/_static/figures/landlab_/test_template_ADV_GEO_Project_placeholder/analysis_substeps_figures/loop_vs_max_uplift_diffusion_change_n_substeps_6.png" />
+</figure>
+<h2
+id="figure-c14-n_substeps-20-scenario-diffusion-and-uplift-effect-on-elevation-changes">Figure
+C14: <code>n_substeps = 20</code> scenario: Diffusion and Uplift effect
+on Elevation Changes</h2>
+<figure class="align-center">
+<img
+data-src="/_static/figures/landlab_/test_template_ADV_GEO_Project_placeholder/analysis_substeps_figures/loop_vs_max_uplift_diffusion_change_n_substeps_20.png"
+alt="/_static/figures/landlab_/test_template_ADV_GEO_Project_placeholder/analysis_substeps_figures/loop_vs_max_uplift_diffusion_change_n_substeps_20.png" />
+</figure>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^5/dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@^5/plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^5/plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^5/plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>

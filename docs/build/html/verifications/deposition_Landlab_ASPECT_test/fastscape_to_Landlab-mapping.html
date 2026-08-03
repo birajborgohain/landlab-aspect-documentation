@@ -1,0 +1,1125 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deposition and Rift Basin Evolution &mdash; Landlab-Aspect Development Documentation 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d75fae25" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=fa26092b" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../../_static/slides.js?v=4682ba28"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Implementation (What has been successfully developed?)" href="../../implementation/index.html" />
+    <link rel="prev" title="Error-2: Segmentation Fault During World Builder Initialization" href="denial_adalace_T-model_with-pr43.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Landlab-Aspect Development Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../installation/index.html">Installation Landlab-ASPECT</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../installation/installation_running.html">Setup Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../installation/installation_running.html#python-environment-uv">1. Python Environment (uv)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../installation/installation_running.html#install-aspect-with-python-support">2. Install ASPECT with Python Support</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Varification (What is being tested?)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../uplift_diffusion_n_substeps.html">Verification of the <code class="docutils literal notranslate"><span class="pre">n_substeps</span></code> Coupling Algorithm</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#objective">Objective</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#how-discrepancy-was-identified">How discrepancy was identified?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#method-applied-to-investigate-the-origin-of-the-discrepancy">Method applied to investigate the origin of the discrepancy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#model-setup">Model Setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#case-1-landlab-induced-uplift-configuration">Case 1 : Landlab induced uplift configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#case-2-aspect-induced-uplift-configuration">Case 2 : ASPECT induced uplift configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#results">Results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#interpretation">Interpretation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#discussion">Discussion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#summary">Summary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#figures">Figures</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#figure-1-problem-defintion">Figure 1: Problem defintion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#discrepancy-in-topographic-response-for-between-coupled-aspectlandlab-and-standalone-landlab-in-n-substeps-1-greater-then-1-scenarios">Discrepancy in Topographic Response for  Between Coupled ASPECT–Landlab and Standalone Landlab in <code class="docutils literal notranslate"><span class="pre">n_substeps</span> <span class="pre">&gt;</span> <span class="pre">1</span></code>   <code class="docutils literal notranslate"><span class="pre">(Greater</span> <span class="pre">then</span> <span class="pre">1)</span></code> Scenarios</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#figure-2-n-substeps-purpose">Figure 2: <code class="docutils literal notranslate"><span class="pre">n_substeps</span></code> Purpose</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#coupling-larger-time-with-shorter-time-frame">Coupling Larger Time with Shorter Time frame</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#figure-3-hypothesis">Figure 3 Hypothesis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#increasing-n-substeps-should-not-change-the-solution">Increasing <code class="docutils literal notranslate"><span class="pre">n_substeps</span></code> Should Not Change the Solution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#figure-4-thumbnail">Figure 4: Thumbnail</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#uplift-diffusion-algorithm-in-coupled-landlab-aspect-framework">Uplift-Diffusion Algorithm in coupled Landlab-ASPECT framework</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#figure-5-operator-splitting-error-or-non-simultaneous-process-interaction">Figure 5: Operator Splitting Error (or Non-Simultaneous Process Interaction)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#isolation-of-diffusion-and-uplift-effects-using-elevation-tracers">Isolation of Diffusion and Uplift Effects Using Elevation Tracers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#figure-6-summary">Figure 6: Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#complementary-experiments">Complementary Experiments</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#figure-c1-diffusion-first-then-uplift">Figure C1: Diffusion first <code class="docutils literal notranslate"><span class="pre">THEN</span></code> Uplift</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#figure-c2-uplift-first-then-diffusion">Figure C2: Uplift first <code class="docutils literal notranslate"><span class="pre">THEN</span></code> Diffusion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#figure-c3-ideal-case-scenario">Figure C3: Ideal case scenario</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#figure-c4-coupled-landlab-defined-uplift-no-difusion-uniform-uplift">Figure C4: Coupled Landlab defined uplift (No difusion) uniform Uplift</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#figure-c5-aspect-defined-uplift-no-difusion-uniform-uplift">Figure C5: ASPECT defined uplift (No difusion) uniform Uplift</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#figure-c7-uplift-implementation-difference">Figure C7: Uplift Implementation difference</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#figure-c8-n-substeps-10-scenario-crosssection-of-each-time-step-total-of-4">Figure C8: <code class="docutils literal notranslate"><span class="pre">n_substeps</span> <span class="pre">=</span> <span class="pre">10</span></code> scenario: Crosssection of each time step (total of 4)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#figure-c9-n-substeps-1-scenario-crosssection-of-each-time-step-total-of-4">Figure C9: <code class="docutils literal notranslate"><span class="pre">n_substeps</span> <span class="pre">=</span> <span class="pre">1</span></code> scenario: Crosssection of each time step (total of 4)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#figure-c10-n-substeps-1-scenario-diffusion-and-uplift-effect-on-elevation-changes">Figure C10: <code class="docutils literal notranslate"><span class="pre">n_substeps</span> <span class="pre">=</span> <span class="pre">1</span></code> scenario: Diffusion and Uplift effect on Elevation Changes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#figure-c11-n-substeps-2-scenario-diffusion-and-uplift-effect-on-elevation-changes">Figure C11: <code class="docutils literal notranslate"><span class="pre">n_substeps</span> <span class="pre">=</span> <span class="pre">2</span></code> scenario: Diffusion and Uplift effect on Elevation Changes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#figure-c12-n-substeps-3-scenario-diffusion-and-uplift-effect-on-elevation-changes">Figure C12: <code class="docutils literal notranslate"><span class="pre">n_substeps</span> <span class="pre">=</span> <span class="pre">3</span></code> scenario: Diffusion and Uplift effect on Elevation Changes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#figure-c13-n-substeps-6-scenario-diffusion-and-uplift-effect-on-elevation-changes">Figure C13: <code class="docutils literal notranslate"><span class="pre">n_substeps</span> <span class="pre">=</span> <span class="pre">6</span></code> scenario: Diffusion and Uplift effect on Elevation Changes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#figure-c14-n-substeps-20-scenario-diffusion-and-uplift-effect-on-elevation-changes">Figure C14: <code class="docutils literal notranslate"><span class="pre">n_substeps</span> <span class="pre">=</span> <span class="pre">20</span></code> scenario: Diffusion and Uplift effect on Elevation Changes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Deposition Implementation Tests</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="denial_adalace_T-model_test.html">Error-1: Python Callback API Mismatch: <code class="docutils literal notranslate"><span class="pre">update_until()</span></code> Missing Required Argument</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="denial_adalace_T-model_test.html#description">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="denial_adalace_T-model_test.html#command">Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="denial_adalace_T-model_test.html#software-environment">Software Environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="denial_adalace_T-model_test.html#simulation-progress">Simulation Progress</a></li>
+<li class="toctree-l4"><a class="reference internal" href="denial_adalace_T-model_test.html#failure">Failure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="denial_adalace_T-model_test.html#exception">Exception</a></li>
+<li class="toctree-l4"><a class="reference internal" href="denial_adalace_T-model_test.html#root-cause">Root Cause</a></li>
+<li class="toctree-l4"><a class="reference internal" href="denial_adalace_T-model_test.html#execution-flow">Execution Flow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="denial_adalace_T-model_test.html#resolution">Resolution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="denial_adalace_T-model_test.html#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="denial_adalace_T-model_with-pr43.html">Error-2: Segmentation Fault During World Builder Initialization</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="denial_adalace_T-model_with-pr43.html#description">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="denial_adalace_T-model_with-pr43.html#command">Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="denial_adalace_T-model_with-pr43.html#software-environment">Software Environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="denial_adalace_T-model_with-pr43.html#simulation-progress">Simulation Progress</a></li>
+<li class="toctree-l4"><a class="reference internal" href="denial_adalace_T-model_with-pr43.html#failure">Failure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="denial_adalace_T-model_with-pr43.html#stack-trace">Stack Trace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="denial_adalace_T-model_with-pr43.html#root-cause">Root Cause</a></li>
+<li class="toctree-l4"><a class="reference internal" href="denial_adalace_T-model_with-pr43.html#execution-flow">Execution Flow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="denial_adalace_T-model_with-pr43.html#comparison-with-previous-failure">Comparison with Previous Failure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="denial_adalace_T-model_with-pr43.html#resolution">Resolution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="denial_adalace_T-model_with-pr43.html#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Deposition and Rift Basin Evolution</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#table-of-fastscape-aspect-to-landlab-aspect-mapping">Table of FastScape–ASPECT to Landlab–ASPECT Mapping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#time-stepping">Time stepping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#uplift">Uplift</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#horizontal-advection">Horizontal advection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#flow-routing">Flow routing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#erosion-and-deposition">Erosion and deposition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#common-erosional-parameter-mapping">Common Erosional Parameter Mapping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#deposition-parameter-mapping">Deposition Parameter Mapping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#marine-parameter-mapping">Marine Parameter Mapping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mesh-geometry-boundaries">Mesh Geometry &amp; Boundaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#boundary-conditions">Boundary Conditions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#landlab-component-initialization">Landlab component initialization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#missing-fastscape-features-in-the-current-landlab-aspect-implementation">Missing FastScape Features in the Current Landlab–ASPECT Implementation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#figures">Figures</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#reproducing-the-liang-2025-epsl-landlab-aspect-test">Reproducing the Liang (2025) EPSL Landlab–ASPECT Test</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#input-output-directory">Input/Output Directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aspect-executable">ASPECT Executable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#run-command">Run Command</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../implementation/index.html">Implementation (What has been successfully developed?)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../implementation/PR_diffusion_of_hill.html">Benchmark Recreation: ASPECT <code class="docutils literal notranslate"><span class="pre">diffusion_of_hill</span></code> Using Landlab</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../open_questions/index.html">Open Questions (What remains to be understood?)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development_journal/index.html">Development Journal</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../development_journal/August_1_2026.html">August 1, 2026, Varification - Deposition Implementation Tests - Deposition and Rift Basin</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_1_2026.html#fastscapelandlab-integration-horizontal-surface-advection-parameter-mapping-and-code-refinement">FastScape–Landlab Integration: Horizontal Surface Advection, Parameter Mapping, and Code Refinement</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Landlab-Aspect Development Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Varification (What is being tested?)</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Deposition Implementation Tests</a></li>
+      <li class="breadcrumb-item active">Deposition and Rift Basin Evolution</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/verifications/deposition_Landlab_ASPECT_test/fastscape_to_Landlab-mapping.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="denial_adalace_T-model_with-pr43.html" class="btn btn-neutral float-left" title="Error-2: Segmentation Fault During World Builder Initialization" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../implementation/index.html" class="btn btn-neutral float-right" title="Implementation (What has been successfully developed?)" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="deposition-and-rift-basin-evolution">
+<h1>Deposition and Rift Basin Evolution<a class="headerlink" href="#deposition-and-rift-basin-evolution" title="Link to this heading"></a></h1>
+<p>This benchmark tests the implementation of sediment deposition within the
+<strong>Landlab–ASPECT</strong> framework by reproducing the published
+<strong>FastScape–ASPECT</strong> model. Reproducing the published implementation
+provides a validation benchmark for the Landlab-based framework before it
+is extended to investigate sediment deposition, landscape evolution, and
+rift basin development in a broader range of tectonic settings.</p>
+<p><strong>Reference</strong></p>
+<div class="line-block">
+<div class="line">Xue, L., Moucha, R., Scholz, C. A., &amp; Naliboff, J. (2025).</div>
+<div class="line"><em>Sedimentation and deformation in oblique continental rifts: The role of climate–tectonic interactions</em>.</div>
+<div class="line"><em>Earth and Planetary Science Letters</em>, <strong>657</strong>, 119565.</div>
+<div class="line">DOI: <a class="reference external" href="https://doi.org/10.1016/j.epsl.2025.119565">https://doi.org/10.1016/j.epsl.2025.119565</a></div>
+</div>
+<section id="table-of-fastscape-aspect-to-landlab-aspect-mapping">
+<h2>Table of FastScape–ASPECT to Landlab–ASPECT Mapping<a class="headerlink" href="#table-of-fastscape-aspect-to-landlab-aspect-mapping" title="Link to this heading"></a></h2>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">FastScape–ASPECT to Landlab–ASPECT mapping</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 18.0%" />
+<col style="width: 28.0%" />
+<col style="width: 12.0%" />
+<col style="width: 42.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>FastScape parameter</p></th>
+<th class="head"><p>Landlab implementation</p></th>
+<th class="head"><p>Status</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Time step per ASPECT time step</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n_substeps</span></code></p></td>
+<td><p>Implemented</p></td>
+<td><p>ASPECT timestep is subdivided into multiple Landlab substeps.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Maximum timestep length</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">dt</span> <span class="pre">=</span> <span class="pre">end_time</span> <span class="pre">-</span> <span class="pre">self.current_time</span></code></p></td>
+<td><p>Partial</p></td>
+<td><p>Controlled by ASPECT. No explicit timestep limiter.</p></td>
+</tr>
+<tr class="row-even"><td><p>Uplift</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">determine_uplift_velocity()</span></code></p></td>
+<td><p>Implemented</p></td>
+<td><p>Vertical velocity from ASPECT updates the surface elevation.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Horizontal advection</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">AdvectionSolverTVD</span></code></p></td>
+<td><p>Implemented</p></td>
+<td><p>Uses the ASPECT horizontal velocity stored in <code class="docutils literal notranslate"><span class="pre">advection__velocity</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p>Flow routing</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">FlowAccumulator(flow_director=&quot;D8&quot;)</span></code></p></td>
+<td><p>Implemented</p></td>
+<td><p>Explicit in Landlab, implicit in FastScape.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Stream-power erosion</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ErosionDeposition</span></code></p></td>
+<td><p>Implemented</p></td>
+<td><p>Uses drainage area and slope.</p></td>
+</tr>
+<tr class="row-even"><td><p>Hillslope diffusion</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">LinearDiffuser</span></code></p></td>
+<td><p>Implemented</p></td>
+<td><p>Linear diffusion.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Marine transport</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SimpleSubmarineDiffuser</span></code></p></td>
+<td><p>Basic implementation</p></td>
+<td><p>Approximates marine sediment transport.</p></td>
+</tr>
+<tr class="row-even"><td><p>Ghost nodes</p></td>
+<td><p>RasterModelGrid buffer</p></td>
+<td><p>Implemented</p></td>
+<td><p>Two ghost nodes surrounding the physical domain.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Boundary conditions</p></td>
+<td><p>Landlab boundary status</p></td>
+<td><p>Missing</p></td>
+<td><p>No direct FastScape mapping.</p></td>
+</tr>
+<tr class="row-even"><td><p>Node tolerance</p></td>
+<td><p>Coupling interpolation</p></td>
+<td><p>Missing</p></td>
+<td><p>One-to-one node mapping currently assumed.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Additional refinement</p></td>
+<td><p>RasterModelGrid resolution</p></td>
+<td><p>Missing</p></td>
+<td><p>Fixed during grid construction.</p></td>
+</tr>
+<tr class="row-even"><td><p>Vertical exaggeration</p></td>
+<td><p>—</p></td>
+<td><p>Not required</p></td>
+<td><p>Visualization only.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Random seed</p></td>
+<td><p>—</p></td>
+<td><p>Missing</p></td>
+<td><p>Not currently required.</p></td>
+</tr>
+<tr class="row-even"><td><p>Sediment diffusivity</p></td>
+<td><p>—</p></td>
+<td><p>Missing</p></td>
+<td><p>Not represented.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Bedrock deposition coefficient</p></td>
+<td><p>—</p></td>
+<td><p>Missing</p></td>
+<td><p>No equivalent currently.</p></td>
+</tr>
+<tr class="row-even"><td><p>Sediment deposition coefficient</p></td>
+<td><p>—</p></td>
+<td><p>Missing</p></td>
+<td><p>No equivalent currently.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sand/silt transport</p></td>
+<td><p>—</p></td>
+<td><p>Missing</p></td>
+<td><p>Requires additional implementation.</p></td>
+</tr>
+<tr class="row-even"><td><p>Porosity evolution</p></td>
+<td><p>—</p></td>
+<td><p>Missing</p></td>
+<td><p>Not implemented.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sand/silt ratio</p></td>
+<td><p>—</p></td>
+<td><p>Missing</p></td>
+<td><p>Not implemented.</p></td>
+</tr>
+<tr class="row-even"><td><p>Marine compaction</p></td>
+<td><p>—</p></td>
+<td><p>Missing</p></td>
+<td><p>Not implemented.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="time-stepping">
+<h2>Time stepping<a class="headerlink" href="#time-stepping" title="Link to this heading"></a></h2>
+<p>FastScape</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Number of FastScape timesteps per ASPECT timestep = 5
+</pre></div>
+</div>
+<p>Landlab</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n_substeps</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">sub_dt</span> <span class="o">=</span> <span class="n">dt</span> <span class="o">/</span> <span class="n">n_substeps</span>
+</pre></div>
+</div>
+</section>
+<section id="uplift">
+<h2>Uplift<a class="headerlink" href="#uplift" title="Link to this heading"></a></h2>
+<p>FastScape</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Uplift and advect with FastScape = true
+</pre></div>
+</div>
+<p>Landlab</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vertical_velocity</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">determine_uplift_velocity</span><span class="p">(</span>
+    <span class="n">ASPECT_dim</span><span class="p">,</span>
+    <span class="n">ASPECT_fields_at_Landlab_nodes_dict</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="bp">self</span><span class="o">.</span><span class="n">elevation</span> <span class="o">+=</span> <span class="n">vertical_velocity</span> <span class="o">*</span> <span class="n">sub_dt</span>
+</pre></div>
+</div>
+</section>
+<section id="horizontal-advection">
+<h2>Horizontal advection<a class="headerlink" href="#horizontal-advection" title="Link to this heading"></a></h2>
+<p>FastScape performs horizontal advection internally.</p>
+<p>Landlab computes the horizontal velocity from ASPECT and stores it
+in the <code class="docutils literal notranslate"><span class="pre">advection__velocity</span></code> field.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">determine_horizontal_velocity</span><span class="p">(</span>
+    <span class="n">ASPECT_dim</span><span class="p">,</span>
+    <span class="n">ASPECT_fields_at_Landlab_nodes_dict</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="bp">self</span><span class="o">.</span><span class="n">horizontal_surface_advector</span><span class="o">.</span><span class="n">run_one_step</span><span class="p">(</span><span class="n">sub_dt</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="flow-routing">
+<h2>Flow routing<a class="headerlink" href="#flow-routing" title="Link to this heading"></a></h2>
+<p>FastScape</p>
+<ul class="simple">
+<li><p>Implicit (built into FastScape)</p></li>
+</ul>
+<p>Landlab</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">flow_accumulator</span> <span class="o">=</span> <span class="n">FlowAccumulator</span><span class="p">(</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">model_grid</span><span class="p">,</span>
+    <span class="n">flow_director</span><span class="o">=</span><span class="s2">&quot;D8&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="erosion-and-deposition">
+<h2>Erosion and deposition<a class="headerlink" href="#erosion-and-deposition" title="Link to this heading"></a></h2>
+<p>FastScape parameters</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Drainage area exponent = 0.5
+Slope exponent = 1.0
+Bedrock river incision rate = 1e-6
+Bedrock diffusivity = 1e-2
+
+Bedrock deposition coefficient = 1
+Sediment deposition coefficient = 1
+Sediment river incision rate = 1e-6
+Sediment diffusivity = -1
+</pre></div>
+</div>
+</section>
+<section id="common-erosional-parameter-mapping">
+<h2>Common Erosional Parameter Mapping<a class="headerlink" href="#common-erosional-parameter-mapping" title="Link to this heading"></a></h2>
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">FastScape erosional parameters and their Landlab equivalents</span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 35.0%" />
+<col style="width: 30.0%" />
+<col style="width: 35.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>FastScape parameter</p></th>
+<th class="head"><p>Landlab parameter</p></th>
+<th class="head"><p>Remarks</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Drainage</span> <span class="pre">area</span> <span class="pre">exponent</span> <span class="pre">=</span> <span class="pre">0.5</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">m_sp</span> <span class="pre">=</span> <span class="pre">0.5</span></code></p></td>
+<td><p>Numerically identical.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Slope</span> <span class="pre">exponent</span> <span class="pre">=</span> <span class="pre">1.0</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n_sp</span> <span class="pre">=</span> <span class="pre">1.0</span></code></p></td>
+<td><p>Numerically identical.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Bedrock</span> <span class="pre">river</span> <span class="pre">incision</span> <span class="pre">rate</span> <span class="pre">=</span> <span class="pre">1e-6</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">K</span> <span class="pre">=</span> <span class="pre">1e-6</span></code></p></td>
+<td><p>Numerically identical.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Bedrock</span> <span class="pre">diffusivity</span> <span class="pre">=</span> <span class="pre">1e-2</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">D</span> <span class="pre">=</span> <span class="pre">1e-2</span></code></p></td>
+<td><p>Numerically identical.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Unit consistency:</strong> The FastScape parameters</p>
+<ul class="simple">
+<li><p><cite>Bedrock river incision rate = 1e-6</cite></p></li>
+<li><p><cite>Bedrock diffusivity = 1e-2</cite></p></li>
+</ul>
+<p>are already expressed in <strong>per year</strong> units (m/yr and m²/yr, respectively).
+Landlab also expects these quantities in per-year units. Therefore, these
+values should be passed directly as</p>
+<ul class="simple">
+<li><p><cite>K = 1e-6</cite></p></li>
+<li><p><cite>D = 1e-2</cite></p></li>
+</ul>
+<p><strong>without dividing by</strong> <cite>self.s2yr = 60 * 60 * 24 * 365.25</cite>.</p>
+<p>Dividing by <cite>self.s2yr</cite> would incorrectly convert the parameters from
+per year to per second, resulting in values that are too small by a factor
+of approximately <span class="math notranslate nohighlight">\(3.16 \times 10^7\)</span>.</p>
+</div>
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-number">Table 3 </span><span class="caption-text">Typical ranges of bedrock incision/uplift rates and linear hillslope diffusivities</span><a class="headerlink" href="#id3" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 36.8%" />
+<col style="width: 31.6%" />
+<col style="width: 31.6%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Scenario</p></th>
+<th class="head"><p>Incision/Uplift</p></th>
+<th class="head"><p>Diffusivity</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Low-relief landscapes</p></td>
+<td><p><span class="math notranslate nohighlight">\(10^{-7}\)</span>–<span class="math notranslate nohighlight">\(10^{-6}\)</span> m/yr</p></td>
+<td><p><span class="math notranslate nohighlight">\(10^{-2}\)</span>–<span class="math notranslate nohighlight">\(10^{-1}\)</span> m²/yr</p></td>
+</tr>
+<tr class="row-odd"><td><p>Moderate relief</p></td>
+<td><p><span class="math notranslate nohighlight">\(10^{-6}\)</span>–<span class="math notranslate nohighlight">\(10^{-5}\)</span> m/yr</p></td>
+<td><p><span class="math notranslate nohighlight">\(10^{-1}\)</span>–<span class="math notranslate nohighlight">\(1\)</span> m²/yr</p></td>
+</tr>
+<tr class="row-even"><td><p>Active mountain belts</p></td>
+<td><p><span class="math notranslate nohighlight">\(10^{-5}\)</span>–<span class="math notranslate nohighlight">\(10^{-4}\)</span> m/yr</p></td>
+<td><p><span class="math notranslate nohighlight">\(1\)</span>–<span class="math notranslate nohighlight">\(10\)</span> m²/yr</p></td>
+</tr>
+<tr class="row-odd"><td><p>Regional-scale numerical models</p></td>
+<td><p><span class="math notranslate nohighlight">\(10^{-6}\)</span>–<span class="math notranslate nohighlight">\(10^{-5}\)</span> m/yr</p></td>
+<td><p><span class="math notranslate nohighlight">\(1\)</span>–<span class="math notranslate nohighlight">\(100\)</span> m²/yr</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="deposition-parameter-mapping">
+<h2>Deposition Parameter Mapping<a class="headerlink" href="#deposition-parameter-mapping" title="Link to this heading"></a></h2>
+<table class="docutils align-default" id="id4">
+<caption><span class="caption-number">Table 4 </span><span class="caption-text">FastScape deposition parameters and their Landlab equivalents</span><a class="headerlink" href="#id4" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 35.0%" />
+<col style="width: 30.0%" />
+<col style="width: 35.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>FastScape parameter</p></th>
+<th class="head"><p>Landlab parameter</p></th>
+<th class="head"><p>Remarks</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Bedrock</span> <span class="pre">deposition</span> <span class="pre">coefficient</span> <span class="pre">=</span> <span class="pre">1</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">v_s</span> <span class="pre">=</span> <span class="pre">1000.0</span></code></p></td>
+<td><p>Approximate mapping. <code class="docutils literal notranslate"><span class="pre">v_s</span></code> is the sediment settling velocity in <code class="docutils literal notranslate"><span class="pre">ErosionDeposition</span></code> and is <strong>not</strong> a direct equivalent of the FastScape bedrock deposition coefficient.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Sediment</span> <span class="pre">deposition</span> <span class="pre">coefficient</span> <span class="pre">=</span> <span class="pre">1</span></code></p></td>
+<td><p>—</p></td>
+<td><p>No equivalent parameter in <code class="docutils literal notranslate"><span class="pre">ErosionDeposition</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Sediment</span> <span class="pre">river</span> <span class="pre">incision</span> <span class="pre">rate</span> <span class="pre">=</span> <span class="pre">1e-6</span></code></p></td>
+<td><p>—</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ErosionDeposition</span></code> uses a single incision coefficient <code class="docutils literal notranslate"><span class="pre">K</span></code> for both erosion and deposition processes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Sediment</span> <span class="pre">diffusivity</span> <span class="pre">=</span> <span class="pre">-1</span></code></p></td>
+<td><p>—</p></td>
+<td><p>No separate sediment diffusivity is implemented. Hillslope diffusion is represented by <code class="docutils literal notranslate"><span class="pre">LinearDiffuser</span></code> using a single diffusivity <code class="docutils literal notranslate"><span class="pre">D</span></code>.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="marine-parameter-mapping">
+<h2>Marine Parameter Mapping<a class="headerlink" href="#marine-parameter-mapping" title="Link to this heading"></a></h2>
+<table class="docutils align-default" id="id5">
+<caption><span class="caption-number">Table 5 </span><span class="caption-text">FastScape marine parameters and their Landlab equivalents</span><a class="headerlink" href="#id5" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 35.0%" />
+<col style="width: 30.0%" />
+<col style="width: 35.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>FastScape parameter</p></th>
+<th class="head"><p>Landlab parameter</p></th>
+<th class="head"><p>Remarks</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Sea</span> <span class="pre">level</span> <span class="pre">=</span> <span class="pre">-2000</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">sea_level</span> <span class="pre">=</span> <span class="pre">0</span></code></p></td>
+<td><p>Passed directly to <code class="docutils literal notranslate"><span class="pre">SimpleSubmarineDiffuser</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Sand</span> <span class="pre">transport</span> <span class="pre">coefficient</span> <span class="pre">=</span> <span class="pre">200</span></code></p></td>
+<td><p>—</p></td>
+<td><p>Not implemented.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Silt</span> <span class="pre">transport</span> <span class="pre">coefficient</span> <span class="pre">=</span> <span class="pre">200</span></code></p></td>
+<td><p>—</p></td>
+<td><p>Not implemented.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Sand</span> <span class="pre">porosity</span> <span class="pre">=</span> <span class="pre">0</span></code></p></td>
+<td><p>—</p></td>
+<td><p>Not implemented.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Silt</span> <span class="pre">porosity</span> <span class="pre">=</span> <span class="pre">0</span></code></p></td>
+<td><p>—</p></td>
+<td><p>Not implemented.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Sand</span> <span class="pre">e-folding</span> <span class="pre">depth</span> <span class="pre">=</span> <span class="pre">1e3</span></code></p></td>
+<td><p>—</p></td>
+<td><p>Not implemented.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Silt</span> <span class="pre">e-folding</span> <span class="pre">depth</span> <span class="pre">=</span> <span class="pre">1e3</span></code></p></td>
+<td><p>—</p></td>
+<td><p>Not implemented.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Sand-silt</span> <span class="pre">ratio</span> <span class="pre">=</span> <span class="pre">1</span></code></p></td>
+<td><p>—</p></td>
+<td><p>Not implemented.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Depth</span> <span class="pre">averaging</span> <span class="pre">thickness</span> <span class="pre">=</span> <span class="pre">1e2</span></code></p></td>
+<td><p>—</p></td>
+<td><p>Not implemented.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="mesh-geometry-boundaries">
+<h2>Mesh Geometry &amp; Boundaries<a class="headerlink" href="#mesh-geometry-boundaries" title="Link to this heading"></a></h2>
+<p>The following table summarizes the commonly used FastScape parameters, their
+closest equivalent in Landlab (when available), and their purpose.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 30.0%" />
+<col style="width: 40.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>FastScape Parameter</strong></p></th>
+<th class="head"><p><strong>Landlab Equivalent</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Vertical</span> <span class="pre">exaggeration</span> <span class="pre">=</span> <span class="pre">-1</span></code></p></td>
+<td><p>—</p></td>
+<td><p>Controls the vertical scaling used internally by FastScape. A value of
+<code class="docutils literal notranslate"><span class="pre">-1</span></code> disables vertical exaggeration (default behavior) and does not
+affect the physical simulation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Additional</span> <span class="pre">fastscape</span> <span class="pre">refinement</span> <span class="pre">=</span> <span class="pre">1</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">RasterModelGrid</span></code> resolution (<code class="docutils literal notranslate"><span class="pre">xy_spacing</span></code>)</p></td>
+<td><p>Refines the FastScape surface grid above the highest ASPECT surface
+resolution. Increasing this value produces a finer erosion/deposition
+grid. Landlab instead uses a fixed grid resolution specified during
+grid creation.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Fastscape</span> <span class="pre">seed</span> <span class="pre">=</span> <span class="pre">1000</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">numpy.random.seed()</span></code></p></td>
+<td><p>Sets the random seed for stochastic processes, ensuring reproducible
+simulations whenever random initialization is used.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Maximum</span> <span class="pre">surface</span> <span class="pre">refinement</span> <span class="pre">level</span> <span class="pre">=</span> <span class="pre">1</span></code></p></td>
+<td><p>None</p></td>
+<td><p>Specifies the highest adaptive mesh refinement level permitted at the
+ASPECT surface. This parameter has no equivalent in Landlab because
+Landlab uses a fixed-resolution grid.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Surface</span> <span class="pre">refinement</span> <span class="pre">difference</span> <span class="pre">=</span> <span class="pre">0</span></code></p></td>
+<td><p>None</p></td>
+<td><p>Limits the allowable difference between the minimum and maximum surface
+refinement levels to maintain smooth mesh transitions. This parameter is
+not applicable to Landlab.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Use</span> <span class="pre">marine</span> <span class="pre">component</span> <span class="pre">=</span> <span class="pre">true</span></code></p></td>
+<td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">submarine_diffuser</span> <span class="o">=</span> <span class="n">SimpleSubmarineDiffuser</span><span class="p">(</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">model_grid</span><span class="p">,</span>
+      <span class="n">tidal_range</span><span class="o">=</span><span class="n">sd</span><span class="p">[</span><span class="s2">&quot;tidal_range&quot;</span><span class="p">],</span>
+      <span class="n">shallow_water_diffusivity</span><span class="o">=</span><span class="n">sd</span><span class="p">[</span><span class="s2">&quot;K&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">s2yr</span><span class="p">,</span>
+      <span class="n">sea_level</span><span class="o">=</span><span class="n">sd</span><span class="p">[</span><span class="s2">&quot;sea_level&quot;</span><span class="p">],</span>
+  <span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><p>Enables marine sediment transport and deposition below sea level.
+Landlab does not provide a built-in marine sedimentation component.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Uplift</span> <span class="pre">and</span> <span class="pre">advect</span> <span class="pre">with</span> <span class="pre">fastscape</span> <span class="pre">=</span> <span class="pre">true</span></code></p></td>
+<td><p>User-defined uplift and advection</p></td>
+<td><p>Allows FastScape to apply tectonic uplift and horizontal advection in
+addition to erosion and deposition. In Landlab, uplift is typically
+imposed by the user, while advection requires additional components or
+custom implementation.</p></td>
+</tr>
+<tr class="row-odd"><td><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">subsection</span> <span class="n">Box</span>
+  <span class="nb">set</span> <span class="n">X</span> <span class="n">repetitions</span> <span class="o">=</span> <span class="mi">30</span>
+  <span class="nb">set</span> <span class="n">Y</span> <span class="n">repetitions</span> <span class="o">=</span> <span class="mi">12</span>
+  <span class="nb">set</span> <span class="n">Z</span> <span class="n">repetitions</span> <span class="o">=</span> <span class="mi">15</span>
+
+  <span class="nb">set</span> <span class="n">X</span> <span class="n">extent</span> <span class="o">=</span> <span class="mf">300e3</span>
+  <span class="nb">set</span> <span class="n">Y</span> <span class="n">extent</span> <span class="o">=</span> <span class="mf">120e3</span>
+  <span class="nb">set</span> <span class="n">Z</span> <span class="n">extent</span> <span class="o">=</span> <span class="mf">150e3</span>
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x_extent</span> <span class="o">=</span> <span class="mf">300e3</span>
+<span class="n">y_extent</span> <span class="o">=</span> <span class="mf">120e3</span>
+<span class="n">spacing</span> <span class="o">=</span> <span class="mf">2500.0</span>
+
+<span class="n">ghost_nodes</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="n">nrows</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">y_extent</span> <span class="o">/</span> <span class="n">spacing</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">ghost_nodes</span>
+<span class="n">ncols</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x_extent</span> <span class="o">/</span> <span class="n">spacing</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">ghost_nodes</span>
+</pre></div>
+</div>
+</td>
+<td><p>Uses ghost nodes outside the computational domain to simplify boundary
+condition calculations. Landlab instead handles boundaries using node
+status flags.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Node</span> <span class="pre">tolerance</span> <span class="pre">=</span> <span class="pre">0.001</span></code></p></td>
+<td><p>None</p></td>
+<td><p>Defines the maximum allowable distance between an ASPECT surface node
+and the corresponding FastScape node when transferring data between the
+two models. This parameter is specific to the ASPECT–FastScape
+coupling.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="boundary-conditions">
+<h2>Boundary Conditions<a class="headerlink" href="#boundary-conditions" title="Link to this heading"></a></h2>
+<p>The following table summarizes the available FastScape boundary conditions and
+their closest equivalents in Landlab.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 30.0%" />
+<col style="width: 40.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>FastScape Boundary Condition</strong></p></th>
+<th class="head"><p><strong>Landlab Equivalent</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Numerically identical</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">subsection</span> <span class="n">Boundary</span> <span class="n">conditions</span>
+  <span class="nb">set</span> <span class="n">Front</span> <span class="o">=</span> <span class="mi">1</span>
+  <span class="nb">set</span> <span class="n">Right</span> <span class="o">=</span> <span class="mi">1</span>
+  <span class="nb">set</span> <span class="n">Back</span>  <span class="o">=</span> <span class="mi">1</span>
+  <span class="nb">set</span> <span class="n">Left</span>  <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</td>
+<td><p>Numerically identical</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">model_grid</span><span class="o">.</span><span class="n">set_closed_boundaries_at_grid_edges</span><span class="p">(</span>
+    <span class="n">right_is_closed</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">left_is_closed</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">top_is_closed</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">bottom_is_closed</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><p><strong>Boundary condition definitions</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In FastScape, boundary condition values have the following meaning:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code>: Fixed-height boundary. The boundary elevation is fixed,
+although it can still be modified by an imposed uplift velocity.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>: Reflective boundary. No flux crosses the boundary,
+producing a mirror symmetry about the boundary.</p></li>
+</ul>
+<p>During testing of the ASPECT–Landlab coupling, reflective
+boundaries (<code class="docutils literal notranslate"><span class="pre">0</span></code>) resulted in <strong>no river incision within the
+rift valley</strong>. Therefore, fixed-height boundaries (<code class="docutils literal notranslate"><span class="pre">1</span></code>) are
+used in the examples presented here.</p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Boundary</span> <span class="pre">=</span> <span class="pre">0</span></code> (Not used)</p></td>
+<td><p>—</p></td>
+<td><p>Specifies a reflective (no-flux) boundary that prevents sediment from
+leaving the domain. Opposing reflective boundaries can produce special
+behavior in FastScape.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Left</span> <span class="pre">mass</span> <span class="pre">flux</span></code> (Not used)</p></td>
+<td><p>—</p></td>
+<td><p>Prescribes sediment flux through the left boundary
+(<span class="math notranslate nohighlight">\(\mathrm{m^2/yr}\)</span>).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Front</span> <span class="pre">mass</span> <span class="pre">flux</span></code> (Not used)</p></td>
+<td><p>—</p></td>
+<td><p>Prescribes sediment flux through the front boundary
+(<span class="math notranslate nohighlight">\(\mathrm{m^2/yr}\)</span>).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Back</span> <span class="pre">mass</span> <span class="pre">flux</span></code> (Not used)</p></td>
+<td><p>—</p></td>
+<td><p>Prescribes sediment flux through the back boundary
+(<span class="math notranslate nohighlight">\(\mathrm{m^2/yr}\)</span>).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Back</span> <span class="pre">front</span> <span class="pre">ghost</span> <span class="pre">nodes</span> <span class="pre">periodic</span></code> (Not used)</p></td>
+<td><p>—</p></td>
+<td><p>Treats ghost nodes as periodic in the front–back direction even when
+the physical boundaries are fixed.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Left</span> <span class="pre">right</span> <span class="pre">ghost</span> <span class="pre">nodes</span> <span class="pre">periodic</span></code> (Not used)</p></td>
+<td><p>—</p></td>
+<td><p>Treats ghost nodes as periodic in the left–right direction even when
+the physical boundaries are fixed.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Several FastScape parameters (for example,
+<code class="docutils literal notranslate"><span class="pre">Maximum</span> <span class="pre">surface</span> <span class="pre">refinement</span> <span class="pre">level</span></code>,
+<code class="docutils literal notranslate"><span class="pre">Surface</span> <span class="pre">refinement</span> <span class="pre">difference</span></code>, and <code class="docutils literal notranslate"><span class="pre">Node</span> <span class="pre">tolerance</span></code>) are specific to
+the ASPECT–FastScape coupling and therefore have <strong>no direct equivalent</strong>
+in Landlab.</p></li>
+<li><p>FastScape operates on an adaptively refined surface mesh provided by ASPECT,
+whereas Landlab uses a fixed structured grid such as
+<code class="docutils literal notranslate"><span class="pre">RasterModelGrid</span></code> or <code class="docutils literal notranslate"><span class="pre">HexModelGrid</span></code>.</p></li>
+<li><p>Boundary handling also differs between the two frameworks:</p>
+<ul>
+<li><p><strong>FastScape:</strong> Fixed (<code class="docutils literal notranslate"><span class="pre">1</span></code>), reflective (<code class="docutils literal notranslate"><span class="pre">0</span></code>), optional ghost nodes,
+and prescribed sediment flux boundaries.</p></li>
+<li><p><strong>Landlab:</strong> Open, closed, fixed-value, or fixed-gradient boundaries
+controlled through node status flags.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">subsection Fastscape</span>
+<span class="w">  </span><span class="na">set Number of fastscape timesteps per aspect timestep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">5</span>
+
+<span class="w">  </span><span class="c1"># Maximum timestep for FastScape</span>
+<span class="w">  </span><span class="na">set Maximum timestep length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">5000</span>
+
+<span class="w">  </span><span class="na">set Vertical exaggeration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">-1</span>
+
+<span class="w">  </span><span class="c1"># How many levels FastScape should be refined above the maximum ASPECT surface resolution.</span>
+<span class="w">  </span><span class="na">set Additional fastscape refinement</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1</span>
+
+<span class="w">  </span><span class="na">set Fastscape seed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1000</span>
+
+<span class="w">  </span><span class="c1"># As the highest resolution at the surface is 3 in the mesh refinement function,</span>
+<span class="w">  </span><span class="c1"># we set this the same.</span>
+<span class="w">  </span><span class="na">set Maximum surface refinement level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1</span>
+
+<span class="w">  </span><span class="c1"># The difference between the lowest and highest refinement level at the surface.</span>
+<span class="w">  </span><span class="na">set Surface refinement difference</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0</span>
+
+<span class="w">  </span><span class="na">set Use marine component</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true</span>
+
+<span class="w">  </span><span class="c1"># Flag for having FastScape advect/uplift the surface.</span>
+<span class="w">  </span><span class="na">set Uplift and advect with fastscape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true</span>
+
+<span class="w">  </span><span class="c1"># Because no boundaries are periodic, no flux is prescribed,</span>
+<span class="w">  </span><span class="c1"># and no advection occurs in FastScape,</span>
+<span class="w">  </span><span class="c1"># we do not need ghost nodes.</span>
+<span class="w">  </span><span class="na">set Use ghost nodes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true</span>
+
+<span class="w">  </span><span class="c1"># Node tolerance for how close an ASPECT node must be</span>
+<span class="w">  </span><span class="c1"># to the FastScape node for the value to be transferred.</span>
+<span class="w">  </span><span class="na">set Node tolerance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0.001</span>
+
+<span class="w">  </span><span class="c1"># BC 1 is fixed and 0 is reflective</span>
+<span class="w">  </span><span class="na">subsection Boundary conditions</span>
+
+<span class="w">    </span><span class="na">set Front</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1</span>
+<span class="w">    </span><span class="na">set Right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1</span>
+<span class="w">    </span><span class="na">set Back</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1</span>
+<span class="w">    </span><span class="na">set Left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1</span>
+
+<span class="w">    </span><span class="c1"># Flux per unit length through left boundary.</span>
+<span class="w">    </span><span class="c1"># set Left mass flux = 0</span>
+<span class="w">    </span><span class="c1"># set Front mass flux = 0</span>
+<span class="w">    </span><span class="c1"># set Back mass flux = 0</span>
+
+<span class="w">    </span><span class="c1"># Whether to set the ghost nodes periodic.</span>
+<span class="w">    </span><span class="c1"># set Back front ghost nodes periodic = false</span>
+<span class="w">    </span><span class="c1"># set Left right ghost nodes periodic = false</span>
+
+<span class="w">  </span><span class="na">end</span>
+
+<span class="w">  </span><span class="na">subsection Erosional parameters</span>
+
+<span class="w">    </span><span class="na">set Drainage area exponent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0.5</span>
+<span class="w">    </span><span class="na">set Slope exponent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1</span>
+
+<span class="w">    </span><span class="c1"># A negative value indicates varied flow.</span>
+<span class="w">    </span><span class="c1"># set Multi-direction slope exponent = -1</span>
+
+<span class="w">    </span><span class="c1"># Bedrock deposition coefficient.</span>
+<span class="w">    </span><span class="na">set Bedrock deposition coefficient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1</span>
+
+<span class="w">    </span><span class="c1"># Deposition coefficient for sediment.</span>
+<span class="w">    </span><span class="na">set Sediment deposition coefficient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1</span>
+
+<span class="w">    </span><span class="c1"># River incision rate for bedrock.</span>
+<span class="w">    </span><span class="na">set Bedrock river incision rate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1e-6</span>
+
+<span class="w">    </span><span class="c1"># River incision rate for sediment.</span>
+<span class="w">    </span><span class="na">set Sediment river incision rate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1e-6</span>
+
+<span class="w">    </span><span class="c1"># Bedrock diffusivity.</span>
+<span class="w">    </span><span class="na">set Bedrock diffusivity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1e-2</span>
+
+<span class="w">    </span><span class="c1"># Sediment diffusivity.</span>
+<span class="w">    </span><span class="na">set Sediment diffusivity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">-1</span>
+
+<span class="w">    </span><span class="c1"># Use a fixed erosional base level.</span>
+<span class="w">    </span><span class="c1"># set Use a fixed erosional base level = true</span>
+
+<span class="w">    </span><span class="c1"># set Erosional base level = 0</span>
+
+<span class="w">  </span><span class="na">end</span>
+
+<span class="w">  </span><span class="na">subsection Marine parameters</span>
+
+<span class="w">    </span><span class="c1"># FastScape sea level (m)</span>
+<span class="w">    </span><span class="na">set Sea level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">-2000</span>
+
+<span class="w">    </span><span class="na">set Sand porosity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0</span>
+<span class="w">    </span><span class="na">set Silt porosity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0</span>
+
+<span class="w">    </span><span class="na">set Sand e-folding depth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1e3</span>
+<span class="w">    </span><span class="na">set Silt e-folding depth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1e3</span>
+
+<span class="w">    </span><span class="na">set Sand-silt ratio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1</span>
+<span class="w">    </span><span class="na">set Depth averaging thickness</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1e2</span>
+
+<span class="w">    </span><span class="na">set Sand transport coefficient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">200</span>
+<span class="w">    </span><span class="na">set Silt transport coefficient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">200</span>
+
+<span class="w">  </span><span class="na">end</span>
+
+<span class="na">end</span>
+</pre></div>
+</div>
+</section>
+<section id="landlab-component-initialization">
+<h2>Landlab component initialization<a class="headerlink" href="#landlab-component-initialization" title="Link to this heading"></a></h2>
+<p>All Landlab components are initialized in
+<code class="docutils literal notranslate"><span class="pre">initialize_landlab_components()</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">initialize_landlab_components</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+    <span class="n">landlab_component_parameters</span> <span class="o">=</span> <span class="p">{</span>
+
+        <span class="s2">&quot;LinearDiffuser&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;D&quot;</span><span class="p">:</span> <span class="mf">1e-2</span><span class="p">,</span>
+        <span class="p">},</span>
+
+        <span class="s2">&quot;FlowAccumulator&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;flow_director&quot;</span><span class="p">:</span> <span class="s2">&quot;D8&quot;</span><span class="p">,</span>
+        <span class="p">},</span>
+
+        <span class="s2">&quot;ErosionDeposition&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;K&quot;</span><span class="p">:</span> <span class="mf">1e-6</span><span class="p">,</span>
+            <span class="s2">&quot;v_s&quot;</span><span class="p">:</span> <span class="mf">1000.0</span><span class="p">,</span>
+            <span class="s2">&quot;m_sp&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+            <span class="s2">&quot;n_sp&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
+            <span class="s2">&quot;sp_crit&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+        <span class="p">},</span>
+
+        <span class="s2">&quot;SimpleSubmarineDiffuser&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;K&quot;</span><span class="p">:</span> <span class="mf">1e-2</span><span class="p">,</span>
+            <span class="s2">&quot;tidal_range&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+            <span class="s2">&quot;sea_level&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">}</span>
+
+    <span class="c1"># LinearDiffuser</span>
+    <span class="n">D</span> <span class="o">=</span> <span class="n">landlab_component_parameters</span><span class="p">[</span><span class="s2">&quot;LinearDiffuser&quot;</span><span class="p">][</span><span class="s2">&quot;D&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">s2yr</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">Diffusivity</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model_grid</span><span class="o">.</span><span class="n">add_zeros</span><span class="p">(</span>
+        <span class="s2">&quot;linear_diffusivity&quot;</span><span class="p">,</span>
+        <span class="n">at</span><span class="o">=</span><span class="s2">&quot;node&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">Diffusivity</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">D</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">linear_diffuser</span> <span class="o">=</span> <span class="n">LinearDiffuser</span><span class="p">(</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model_grid</span><span class="p">,</span>
+        <span class="n">linear_diffusivity</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">Diffusivity</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># FlowAccumulator</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">flow_accumulator</span> <span class="o">=</span> <span class="n">FlowAccumulator</span><span class="p">(</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model_grid</span><span class="p">,</span>
+        <span class="n">flow_director</span><span class="o">=</span><span class="n">landlab_component_parameters</span><span class="p">[</span>
+            <span class="s2">&quot;FlowAccumulator&quot;</span><span class="p">][</span><span class="s2">&quot;flow_director&quot;</span><span class="p">],</span>
+    <span class="p">)</span>
+
+    <span class="c1"># ErosionDeposition</span>
+    <span class="n">ed</span> <span class="o">=</span> <span class="n">landlab_component_parameters</span><span class="p">[</span><span class="s2">&quot;ErosionDeposition&quot;</span><span class="p">]</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">erosion_deposition</span> <span class="o">=</span> <span class="n">ErosionDeposition</span><span class="p">(</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model_grid</span><span class="p">,</span>
+        <span class="n">K</span><span class="o">=</span><span class="n">ed</span><span class="p">[</span><span class="s2">&quot;K&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">s2yr</span><span class="p">,</span>
+        <span class="n">v_s</span><span class="o">=</span><span class="n">ed</span><span class="p">[</span><span class="s2">&quot;v_s&quot;</span><span class="p">],</span>
+        <span class="n">m_sp</span><span class="o">=</span><span class="n">ed</span><span class="p">[</span><span class="s2">&quot;m_sp&quot;</span><span class="p">],</span>
+        <span class="n">n_sp</span><span class="o">=</span><span class="n">ed</span><span class="p">[</span><span class="s2">&quot;n_sp&quot;</span><span class="p">],</span>
+        <span class="n">sp_crit</span><span class="o">=</span><span class="n">ed</span><span class="p">[</span><span class="s2">&quot;sp_crit&quot;</span><span class="p">],</span>
+    <span class="p">)</span>
+
+    <span class="c1"># SimpleSubmarineDiffuser</span>
+    <span class="n">sd</span> <span class="o">=</span> <span class="n">landlab_component_parameters</span><span class="p">[</span><span class="s2">&quot;SimpleSubmarineDiffuser&quot;</span><span class="p">]</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">submarine_diffuser</span> <span class="o">=</span> <span class="n">SimpleSubmarineDiffuser</span><span class="p">(</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model_grid</span><span class="p">,</span>
+        <span class="n">tidal_range</span><span class="o">=</span><span class="n">sd</span><span class="p">[</span><span class="s2">&quot;tidal_range&quot;</span><span class="p">],</span>
+        <span class="n">shallow_water_diffusivity</span><span class="o">=</span><span class="n">sd</span><span class="p">[</span><span class="s2">&quot;K&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">s2yr</span><span class="p">,</span>
+        <span class="n">sea_level</span><span class="o">=</span><span class="n">sd</span><span class="p">[</span><span class="s2">&quot;sea_level&quot;</span><span class="p">],</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Horizontal advection</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">horizontal_surface_advector</span> <span class="o">=</span> <span class="n">AdvectionSolverTVD</span><span class="p">(</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model_grid</span><span class="p">,</span>
+        <span class="n">fields_to_advect</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">elevation</span><span class="p">,</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="missing-fastscape-features-in-the-current-landlab-aspect-implementation">
+<h2>Missing FastScape Features in the Current Landlab–ASPECT Implementation<a class="headerlink" href="#missing-fastscape-features-in-the-current-landlab-aspect-implementation" title="Link to this heading"></a></h2>
+<p>The following FastScape parameters do not currently have a direct
+equivalent in the present Landlab–ASPECT implementation.</p>
+<section id="erosional-parameters">
+<h3>Erosional parameters<a class="headerlink" href="#erosional-parameters" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Sediment river incision rate</strong>
+- FastScape supports separate incision rates for bedrock and sediment.
+- <code class="docutils literal notranslate"><span class="pre">ErosionDeposition</span></code> uses a single stream-power coefficient (<code class="docutils literal notranslate"><span class="pre">K</span></code>).</p></li>
+<li><p><strong>Sediment deposition coefficient</strong>
+- No equivalent parameter currently exists.</p></li>
+<li><p><strong>Sediment diffusivity</strong>
+- No separate sediment diffusivity is implemented.</p></li>
+<li><p><strong>Multi-direction slope exponent</strong>
+- Landlab currently uses the D8 flow-routing algorithm.
+- No equivalent multi-direction weighting parameter is implemented.</p></li>
+<li><p><strong>Use a fixed erosional base level</strong>
+- Not implemented.</p></li>
+<li><p><strong>Erosional base level</strong>
+- Not implemented.</p></li>
+</ul>
+</section>
+<section id="marine-parameters">
+<h3>Marine parameters<a class="headerlink" href="#marine-parameters" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Sand porosity</strong>
+- Not implemented.</p></li>
+<li><p><strong>Silt porosity</strong>
+- Not implemented.</p></li>
+<li><p><strong>Sand e-folding depth</strong>
+- Not implemented.</p></li>
+<li><p><strong>Silt e-folding depth</strong>
+- Not implemented.</p></li>
+<li><p><strong>Sand-silt ratio</strong>
+- Not implemented.</p></li>
+<li><p><strong>Depth averaging thickness</strong>
+- Not implemented.</p></li>
+<li><p><strong>Separate sand transport coefficient</strong>
+- <code class="docutils literal notranslate"><span class="pre">SimpleSubmarineDiffuser</span></code> uses a single diffusivity and does not distinguish sand transport.</p></li>
+<li><p><strong>Separate silt transport coefficient</strong>
+- <code class="docutils literal notranslate"><span class="pre">SimpleSubmarineDiffuser</span></code> uses a single diffusivity and does not distinguish silt transport.</p></li>
+<li><p><strong>Marine compaction</strong>
+- Not implemented.</p></li>
+</ul>
+</section>
+</section>
+<section id="figures">
+<h2>Figures<a class="headerlink" href="#figures" title="Link to this heading"></a></h2>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/depo_drainage_topo_combine_Landlab_Fastscape.png"><img alt="../../_images/depo_drainage_topo_combine_Landlab_Fastscape.png" src="../../_images/depo_drainage_topo_combine_Landlab_Fastscape.png" style="width: 100%;" />
+</a>
+</figure>
+</section>
+<section id="reproducing-the-liang-2025-epsl-landlab-aspect-test">
+<h2>Reproducing the Liang (2025) EPSL Landlab–ASPECT Test<a class="headerlink" href="#reproducing-the-liang-2025-epsl-landlab-aspect-test" title="Link to this heading"></a></h2>
+<p>This note records the locations of the input files, output directory,
+and executable used for the Landlab–ASPECT coupling test based on the
+Liang (2025) EPSL.</p>
+</section>
+<section id="input-output-directory">
+<h2>Input/Output Directory<a class="headerlink" href="#input-output-directory" title="Link to this heading"></a></h2>
+<p>The parameter files and simulation outputs are stored in</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/Users/biraj/cookbook_biraj/
+fastscape_cookbook_ASPECT-300_deal-970_fastscape-290_biraj/
+Liang_2025_EPSL_output_prm/
+prm_input/
+outputs/
+test64_landlab_ada_denial_2.5_km-spacing_ghost/
+</pre></div>
+</div>
+<p>This directory contains:</p>
+<ul class="simple">
+<li><p>ASPECT <code class="docutils literal notranslate"><span class="pre">.prm</span></code> input files</p></li>
+<li><p>Landlab outputs</p></li>
+<li><p>ASPECT outputs</p></li>
+<li><p>VTK files</p></li>
+<li><p>Simulation logs</p></li>
+</ul>
+</section>
+<section id="aspect-executable">
+<h2>ASPECT Executable<a class="headerlink" href="#aspect-executable" title="Link to this heading"></a></h2>
+<p>The simulation was run using the following ASPECT executable:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/Users/biraj/software/landlab_ASPECT_test_2/
+aspect/build/aspect-release
+</pre></div>
+</div>
+</section>
+<section id="run-command">
+<h2>Run Command<a class="headerlink" href="#run-command" title="Link to this heading"></a></h2>
+<p>The simulation was executed using MPI with 14 processes.</p>
+<p>activate uv environment</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>/Users/biraj/software/landlab_ASPECT_test_2/aspect/.venv/bin/activate
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/opt/homebrew/bin/mpirun<span class="w"> </span>-np<span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>/Users/biraj/software/landlab_ASPECT_test_2/aspect/build/aspect-release<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>3d_64c1t1s1ob1c1_copy_1_landlab_ada_denial.prm
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">9</span><span class="w"> </span>minute<span class="w"> </span>to<span class="w"> </span><span class="nb">complete</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="denial_adalace_T-model_with-pr43.html" class="btn btn-neutral float-left" title="Error-2: Segmentation Fault During World Builder Initialization" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../implementation/index.html" class="btn btn-neutral float-right" title="Implementation (What has been successfully developed?)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Biraj Borgohain.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

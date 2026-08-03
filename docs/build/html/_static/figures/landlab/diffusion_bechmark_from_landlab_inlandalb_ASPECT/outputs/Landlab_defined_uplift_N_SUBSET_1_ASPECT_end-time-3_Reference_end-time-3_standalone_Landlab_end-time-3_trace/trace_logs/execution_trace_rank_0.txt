@@ -1,0 +1,110 @@
+=====================================
+ASPECT-Landlab Execution Trace
+MPI Rank: 0
+Trace File: /Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/diffusion_bechmark_from_landlab_inlandalb_ASPECT/outputs/Landlab_defined_uplift_N_SUBSET_1_ASPECT_end-time-3_Reference_end-time-3_standalone_Landlab_end-time-3_trace/trace_logs/execution_trace_rank_0.txt
+=====================================
+
+[11:23:05] [RANK 0] [STEP 1] Function: set_mesh_information | Line: 499 | TRACE INITIALIZED | output_dir=/Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/diffusion_bechmark_from_landlab_inlandalb_ASPECT/outputs/Landlab_defined_uplift_N_SUBSET_1_ASPECT_end-time-3_Reference_end-time-3_standalone_Landlab_end-time-3_trace
+[11:23:05] [RANK 0] [STEP 2] Function: set_mesh_information | Line: 504 | TRACE INITIALIZED
+[11:23:05] [RANK 0] [STEP 3] Function: set_mesh_information | Line: 506 | Setting mesh information
+[11:23:05] [RANK 0] [STEP 4] Function: set_mesh_information | Line: 510 | Creating RasterModelGrid
+[11:23:05] [RANK 0] [STEP 5] Function: set_mesh_information | Line: 523 | Domain parameters | x_extent=900, y_extent=1900, spacing=100
+[11:23:05] [RANK 0] [STEP 6] Function: set_mesh_information | Line: 533 | Computed grid size | nrows=20, ncols=10
+[11:23:05] [RANK 0] [STEP 7] Function: set_mesh_information | Line: 546 | RasterModelGrid created | nodes=200
+[11:23:05] [RANK 0] [STEP 8] Function: set_mesh_information | Line: 561 | Initialized uplift_rate | min=0.0, max=0.014
+[11:23:05] [RANK 0] [STEP 9] Function: set_mesh_information | Line: 606 | Creating initial topography field
+[11:23:05] [RANK 0] [STEP 10] Function: set_mesh_information | Line: 609 | Random seed set to 0
+[11:23:05] [RANK 0] [STEP 11] Function: set_mesh_information | Line: 615 | Initialized elevation field | min=4.695476192547066e-06, max=0.0009988470065678664
+[11:23:05] [RANK 0] [STEP 12] Function: set_mesh_information | Line: 623 | Setting fixed-value boundary conditions
+[11:23:05] [RANK 0] [STEP 13] Function: set_mesh_information | Line: 674 | Setting fixed-value boundary conditions
+[11:23:05] [RANK 0] [STEP 14] Function: set_mesh_information | Line: 685 | Grid summary | number_of_nodes=200
+[11:23:05] [RANK 0] [STEP 15] Function: set_mesh_information | Line: 689 | Initializing Landlab components
+[11:23:05] [RANK 0] [STEP 16] Function: initialize_landlab_components | Line: 700 | Entered initialize_landlab_components
+[11:23:05] [RANK 0] [STEP 17] Function: initialize_landlab_components | Line: 703 | Diffusivity D = 50000.0
+[11:23:05] [RANK 0] [STEP 18] Function: initialize_landlab_components | Line: 710 | Created linear_diffusivity field
+[11:23:05] [RANK 0] [STEP 19] Function: initialize_landlab_components | Line: 713 | Assigned diffusivity values | min=50000.0, max=50000.0
+[11:23:05] [RANK 0] [STEP 20] Function: initialize_landlab_components | Line: 724 | LinearDiffuser initialized
+[11:23:05] [RANK 0] [STEP 21] Function: set_mesh_information | Line: 695 | Returning model_grid
+[11:23:05] [RANK 0] [STEP 22] Function: update_until | Line: 302 | Entered update_until
+[11:23:05] [RANK 0] [STEP 23] Function: update_until | Line: 305 | Computed dt = 0.0
+[11:23:05] [RANK 0] [STEP 24] Function: update_until | Line: 307 | Timestep incremented to 1
+[11:23:05] [RANK 0] [STEP 25] Function: update_until | Line: 310 | Initialized deposition_erosion array
+[11:23:05] [RANK 0] [STEP 26] Function: update_until | Line: 449 | Updating current_time to 0.0
+[11:23:05] [RANK 0] [STEP 27] Function: update_until | Line: 452 | Saving landlab output
+[11:23:05] [RANK 0] [STEP 28] Function: update_until | Line: 454 | Finished saving landlab output
+[11:23:05] [RANK 0] [STEP 29] Function: update_until | Line: 462 | Computing dimensional deposition/erosion
+[11:23:05] [RANK 0] [STEP 30] Function: update_until | Line: 472 | Final elevation stats | min=4.695476192547066e-06, max=0.0009988470065678664
+[11:23:05] [RANK 0] [STEP 31] Function: update_until | Line: 478 | Final deposition_erosion stats | min=0.0, max=0.0
+[11:23:05] [RANK 0] [STEP 32] Function: update_until | Line: 484 | Returning dimensional_deposition_erosion
+[11:23:05] [RANK 0] [STEP 33] Function: update_until | Line: 302 | Entered update_until
+[11:23:05] [RANK 0] [STEP 34] Function: update_until | Line: 305 | Computed dt = 1.0
+[11:23:05] [RANK 0] [STEP 35] Function: update_until | Line: 307 | Timestep incremented to 2
+[11:23:05] [RANK 0] [STEP 36] Function: update_until | Line: 310 | Initialized deposition_erosion array
+[11:23:05] [RANK 0] [STEP 37] Function: update_until | Line: 312 | dt > 0 condition TRUE
+[11:23:05] [RANK 0] [STEP 38] Function: update_until | Line: 314 | n_substeps = 1
+[11:23:05] [RANK 0] [STEP 39] Function: update_until | Line: 316 | sub_dt = 1.0
+[11:23:05] [RANK 0] [STEP 40] Function: update_until | Line: 319 | Starting substep 0
+[11:23:05] [RANK 0] [STEP 41] Function: update_until | Line: 323 | Copied elevation_before | max = 0.0009988470065678664
+[11:23:05] [RANK 0] [STEP 42] Function: update_until | Line: 334 | Starting diffusion
+[11:23:05] [RANK 0] [STEP 43] Function: update_until | Line: 355 | Finished diffusion | max elevation = 0.0009988470065678664
+[11:23:05] [RANK 0] [STEP 44] Function: update_until | Line: 360 | diffusion_change = 0.0006154028077413672
+[11:23:05] [RANK 0] [STEP 45] Function: update_until | Line: 396 | Starting uplift
+[11:23:05] [RANK 0] [STEP 46] Function: update_until | Line: 421 | Finished uplift | max elevation = 0.014476688772301786
+[11:23:05] [RANK 0] [STEP 47] Function: update_until | Line: 426 | uplift_change = 0.014
+[11:23:05] [RANK 0] [STEP 48] Function: update_until | Line: 437 | Starting erosion/deposition
+[11:23:05] [RANK 0] [STEP 49] Function: update_until | Line: 441 | Finished erosion/deposition | max deposition_erosion = 0.01386272281633589
+[11:23:05] [RANK 0] [STEP 50] Function: update_until | Line: 449 | Updating current_time to 1.0
+[11:23:05] [RANK 0] [STEP 51] Function: update_until | Line: 452 | Saving landlab output
+[11:23:05] [RANK 0] [STEP 52] Function: update_until | Line: 454 | Finished saving landlab output
+[11:23:05] [RANK 0] [STEP 53] Function: update_until | Line: 462 | Computing dimensional deposition/erosion
+[11:23:05] [RANK 0] [STEP 54] Function: update_until | Line: 472 | Final elevation stats | min=4.695476192547066e-06, max=0.014476688772301786
+[11:23:05] [RANK 0] [STEP 55] Function: update_until | Line: 478 | Final deposition_erosion stats | min=-0.00037533356573723196, max=0.01386272281633589
+[11:23:05] [RANK 0] [STEP 56] Function: update_until | Line: 484 | Returning dimensional_deposition_erosion
+[11:23:05] [RANK 0] [STEP 57] Function: update_until | Line: 302 | Entered update_until
+[11:23:05] [RANK 0] [STEP 58] Function: update_until | Line: 305 | Computed dt = 1.0
+[11:23:05] [RANK 0] [STEP 59] Function: update_until | Line: 307 | Timestep incremented to 3
+[11:23:05] [RANK 0] [STEP 60] Function: update_until | Line: 310 | Initialized deposition_erosion array
+[11:23:05] [RANK 0] [STEP 61] Function: update_until | Line: 312 | dt > 0 condition TRUE
+[11:23:05] [RANK 0] [STEP 62] Function: update_until | Line: 314 | n_substeps = 1
+[11:23:05] [RANK 0] [STEP 63] Function: update_until | Line: 316 | sub_dt = 1.0
+[11:23:05] [RANK 0] [STEP 64] Function: update_until | Line: 319 | Starting substep 0
+[11:23:05] [RANK 0] [STEP 65] Function: update_until | Line: 323 | Copied elevation_before | max = 0.014476688772301786
+[11:23:05] [RANK 0] [STEP 66] Function: update_until | Line: 334 | Starting diffusion
+[11:23:05] [RANK 0] [STEP 67] Function: update_until | Line: 355 | Finished diffusion | max elevation = 0.00631750848231354
+[11:23:05] [RANK 0] [STEP 68] Function: update_until | Line: 360 | diffusion_change = 0.013365169626005244
+[11:23:05] [RANK 0] [STEP 69] Function: update_until | Line: 396 | Starting uplift
+[11:23:05] [RANK 0] [STEP 70] Function: update_until | Line: 421 | Finished uplift | max elevation = 0.01713442919345352
+[11:23:05] [RANK 0] [STEP 71] Function: update_until | Line: 426 | uplift_change = 0.014
+[11:23:05] [RANK 0] [STEP 72] Function: update_until | Line: 437 | Starting erosion/deposition
+[11:23:05] [RANK 0] [STEP 73] Function: update_until | Line: 441 | Finished erosion/deposition | max deposition_erosion = 0.00579155674674958
+[11:23:05] [RANK 0] [STEP 74] Function: update_until | Line: 449 | Updating current_time to 2.0
+[11:23:05] [RANK 0] [STEP 75] Function: update_until | Line: 452 | Saving landlab output
+[11:23:05] [RANK 0] [STEP 76] Function: update_until | Line: 454 | Finished saving landlab output
+[11:23:05] [RANK 0] [STEP 77] Function: update_until | Line: 462 | Computing dimensional deposition/erosion
+[11:23:05] [RANK 0] [STEP 78] Function: update_until | Line: 472 | Final elevation stats | min=4.695476192547066e-06, max=0.01713442919345352
+[11:23:05] [RANK 0] [STEP 79] Function: update_until | Line: 478 | Final deposition_erosion stats | min=0.0, max=0.00579155674674958
+[11:23:05] [RANK 0] [STEP 80] Function: update_until | Line: 484 | Returning dimensional_deposition_erosion
+[11:23:05] [RANK 0] [STEP 81] Function: update_until | Line: 302 | Entered update_until
+[11:23:05] [RANK 0] [STEP 82] Function: update_until | Line: 305 | Computed dt = 1.0
+[11:23:05] [RANK 0] [STEP 83] Function: update_until | Line: 307 | Timestep incremented to 4
+[11:23:05] [RANK 0] [STEP 84] Function: update_until | Line: 310 | Initialized deposition_erosion array
+[11:23:05] [RANK 0] [STEP 85] Function: update_until | Line: 312 | dt > 0 condition TRUE
+[11:23:05] [RANK 0] [STEP 86] Function: update_until | Line: 314 | n_substeps = 1
+[11:23:05] [RANK 0] [STEP 87] Function: update_until | Line: 316 | sub_dt = 1.0
+[11:23:05] [RANK 0] [STEP 88] Function: update_until | Line: 319 | Starting substep 0
+[11:23:05] [RANK 0] [STEP 89] Function: update_until | Line: 323 | Copied elevation_before | max = 0.01713442919345352
+[11:23:05] [RANK 0] [STEP 90] Function: update_until | Line: 334 | Starting diffusion
+[11:23:05] [RANK 0] [STEP 91] Function: update_until | Line: 355 | Finished diffusion | max elevation = 0.008831130994862775
+[11:23:05] [RANK 0] [STEP 92] Function: update_until | Line: 360 | diffusion_change = 0.013783737553956866
+[11:23:05] [RANK 0] [STEP 93] Function: update_until | Line: 396 | Starting uplift
+[11:23:05] [RANK 0] [STEP 94] Function: update_until | Line: 421 | Finished uplift | max elevation = 0.019009135054567354
+[11:23:05] [RANK 0] [STEP 95] Function: update_until | Line: 426 | uplift_change = 0.014000000000000002
+[11:23:05] [RANK 0] [STEP 96] Function: update_until | Line: 437 | Starting erosion/deposition
+[11:23:05] [RANK 0] [STEP 97] Function: update_until | Line: 441 | Finished erosion/deposition | max deposition_erosion = 0.0025537170173639823
+[11:23:05] [RANK 0] [STEP 98] Function: update_until | Line: 449 | Updating current_time to 3.0
+[11:23:05] [RANK 0] [STEP 99] Function: update_until | Line: 452 | Saving landlab output
+[11:23:05] [RANK 0] [STEP 100] Function: update_until | Line: 454 | Finished saving landlab output
+[11:23:05] [RANK 0] [STEP 101] Function: update_until | Line: 462 | Computing dimensional deposition/erosion
+[11:23:05] [RANK 0] [STEP 102] Function: update_until | Line: 472 | Final elevation stats | min=4.695476192547066e-06, max=0.019009135054567354
+[11:23:05] [RANK 0] [STEP 103] Function: update_until | Line: 478 | Final deposition_erosion stats | min=0.0, max=0.0025537170173639823
+[11:23:05] [RANK 0] [STEP 104] Function: update_until | Line: 484 | Returning dimensional_deposition_erosion

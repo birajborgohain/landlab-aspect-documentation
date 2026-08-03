@@ -1,0 +1,497 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2 August 2026 Investigation of Unit Conversion and Solver Failure in the ASPECT–Landlab Coupling &mdash; Landlab-Aspect Development Documentation 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d75fae25" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=fa26092b" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../_static/slides.js?v=4682ba28"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="August 1, 2026, Varification - Deposition Implementation Tests - Deposition and Rift Basin" href="August_1_2026.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Landlab-Aspect Development Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation Landlab-ASPECT</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation/installation_running.html">Setup Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../installation/installation_running.html#python-environment-uv">1. Python Environment (uv)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../installation/installation_running.html#install-aspect-with-python-support">2. Install ASPECT with Python Support</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../verifications/index.html">Varification (What is being tested?)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../verifications/uplift_diffusion_n_substeps.html">Verification of the <code class="docutils literal notranslate"><span class="pre">n_substeps</span></code> Coupling Algorithm</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../verifications/uplift_diffusion_n_substeps.html#objective">Objective</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../verifications/uplift_diffusion_n_substeps.html#how-discrepancy-was-identified">How discrepancy was identified?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../verifications/uplift_diffusion_n_substeps.html#method-applied-to-investigate-the-origin-of-the-discrepancy">Method applied to investigate the origin of the discrepancy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../verifications/uplift_diffusion_n_substeps.html#model-setup">Model Setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/uplift_diffusion_n_substeps.html#case-1-landlab-induced-uplift-configuration">Case 1 : Landlab induced uplift configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/uplift_diffusion_n_substeps.html#case-2-aspect-induced-uplift-configuration">Case 2 : ASPECT induced uplift configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../verifications/uplift_diffusion_n_substeps.html#results">Results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../verifications/uplift_diffusion_n_substeps.html#interpretation">Interpretation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../verifications/uplift_diffusion_n_substeps.html#discussion">Discussion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../verifications/uplift_diffusion_n_substeps.html#summary">Summary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../verifications/uplift_diffusion_n_substeps.html#figures">Figures</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/uplift_diffusion_n_substeps.html#figure-1-problem-defintion">Figure 1: Problem defintion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/uplift_diffusion_n_substeps.html#discrepancy-in-topographic-response-for-between-coupled-aspectlandlab-and-standalone-landlab-in-n-substeps-1-greater-then-1-scenarios">Discrepancy in Topographic Response for  Between Coupled ASPECT–Landlab and Standalone Landlab in <code class="docutils literal notranslate"><span class="pre">n_substeps</span> <span class="pre">&gt;</span> <span class="pre">1</span></code>   <code class="docutils literal notranslate"><span class="pre">(Greater</span> <span class="pre">then</span> <span class="pre">1)</span></code> Scenarios</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/uplift_diffusion_n_substeps.html#figure-2-n-substeps-purpose">Figure 2: <code class="docutils literal notranslate"><span class="pre">n_substeps</span></code> Purpose</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/uplift_diffusion_n_substeps.html#coupling-larger-time-with-shorter-time-frame">Coupling Larger Time with Shorter Time frame</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/uplift_diffusion_n_substeps.html#figure-3-hypothesis">Figure 3 Hypothesis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/uplift_diffusion_n_substeps.html#increasing-n-substeps-should-not-change-the-solution">Increasing <code class="docutils literal notranslate"><span class="pre">n_substeps</span></code> Should Not Change the Solution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/uplift_diffusion_n_substeps.html#figure-4-thumbnail">Figure 4: Thumbnail</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/uplift_diffusion_n_substeps.html#uplift-diffusion-algorithm-in-coupled-landlab-aspect-framework">Uplift-Diffusion Algorithm in coupled Landlab-ASPECT framework</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/uplift_diffusion_n_substeps.html#figure-5-operator-splitting-error-or-non-simultaneous-process-interaction">Figure 5: Operator Splitting Error (or Non-Simultaneous Process Interaction)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/uplift_diffusion_n_substeps.html#isolation-of-diffusion-and-uplift-effects-using-elevation-tracers">Isolation of Diffusion and Uplift Effects Using Elevation Tracers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/uplift_diffusion_n_substeps.html#figure-6-summary">Figure 6: Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../verifications/uplift_diffusion_n_substeps.html#complementary-experiments">Complementary Experiments</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/uplift_diffusion_n_substeps.html#figure-c1-diffusion-first-then-uplift">Figure C1: Diffusion first <code class="docutils literal notranslate"><span class="pre">THEN</span></code> Uplift</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/uplift_diffusion_n_substeps.html#figure-c2-uplift-first-then-diffusion">Figure C2: Uplift first <code class="docutils literal notranslate"><span class="pre">THEN</span></code> Diffusion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/uplift_diffusion_n_substeps.html#figure-c3-ideal-case-scenario">Figure C3: Ideal case scenario</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/uplift_diffusion_n_substeps.html#figure-c4-coupled-landlab-defined-uplift-no-difusion-uniform-uplift">Figure C4: Coupled Landlab defined uplift (No difusion) uniform Uplift</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/uplift_diffusion_n_substeps.html#figure-c5-aspect-defined-uplift-no-difusion-uniform-uplift">Figure C5: ASPECT defined uplift (No difusion) uniform Uplift</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/uplift_diffusion_n_substeps.html#figure-c7-uplift-implementation-difference">Figure C7: Uplift Implementation difference</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/uplift_diffusion_n_substeps.html#figure-c8-n-substeps-10-scenario-crosssection-of-each-time-step-total-of-4">Figure C8: <code class="docutils literal notranslate"><span class="pre">n_substeps</span> <span class="pre">=</span> <span class="pre">10</span></code> scenario: Crosssection of each time step (total of 4)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/uplift_diffusion_n_substeps.html#figure-c9-n-substeps-1-scenario-crosssection-of-each-time-step-total-of-4">Figure C9: <code class="docutils literal notranslate"><span class="pre">n_substeps</span> <span class="pre">=</span> <span class="pre">1</span></code> scenario: Crosssection of each time step (total of 4)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/uplift_diffusion_n_substeps.html#figure-c10-n-substeps-1-scenario-diffusion-and-uplift-effect-on-elevation-changes">Figure C10: <code class="docutils literal notranslate"><span class="pre">n_substeps</span> <span class="pre">=</span> <span class="pre">1</span></code> scenario: Diffusion and Uplift effect on Elevation Changes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/uplift_diffusion_n_substeps.html#figure-c11-n-substeps-2-scenario-diffusion-and-uplift-effect-on-elevation-changes">Figure C11: <code class="docutils literal notranslate"><span class="pre">n_substeps</span> <span class="pre">=</span> <span class="pre">2</span></code> scenario: Diffusion and Uplift effect on Elevation Changes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/uplift_diffusion_n_substeps.html#figure-c12-n-substeps-3-scenario-diffusion-and-uplift-effect-on-elevation-changes">Figure C12: <code class="docutils literal notranslate"><span class="pre">n_substeps</span> <span class="pre">=</span> <span class="pre">3</span></code> scenario: Diffusion and Uplift effect on Elevation Changes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/uplift_diffusion_n_substeps.html#figure-c13-n-substeps-6-scenario-diffusion-and-uplift-effect-on-elevation-changes">Figure C13: <code class="docutils literal notranslate"><span class="pre">n_substeps</span> <span class="pre">=</span> <span class="pre">6</span></code> scenario: Diffusion and Uplift effect on Elevation Changes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/uplift_diffusion_n_substeps.html#figure-c14-n-substeps-20-scenario-diffusion-and-uplift-effect-on-elevation-changes">Figure C14: <code class="docutils literal notranslate"><span class="pre">n_substeps</span> <span class="pre">=</span> <span class="pre">20</span></code> scenario: Diffusion and Uplift effect on Elevation Changes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../verifications/deposition_Landlab_ASPECT_test/index.html">Deposition Implementation Tests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../verifications/deposition_Landlab_ASPECT_test/denial_adalace_T-model_test.html">Error-1: Python Callback API Mismatch: <code class="docutils literal notranslate"><span class="pre">update_until()</span></code> Missing Required Argument</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/deposition_Landlab_ASPECT_test/denial_adalace_T-model_test.html#description">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/deposition_Landlab_ASPECT_test/denial_adalace_T-model_test.html#command">Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/deposition_Landlab_ASPECT_test/denial_adalace_T-model_test.html#software-environment">Software Environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/deposition_Landlab_ASPECT_test/denial_adalace_T-model_test.html#simulation-progress">Simulation Progress</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/deposition_Landlab_ASPECT_test/denial_adalace_T-model_test.html#failure">Failure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/deposition_Landlab_ASPECT_test/denial_adalace_T-model_test.html#exception">Exception</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/deposition_Landlab_ASPECT_test/denial_adalace_T-model_test.html#root-cause">Root Cause</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/deposition_Landlab_ASPECT_test/denial_adalace_T-model_test.html#execution-flow">Execution Flow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/deposition_Landlab_ASPECT_test/denial_adalace_T-model_test.html#resolution">Resolution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/deposition_Landlab_ASPECT_test/denial_adalace_T-model_test.html#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../verifications/deposition_Landlab_ASPECT_test/denial_adalace_T-model_with-pr43.html">Error-2: Segmentation Fault During World Builder Initialization</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/deposition_Landlab_ASPECT_test/denial_adalace_T-model_with-pr43.html#description">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/deposition_Landlab_ASPECT_test/denial_adalace_T-model_with-pr43.html#command">Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/deposition_Landlab_ASPECT_test/denial_adalace_T-model_with-pr43.html#software-environment">Software Environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/deposition_Landlab_ASPECT_test/denial_adalace_T-model_with-pr43.html#simulation-progress">Simulation Progress</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/deposition_Landlab_ASPECT_test/denial_adalace_T-model_with-pr43.html#failure">Failure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/deposition_Landlab_ASPECT_test/denial_adalace_T-model_with-pr43.html#stack-trace">Stack Trace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/deposition_Landlab_ASPECT_test/denial_adalace_T-model_with-pr43.html#root-cause">Root Cause</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/deposition_Landlab_ASPECT_test/denial_adalace_T-model_with-pr43.html#execution-flow">Execution Flow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/deposition_Landlab_ASPECT_test/denial_adalace_T-model_with-pr43.html#comparison-with-previous-failure">Comparison with Previous Failure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/deposition_Landlab_ASPECT_test/denial_adalace_T-model_with-pr43.html#resolution">Resolution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/deposition_Landlab_ASPECT_test/denial_adalace_T-model_with-pr43.html#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../verifications/deposition_Landlab_ASPECT_test/fastscape_to_Landlab-mapping.html">Deposition and Rift Basin Evolution</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/deposition_Landlab_ASPECT_test/fastscape_to_Landlab-mapping.html#table-of-fastscape-aspect-to-landlab-aspect-mapping">Table of FastScape–ASPECT to Landlab–ASPECT Mapping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/deposition_Landlab_ASPECT_test/fastscape_to_Landlab-mapping.html#time-stepping">Time stepping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/deposition_Landlab_ASPECT_test/fastscape_to_Landlab-mapping.html#uplift">Uplift</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/deposition_Landlab_ASPECT_test/fastscape_to_Landlab-mapping.html#horizontal-advection">Horizontal advection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/deposition_Landlab_ASPECT_test/fastscape_to_Landlab-mapping.html#flow-routing">Flow routing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/deposition_Landlab_ASPECT_test/fastscape_to_Landlab-mapping.html#erosion-and-deposition">Erosion and deposition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/deposition_Landlab_ASPECT_test/fastscape_to_Landlab-mapping.html#common-erosional-parameter-mapping">Common Erosional Parameter Mapping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/deposition_Landlab_ASPECT_test/fastscape_to_Landlab-mapping.html#deposition-parameter-mapping">Deposition Parameter Mapping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/deposition_Landlab_ASPECT_test/fastscape_to_Landlab-mapping.html#marine-parameter-mapping">Marine Parameter Mapping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/deposition_Landlab_ASPECT_test/fastscape_to_Landlab-mapping.html#mesh-geometry-boundaries">Mesh Geometry &amp; Boundaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/deposition_Landlab_ASPECT_test/fastscape_to_Landlab-mapping.html#boundary-conditions">Boundary Conditions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/deposition_Landlab_ASPECT_test/fastscape_to_Landlab-mapping.html#landlab-component-initialization">Landlab component initialization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/deposition_Landlab_ASPECT_test/fastscape_to_Landlab-mapping.html#missing-fastscape-features-in-the-current-landlab-aspect-implementation">Missing FastScape Features in the Current Landlab–ASPECT Implementation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/deposition_Landlab_ASPECT_test/fastscape_to_Landlab-mapping.html#figures">Figures</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/deposition_Landlab_ASPECT_test/fastscape_to_Landlab-mapping.html#reproducing-the-liang-2025-epsl-landlab-aspect-test">Reproducing the Liang (2025) EPSL Landlab–ASPECT Test</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/deposition_Landlab_ASPECT_test/fastscape_to_Landlab-mapping.html#input-output-directory">Input/Output Directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/deposition_Landlab_ASPECT_test/fastscape_to_Landlab-mapping.html#aspect-executable">ASPECT Executable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../verifications/deposition_Landlab_ASPECT_test/fastscape_to_Landlab-mapping.html#run-command">Run Command</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../implementation/index.html">Implementation (What has been successfully developed?)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../implementation/PR_diffusion_of_hill.html">Benchmark Recreation: ASPECT <code class="docutils literal notranslate"><span class="pre">diffusion_of_hill</span></code> Using Landlab</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../open_questions/index.html">Open Questions (What remains to be understood?)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Development Journal</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="August_1_2026.html">August 1, 2026, Varification - Deposition Implementation Tests - Deposition and Rift Basin</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="August_1_2026.html#fastscapelandlab-integration-horizontal-surface-advection-parameter-mapping-and-code-refinement">FastScape–Landlab Integration: Horizontal Surface Advection, Parameter Mapping, and Code Refinement</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2 August 2026 Investigation of Unit Conversion and Solver Failure in the ASPECT–Landlab Coupling</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Landlab-Aspect Development Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Development Journal</a></li>
+      <li class="breadcrumb-item active">2 August 2026 Investigation of Unit Conversion and Solver Failure in the ASPECT–Landlab Coupling</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/development_journal/August_2_2026_s2yr_debug.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="August_1_2026.html" class="btn btn-neutral float-left" title="August 1, 2026, Varification - Deposition Implementation Tests - Deposition and Rift Basin" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="august-2026-investigation-of-unit-conversion-and-solver-failure-in-the-aspectlandlab-coupling">
+<h1>2 August 2026 Investigation of Unit Conversion and Solver Failure in the ASPECT–Landlab Coupling<a class="headerlink" href="#august-2026-investigation-of-unit-conversion-and-solver-failure-in-the-aspectlandlab-coupling" title="Link to this heading"></a></h1>
+<p><strong>Objective</strong></p>
+<p>Today’s work focused on investigating a numerical instability encountered
+after replacing the original FastScape coupling with the new Landlab
+implementation while preserving the same parameter values from the original
+ASPECT FastScape model.</p>
+<p>The main objective was to determine whether the instability originated from</p>
+<ul class="simple">
+<li><p>incorrect unit conversion,</p></li>
+<li><p>differences between FastScape and Landlab,</p></li>
+<li><p>the ASPECT–Landlab coupling,</p></li>
+<li><p>or the newly introduced ghost-node implementation.</p></li>
+</ul>
+<p><strong>Background</strong></p>
+<p>Originally, the Landlab implementation converted several parameters from
+per-year units to per-second units before passing them to Landlab:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">D</span> <span class="o">=</span> <span class="mf">1e-2</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">s2yr</span>
+<span class="n">K</span> <span class="o">=</span> <span class="mf">1e-6</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">s2yr</span>
+<span class="n">shallow_water_diffusivity</span> <span class="o">=</span> <span class="mf">1e-2</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">s2yr</span>
+</pre></div>
+</div>
+<p>The motivation for changing this was based on the ASPECT parameter file,
+which contains</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>set Use years in output instead of seconds = true
+</pre></div>
+</div>
+<p>Since the original FastScape parameters are documented in units of
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">m/year()</span></code> and <span class="math notranslate nohighlight">\(m^2/year\)</span>, it appeared more natural to pass the
+same parameter values directly into Landlab:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">D</span> <span class="o">=</span> <span class="mf">1e-2</span>
+<span class="n">K</span> <span class="o">=</span> <span class="mf">1e-6</span>
+<span class="n">shallow_water_diffusivity</span> <span class="o">=</span> <span class="mf">1e-2</span>
+</pre></div>
+</div>
+<p>This modification was expected to make the Landlab implementation consistent
+with the original FastScape implementation.</p>
+<p><strong>Observed Error</strong></p>
+<p>Immediately after removing the <code class="docutils literal notranslate"><span class="pre">/</span> <span class="pre">self.s2yr</span></code> conversions, the coupled model
+failed.</p>
+<p>The ASPECT log first reported</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>RuntimeWarning:
+divide by zero encountered in divide
+
+RuntimeWarning:
+overflow encountered in divide
+</pre></div>
+</div>
+<p>Immediately afterwards, the topography became</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Max elevation = 51837293163
+
+Min elevation = -17681406182
+</pre></div>
+</div>
+<p>These elevations are physically impossible and indicate that the numerical
+solution became unstable during the very first timestep.</p>
+<p>Following this instability, ASPECT terminated with</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>The iterative advection solver in
+Simulator::solve_advection did not converge.
+</pre></div>
+</div>
+<p>Finally, MPI aborted the simulation.</p>
+<p><strong>Interpretation of the Error</strong></p>
+<p>Initially it appeared that the ASPECT temperature solver was responsible for
+the crash.</p>
+<p>However, after carefully reading the error log, the sequence of events became
+clear:</p>
+<ol class="arabic simple">
+<li><p>Landlab produces runtime warnings.</p></li>
+<li><p>The surface elevation becomes numerically unstable.</p></li>
+<li><p>Topography grows to approximately <span class="math notranslate nohighlight">\(10^{10}\)</span> m.</p></li>
+<li><p>ASPECT attempts to deform the surface.</p></li>
+<li><p>The temperature advection solver fails to converge.</p></li>
+<li><p>MPI aborts the simulation.</p></li>
+</ol>
+<p>Therefore, the ASPECT solver failure is not the root cause. Instead, it is a
+consequence of an earlier numerical instability occurring inside the
+landscape evolution model.</p>
+<p><strong>Initial Hypothesis</strong></p>
+<p>The first hypothesis was that removing</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">s2yr</span>
+</pre></div>
+</div>
+<p>increased the diffusivities and erosion coefficients by a factor of</p>
+<div class="math notranslate nohighlight">
+\[365.25 \times 24 \times 60 \times 60
+\approx
+3.16 \times 10^7\]</div>
+<p>This would make diffusion and erosion approximately thirty million times
+stronger than before and therefore provide a straightforward explanation for
+the numerical instability.</p>
+<p><strong>Inspection of LandLabTemplate</strong></p>
+<p>The next step was to inspect the implementation of
+<code class="docutils literal notranslate"><span class="pre">LandLabTemplate</span></code>.</p>
+<p>The objective was to determine whether ASPECT or the coupling framework was
+already performing hidden conversions between years and seconds.</p>
+<p>The following functions were examined:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">determine_uplift_velocity()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">determine_horizontal_velocity()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dimensional_deposition_erosion()</span></code></p></li>
+<li><p>initialization of <code class="docutils literal notranslate"><span class="pre">self.s2yr</span></code></p></li>
+</ul>
+<p><strong>Findings</strong></p>
+<p>No unit conversions were found.</p>
+<p>Specifically,</p>
+<ul class="simple">
+<li><p>uplift velocities are copied directly from ASPECT,</p></li>
+<li><p>horizontal velocities are copied directly from ASPECT,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dimensional_deposition_erosion()</span></code> only averages values for 2-D models,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">self.s2yr</span></code> is simply defined and never used inside the template.</p></li>
+</ul>
+<p>This eliminated the possibility that the coupling framework was silently
+converting between years and seconds.</p>
+<p><strong>Inspection of Landlab Components</strong></p>
+<p>The next stage was to inspect the source code of the individual Landlab
+components to determine their expected time units.</p>
+<p><strong>LinearDiffuser</strong></p>
+<p>The first important observation was</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">_unit_agnostic</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p>The documentation specifies</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>linear_diffusivity : m² / time
+</pre></div>
+</div>
+<p>rather than</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>m²/s
+</pre></div>
+</div>
+<p>Similarly, the timestep documentation specifies only</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>dt : time
+</pre></div>
+</div>
+<p>The internal CFL stability criterion is computed as</p>
+<div class="math notranslate nohighlight">
+\[\Delta t
+\propto
+\frac{\Delta x^2}{D}\]</div>
+<p>which remains dimensionally consistent regardless of whether the time unit is</p>
+<ul class="simple">
+<li><p>seconds,</p></li>
+<li><p>years,</p></li>
+<li><p>kyr,</p></li>
+<li><p>or Myr,</p></li>
+</ul>
+<p>provided both <code class="docutils literal notranslate"><span class="pre">D</span></code> and <code class="docutils literal notranslate"><span class="pre">dt</span></code> use the same unit.</p>
+<p><strong>Conclusion</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">LinearDiffuser</span></code> is genuinely unit agnostic.</p>
+<p><strong>SimpleSubmarineDiffuser</strong></p>
+<p>Unlike <code class="docutils literal notranslate"><span class="pre">LinearDiffuser</span></code>, the submarine diffuser explicitly documents its
+time units.</p>
+<p>Its constructor specifies</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>shallow_water_diffusivity (m² / y)
+</pre></div>
+</div>
+<p>Its timestep documentation specifies</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>dt : Time-step duration (y)
+</pre></div>
+</div>
+<p>The component also defines</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">_time_units</span> <span class="o">=</span> <span class="s2">&quot;y&quot;</span>
+</pre></div>
+</div>
+<p><strong>Conclusion</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">SimpleSubmarineDiffuser</span></code> is explicitly designed to operate using years.</p>
+<p><strong>ErosionDeposition</strong></p>
+<p>The erosion-deposition component documents its parameters using generic units</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>L / T
+</pre></div>
+</div>
+<p>and</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>dt : Model timestep [T]
+</pre></div>
+</div>
+<p>rather than seconds.</p>
+<p><strong>Conclusion</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">ErosionDeposition</span></code> is also unit agnostic provided all quantities are
+internally consistent.</p>
+<p><strong>Current Understanding</strong></p>
+<p>After inspecting both the coupling framework and the Landlab source code, the
+original hypothesis became significantly weaker.</p>
+<p>The investigation now indicates that</p>
+<ul class="simple">
+<li><p>ASPECT is operating in years.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LandLabTemplate</span></code> performs no hidden unit conversions.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LinearDiffuser</span></code> is unit agnostic.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ErosionDeposition</span></code> is unit agnostic.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SimpleSubmarineDiffuser</span></code> explicitly expects years.</p></li>
+</ul>
+<p>Therefore, using</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">D</span> <span class="o">=</span> <span class="mf">1e-2</span>
+<span class="n">K</span> <span class="o">=</span> <span class="mf">1e-6</span>
+<span class="n">shallow_water_diffusivity</span> <span class="o">=</span> <span class="mf">1e-2</span>
+</pre></div>
+</div>
+<p>appears to be the more internally consistent implementation.</p>
+<p>This naturally raises the following question:</p>
+<p><strong>If the units are now internally consistent, why does the simulation still
+become unstable?</strong></p>
+<p><strong>Current Leading Hypotheses</strong></p>
+<p>The instability is now believed to originate from something other than the
+simple removal of <code class="docutils literal notranslate"><span class="pre">/</span> <span class="pre">self.s2yr</span></code>.</p>
+<p>The leading possibilities are</p>
+<ol class="arabic simple">
+<li><p>interaction between the newly introduced ghost nodes and one of the
+Landlab components,</p></li>
+<li><p>a mismatch between FastScape parameter definitions and the equivalent
+Landlab parameters,</p></li>
+<li><p>numerical instability within one specific Landlab component.</p></li>
+</ol>
+<p><strong>Planned Debugging Strategy</strong></p>
+<p>Rather than modifying the unit conversions again, the next debugging stage
+will isolate the component responsible for the instability.</p>
+<p>The components will be enabled sequentially.</p>
+<p><strong>Stage 1</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">flow_accumulator</span><span class="o">.</span><span class="n">run_one_step</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Stage 2</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">flow_accumulator</span><span class="o">.</span><span class="n">run_one_step</span><span class="p">()</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">linear_diffuser</span><span class="o">.</span><span class="n">run_one_step</span><span class="p">(</span><span class="n">sub_dt</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Stage 3</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">flow_accumulator</span><span class="o">.</span><span class="n">run_one_step</span><span class="p">()</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">linear_diffuser</span><span class="o">.</span><span class="n">run_one_step</span><span class="p">(</span><span class="n">sub_dt</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">erosion_deposition</span><span class="o">.</span><span class="n">run_one_step</span><span class="p">(</span><span class="n">sub_dt</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Stage 4</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">flow_accumulator</span><span class="o">.</span><span class="n">run_one_step</span><span class="p">()</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">linear_diffuser</span><span class="o">.</span><span class="n">run_one_step</span><span class="p">(</span><span class="n">sub_dt</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">erosion_deposition</span><span class="o">.</span><span class="n">run_one_step</span><span class="p">(</span><span class="n">sub_dt</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">submarine_diffuser</span><span class="o">.</span><span class="n">run_one_step</span><span class="p">(</span><span class="n">sub_dt</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>After each component call, the following diagnostic checks will be added:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">nanmin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">elevation</span><span class="p">),</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">elevation</span><span class="p">),</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">elevation</span><span class="p">)),</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isinf</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">elevation</span><span class="p">))</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>This should identify exactly which component first produces invalid
+elevations.</p>
+<p><strong>Next Steps</strong></p>
+<p>The immediate objectives for the next development session are</p>
+<ul class="simple">
+<li><p>isolate the first Landlab component that generates unstable elevations,</p></li>
+<li><p>determine whether ghost nodes participate correctly in all Landlab
+calculations,</p></li>
+<li><p>verify that the FastScape parameters have identical physical meanings in
+their corresponding Landlab implementations,</p></li>
+<li><p>investigate the origin of the divide-by-zero warning inside Landlab,</p></li>
+<li><p>determine whether the numerical instability originates before or after the
+first diffusion calculation.</p></li>
+</ul>
+<p><strong>Status</strong></p>
+<p>The unit-conversion investigation substantially improved the understanding of
+the ASPECT–Landlab coupling.</p>
+<p>At present, there is no clear evidence that the instability is caused solely
+by using years instead of seconds.</p>
+<p>Instead, the evidence increasingly suggests that the instability originates
+from a numerical issue within one of the coupled Landlab components or from
+its interaction with the modified grid containing ghost nodes.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="August_1_2026.html" class="btn btn-neutral float-left" title="August 1, 2026, Varification - Deposition Implementation Tests - Deposition and Rift Basin" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Biraj Borgohain.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

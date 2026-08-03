@@ -1,0 +1,13 @@
+{
+  "file-series-version": "1.0",
+  "files": [
+    {
+      "name": "landlab_0001.vtk",
+      "time": 0.0
+    },
+    {
+      "name": "landlab_0002.vtk",
+      "time": 31556952.0
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+=====================================
+Standalone Landlab Execution Trace
+=====================================
+
+[12:27:42] [STEP 1] Function: test_diffusion | Line: 175 | TRACE INITIALIZED | output_file=/Users/biraj/software/landlab_ASPECT_test_2/aspect/cookbooks/landlab/diffusion_bechmark_from_landlab_inlandalb_ASPECT/outputs/Landlab_defined_uplift_N_SUBSET_1.5_ASPECT_end-time-3_Reference_end-time-3_standalone_Landlab_end-time-3_DT-0.5_trace/results_benchmark/trace_logs/landlab_execution_trace.txt
+[12:27:42] [STEP 2] Function: test_diffusion | Line: 187 | Simulation start | dt=0.5 | time_to_run=3.0
+[12:27:42] [STEP 3] Function: test_diffusion | Line: 197 | ================ LOOP 1 ================
+[12:27:42] [STEP 4] Function: test_diffusion | Line: 201 | elapsed_time_before = 0.0
+[12:27:42] [STEP 5] Function: test_diffusion | Line: 223 | Using dt = 0.5
+[12:27:42] [STEP 6] Function: test_diffusion | Line: 231 | Starting diffusion
+[12:27:42] [STEP 7] Function: test_diffusion | Line: 253 | max diffusion_change = 0.0005765836482620275
+[12:27:42] [STEP 8] Function: test_diffusion | Line: 258 | max elevation after diffusion = 0.0009988470065678664
+[12:27:42] [STEP 9] Function: test_diffusion | Line: 267 | Starting uplift
+[12:27:42] [STEP 10] Function: test_diffusion | Line: 293 | max uplift_change = 0.007
+[12:27:42] [STEP 11] Function: test_diffusion | Line: 298 | max elevation after uplift = 0.007496672763681937
+[12:27:42] [STEP 12] Function: test_diffusion | Line: 307 | Updating elapsed_time from 0.0 to 0.5
+[12:27:42] [STEP 13] Function: test_diffusion | Line: 315 | elapsed_time_after = 0.5
+[12:27:42] [STEP 14] Function: test_diffusion | Line: 197 | ================ LOOP 2 ================
+[12:27:42] [STEP 15] Function: test_diffusion | Line: 201 | elapsed_time_before = 0.5
+[12:27:42] [STEP 16] Function: test_diffusion | Line: 223 | Using dt = 0.5
+[12:27:42] [STEP 17] Function: test_diffusion | Line: 231 | Starting diffusion
+[12:27:42] [STEP 18] Function: test_diffusion | Line: 253 | max diffusion_change = 0.006321511220976831
+[12:27:42] [STEP 19] Function: test_diffusion | Line: 258 | max elevation after diffusion = 0.004956047902286345
+[12:27:42] [STEP 20] Function: test_diffusion | Line: 267 | Starting uplift
+[12:27:42] [STEP 21] Function: test_diffusion | Line: 293 | max uplift_change = 0.007000000000000001
+[12:27:42] [STEP 22] Function: test_diffusion | Line: 298 | max elevation after uplift = 0.010617185739121543
+[12:27:42] [STEP 23] Function: test_diffusion | Line: 307 | Updating elapsed_time from 0.5 to 1.0
+[12:27:42] [STEP 24] Function: test_diffusion | Line: 315 | elapsed_time_after = 1.0
+[12:27:42] [STEP 25] Function: test_diffusion | Line: 197 | ================ LOOP 3 ================
+[12:27:42] [STEP 26] Function: test_diffusion | Line: 201 | elapsed_time_before = 1.0
+[12:27:42] [STEP 27] Function: test_diffusion | Line: 223 | Using dt = 0.5
+[12:27:42] [STEP 28] Function: test_diffusion | Line: 231 | Starting diffusion
+[12:27:42] [STEP 29] Function: test_diffusion | Line: 253 | max diffusion_change = 0.006683600741166637
+[12:27:42] [STEP 30] Function: test_diffusion | Line: 258 | max elevation after diffusion = 0.00782605277786083
+[12:27:42] [STEP 31] Function: test_diffusion | Line: 267 | Starting uplift
+[12:27:42] [STEP 32] Function: test_diffusion | Line: 293 | max uplift_change = 0.007000000000000001
+[12:27:42] [STEP 33] Function: test_diffusion | Line: 298 | max elevation after uplift = 0.013154501821843002
+[12:27:42] [STEP 34] Function: test_diffusion | Line: 307 | Updating elapsed_time from 1.0 to 1.5
+[12:27:42] [STEP 35] Function: test_diffusion | Line: 315 | elapsed_time_after = 1.5
+[12:27:42] [STEP 36] Function: test_diffusion | Line: 197 | ================ LOOP 4 ================
+[12:27:42] [STEP 37] Function: test_diffusion | Line: 201 | elapsed_time_before = 1.5
+[12:27:42] [STEP 38] Function: test_diffusion | Line: 223 | Using dt = 0.5
+[12:27:42] [STEP 39] Function: test_diffusion | Line: 231 | Starting diffusion
+[12:27:42] [STEP 40] Function: test_diffusion | Line: 253 | max diffusion_change = 0.006821186207842242
+[12:27:42] [STEP 41] Function: test_diffusion | Line: 258 | max elevation after diffusion = 0.00966133543483255
+[12:27:42] [STEP 42] Function: test_diffusion | Line: 267 | Starting uplift
+[12:27:42] [STEP 43] Function: test_diffusion | Line: 293 | max uplift_change = 0.007000000000000001
+[12:27:42] [STEP 44] Function: test_diffusion | Line: 298 | max elevation after uplift = 0.01481315416758424
+[12:27:42] [STEP 45] Function: test_diffusion | Line: 307 | Updating elapsed_time from 1.5 to 2.0
+[12:27:42] [STEP 46] Function: test_diffusion | Line: 315 | elapsed_time_after = 2.0
+[12:27:42] [STEP 47] Function: test_diffusion | Line: 197 | ================ LOOP 5 ================
+[12:27:42] [STEP 48] Function: test_diffusion | Line: 201 | elapsed_time_before = 2.0
+[12:27:42] [STEP 49] Function: test_diffusion | Line: 223 | Using dt = 0.5
+[12:27:42] [STEP 50] Function: test_diffusion | Line: 231 | Starting diffusion
+[12:27:42] [STEP 51] Function: test_diffusion | Line: 253 | max diffusion_change = 0.006891998786957612
+[12:27:42] [STEP 52] Function: test_diffusion | Line: 258 | max elevation after diffusion = 0.010841882811421013
+[12:27:42] [STEP 53] Function: test_diffusion | Line: 267 | Starting uplift
+[12:27:42] [STEP 54] Function: test_diffusion | Line: 293 | max uplift_change = 0.007000000000000001
+[12:27:42] [STEP 55] Function: test_diffusion | Line: 298 | max elevation after uplift = 0.015857929704115193
+[12:27:42] [STEP 56] Function: test_diffusion | Line: 307 | Updating elapsed_time from 2.0 to 2.5
+[12:27:42] [STEP 57] Function: test_diffusion | Line: 315 | elapsed_time_after = 2.5
+[12:27:42] [STEP 58] Function: test_diffusion | Line: 197 | ================ LOOP 6 ================
+[12:27:42] [STEP 59] Function: test_diffusion | Line: 201 | elapsed_time_before = 2.5
+[12:27:42] [STEP 60] Function: test_diffusion | Line: 223 | Using dt = 0.5
+[12:27:42] [STEP 61] Function: test_diffusion | Line: 231 | Starting diffusion
+[12:27:42] [STEP 62] Function: test_diffusion | Line: 253 | max diffusion_change = 0.006932423792465945
+[12:27:42] [STEP 63] Function: test_diffusion | Line: 258 | max elevation after diffusion = 0.011615328018592792
+[12:27:42] [STEP 64] Function: test_diffusion | Line: 267 | Starting uplift
+[12:27:42] [STEP 65] Function: test_diffusion | Line: 293 | max uplift_change = 0.007000000000000001
+[12:27:42] [STEP 66] Function: test_diffusion | Line: 298 | max elevation after uplift = 0.016615328018592793
+[12:27:42] [STEP 67] Function: test_diffusion | Line: 307 | Updating elapsed_time from 2.5 to 3.0
+[12:27:42] [STEP 68] Function: test_diffusion | Line: 315 | elapsed_time_after = 3.0
+[12:27:42] [STEP 69] Function: test_diffusion | Line: 323 | =====================================
+[12:27:42] [STEP 70] Function: test_diffusion | Line: 327 | FINAL SUMMARY
+[12:27:42] [STEP 71] Function: test_diffusion | Line: 331 | Total loops = 6
+[12:27:42] [STEP 72] Function: test_diffusion | Line: 335 | Final elapsed_time = 3.0
+[12:27:42] [STEP 73] Function: test_diffusion | Line: 339 | Final max elevation = 0.016615328018592793

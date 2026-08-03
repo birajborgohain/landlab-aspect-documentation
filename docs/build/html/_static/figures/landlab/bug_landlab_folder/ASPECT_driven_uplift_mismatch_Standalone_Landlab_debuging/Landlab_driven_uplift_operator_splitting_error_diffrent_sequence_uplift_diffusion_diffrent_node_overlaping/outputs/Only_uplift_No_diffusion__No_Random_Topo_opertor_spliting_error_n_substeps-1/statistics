@@ -1,0 +1,15 @@
+# 1: Time step number
+# 2: Time (seconds)
+# 3: Time step size (seconds)
+# 4: Number of mesh cells
+# 5: Number of Stokes degrees of freedom
+# 6: Number of temperature degrees of freedom
+# 7: Number of nonlinear iterations
+# 8: Visualization file name
+# 9: Surface visualization file name
+# 10: Minimum topography (m)
+# 11: Maximum topography (m)
+0 0.000000000000e+00 0.000000000000e+00 171 7069 2223 0 outputs/Only_uplift_No_diffusion_opertor_spliting_error_n_substeps-1/solution/solution-00000 outputs/Only_uplift_No_diffusion_opertor_spliting_error_n_substeps-1/solution_surface/solution_surface-00000 0.00000000e+00 0.00000000e+00 
+1 1.000000000000e+00 1.000000000000e+00 171 7069 2223 0 outputs/Only_uplift_No_diffusion_opertor_spliting_error_n_substeps-1/solution/solution-00001 outputs/Only_uplift_No_diffusion_opertor_spliting_error_n_substeps-1/solution_surface/solution_surface-00001 0.00000000e+00 1.40000000e-02 
+2 2.000000000000e+00 1.000000000000e+00 171 7069 2223 0 outputs/Only_uplift_No_diffusion_opertor_spliting_error_n_substeps-1/solution/solution-00002 outputs/Only_uplift_No_diffusion_opertor_spliting_error_n_substeps-1/solution_surface/solution_surface-00002 0.00000000e+00 2.80000000e-02 
+3 3.000000000000e+00 1.000000000000e+00 171 7069 2223 0 outputs/Only_uplift_No_diffusion_opertor_spliting_error_n_substeps-1/solution/solution-00003 outputs/Only_uplift_No_diffusion_opertor_spliting_error_n_substeps-1/solution_surface/solution_surface-00003 0.00000000e+00 4.20000000e-02 

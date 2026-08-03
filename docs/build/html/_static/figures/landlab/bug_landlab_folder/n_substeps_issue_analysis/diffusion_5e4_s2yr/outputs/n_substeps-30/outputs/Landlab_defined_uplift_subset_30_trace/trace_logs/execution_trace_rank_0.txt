@@ -1,0 +1,978 @@
+=====================================
+ASPECT-Landlab Execution Trace
+MPI Rank: 0
+Trace File: outputs/Landlab_defined_uplift_subset_30_trace/trace_logs/execution_trace_rank_0.txt
+=====================================
+
+[17:15:25] [RANK 0] [STEP 1] Function: set_mesh_information | Line: 452 | Setting mesh information
+[17:15:25] [RANK 0] [STEP 2] Function: set_mesh_information | Line: 456 | Creating RasterModelGrid
+[17:15:25] [RANK 0] [STEP 3] Function: set_mesh_information | Line: 469 | Domain parameters | x_extent=900, y_extent=1900, spacing=100
+[17:15:25] [RANK 0] [STEP 4] Function: set_mesh_information | Line: 479 | Computed grid size | nrows=20, ncols=10
+[17:15:25] [RANK 0] [STEP 5] Function: set_mesh_information | Line: 492 | RasterModelGrid created | nodes=200
+[17:15:25] [RANK 0] [STEP 6] Function: set_mesh_information | Line: 507 | Initialized uplift_rate | min=0.0, max=0.014
+[17:15:25] [RANK 0] [STEP 7] Function: set_mesh_information | Line: 552 | Creating initial topography field
+[17:15:25] [RANK 0] [STEP 8] Function: set_mesh_information | Line: 555 | Random seed set to 0
+[17:15:25] [RANK 0] [STEP 9] Function: set_mesh_information | Line: 561 | Initialized elevation field | min=0.0, max=0.0
+[17:15:25] [RANK 0] [STEP 10] Function: set_mesh_information | Line: 569 | Setting fixed-value boundary conditions
+[17:15:25] [RANK 0] [STEP 11] Function: set_mesh_information | Line: 620 | Setting fixed-value boundary conditions
+[17:15:25] [RANK 0] [STEP 12] Function: set_mesh_information | Line: 631 | Grid summary | number_of_nodes=200
+[17:15:25] [RANK 0] [STEP 13] Function: set_mesh_information | Line: 635 | Initializing Landlab components
+[17:15:25] [RANK 0] [STEP 14] Function: initialize_landlab_components | Line: 646 | Entered initialize_landlab_components
+[17:15:25] [RANK 0] [STEP 15] Function: initialize_landlab_components | Line: 650 | Diffusivity D = 0.0015844043907014475
+[17:15:25] [RANK 0] [STEP 16] Function: initialize_landlab_components | Line: 657 | Created linear_diffusivity field
+[17:15:25] [RANK 0] [STEP 17] Function: initialize_landlab_components | Line: 660 | Assigned diffusivity values | min=0.0015844043907014475, max=0.0015844043907014475
+[17:15:25] [RANK 0] [STEP 18] Function: initialize_landlab_components | Line: 671 | LinearDiffuser initialized
+[17:15:25] [RANK 0] [STEP 19] Function: set_mesh_information | Line: 641 | Returning model_grid
+[17:15:25] [RANK 0] [STEP 20] Function: update_until | Line: 264 | Entered update_until
+[17:15:25] [RANK 0] [STEP 21] Function: update_until | Line: 267 | Computed dt = 0.0
+[17:15:25] [RANK 0] [STEP 22] Function: update_until | Line: 269 | Timestep incremented to 1
+[17:15:25] [RANK 0] [STEP 23] Function: update_until | Line: 272 | Initialized deposition_erosion array
+[17:15:25] [RANK 0] [STEP 24] Function: update_until | Line: 411 | Updating current_time to 0.0
+[17:15:25] [RANK 0] [STEP 25] Function: update_until | Line: 414 | Saving landlab output
+[17:15:25] [RANK 0] [STEP 26] Function: update_until | Line: 416 | Finished saving landlab output
+[17:15:25] [RANK 0] [STEP 27] Function: update_until | Line: 424 | Computing dimensional deposition/erosion
+[17:15:25] [RANK 0] [STEP 28] Function: update_until | Line: 434 | Final elevation stats | min=0.0, max=0.0
+[17:15:25] [RANK 0] [STEP 29] Function: update_until | Line: 440 | Final deposition_erosion stats | min=0.0, max=0.0
+[17:15:25] [RANK 0] [STEP 30] Function: update_until | Line: 446 | Returning dimensional_deposition_erosion
+[17:15:25] [RANK 0] [STEP 31] Function: update_until | Line: 264 | Entered update_until
+[17:15:25] [RANK 0] [STEP 32] Function: update_until | Line: 267 | Computed dt = 1.0
+[17:15:25] [RANK 0] [STEP 33] Function: update_until | Line: 269 | Timestep incremented to 2
+[17:15:25] [RANK 0] [STEP 34] Function: update_until | Line: 272 | Initialized deposition_erosion array
+[17:15:25] [RANK 0] [STEP 35] Function: update_until | Line: 274 | dt > 0 condition TRUE
+[17:15:25] [RANK 0] [STEP 36] Function: update_until | Line: 276 | n_substeps = 30
+[17:15:25] [RANK 0] [STEP 37] Function: update_until | Line: 278 | sub_dt = 0.03333333333333333
+[17:15:25] [RANK 0] [STEP 38] Function: update_until | Line: 281 | Starting substep 0
+[17:15:25] [RANK 0] [STEP 39] Function: update_until | Line: 285 | Copied elevation_before | max = 0.0
+[17:15:25] [RANK 0] [STEP 40] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 41] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.0
+[17:15:25] [RANK 0] [STEP 42] Function: update_until | Line: 322 | diffusion_change = 0.0
+[17:15:25] [RANK 0] [STEP 43] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 44] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.00046666666666666666
+[17:15:25] [RANK 0] [STEP 45] Function: update_until | Line: 388 | uplift_change = 0.00046666666666666666
+[17:15:25] [RANK 0] [STEP 46] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 47] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.00046666666666666666
+[17:15:25] [RANK 0] [STEP 48] Function: update_until | Line: 281 | Starting substep 1
+[17:15:25] [RANK 0] [STEP 49] Function: update_until | Line: 285 | Copied elevation_before | max = 0.00046666666666666666
+[17:15:25] [RANK 0] [STEP 50] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 51] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.0004666666640259927
+[17:15:25] [RANK 0] [STEP 52] Function: update_until | Line: 322 | diffusion_change = 5.105303061813532e-12
+[17:15:25] [RANK 0] [STEP 53] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 54] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.0009333333306926594
+[17:15:25] [RANK 0] [STEP 55] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666667
+[17:15:25] [RANK 0] [STEP 56] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 57] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.0009333333306926594
+[17:15:25] [RANK 0] [STEP 58] Function: update_until | Line: 281 | Starting substep 2
+[17:15:25] [RANK 0] [STEP 59] Function: update_until | Line: 285 | Copied elevation_before | max = 0.0009333333306926594
+[17:15:25] [RANK 0] [STEP 60] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 61] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.0009333333254113115
+[17:15:25] [RANK 0] [STEP 62] Function: update_until | Line: 322 | diffusion_change = 1.0210606015206847e-11
+[17:15:25] [RANK 0] [STEP 63] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 64] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.0013999999920779782
+[17:15:25] [RANK 0] [STEP 65] Function: update_until | Line: 388 | uplift_change = 0.00046666666666666677
+[17:15:25] [RANK 0] [STEP 66] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 67] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.0013999999920779782
+[17:15:25] [RANK 0] [STEP 68] Function: update_until | Line: 281 | Starting substep 3
+[17:15:25] [RANK 0] [STEP 69] Function: update_until | Line: 285 | Copied elevation_before | max = 0.0013999999920779782
+[17:15:25] [RANK 0] [STEP 70] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 71] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.0013999999841559562
+[17:15:25] [RANK 0] [STEP 72] Function: update_until | Line: 322 | diffusion_change = 1.5315908914390053e-11
+[17:15:25] [RANK 0] [STEP 73] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 74] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.001866666650822623
+[17:15:25] [RANK 0] [STEP 75] Function: update_until | Line: 388 | uplift_change = 0.00046666666666666666
+[17:15:25] [RANK 0] [STEP 76] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 77] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.001866666650822623
+[17:15:25] [RANK 0] [STEP 78] Function: update_until | Line: 281 | Starting substep 4
+[17:15:25] [RANK 0] [STEP 79] Function: update_until | Line: 285 | Copied elevation_before | max = 0.001866666650822623
+[17:15:25] [RANK 0] [STEP 80] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 81] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.0018666666402599272
+[17:15:25] [RANK 0] [STEP 82] Function: update_until | Line: 322 | diffusion_change = 2.0421211596732824e-11
+[17:15:25] [RANK 0] [STEP 83] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 84] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.002333333306926594
+[17:15:25] [RANK 0] [STEP 85] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666669
+[17:15:25] [RANK 0] [STEP 86] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 87] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.002333333306926594
+[17:15:25] [RANK 0] [STEP 88] Function: update_until | Line: 281 | Starting substep 5
+[17:15:25] [RANK 0] [STEP 89] Function: update_until | Line: 285 | Copied elevation_before | max = 0.002333333306926594
+[17:15:25] [RANK 0] [STEP 90] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 91] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.002333333293723224
+[17:15:25] [RANK 0] [STEP 92] Function: update_until | Line: 322 | diffusion_change = 2.552651449591603e-11
+[17:15:25] [RANK 0] [STEP 93] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 94] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.002799999960389891
+[17:15:25] [RANK 0] [STEP 95] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666669
+[17:15:25] [RANK 0] [STEP 96] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 97] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.002799999960389891
+[17:15:25] [RANK 0] [STEP 98] Function: update_until | Line: 281 | Starting substep 6
+[17:15:25] [RANK 0] [STEP 99] Function: update_until | Line: 285 | Copied elevation_before | max = 0.002799999960389891
+[17:15:25] [RANK 0] [STEP 100] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 101] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.0027999999445458474
+[17:15:25] [RANK 0] [STEP 102] Function: update_until | Line: 322 | diffusion_change = 3.063181696141837e-11
+[17:15:25] [RANK 0] [STEP 103] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 104] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.0032666666112125143
+[17:15:25] [RANK 0] [STEP 105] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666669
+[17:15:25] [RANK 0] [STEP 106] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 107] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.0032666666112125143
+[17:15:25] [RANK 0] [STEP 108] Function: update_until | Line: 281 | Starting substep 7
+[17:15:25] [RANK 0] [STEP 109] Function: update_until | Line: 285 | Copied elevation_before | max = 0.0032666666112125143
+[17:15:25] [RANK 0] [STEP 110] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 111] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.003266666592727797
+[17:15:25] [RANK 0] [STEP 112] Function: update_until | Line: 322 | diffusion_change = 3.5737119426920705e-11
+[17:15:25] [RANK 0] [STEP 113] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 114] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.0037333332593944635
+[17:15:25] [RANK 0] [STEP 115] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666669
+[17:15:25] [RANK 0] [STEP 116] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 117] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.0037333332593944635
+[17:15:25] [RANK 0] [STEP 118] Function: update_until | Line: 281 | Starting substep 8
+[17:15:25] [RANK 0] [STEP 119] Function: update_until | Line: 285 | Copied elevation_before | max = 0.0037333332593944635
+[17:15:25] [RANK 0] [STEP 120] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 121] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.0037333332382690726
+[17:15:25] [RANK 0] [STEP 122] Function: update_until | Line: 322 | diffusion_change = 4.084242189242304e-11
+[17:15:25] [RANK 0] [STEP 123] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 124] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.0041999999049357395
+[17:15:25] [RANK 0] [STEP 125] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666669
+[17:15:25] [RANK 0] [STEP 126] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 127] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.0041999999049357395
+[17:15:25] [RANK 0] [STEP 128] Function: update_until | Line: 281 | Starting substep 9
+[17:15:25] [RANK 0] [STEP 129] Function: update_until | Line: 285 | Copied elevation_before | max = 0.0041999999049357395
+[17:15:25] [RANK 0] [STEP 130] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 131] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.004199999881169675
+[17:15:25] [RANK 0] [STEP 132] Function: update_until | Line: 322 | diffusion_change = 4.594772479160625e-11
+[17:15:25] [RANK 0] [STEP 133] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 134] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.004666666547836341
+[17:15:25] [RANK 0] [STEP 135] Function: update_until | Line: 388 | uplift_change = 0.00046666666666666645
+[17:15:25] [RANK 0] [STEP 136] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 137] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.004666666547836341
+[17:15:25] [RANK 0] [STEP 138] Function: update_until | Line: 281 | Starting substep 10
+[17:15:25] [RANK 0] [STEP 139] Function: update_until | Line: 285 | Copied elevation_before | max = 0.004666666547836341
+[17:15:25] [RANK 0] [STEP 140] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 141] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.0046666665214296025
+[17:15:25] [RANK 0] [STEP 142] Function: update_until | Line: 322 | diffusion_change = 5.105302638974685e-11
+[17:15:25] [RANK 0] [STEP 143] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 144] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.005133333188096269
+[17:15:25] [RANK 0] [STEP 145] Function: update_until | Line: 388 | uplift_change = 0.00046666666666666645
+[17:15:25] [RANK 0] [STEP 146] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 147] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.005133333188096269
+[17:15:25] [RANK 0] [STEP 148] Function: update_until | Line: 281 | Starting substep 11
+[17:15:25] [RANK 0] [STEP 149] Function: update_until | Line: 285 | Copied elevation_before | max = 0.005133333188096269
+[17:15:25] [RANK 0] [STEP 150] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 151] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.005133333159048857
+[17:15:25] [RANK 0] [STEP 152] Function: update_until | Line: 322 | diffusion_change = 5.6158328855249184e-11
+[17:15:25] [RANK 0] [STEP 153] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 154] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.005599999825715523
+[17:15:25] [RANK 0] [STEP 155] Function: update_until | Line: 388 | uplift_change = 0.00046666666666666645
+[17:15:25] [RANK 0] [STEP 156] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 157] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.005599999825715523
+[17:15:25] [RANK 0] [STEP 158] Function: update_until | Line: 281 | Starting substep 12
+[17:15:25] [RANK 0] [STEP 159] Function: update_until | Line: 285 | Copied elevation_before | max = 0.005599999825715523
+[17:15:25] [RANK 0] [STEP 160] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 161] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.005599999794027437
+[17:15:25] [RANK 0] [STEP 162] Function: update_until | Line: 322 | diffusion_change = 6.126363132075152e-11
+[17:15:25] [RANK 0] [STEP 163] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 164] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.006066666460694104
+[17:15:25] [RANK 0] [STEP 165] Function: update_until | Line: 388 | uplift_change = 0.00046666666666666645
+[17:15:25] [RANK 0] [STEP 166] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 167] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.006066666460694104
+[17:15:25] [RANK 0] [STEP 168] Function: update_until | Line: 281 | Starting substep 13
+[17:15:25] [RANK 0] [STEP 169] Function: update_until | Line: 285 | Copied elevation_before | max = 0.006066666460694104
+[17:15:25] [RANK 0] [STEP 170] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 171] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.006066666426365344
+[17:15:25] [RANK 0] [STEP 172] Function: update_until | Line: 322 | diffusion_change = 6.636893291889212e-11
+[17:15:25] [RANK 0] [STEP 173] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 174] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.006533333093032011
+[17:15:25] [RANK 0] [STEP 175] Function: update_until | Line: 388 | uplift_change = 0.00046666666666666645
+[17:15:25] [RANK 0] [STEP 176] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 177] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.006533333093032011
+[17:15:25] [RANK 0] [STEP 178] Function: update_until | Line: 281 | Starting substep 14
+[17:15:25] [RANK 0] [STEP 179] Function: update_until | Line: 285 | Copied elevation_before | max = 0.006533333093032011
+[17:15:25] [RANK 0] [STEP 180] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 181] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.006533333056062577
+[17:15:25] [RANK 0] [STEP 182] Function: update_until | Line: 322 | diffusion_change = 7.147423538439446e-11
+[17:15:25] [RANK 0] [STEP 183] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 184] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.0069999997227292434
+[17:15:25] [RANK 0] [STEP 185] Function: update_until | Line: 388 | uplift_change = 0.00046666666666666645
+[17:15:25] [RANK 0] [STEP 186] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 187] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.0069999997227292434
+[17:15:25] [RANK 0] [STEP 188] Function: update_until | Line: 281 | Starting substep 15
+[17:15:25] [RANK 0] [STEP 189] Function: update_until | Line: 285 | Copied elevation_before | max = 0.0069999997227292434
+[17:15:25] [RANK 0] [STEP 190] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 191] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.006999999683119137
+[17:15:25] [RANK 0] [STEP 192] Function: update_until | Line: 322 | diffusion_change = 7.657953698253506e-11
+[17:15:25] [RANK 0] [STEP 193] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 194] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.007466666349785803
+[17:15:25] [RANK 0] [STEP 195] Function: update_until | Line: 388 | uplift_change = 0.00046666666666666645
+[17:15:25] [RANK 0] [STEP 196] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 197] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.007466666349785803
+[17:15:25] [RANK 0] [STEP 198] Function: update_until | Line: 281 | Starting substep 16
+[17:15:25] [RANK 0] [STEP 199] Function: update_until | Line: 285 | Copied elevation_before | max = 0.007466666349785803
+[17:15:25] [RANK 0] [STEP 200] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 201] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.007466666307535023
+[17:15:25] [RANK 0] [STEP 202] Function: update_until | Line: 322 | diffusion_change = 8.168483858067566e-11
+[17:15:25] [RANK 0] [STEP 203] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 204] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.00793333297420169
+[17:15:25] [RANK 0] [STEP 205] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 206] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 207] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.00793333297420169
+[17:15:25] [RANK 0] [STEP 208] Function: update_until | Line: 281 | Starting substep 17
+[17:15:25] [RANK 0] [STEP 209] Function: update_until | Line: 285 | Copied elevation_before | max = 0.00793333297420169
+[17:15:25] [RANK 0] [STEP 210] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 211] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.007933332929310236
+[17:15:25] [RANK 0] [STEP 212] Function: update_until | Line: 322 | diffusion_change = 8.679014104617799e-11
+[17:15:25] [RANK 0] [STEP 213] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 214] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.008399999595976903
+[17:15:25] [RANK 0] [STEP 215] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 216] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 217] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.008399999595976903
+[17:15:25] [RANK 0] [STEP 218] Function: update_until | Line: 281 | Starting substep 18
+[17:15:25] [RANK 0] [STEP 219] Function: update_until | Line: 285 | Copied elevation_before | max = 0.008399999595976903
+[17:15:25] [RANK 0] [STEP 220] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 221] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.008399999548444776
+[17:15:25] [RANK 0] [STEP 222] Function: update_until | Line: 322 | diffusion_change = 9.189544264431859e-11
+[17:15:25] [RANK 0] [STEP 223] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 224] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.008866666215111443
+[17:15:25] [RANK 0] [STEP 225] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 226] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 227] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.008866666215111443
+[17:15:25] [RANK 0] [STEP 228] Function: update_until | Line: 281 | Starting substep 19
+[17:15:25] [RANK 0] [STEP 229] Function: update_until | Line: 285 | Copied elevation_before | max = 0.008866666215111443
+[17:15:25] [RANK 0] [STEP 230] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 231] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.008866666164938641
+[17:15:25] [RANK 0] [STEP 232] Function: update_until | Line: 322 | diffusion_change = 9.700074424245919e-11
+[17:15:25] [RANK 0] [STEP 233] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 234] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.009333332831605309
+[17:15:25] [RANK 0] [STEP 235] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 236] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 237] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.009333332831605309
+[17:15:25] [RANK 0] [STEP 238] Function: update_until | Line: 281 | Starting substep 20
+[17:15:25] [RANK 0] [STEP 239] Function: update_until | Line: 285 | Copied elevation_before | max = 0.009333332831605309
+[17:15:25] [RANK 0] [STEP 240] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 241] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.009333332778791835
+[17:15:25] [RANK 0] [STEP 242] Function: update_until | Line: 322 | diffusion_change = 1.0210604584059979e-10
+[17:15:25] [RANK 0] [STEP 243] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 244] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.009799999445458502
+[17:15:25] [RANK 0] [STEP 245] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 246] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 247] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.009799999445458502
+[17:15:25] [RANK 0] [STEP 248] Function: update_until | Line: 281 | Starting substep 21
+[17:15:25] [RANK 0] [STEP 249] Function: update_until | Line: 285 | Copied elevation_before | max = 0.009799999445458502
+[17:15:25] [RANK 0] [STEP 250] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 251] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.009799999390004354
+[17:15:25] [RANK 0] [STEP 252] Function: update_until | Line: 322 | diffusion_change = 1.0721134743874039e-10
+[17:15:25] [RANK 0] [STEP 253] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 254] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.010266666056671021
+[17:15:25] [RANK 0] [STEP 255] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 256] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 257] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.010266666056671021
+[17:15:25] [RANK 0] [STEP 258] Function: update_until | Line: 281 | Starting substep 22
+[17:15:25] [RANK 0] [STEP 259] Function: update_until | Line: 285 | Copied elevation_before | max = 0.010266666056671021
+[17:15:25] [RANK 0] [STEP 260] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 261] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.0102666659985762
+[17:15:25] [RANK 0] [STEP 262] Function: update_until | Line: 322 | diffusion_change = 1.1231664730215751e-10
+[17:15:25] [RANK 0] [STEP 263] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 264] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.010733332665242868
+[17:15:25] [RANK 0] [STEP 265] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 266] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 267] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.010733332665242868
+[17:15:25] [RANK 0] [STEP 268] Function: update_until | Line: 281 | Starting substep 23
+[17:15:25] [RANK 0] [STEP 269] Function: update_until | Line: 285 | Copied elevation_before | max = 0.010733332665242868
+[17:15:25] [RANK 0] [STEP 270] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 271] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.010733332604507373
+[17:15:25] [RANK 0] [STEP 272] Function: update_until | Line: 322 | diffusion_change = 1.174219489002981e-10
+[17:15:25] [RANK 0] [STEP 273] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 274] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.01119999927117404
+[17:15:25] [RANK 0] [STEP 275] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 276] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 277] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.01119999927117404
+[17:15:25] [RANK 0] [STEP 278] Function: update_until | Line: 281 | Starting substep 24
+[17:15:25] [RANK 0] [STEP 279] Function: update_until | Line: 285 | Copied elevation_before | max = 0.01119999927117404
+[17:15:25] [RANK 0] [STEP 280] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 281] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.011199999207797871
+[17:15:25] [RANK 0] [STEP 282] Function: update_until | Line: 322 | diffusion_change = 1.225272504984387e-10
+[17:15:25] [RANK 0] [STEP 283] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 284] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.011666665874464539
+[17:15:25] [RANK 0] [STEP 285] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 286] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 287] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.011666665874464539
+[17:15:25] [RANK 0] [STEP 288] Function: update_until | Line: 281 | Starting substep 25
+[17:15:25] [RANK 0] [STEP 289] Function: update_until | Line: 285 | Copied elevation_before | max = 0.011666665874464539
+[17:15:25] [RANK 0] [STEP 290] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 291] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.011666665808447697
+[17:15:25] [RANK 0] [STEP 292] Function: update_until | Line: 322 | diffusion_change = 1.276325520965793e-10
+[17:15:25] [RANK 0] [STEP 293] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 294] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.012133332475114365
+[17:15:25] [RANK 0] [STEP 295] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 296] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 297] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.012133332475114365
+[17:15:25] [RANK 0] [STEP 298] Function: update_until | Line: 281 | Starting substep 26
+[17:15:25] [RANK 0] [STEP 299] Function: update_until | Line: 285 | Copied elevation_before | max = 0.012133332475114365
+[17:15:25] [RANK 0] [STEP 300] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 301] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.01213333240645685
+[17:15:25] [RANK 0] [STEP 302] Function: update_until | Line: 322 | diffusion_change = 1.3273785195999643e-10
+[17:15:25] [RANK 0] [STEP 303] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 304] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.012599999073123517
+[17:15:25] [RANK 0] [STEP 305] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 306] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 307] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.012599999073123517
+[17:15:25] [RANK 0] [STEP 308] Function: update_until | Line: 281 | Starting substep 27
+[17:15:25] [RANK 0] [STEP 309] Function: update_until | Line: 285 | Copied elevation_before | max = 0.012599999073123517
+[17:15:25] [RANK 0] [STEP 310] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 311] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.012599999001825329
+[17:15:25] [RANK 0] [STEP 312] Function: update_until | Line: 322 | diffusion_change = 1.3784315355813703e-10
+[17:15:25] [RANK 0] [STEP 313] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 314] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.013066665668491996
+[17:15:25] [RANK 0] [STEP 315] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 316] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 317] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.013066665668491996
+[17:15:25] [RANK 0] [STEP 318] Function: update_until | Line: 281 | Starting substep 28
+[17:15:25] [RANK 0] [STEP 319] Function: update_until | Line: 285 | Copied elevation_before | max = 0.013066665668491996
+[17:15:25] [RANK 0] [STEP 320] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 321] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.013066665594553134
+[17:15:25] [RANK 0] [STEP 322] Function: update_until | Line: 322 | diffusion_change = 1.4294845342155416e-10
+[17:15:25] [RANK 0] [STEP 323] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 324] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.013533332261219801
+[17:15:25] [RANK 0] [STEP 325] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 326] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 327] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.013533332261219801
+[17:15:25] [RANK 0] [STEP 328] Function: update_until | Line: 281 | Starting substep 29
+[17:15:25] [RANK 0] [STEP 329] Function: update_until | Line: 285 | Copied elevation_before | max = 0.013533332261219801
+[17:15:25] [RANK 0] [STEP 330] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 331] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.013533332184640267
+[17:15:25] [RANK 0] [STEP 332] Function: update_until | Line: 322 | diffusion_change = 1.4805375501969475e-10
+[17:15:25] [RANK 0] [STEP 333] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 334] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.013999998851306934
+[17:15:25] [RANK 0] [STEP 335] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 336] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 337] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.013999998851306934
+[17:15:25] [RANK 0] [STEP 338] Function: update_until | Line: 411 | Updating current_time to 1.0
+[17:15:25] [RANK 0] [STEP 339] Function: update_until | Line: 414 | Saving landlab output
+[17:15:25] [RANK 0] [STEP 340] Function: update_until | Line: 416 | Finished saving landlab output
+[17:15:25] [RANK 0] [STEP 341] Function: update_until | Line: 424 | Computing dimensional deposition/erosion
+[17:15:25] [RANK 0] [STEP 342] Function: update_until | Line: 434 | Final elevation stats | min=0.0, max=0.013999998851306934
+[17:15:25] [RANK 0] [STEP 343] Function: update_until | Line: 440 | Final deposition_erosion stats | min=0.0, max=0.013999998851306934
+[17:15:25] [RANK 0] [STEP 344] Function: update_until | Line: 446 | Returning dimensional_deposition_erosion
+[17:15:25] [RANK 0] [STEP 345] Function: update_until | Line: 264 | Entered update_until
+[17:15:25] [RANK 0] [STEP 346] Function: update_until | Line: 267 | Computed dt = 1.0
+[17:15:25] [RANK 0] [STEP 347] Function: update_until | Line: 269 | Timestep incremented to 3
+[17:15:25] [RANK 0] [STEP 348] Function: update_until | Line: 272 | Initialized deposition_erosion array
+[17:15:25] [RANK 0] [STEP 349] Function: update_until | Line: 274 | dt > 0 condition TRUE
+[17:15:25] [RANK 0] [STEP 350] Function: update_until | Line: 276 | n_substeps = 30
+[17:15:25] [RANK 0] [STEP 351] Function: update_until | Line: 278 | sub_dt = 0.03333333333333333
+[17:15:25] [RANK 0] [STEP 352] Function: update_until | Line: 281 | Starting substep 0
+[17:15:25] [RANK 0] [STEP 353] Function: update_until | Line: 285 | Copied elevation_before | max = 0.013999998851306934
+[17:15:25] [RANK 0] [STEP 354] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 355] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.013999998772086726
+[17:15:25] [RANK 0] [STEP 356] Function: update_until | Line: 322 | diffusion_change = 1.5315905488311188e-10
+[17:15:25] [RANK 0] [STEP 357] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 358] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.014466665438753393
+[17:15:25] [RANK 0] [STEP 359] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 360] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 361] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.0004666665874464588
+[17:15:25] [RANK 0] [STEP 362] Function: update_until | Line: 281 | Starting substep 1
+[17:15:25] [RANK 0] [STEP 363] Function: update_until | Line: 285 | Copied elevation_before | max = 0.014466665438753393
+[17:15:25] [RANK 0] [STEP 364] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 365] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.014466665356892512
+[17:15:25] [RANK 0] [STEP 366] Function: update_until | Line: 322 | diffusion_change = 1.5826435648125248e-10
+[17:15:25] [RANK 0] [STEP 367] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 368] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.01493333202355918
+[17:15:25] [RANK 0] [STEP 369] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 370] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 371] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.0009333331722522452
+[17:15:25] [RANK 0] [STEP 372] Function: update_until | Line: 281 | Starting substep 2
+[17:15:25] [RANK 0] [STEP 373] Function: update_until | Line: 285 | Copied elevation_before | max = 0.01493333202355918
+[17:15:25] [RANK 0] [STEP 374] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 375] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.014933331939057626
+[17:15:25] [RANK 0] [STEP 376] Function: update_until | Line: 322 | diffusion_change = 1.633696563446696e-10
+[17:15:25] [RANK 0] [STEP 377] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 378] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.015399998605724293
+[17:15:25] [RANK 0] [STEP 379] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 380] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 381] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.0013999997544173592
+[17:15:25] [RANK 0] [STEP 382] Function: update_until | Line: 281 | Starting substep 3
+[17:15:25] [RANK 0] [STEP 383] Function: update_until | Line: 285 | Copied elevation_before | max = 0.015399998605724293
+[17:15:25] [RANK 0] [STEP 384] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 385] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.015399998518582066
+[17:15:25] [RANK 0] [STEP 386] Function: update_until | Line: 322 | diffusion_change = 1.6847495620808672e-10
+[17:15:25] [RANK 0] [STEP 387] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 388] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.01586666518524873
+[17:15:25] [RANK 0] [STEP 389] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 390] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 391] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.0018666663339417973
+[17:15:25] [RANK 0] [STEP 392] Function: update_until | Line: 281 | Starting substep 4
+[17:15:25] [RANK 0] [STEP 393] Function: update_until | Line: 285 | Copied elevation_before | max = 0.01586666518524873
+[17:15:25] [RANK 0] [STEP 394] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 395] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.01586666509546583
+[17:15:25] [RANK 0] [STEP 396] Function: update_until | Line: 322 | diffusion_change = 1.7358025780622732e-10
+[17:15:25] [RANK 0] [STEP 397] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 398] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.0163333317621325
+[17:15:25] [RANK 0] [STEP 399] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 400] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 401] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.0023333329108255647
+[17:15:25] [RANK 0] [STEP 402] Function: update_until | Line: 281 | Starting substep 5
+[17:15:25] [RANK 0] [STEP 403] Function: update_until | Line: 285 | Copied elevation_before | max = 0.0163333317621325
+[17:15:25] [RANK 0] [STEP 404] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 405] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.016333331669708927
+[17:15:25] [RANK 0] [STEP 406] Function: update_until | Line: 322 | diffusion_change = 1.7868555593492097e-10
+[17:15:25] [RANK 0] [STEP 407] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 408] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.016799998336375594
+[17:15:25] [RANK 0] [STEP 409] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 410] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 411] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.0027999994850686598
+[17:15:25] [RANK 0] [STEP 412] Function: update_until | Line: 281 | Starting substep 6
+[17:15:25] [RANK 0] [STEP 413] Function: update_until | Line: 285 | Copied elevation_before | max = 0.016799998336375594
+[17:15:25] [RANK 0] [STEP 414] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 415] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.016799998241311346
+[17:15:25] [RANK 0] [STEP 416] Function: update_until | Line: 322 | diffusion_change = 1.8379085753306157e-10
+[17:15:25] [RANK 0] [STEP 417] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 418] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.017266664907978013
+[17:15:25] [RANK 0] [STEP 419] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 420] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 421] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.003266666056671079
+[17:15:25] [RANK 0] [STEP 422] Function: update_until | Line: 281 | Starting substep 7
+[17:15:25] [RANK 0] [STEP 423] Function: update_until | Line: 285 | Copied elevation_before | max = 0.017266664907978013
+[17:15:25] [RANK 0] [STEP 424] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 425] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.017266664810273093
+[17:15:25] [RANK 0] [STEP 426] Function: update_until | Line: 322 | diffusion_change = 1.8889615913120217e-10
+[17:15:25] [RANK 0] [STEP 427] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 428] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.01773333147693976
+[17:15:25] [RANK 0] [STEP 429] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 430] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 431] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.0037333326256328257
+[17:15:25] [RANK 0] [STEP 432] Function: update_until | Line: 281 | Starting substep 8
+[17:15:25] [RANK 0] [STEP 433] Function: update_until | Line: 285 | Copied elevation_before | max = 0.01773333147693976
+[17:15:25] [RANK 0] [STEP 434] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 435] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.017733331376594167
+[17:15:25] [RANK 0] [STEP 436] Function: update_until | Line: 322 | diffusion_change = 1.9400145725989582e-10
+[17:15:25] [RANK 0] [STEP 437] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 438] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.018199998043260834
+[17:15:25] [RANK 0] [STEP 439] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 440] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 441] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.0041999991919539
+[17:15:25] [RANK 0] [STEP 442] Function: update_until | Line: 281 | Starting substep 9
+[17:15:25] [RANK 0] [STEP 443] Function: update_until | Line: 285 | Copied elevation_before | max = 0.018199998043260834
+[17:15:25] [RANK 0] [STEP 444] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 445] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.01819999794027457
+[17:15:25] [RANK 0] [STEP 446] Function: update_until | Line: 322 | diffusion_change = 1.9910675885803641e-10
+[17:15:25] [RANK 0] [STEP 447] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 448] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.018666664606941236
+[17:15:25] [RANK 0] [STEP 449] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 450] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 451] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.004666665755634302
+[17:15:25] [RANK 0] [STEP 452] Function: update_until | Line: 281 | Starting substep 10
+[17:15:25] [RANK 0] [STEP 453] Function: update_until | Line: 285 | Copied elevation_before | max = 0.018666664606941236
+[17:15:25] [RANK 0] [STEP 454] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 455] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.0186666645013143
+[17:15:25] [RANK 0] [STEP 456] Function: update_until | Line: 322 | diffusion_change = 2.0421205698673006e-10
+[17:15:25] [RANK 0] [STEP 457] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 458] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.019133331167980966
+[17:15:25] [RANK 0] [STEP 459] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 460] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 461] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.005133332316674032
+[17:15:25] [RANK 0] [STEP 462] Function: update_until | Line: 281 | Starting substep 11
+[17:15:25] [RANK 0] [STEP 463] Function: update_until | Line: 285 | Copied elevation_before | max = 0.019133331167980966
+[17:15:25] [RANK 0] [STEP 464] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 465] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.019133331059713356
+[17:15:25] [RANK 0] [STEP 466] Function: update_until | Line: 322 | diffusion_change = 2.0931735858487066e-10
+[17:15:25] [RANK 0] [STEP 467] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 468] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.019599997726380023
+[17:15:25] [RANK 0] [STEP 469] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 470] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 471] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.005599998875073089
+[17:15:25] [RANK 0] [STEP 472] Function: update_until | Line: 281 | Starting substep 12
+[17:15:25] [RANK 0] [STEP 473] Function: update_until | Line: 285 | Copied elevation_before | max = 0.019599997726380023
+[17:15:25] [RANK 0] [STEP 474] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 475] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.01959999761547174
+[17:15:25] [RANK 0] [STEP 476] Function: update_until | Line: 322 | diffusion_change = 2.144226567135643e-10
+[17:15:25] [RANK 0] [STEP 477] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 478] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.020066664282138408
+[17:15:25] [RANK 0] [STEP 479] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 480] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 481] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.0060666654308314735
+[17:15:25] [RANK 0] [STEP 482] Function: update_until | Line: 281 | Starting substep 13
+[17:15:25] [RANK 0] [STEP 483] Function: update_until | Line: 285 | Copied elevation_before | max = 0.020066664282138408
+[17:15:25] [RANK 0] [STEP 484] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 485] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.02006666416858945
+[17:15:25] [RANK 0] [STEP 486] Function: update_until | Line: 322 | diffusion_change = 2.195279583117049e-10
+[17:15:25] [RANK 0] [STEP 487] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 488] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.020533330835256117
+[17:15:25] [RANK 0] [STEP 489] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 490] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 491] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.006533331983949182
+[17:15:25] [RANK 0] [STEP 492] Function: update_until | Line: 281 | Starting substep 14
+[17:15:25] [RANK 0] [STEP 493] Function: update_until | Line: 285 | Copied elevation_before | max = 0.020533330835256117
+[17:15:25] [RANK 0] [STEP 494] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 495] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.020533330719066486
+[17:15:25] [RANK 0] [STEP 496] Function: update_until | Line: 322 | diffusion_change = 2.2463325644039855e-10
+[17:15:25] [RANK 0] [STEP 497] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 498] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.020999997385733153
+[17:15:25] [RANK 0] [STEP 499] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 500] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 501] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.006999998534426219
+[17:15:25] [RANK 0] [STEP 502] Function: update_until | Line: 281 | Starting substep 15
+[17:15:25] [RANK 0] [STEP 503] Function: update_until | Line: 285 | Copied elevation_before | max = 0.020999997385733153
+[17:15:25] [RANK 0] [STEP 504] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 505] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.02099999726690285
+[17:15:25] [RANK 0] [STEP 506] Function: update_until | Line: 322 | diffusion_change = 2.297385545690922e-10
+[17:15:25] [RANK 0] [STEP 507] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 508] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.021466663933569517
+[17:15:25] [RANK 0] [STEP 509] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 510] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 511] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.007466665082262583
+[17:15:25] [RANK 0] [STEP 512] Function: update_until | Line: 281 | Starting substep 16
+[17:15:25] [RANK 0] [STEP 513] Function: update_until | Line: 285 | Copied elevation_before | max = 0.021466663933569517
+[17:15:25] [RANK 0] [STEP 514] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 515] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.02146666381209854
+[17:15:25] [RANK 0] [STEP 516] Function: update_until | Line: 322 | diffusion_change = 2.348438561672328e-10
+[17:15:25] [RANK 0] [STEP 517] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 518] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.02193333047876521
+[17:15:25] [RANK 0] [STEP 519] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 520] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 521] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.007933331627458275
+[17:15:25] [RANK 0] [STEP 522] Function: update_until | Line: 281 | Starting substep 17
+[17:15:25] [RANK 0] [STEP 523] Function: update_until | Line: 285 | Copied elevation_before | max = 0.02193333047876521
+[17:15:25] [RANK 0] [STEP 524] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 525] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.02193333035465356
+[17:15:25] [RANK 0] [STEP 526] Function: update_until | Line: 322 | diffusion_change = 2.3994915429592645e-10
+[17:15:25] [RANK 0] [STEP 527] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 528] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.022399997021320228
+[17:15:25] [RANK 0] [STEP 529] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 530] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 531] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.008399998170013294
+[17:15:25] [RANK 0] [STEP 532] Function: update_until | Line: 281 | Starting substep 18
+[17:15:25] [RANK 0] [STEP 533] Function: update_until | Line: 285 | Copied elevation_before | max = 0.022399997021320228
+[17:15:25] [RANK 0] [STEP 534] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 535] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.022399996894567908
+[17:15:25] [RANK 0] [STEP 536] Function: update_until | Line: 322 | diffusion_change = 2.450544524246201e-10
+[17:15:25] [RANK 0] [STEP 537] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 538] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.022866663561234575
+[17:15:25] [RANK 0] [STEP 539] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 540] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 541] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.00886666470992764
+[17:15:25] [RANK 0] [STEP 542] Function: update_until | Line: 281 | Starting substep 19
+[17:15:25] [RANK 0] [STEP 543] Function: update_until | Line: 285 | Copied elevation_before | max = 0.022866663561234575
+[17:15:25] [RANK 0] [STEP 544] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 545] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.022866663431841582
+[17:15:25] [RANK 0] [STEP 546] Function: update_until | Line: 322 | diffusion_change = 2.501597540227607e-10
+[17:15:25] [RANK 0] [STEP 547] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 548] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.02333333009850825
+[17:15:25] [RANK 0] [STEP 549] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 550] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 551] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.009333331247201315
+[17:15:25] [RANK 0] [STEP 552] Function: update_until | Line: 281 | Starting substep 20
+[17:15:25] [RANK 0] [STEP 553] Function: update_until | Line: 285 | Copied elevation_before | max = 0.02333333009850825
+[17:15:25] [RANK 0] [STEP 554] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 555] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.023333329966474584
+[17:15:25] [RANK 0] [STEP 556] Function: update_until | Line: 322 | diffusion_change = 2.5526505215145434e-10
+[17:15:25] [RANK 0] [STEP 557] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 558] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.02379999663314125
+[17:15:25] [RANK 0] [STEP 559] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 560] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 561] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.009799997781834317
+[17:15:25] [RANK 0] [STEP 562] Function: update_until | Line: 281 | Starting substep 21
+[17:15:25] [RANK 0] [STEP 563] Function: update_until | Line: 285 | Copied elevation_before | max = 0.02379999663314125
+[17:15:25] [RANK 0] [STEP 564] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 565] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.023799996498466914
+[17:15:25] [RANK 0] [STEP 566] Function: update_until | Line: 322 | diffusion_change = 2.60370350280148e-10
+[17:15:25] [RANK 0] [STEP 567] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 568] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.02426666316513358
+[17:15:25] [RANK 0] [STEP 569] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 570] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 571] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.010266664313826647
+[17:15:25] [RANK 0] [STEP 572] Function: update_until | Line: 281 | Starting substep 22
+[17:15:25] [RANK 0] [STEP 573] Function: update_until | Line: 285 | Copied elevation_before | max = 0.02426666316513358
+[17:15:25] [RANK 0] [STEP 574] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 575] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.02426666302781857
+[17:15:25] [RANK 0] [STEP 576] Function: update_until | Line: 322 | diffusion_change = 2.6547564840884164e-10
+[17:15:25] [RANK 0] [STEP 577] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 578] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.02473332969448524
+[17:15:25] [RANK 0] [STEP 579] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 580] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 581] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.010733330843178304
+[17:15:25] [RANK 0] [STEP 582] Function: update_until | Line: 281 | Starting substep 23
+[17:15:25] [RANK 0] [STEP 583] Function: update_until | Line: 285 | Copied elevation_before | max = 0.02473332969448524
+[17:15:25] [RANK 0] [STEP 584] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 585] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.024733329554529556
+[17:15:25] [RANK 0] [STEP 586] Function: update_until | Line: 322 | diffusion_change = 2.705809465375353e-10
+[17:15:25] [RANK 0] [STEP 587] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 588] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.025199996221196223
+[17:15:25] [RANK 0] [STEP 589] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 590] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 591] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.011199997369889289
+[17:15:25] [RANK 0] [STEP 592] Function: update_until | Line: 281 | Starting substep 24
+[17:15:25] [RANK 0] [STEP 593] Function: update_until | Line: 285 | Copied elevation_before | max = 0.025199996221196223
+[17:15:25] [RANK 0] [STEP 594] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 595] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.02519999607859987
+[17:15:25] [RANK 0] [STEP 596] Function: update_until | Line: 322 | diffusion_change = 2.756862481356759e-10
+[17:15:25] [RANK 0] [STEP 597] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 598] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.025666662745266536
+[17:15:25] [RANK 0] [STEP 599] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 600] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 601] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.011666663893959602
+[17:15:25] [RANK 0] [STEP 602] Function: update_until | Line: 281 | Starting substep 25
+[17:15:25] [RANK 0] [STEP 603] Function: update_until | Line: 285 | Copied elevation_before | max = 0.025666662745266536
+[17:15:25] [RANK 0] [STEP 604] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 605] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.025666662600029505
+[17:15:25] [RANK 0] [STEP 606] Function: update_until | Line: 322 | diffusion_change = 2.8079154626436953e-10
+[17:15:25] [RANK 0] [STEP 607] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 608] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.026133329266696172
+[17:15:25] [RANK 0] [STEP 609] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 610] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 611] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.012133330415389238
+[17:15:25] [RANK 0] [STEP 612] Function: update_until | Line: 281 | Starting substep 26
+[17:15:25] [RANK 0] [STEP 613] Function: update_until | Line: 285 | Copied elevation_before | max = 0.026133329266696172
+[17:15:25] [RANK 0] [STEP 614] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 615] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.02613332911881847
+[17:15:25] [RANK 0] [STEP 616] Function: update_until | Line: 322 | diffusion_change = 2.858968443930632e-10
+[17:15:25] [RANK 0] [STEP 617] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 618] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.026599995785485137
+[17:15:25] [RANK 0] [STEP 619] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 620] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 621] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.012599996934178202
+[17:15:25] [RANK 0] [STEP 622] Function: update_until | Line: 281 | Starting substep 27
+[17:15:25] [RANK 0] [STEP 623] Function: update_until | Line: 285 | Copied elevation_before | max = 0.026599995785485137
+[17:15:25] [RANK 0] [STEP 624] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 625] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.02659999563496676
+[17:15:25] [RANK 0] [STEP 626] Function: update_until | Line: 322 | diffusion_change = 2.910021425217568e-10
+[17:15:25] [RANK 0] [STEP 627] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 628] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.02706666230163343
+[17:15:25] [RANK 0] [STEP 629] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 630] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 631] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.013066663450326494
+[17:15:25] [RANK 0] [STEP 632] Function: update_until | Line: 281 | Starting substep 28
+[17:15:25] [RANK 0] [STEP 633] Function: update_until | Line: 285 | Copied elevation_before | max = 0.02706666230163343
+[17:15:25] [RANK 0] [STEP 634] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 635] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.02706666214847438
+[17:15:25] [RANK 0] [STEP 636] Function: update_until | Line: 322 | diffusion_change = 2.9610744065045047e-10
+[17:15:25] [RANK 0] [STEP 637] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 638] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.027533328815141048
+[17:15:25] [RANK 0] [STEP 639] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 640] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 641] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.013533329963834113
+[17:15:25] [RANK 0] [STEP 642] Function: update_until | Line: 281 | Starting substep 29
+[17:15:25] [RANK 0] [STEP 643] Function: update_until | Line: 285 | Copied elevation_before | max = 0.027533328815141048
+[17:15:25] [RANK 0] [STEP 644] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 645] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.027533328659341327
+[17:15:25] [RANK 0] [STEP 646] Function: update_until | Line: 322 | diffusion_change = 3.012127387791441e-10
+[17:15:25] [RANK 0] [STEP 647] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 648] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.027999995326007995
+[17:15:25] [RANK 0] [STEP 649] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 650] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 651] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.01399999647470106
+[17:15:25] [RANK 0] [STEP 652] Function: update_until | Line: 411 | Updating current_time to 2.0
+[17:15:25] [RANK 0] [STEP 653] Function: update_until | Line: 414 | Saving landlab output
+[17:15:25] [RANK 0] [STEP 654] Function: update_until | Line: 416 | Finished saving landlab output
+[17:15:25] [RANK 0] [STEP 655] Function: update_until | Line: 424 | Computing dimensional deposition/erosion
+[17:15:25] [RANK 0] [STEP 656] Function: update_until | Line: 434 | Final elevation stats | min=0.0, max=0.027999995326007995
+[17:15:25] [RANK 0] [STEP 657] Function: update_until | Line: 440 | Final deposition_erosion stats | min=0.0, max=0.01399999647470106
+[17:15:25] [RANK 0] [STEP 658] Function: update_until | Line: 446 | Returning dimensional_deposition_erosion
+[17:15:25] [RANK 0] [STEP 659] Function: update_until | Line: 264 | Entered update_until
+[17:15:25] [RANK 0] [STEP 660] Function: update_until | Line: 267 | Computed dt = 1.0
+[17:15:25] [RANK 0] [STEP 661] Function: update_until | Line: 269 | Timestep incremented to 4
+[17:15:25] [RANK 0] [STEP 662] Function: update_until | Line: 272 | Initialized deposition_erosion array
+[17:15:25] [RANK 0] [STEP 663] Function: update_until | Line: 274 | dt > 0 condition TRUE
+[17:15:25] [RANK 0] [STEP 664] Function: update_until | Line: 276 | n_substeps = 30
+[17:15:25] [RANK 0] [STEP 665] Function: update_until | Line: 278 | sub_dt = 0.03333333333333333
+[17:15:25] [RANK 0] [STEP 666] Function: update_until | Line: 281 | Starting substep 0
+[17:15:25] [RANK 0] [STEP 667] Function: update_until | Line: 285 | Copied elevation_before | max = 0.027999995326007995
+[17:15:25] [RANK 0] [STEP 668] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 669] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.027999995167567602
+[17:15:25] [RANK 0] [STEP 670] Function: update_until | Line: 322 | diffusion_change = 3.0631803690783777e-10
+[17:15:25] [RANK 0] [STEP 671] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 672] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.02846666183423427
+[17:15:25] [RANK 0] [STEP 673] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 674] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 675] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.00046666650822627456
+[17:15:25] [RANK 0] [STEP 676] Function: update_until | Line: 281 | Starting substep 1
+[17:15:25] [RANK 0] [STEP 677] Function: update_until | Line: 285 | Copied elevation_before | max = 0.02846666183423427
+[17:15:25] [RANK 0] [STEP 678] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 679] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.028466661673153204
+[17:15:25] [RANK 0] [STEP 680] Function: update_until | Line: 322 | diffusion_change = 3.114233350365314e-10
+[17:15:25] [RANK 0] [STEP 681] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 682] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.02893332833981987
+[17:15:25] [RANK 0] [STEP 683] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 684] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 685] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.0009333330138118767
+[17:15:25] [RANK 0] [STEP 686] Function: update_until | Line: 281 | Starting substep 2
+[17:15:25] [RANK 0] [STEP 687] Function: update_until | Line: 285 | Copied elevation_before | max = 0.02893332833981987
+[17:15:25] [RANK 0] [STEP 688] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 689] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.028933328176098134
+[17:15:25] [RANK 0] [STEP 690] Function: update_until | Line: 322 | diffusion_change = 3.1652863316522506e-10
+[17:15:25] [RANK 0] [STEP 691] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 692] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.0293999948427648
+[17:15:25] [RANK 0] [STEP 693] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 694] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 695] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.0013999995167568065
+[17:15:25] [RANK 0] [STEP 696] Function: update_until | Line: 281 | Starting substep 3
+[17:15:25] [RANK 0] [STEP 697] Function: update_until | Line: 285 | Copied elevation_before | max = 0.0293999948427648
+[17:15:25] [RANK 0] [STEP 698] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 699] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.02939999467640239
+[17:15:25] [RANK 0] [STEP 700] Function: update_until | Line: 322 | diffusion_change = 3.216339312939187e-10
+[17:15:25] [RANK 0] [STEP 701] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 702] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.02986666134306906
+[17:15:25] [RANK 0] [STEP 703] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 704] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 705] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.0018666660170610638
+[17:15:25] [RANK 0] [STEP 706] Function: update_until | Line: 281 | Starting substep 4
+[17:15:25] [RANK 0] [STEP 707] Function: update_until | Line: 285 | Copied elevation_before | max = 0.02986666134306906
+[17:15:25] [RANK 0] [STEP 708] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 709] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.029866661174065976
+[17:15:25] [RANK 0] [STEP 710] Function: update_until | Line: 322 | diffusion_change = 3.2673922942261235e-10
+[17:15:25] [RANK 0] [STEP 711] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 712] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.030333327840732643
+[17:15:25] [RANK 0] [STEP 713] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 714] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 715] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.0023333325147246488
+[17:15:25] [RANK 0] [STEP 716] Function: update_until | Line: 281 | Starting substep 5
+[17:15:25] [RANK 0] [STEP 717] Function: update_until | Line: 285 | Copied elevation_before | max = 0.030333327840732643
+[17:15:25] [RANK 0] [STEP 718] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 719] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.030333327669088892
+[17:15:25] [RANK 0] [STEP 720] Function: update_until | Line: 322 | diffusion_change = 3.31844527551306e-10
+[17:15:25] [RANK 0] [STEP 721] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 722] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.03079999433575556
+[17:15:25] [RANK 0] [STEP 723] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 724] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 725] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.002799999009747565
+[17:15:25] [RANK 0] [STEP 726] Function: update_until | Line: 281 | Starting substep 6
+[17:15:25] [RANK 0] [STEP 727] Function: update_until | Line: 285 | Copied elevation_before | max = 0.03079999433575556
+[17:15:25] [RANK 0] [STEP 728] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 729] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.030799994161471136
+[17:15:25] [RANK 0] [STEP 730] Function: update_until | Line: 322 | diffusion_change = 3.3694982567999965e-10
+[17:15:25] [RANK 0] [STEP 731] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 732] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.0312666608281378
+[17:15:25] [RANK 0] [STEP 733] Function: update_until | Line: 388 | uplift_change = 0.0004666666666666673
+[17:15:25] [RANK 0] [STEP 734] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 735] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.0032666655021298084
+[17:15:25] [RANK 0] [STEP 736] Function: update_until | Line: 281 | Starting substep 7
+[17:15:25] [RANK 0] [STEP 737] Function: update_until | Line: 285 | Copied elevation_before | max = 0.0312666608281378
+[17:15:25] [RANK 0] [STEP 738] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 739] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.031266660651212703
+[17:15:25] [RANK 0] [STEP 740] Function: update_until | Line: 322 | diffusion_change = 3.4205512033924634e-10
+[17:15:25] [RANK 0] [STEP 741] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 742] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.03173332731787937
+[17:15:25] [RANK 0] [STEP 743] Function: update_until | Line: 388 | uplift_change = 0.00046666666666666384
+[17:15:25] [RANK 0] [STEP 744] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 745] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.0037333319918713727
+[17:15:25] [RANK 0] [STEP 746] Function: update_until | Line: 281 | Starting substep 8
+[17:15:25] [RANK 0] [STEP 747] Function: update_until | Line: 285 | Copied elevation_before | max = 0.03173332731787937
+[17:15:25] [RANK 0] [STEP 748] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 749] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.031733327138313595
+[17:15:25] [RANK 0] [STEP 750] Function: update_until | Line: 322 | diffusion_change = 3.4716041846794e-10
+[17:15:25] [RANK 0] [STEP 751] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 752] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.03219999380498026
+[17:15:25] [RANK 0] [STEP 753] Function: update_until | Line: 388 | uplift_change = 0.00046666666666666384
+[17:15:25] [RANK 0] [STEP 754] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 755] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.0041999984789722646
+[17:15:25] [RANK 0] [STEP 756] Function: update_until | Line: 281 | Starting substep 9
+[17:15:25] [RANK 0] [STEP 757] Function: update_until | Line: 285 | Copied elevation_before | max = 0.03219999380498026
+[17:15:25] [RANK 0] [STEP 758] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 759] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.032199993622773815
+[17:15:25] [RANK 0] [STEP 760] Function: update_until | Line: 322 | diffusion_change = 3.5226571659663364e-10
+[17:15:25] [RANK 0] [STEP 761] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 762] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.03266666028944048
+[17:15:25] [RANK 0] [STEP 763] Function: update_until | Line: 388 | uplift_change = 0.00046666666666666384
+[17:15:25] [RANK 0] [STEP 764] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 765] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.004666664963432484
+[17:15:25] [RANK 0] [STEP 766] Function: update_until | Line: 281 | Starting substep 10
+[17:15:25] [RANK 0] [STEP 767] Function: update_until | Line: 285 | Copied elevation_before | max = 0.03266666028944048
+[17:15:25] [RANK 0] [STEP 768] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 769] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.03266666010459336
+[17:15:25] [RANK 0] [STEP 770] Function: update_until | Line: 322 | diffusion_change = 3.573710147253273e-10
+[17:15:25] [RANK 0] [STEP 771] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 772] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.033133326771260026
+[17:15:25] [RANK 0] [STEP 773] Function: update_until | Line: 388 | uplift_change = 0.00046666666666666384
+[17:15:25] [RANK 0] [STEP 774] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 775] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.005133331445252031
+[17:15:25] [RANK 0] [STEP 776] Function: update_until | Line: 281 | Starting substep 11
+[17:15:25] [RANK 0] [STEP 777] Function: update_until | Line: 285 | Copied elevation_before | max = 0.033133326771260026
+[17:15:25] [RANK 0] [STEP 778] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 779] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.03313332658377224
+[17:15:25] [RANK 0] [STEP 780] Function: update_until | Line: 322 | diffusion_change = 3.6247631285402093e-10
+[17:15:25] [RANK 0] [STEP 781] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 782] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.0335999932504389
+[17:15:25] [RANK 0] [STEP 783] Function: update_until | Line: 388 | uplift_change = 0.00046666666666666384
+[17:15:25] [RANK 0] [STEP 784] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 785] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.005599997924430906
+[17:15:25] [RANK 0] [STEP 786] Function: update_until | Line: 281 | Starting substep 12
+[17:15:25] [RANK 0] [STEP 787] Function: update_until | Line: 285 | Copied elevation_before | max = 0.0335999932504389
+[17:15:25] [RANK 0] [STEP 788] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 789] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.033599993060310446
+[17:15:25] [RANK 0] [STEP 790] Function: update_until | Line: 322 | diffusion_change = 3.675816109827146e-10
+[17:15:25] [RANK 0] [STEP 791] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 792] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.03406665972697711
+[17:15:25] [RANK 0] [STEP 793] Function: update_until | Line: 388 | uplift_change = 0.00046666666666666384
+[17:15:25] [RANK 0] [STEP 794] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 795] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.006066664400969115
+[17:15:25] [RANK 0] [STEP 796] Function: update_until | Line: 281 | Starting substep 13
+[17:15:25] [RANK 0] [STEP 797] Function: update_until | Line: 285 | Copied elevation_before | max = 0.03406665972697711
+[17:15:25] [RANK 0] [STEP 798] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 799] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.03406665953420798
+[17:15:25] [RANK 0] [STEP 800] Function: update_until | Line: 322 | diffusion_change = 3.7268690911140823e-10
+[17:15:25] [RANK 0] [STEP 801] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 802] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.034533326200874646
+[17:15:25] [RANK 0] [STEP 803] Function: update_until | Line: 388 | uplift_change = 0.00046666666666666384
+[17:15:25] [RANK 0] [STEP 804] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 805] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.006533330874866652
+[17:15:25] [RANK 0] [STEP 806] Function: update_until | Line: 281 | Starting substep 14
+[17:15:25] [RANK 0] [STEP 807] Function: update_until | Line: 285 | Copied elevation_before | max = 0.034533326200874646
+[17:15:25] [RANK 0] [STEP 808] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 809] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.03453332600546485
+[17:15:25] [RANK 0] [STEP 810] Function: update_until | Line: 322 | diffusion_change = 3.7779220030120797e-10
+[17:15:25] [RANK 0] [STEP 811] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 812] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.03499999267213151
+[17:15:25] [RANK 0] [STEP 813] Function: update_until | Line: 388 | uplift_change = 0.00046666666666666384
+[17:15:25] [RANK 0] [STEP 814] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 815] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.006999997346123516
+[17:15:25] [RANK 0] [STEP 816] Function: update_until | Line: 281 | Starting substep 15
+[17:15:25] [RANK 0] [STEP 817] Function: update_until | Line: 285 | Copied elevation_before | max = 0.03499999267213151
+[17:15:25] [RANK 0] [STEP 818] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 819] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.03499999247408104
+[17:15:25] [RANK 0] [STEP 820] Function: update_until | Line: 322 | diffusion_change = 3.828974984299016e-10
+[17:15:25] [RANK 0] [STEP 821] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 822] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.0354666591407477
+[17:15:25] [RANK 0] [STEP 823] Function: update_until | Line: 388 | uplift_change = 0.00046666666666666384
+[17:15:25] [RANK 0] [STEP 824] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 825] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.007466663814739708
+[17:15:25] [RANK 0] [STEP 826] Function: update_until | Line: 281 | Starting substep 16
+[17:15:25] [RANK 0] [STEP 827] Function: update_until | Line: 285 | Copied elevation_before | max = 0.0354666591407477
+[17:15:25] [RANK 0] [STEP 828] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 829] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.03546665894005656
+[17:15:25] [RANK 0] [STEP 830] Function: update_until | Line: 322 | diffusion_change = 3.8800279655859526e-10
+[17:15:25] [RANK 0] [STEP 831] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 832] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.03593332560672322
+[17:15:25] [RANK 0] [STEP 833] Function: update_until | Line: 388 | uplift_change = 0.00046666666666666384
+[17:15:25] [RANK 0] [STEP 834] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 835] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.007933330280715228
+[17:15:25] [RANK 0] [STEP 836] Function: update_until | Line: 281 | Starting substep 17
+[17:15:25] [RANK 0] [STEP 837] Function: update_until | Line: 285 | Copied elevation_before | max = 0.03593332560672322
+[17:15:25] [RANK 0] [STEP 838] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 839] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.035933325403391406
+[17:15:25] [RANK 0] [STEP 840] Function: update_until | Line: 322 | diffusion_change = 3.931080946872889e-10
+[17:15:25] [RANK 0] [STEP 841] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 842] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.03639999207005807
+[17:15:25] [RANK 0] [STEP 843] Function: update_until | Line: 388 | uplift_change = 0.00046666666666666384
+[17:15:25] [RANK 0] [STEP 844] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 845] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.008399996744050075
+[17:15:25] [RANK 0] [STEP 846] Function: update_until | Line: 281 | Starting substep 18
+[17:15:25] [RANK 0] [STEP 847] Function: update_until | Line: 285 | Copied elevation_before | max = 0.03639999207005807
+[17:15:25] [RANK 0] [STEP 848] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 849] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.03639999186408558
+[17:15:25] [RANK 0] [STEP 850] Function: update_until | Line: 322 | diffusion_change = 3.9821339281598256e-10
+[17:15:25] [RANK 0] [STEP 851] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 852] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.036866658530752244
+[17:15:25] [RANK 0] [STEP 853] Function: update_until | Line: 388 | uplift_change = 0.00046666666666666384
+[17:15:25] [RANK 0] [STEP 854] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 855] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.00886666320474425
+[17:15:25] [RANK 0] [STEP 856] Function: update_until | Line: 281 | Starting substep 19
+[17:15:25] [RANK 0] [STEP 857] Function: update_until | Line: 285 | Copied elevation_before | max = 0.036866658530752244
+[17:15:25] [RANK 0] [STEP 858] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 859] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.03686665832213908
+[17:15:25] [RANK 0] [STEP 860] Function: update_until | Line: 322 | diffusion_change = 4.033186909446762e-10
+[17:15:25] [RANK 0] [STEP 861] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 862] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.03733332498880575
+[17:15:25] [RANK 0] [STEP 863] Function: update_until | Line: 388 | uplift_change = 0.00046666666666666384
+[17:15:25] [RANK 0] [STEP 864] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 865] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.009333329662797752
+[17:15:25] [RANK 0] [STEP 866] Function: update_until | Line: 281 | Starting substep 20
+[17:15:25] [RANK 0] [STEP 867] Function: update_until | Line: 285 | Copied elevation_before | max = 0.03733332498880575
+[17:15:25] [RANK 0] [STEP 868] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 869] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.03733332477755191
+[17:15:25] [RANK 0] [STEP 870] Function: update_until | Line: 322 | diffusion_change = 4.0842398213447595e-10
+[17:15:25] [RANK 0] [STEP 871] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 872] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.03779999144421858
+[17:15:25] [RANK 0] [STEP 873] Function: update_until | Line: 388 | uplift_change = 0.00046666666666666384
+[17:15:25] [RANK 0] [STEP 874] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 875] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.009799996118210582
+[17:15:25] [RANK 0] [STEP 876] Function: update_until | Line: 281 | Starting substep 21
+[17:15:25] [RANK 0] [STEP 877] Function: update_until | Line: 285 | Copied elevation_before | max = 0.03779999144421858
+[17:15:25] [RANK 0] [STEP 878] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 879] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.03779999123032407
+[17:15:25] [RANK 0] [STEP 880] Function: update_until | Line: 322 | diffusion_change = 4.135292802631696e-10
+[17:15:25] [RANK 0] [STEP 881] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 882] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.038266657896990734
+[17:15:25] [RANK 0] [STEP 883] Function: update_until | Line: 388 | uplift_change = 0.00046666666666666384
+[17:15:25] [RANK 0] [STEP 884] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 885] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.01026666257098274
+[17:15:25] [RANK 0] [STEP 886] Function: update_until | Line: 281 | Starting substep 22
+[17:15:25] [RANK 0] [STEP 887] Function: update_until | Line: 285 | Copied elevation_before | max = 0.038266657896990734
+[17:15:25] [RANK 0] [STEP 888] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 889] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.038266657680455556
+[17:15:25] [RANK 0] [STEP 890] Function: update_until | Line: 322 | diffusion_change = 4.1863457839186324e-10
+[17:15:25] [RANK 0] [STEP 891] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 892] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.03873332434712222
+[17:15:25] [RANK 0] [STEP 893] Function: update_until | Line: 388 | uplift_change = 0.00046666666666666384
+[17:15:25] [RANK 0] [STEP 894] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 895] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.010733329021114225
+[17:15:25] [RANK 0] [STEP 896] Function: update_until | Line: 281 | Starting substep 23
+[17:15:25] [RANK 0] [STEP 897] Function: update_until | Line: 285 | Copied elevation_before | max = 0.03873332434712222
+[17:15:25] [RANK 0] [STEP 898] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 899] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.03873332412794637
+[17:15:25] [RANK 0] [STEP 900] Function: update_until | Line: 322 | diffusion_change = 4.237398765205569e-10
+[17:15:25] [RANK 0] [STEP 901] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 902] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.03919999079461303
+[17:15:25] [RANK 0] [STEP 903] Function: update_until | Line: 388 | uplift_change = 0.00046666666666666384
+[17:15:25] [RANK 0] [STEP 904] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 905] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.011199995468605038
+[17:15:25] [RANK 0] [STEP 906] Function: update_until | Line: 281 | Starting substep 24
+[17:15:25] [RANK 0] [STEP 907] Function: update_until | Line: 285 | Copied elevation_before | max = 0.03919999079461303
+[17:15:25] [RANK 0] [STEP 908] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 909] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.03919999057279651
+[17:15:25] [RANK 0] [STEP 910] Function: update_until | Line: 322 | diffusion_change = 4.2884516771035663e-10
+[17:15:25] [RANK 0] [STEP 911] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 912] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.03966665723946317
+[17:15:25] [RANK 0] [STEP 913] Function: update_until | Line: 388 | uplift_change = 0.00046666666666666384
+[17:15:25] [RANK 0] [STEP 914] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 915] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.011666661913455178
+[17:15:25] [RANK 0] [STEP 916] Function: update_until | Line: 281 | Starting substep 25
+[17:15:25] [RANK 0] [STEP 917] Function: update_until | Line: 285 | Copied elevation_before | max = 0.03966665723946317
+[17:15:25] [RANK 0] [STEP 918] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 919] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.03966665701500598
+[17:15:25] [RANK 0] [STEP 920] Function: update_until | Line: 322 | diffusion_change = 4.339504658390503e-10
+[17:15:25] [RANK 0] [STEP 921] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 922] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.04013332368167264
+[17:15:25] [RANK 0] [STEP 923] Function: update_until | Line: 388 | uplift_change = 0.00046666666666666384
+[17:15:25] [RANK 0] [STEP 924] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 925] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.012133328355664646
+[17:15:25] [RANK 0] [STEP 926] Function: update_until | Line: 281 | Starting substep 26
+[17:15:25] [RANK 0] [STEP 927] Function: update_until | Line: 285 | Copied elevation_before | max = 0.04013332368167264
+[17:15:25] [RANK 0] [STEP 928] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 929] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.04013332345457478
+[17:15:25] [RANK 0] [STEP 930] Function: update_until | Line: 322 | diffusion_change = 4.3905576396774393e-10
+[17:15:25] [RANK 0] [STEP 931] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 932] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.04059999012124144
+[17:15:25] [RANK 0] [STEP 933] Function: update_until | Line: 388 | uplift_change = 0.00046666666666666384
+[17:15:25] [RANK 0] [STEP 934] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 935] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.012599994795233448
+[17:15:25] [RANK 0] [STEP 936] Function: update_until | Line: 281 | Starting substep 27
+[17:15:25] [RANK 0] [STEP 937] Function: update_until | Line: 285 | Copied elevation_before | max = 0.04059999012124144
+[17:15:25] [RANK 0] [STEP 938] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 939] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.04059998989150291
+[17:15:25] [RANK 0] [STEP 940] Function: update_until | Line: 322 | diffusion_change = 4.4416105515754367e-10
+[17:15:25] [RANK 0] [STEP 941] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 942] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.04106665655816957
+[17:15:25] [RANK 0] [STEP 943] Function: update_until | Line: 388 | uplift_change = 0.00046666666666666384
+[17:15:25] [RANK 0] [STEP 944] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 945] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.013066661232161578
+[17:15:25] [RANK 0] [STEP 946] Function: update_until | Line: 281 | Starting substep 28
+[17:15:25] [RANK 0] [STEP 947] Function: update_until | Line: 285 | Copied elevation_before | max = 0.04106665655816957
+[17:15:25] [RANK 0] [STEP 948] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 949] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.04106665632579037
+[17:15:25] [RANK 0] [STEP 950] Function: update_until | Line: 322 | diffusion_change = 4.492663532862373e-10
+[17:15:25] [RANK 0] [STEP 951] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 952] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.04153332299245703
+[17:15:25] [RANK 0] [STEP 953] Function: update_until | Line: 388 | uplift_change = 0.00046666666666666384
+[17:15:25] [RANK 0] [STEP 954] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 955] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.013533327666449036
+[17:15:25] [RANK 0] [STEP 956] Function: update_until | Line: 281 | Starting substep 29
+[17:15:25] [RANK 0] [STEP 957] Function: update_until | Line: 285 | Copied elevation_before | max = 0.04153332299245703
+[17:15:25] [RANK 0] [STEP 958] Function: update_until | Line: 296 | Starting diffusion
+[17:15:25] [RANK 0] [STEP 959] Function: update_until | Line: 317 | Finished diffusion | max elevation = 0.04153332275743715
+[17:15:25] [RANK 0] [STEP 960] Function: update_until | Line: 322 | diffusion_change = 4.5437165141493097e-10
+[17:15:25] [RANK 0] [STEP 961] Function: update_until | Line: 358 | Starting uplift
+[17:15:25] [RANK 0] [STEP 962] Function: update_until | Line: 383 | Finished uplift | max elevation = 0.041999989424103816
+[17:15:25] [RANK 0] [STEP 963] Function: update_until | Line: 388 | uplift_change = 0.00046666666666666384
+[17:15:25] [RANK 0] [STEP 964] Function: update_until | Line: 399 | Starting erosion/deposition
+[17:15:25] [RANK 0] [STEP 965] Function: update_until | Line: 403 | Finished erosion/deposition | max deposition_erosion = 0.013999994098095821
+[17:15:25] [RANK 0] [STEP 966] Function: update_until | Line: 411 | Updating current_time to 3.0
+[17:15:25] [RANK 0] [STEP 967] Function: update_until | Line: 414 | Saving landlab output
+[17:15:25] [RANK 0] [STEP 968] Function: update_until | Line: 416 | Finished saving landlab output
+[17:15:25] [RANK 0] [STEP 969] Function: update_until | Line: 424 | Computing dimensional deposition/erosion
+[17:15:25] [RANK 0] [STEP 970] Function: update_until | Line: 434 | Final elevation stats | min=0.0, max=0.041999989424103816
+[17:15:25] [RANK 0] [STEP 971] Function: update_until | Line: 440 | Final deposition_erosion stats | min=0.0, max=0.013999994098095821
+[17:15:25] [RANK 0] [STEP 972] Function: update_until | Line: 446 | Returning dimensional_deposition_erosion

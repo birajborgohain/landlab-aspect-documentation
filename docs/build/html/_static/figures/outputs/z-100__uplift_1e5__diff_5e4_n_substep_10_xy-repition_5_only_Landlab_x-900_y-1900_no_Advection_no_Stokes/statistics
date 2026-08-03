@@ -1,0 +1,12 @@
+# 1: Time step number
+# 2: Time (years)
+# 3: Time step size (years)
+# 4: Number of mesh cells
+# 5: Number of Stokes degrees of freedom
+# 6: Number of temperature degrees of freedom
+# 7: Number of nonlinear iterations
+# 8: Visualization file name
+# 9: Surface visualization file name
+# 10: Minimum topography (m)
+# 11: Maximum topography (m)
+0 0.000000000000e+00 0.000000000000e+00 1600 47592 15129 0 outputs/z-100__uplift_1e5__diff_5e4_n_substep_10_xy-repition_5_only_Landlab_x-900_y-1900_no_Advection_no_Stokes/solution/solution-00000 outputs/z-100__uplift_1e5__diff_5e4_n_substep_10_xy-repition_5_only_Landlab_x-900_y-1900_no_Advection_no_Stokes/solution_surface/solution_surface-00000 0.00000000e+00 9.98847007e-04 

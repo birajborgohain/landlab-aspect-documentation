@@ -32,7 +32,8 @@
      inkscape:window-x="257"
      inkscape:window-y="33"
      inkscape:window-maximized="0"
-     inkscape:current-layer="layer1" /><defs
+     inkscape:current-layer="layer1"
+     inkscape:export-bgcolor="#ffffff51" /><defs
      id="defs1" /><g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
@@ -44,7 +45,10 @@
        id="image1"
        x="109.19211"
        y="129.07742"
-       style="stroke-width:13.5963" /><image
+       style="stroke-width:13.5963"
+       inkscape:export-filename="stadalone_ASPECT_comparision_with_Coupled_Landlab-ASPECT_topo_analytical.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" /><image
        width="89.651825"
        height="54.682358"
        preserveAspectRatio="none"

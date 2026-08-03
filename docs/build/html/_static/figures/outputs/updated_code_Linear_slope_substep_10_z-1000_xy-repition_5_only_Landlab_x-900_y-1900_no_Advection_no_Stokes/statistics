@@ -1,0 +1,25 @@
+# 1: Time step number
+# 2: Time (years)
+# 3: Time step size (years)
+# 4: Number of mesh cells
+# 5: Number of Stokes degrees of freedom
+# 6: Number of temperature degrees of freedom
+# 7: Iterations for temperature solver
+# 8: Iterations for Stokes solver
+# 9: Velocity iterations in Stokes preconditioner
+# 10: Schur complement iterations in Stokes preconditioner
+# 11: Visualization file name
+# 12: Surface visualization file name
+# 13: Minimum topography (m)
+# 14: Maximum topography (m)
+ 0 0.000000000000e+00 0.000000000000e+00 1 89 27 0 89  90  90 outputs/updated_code_Linear_slope_substep_10_z-1000_xy-repition_5_only_Landlab_x-900_y-1900_no_Advection_no_Stokes/solution/solution-00000 outputs/updated_code_Linear_slope_substep_10_z-1000_xy-repition_5_only_Landlab_x-900_y-1900_no_Advection_no_Stokes/solution_surface/solution_surface-00000 0.00000000e+00 4.50000000e+02 
+ 1 2.046055632062e-29 2.046055632062e-29 1 89 27 2 98  99  99 outputs/updated_code_Linear_slope_substep_10_z-1000_xy-repition_5_only_Landlab_x-900_y-1900_no_Advection_no_Stokes/solution/solution-00001 outputs/updated_code_Linear_slope_substep_10_z-1000_xy-repition_5_only_Landlab_x-900_y-1900_no_Advection_no_Stokes/solution_surface/solution_surface-00001 0.00000000e+00 4.50000000e+02 
+ 2 4.553920524411e-29 2.507864892349e-29 1 89 27 1 99 100 100 outputs/updated_code_Linear_slope_substep_10_z-1000_xy-repition_5_only_Landlab_x-900_y-1900_no_Advection_no_Stokes/solution/solution-00002 outputs/updated_code_Linear_slope_substep_10_z-1000_xy-repition_5_only_Landlab_x-900_y-1900_no_Advection_no_Stokes/solution_surface/solution_surface-00002 0.00000000e+00 4.50000000e+02 
+ 3 8.042873023846e-29 3.488952499435e-29 1 89 27 1 87  88  88 outputs/updated_code_Linear_slope_substep_10_z-1000_xy-repition_5_only_Landlab_x-900_y-1900_no_Advection_no_Stokes/solution/solution-00003 outputs/updated_code_Linear_slope_substep_10_z-1000_xy-repition_5_only_Landlab_x-900_y-1900_no_Advection_no_Stokes/solution_surface/solution_surface-00003 0.00000000e+00 4.50000000e+02 
+ 4 8.104740907838e-29 6.186788399196e-31 1 89 27 1 90  91  91 outputs/updated_code_Linear_slope_substep_10_z-1000_xy-repition_5_only_Landlab_x-900_y-1900_no_Advection_no_Stokes/solution/solution-00004 outputs/updated_code_Linear_slope_substep_10_z-1000_xy-repition_5_only_Landlab_x-900_y-1900_no_Advection_no_Stokes/solution_surface/solution_surface-00004 0.00000000e+00 4.50000000e+02 
+ 5 8.165617849676e-29 6.087694183787e-31 1 89 27 1 99 100 100 outputs/updated_code_Linear_slope_substep_10_z-1000_xy-repition_5_only_Landlab_x-900_y-1900_no_Advection_no_Stokes/solution/solution-00005 outputs/updated_code_Linear_slope_substep_10_z-1000_xy-repition_5_only_Landlab_x-900_y-1900_no_Advection_no_Stokes/solution_surface/solution_surface-00005 0.00000000e+00 4.50000000e+02 
+ 6 8.224674693813e-29 5.905684413683e-31 1 89 27 2 87  88  88 outputs/updated_code_Linear_slope_substep_10_z-1000_xy-repition_5_only_Landlab_x-900_y-1900_no_Advection_no_Stokes/solution/solution-00006 outputs/updated_code_Linear_slope_substep_10_z-1000_xy-repition_5_only_Landlab_x-900_y-1900_no_Advection_no_Stokes/solution_surface/solution_surface-00006 0.00000000e+00 4.50000000e+02 
+ 7 8.282128245100e-29 5.745355128737e-31 1 89 27 1 97  98  98 outputs/updated_code_Linear_slope_substep_10_z-1000_xy-repition_5_only_Landlab_x-900_y-1900_no_Advection_no_Stokes/solution/solution-00007 outputs/updated_code_Linear_slope_substep_10_z-1000_xy-repition_5_only_Landlab_x-900_y-1900_no_Advection_no_Stokes/solution_surface/solution_surface-00007 0.00000000e+00 4.50000000e+02 
+ 8 8.339248649805e-29 5.712040470490e-31 1 89 27 1 93  94  94 outputs/updated_code_Linear_slope_substep_10_z-1000_xy-repition_5_only_Landlab_x-900_y-1900_no_Advection_no_Stokes/solution/solution-00008 outputs/updated_code_Linear_slope_substep_10_z-1000_xy-repition_5_only_Landlab_x-900_y-1900_no_Advection_no_Stokes/solution_surface/solution_surface-00008 0.00000000e+00 4.50000000e+02 
+ 9 8.395955760599e-29 5.670711079391e-31 1 89 27 1 86  87  87 outputs/updated_code_Linear_slope_substep_10_z-1000_xy-repition_5_only_Landlab_x-900_y-1900_no_Advection_no_Stokes/solution/solution-00009 outputs/updated_code_Linear_slope_substep_10_z-1000_xy-repition_5_only_Landlab_x-900_y-1900_no_Advection_no_Stokes/solution_surface/solution_surface-00009 0.00000000e+00 4.50000000e+02 
+10 8.453082422377e-29 5.712666177834e-31 1 89 27 2 88  89  89 outputs/updated_code_Linear_slope_substep_10_z-1000_xy-repition_5_only_Landlab_x-900_y-1900_no_Advection_no_Stokes/solution/solution-00010 outputs/updated_code_Linear_slope_substep_10_z-1000_xy-repition_5_only_Landlab_x-900_y-1900_no_Advection_no_Stokes/solution_surface/solution_surface-00010 0.00000000e+00 4.50000000e+02 

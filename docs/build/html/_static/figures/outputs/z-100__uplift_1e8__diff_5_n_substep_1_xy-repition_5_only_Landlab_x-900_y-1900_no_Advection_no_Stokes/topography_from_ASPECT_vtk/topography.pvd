@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<VTKFile type="Collection" version="0.1">
+  <Collection>
+    <DataSet timestep="0" file="topography_0000.vtk"/>
+    <DataSet timestep="1" file="topography_0001.vtk"/>
+    <DataSet timestep="2" file="topography_0002.vtk"/>
+    <DataSet timestep="3" file="topography_0003.vtk"/>
+  </Collection>
+</VTKFile>

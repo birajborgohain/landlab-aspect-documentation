@@ -1,0 +1,445 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Error-2: Segmentation Fault During World Builder Initialization &mdash; Landlab-Aspect Development Documentation 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d75fae25" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=fa26092b" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/slides.js?v=4682ba28"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Implementation (What has been successfully developed?)" href="../../implementation/index.html" />
+    <link rel="prev" title="Error-1:Python Callback API Mismatch: update_until() Missing Required Argument" href="denial_adalace_T-model_test.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Landlab-Aspect Development Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../installation/index.html">Installation Landlab-ASPECT</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../installation/installation_running.html">Setup Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../installation/installation_running.html#python-environment-uv">1. Python Environment (uv)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../installation/installation_running.html#install-aspect-with-python-support">2. Install ASPECT with Python Support</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Varification (What is being tested?)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../uplift_diffusion_n_substeps.html">Verification of the <code class="docutils literal notranslate"><span class="pre">n_substeps</span></code> Coupling Algorithm</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#objective">Objective</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#how-discrepancy-was-identified">How discrepancy was identified?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#method-applied-to-investigate-the-origin-of-the-discrepancy">Method applied to investigate the origin of the discrepancy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#model-setup">Model Setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#case-1-landlab-induced-uplift-configuration">Case 1 : Landlab induced uplift configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#case-2-aspect-induced-uplift-configuration">Case 2 : ASPECT induced uplift configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#results">Results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#interpretation">Interpretation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#discussion">Discussion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#summary">Summary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#figures">Figures</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#figure-1-problem-defintion">Figure 1: Problem defintion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#discrepancy-in-topographic-response-for-between-coupled-aspectlandlab-and-standalone-landlab-in-n-substeps-1-greater-then-1-scenarios">Discrepancy in Topographic Response for  Between Coupled ASPECT–Landlab and Standalone Landlab in <code class="docutils literal notranslate"><span class="pre">n_substeps</span> <span class="pre">&gt;</span> <span class="pre">1</span></code>   <code class="docutils literal notranslate"><span class="pre">(Greater</span> <span class="pre">then</span> <span class="pre">1)</span></code> Scenarios</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#figure-2-n-substeps-purpose">Figure 2: <code class="docutils literal notranslate"><span class="pre">n_substeps</span></code> Purpose</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#coupling-larger-time-with-shorter-time-frame">Coupling Larger Time with Shorter Time frame</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#figure-3-hypothesis">Figure 3 Hypothesis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#increasing-n-substeps-should-not-change-the-solution">Increasing <code class="docutils literal notranslate"><span class="pre">n_substeps</span></code> Should Not Change the Solution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#figure-4-thumbnail">Figure 4: Thumbnail</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#uplift-diffusion-algorithm-in-coupled-landlab-aspect-framework">Uplift-Diffusion Algorithm in coupled Landlab-ASPECT framework</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#figure-5-operator-splitting-error-or-non-simultaneous-process-interaction">Figure 5: Operator Splitting Error (or Non-Simultaneous Process Interaction)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#isolation-of-diffusion-and-uplift-effects-using-elevation-tracers">Isolation of Diffusion and Uplift Effects Using Elevation Tracers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#figure-6-summary">Figure 6: Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#complementary-experiments">Complementary Experiments</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#figure-c1-diffusion-first-then-uplift">Figure C1: Diffusion first <code class="docutils literal notranslate"><span class="pre">THEN</span></code> Uplift</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#figure-c2-uplift-first-then-diffusion">Figure C2: Uplift first <code class="docutils literal notranslate"><span class="pre">THEN</span></code> Diffusion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#figure-c3-ideal-case-scenario">Figure C3: Ideal case scenario</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#figure-c4-coupled-landlab-defined-uplift-no-difusion-uniform-uplift">Figure C4: Coupled Landlab defined uplift (No difusion) uniform Uplift</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#figure-c5-aspect-defined-uplift-no-difusion-uniform-uplift">Figure C5: ASPECT defined uplift (No difusion) uniform Uplift</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#figure-c7-uplift-implementation-difference">Figure C7: Uplift Implementation difference</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#figure-c8-n-substeps-10-scenario-crosssection-of-each-time-step-total-of-4">Figure C8: <code class="docutils literal notranslate"><span class="pre">n_substeps</span> <span class="pre">=</span> <span class="pre">10</span></code> scenario: Crosssection of each time step (total of 4)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#figure-c9-n-substeps-1-scenario-crosssection-of-each-time-step-total-of-4">Figure C9: <code class="docutils literal notranslate"><span class="pre">n_substeps</span> <span class="pre">=</span> <span class="pre">1</span></code> scenario: Crosssection of each time step (total of 4)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#figure-c10-n-substeps-1-scenario-diffusion-and-uplift-effect-on-elevation-changes">Figure C10: <code class="docutils literal notranslate"><span class="pre">n_substeps</span> <span class="pre">=</span> <span class="pre">1</span></code> scenario: Diffusion and Uplift effect on Elevation Changes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#figure-c11-n-substeps-2-scenario-diffusion-and-uplift-effect-on-elevation-changes">Figure C11: <code class="docutils literal notranslate"><span class="pre">n_substeps</span> <span class="pre">=</span> <span class="pre">2</span></code> scenario: Diffusion and Uplift effect on Elevation Changes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#figure-c12-n-substeps-3-scenario-diffusion-and-uplift-effect-on-elevation-changes">Figure C12: <code class="docutils literal notranslate"><span class="pre">n_substeps</span> <span class="pre">=</span> <span class="pre">3</span></code> scenario: Diffusion and Uplift effect on Elevation Changes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#figure-c13-n-substeps-6-scenario-diffusion-and-uplift-effect-on-elevation-changes">Figure C13: <code class="docutils literal notranslate"><span class="pre">n_substeps</span> <span class="pre">=</span> <span class="pre">6</span></code> scenario: Diffusion and Uplift effect on Elevation Changes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uplift_diffusion_n_substeps.html#figure-c14-n-substeps-20-scenario-diffusion-and-uplift-effect-on-elevation-changes">Figure C14: <code class="docutils literal notranslate"><span class="pre">n_substeps</span> <span class="pre">=</span> <span class="pre">20</span></code> scenario: Diffusion and Uplift effect on Elevation Changes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Deposition Implementation Tests</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="denial_adalace_T-model_test.html">Error-1:Python Callback API Mismatch: <code class="docutils literal notranslate"><span class="pre">update_until()</span></code> Missing Required Argument</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="denial_adalace_T-model_test.html#description">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="denial_adalace_T-model_test.html#command">Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="denial_adalace_T-model_test.html#software-environment">Software Environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="denial_adalace_T-model_test.html#simulation-progress">Simulation Progress</a></li>
+<li class="toctree-l4"><a class="reference internal" href="denial_adalace_T-model_test.html#failure">Failure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="denial_adalace_T-model_test.html#exception">Exception</a></li>
+<li class="toctree-l4"><a class="reference internal" href="denial_adalace_T-model_test.html#root-cause">Root Cause</a></li>
+<li class="toctree-l4"><a class="reference internal" href="denial_adalace_T-model_test.html#execution-flow">Execution Flow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="denial_adalace_T-model_test.html#resolution">Resolution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="denial_adalace_T-model_test.html#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Error-2: Segmentation Fault During World Builder Initialization</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#description">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#command">Command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#software-environment">Software Environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#simulation-progress">Simulation Progress</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#failure">Failure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#stack-trace">Stack Trace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#root-cause">Root Cause</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#execution-flow">Execution Flow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#comparison-with-previous-failure">Comparison with Previous Failure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#resolution">Resolution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#summary">Summary</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../implementation/index.html">Implementation (What has been successfully developed?)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../implementation/PR_diffusion_of_hill.html">Benchmark Recreation: ASPECT <code class="docutils literal notranslate"><span class="pre">diffusion_of_hill</span></code> Using Landlab</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../open_questions/index.html">Open Questions (What remains to be understood?)</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Landlab-Aspect Development Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Varification (What is being tested?)</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Deposition Implementation Tests</a></li>
+      <li class="breadcrumb-item active">Error-2: Segmentation Fault During World Builder Initialization</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/verifications/deposition_Landlab_ASPECT_test/denial_adalace_T-model_with-pr43.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="denial_adalace_T-model_test.html" class="btn btn-neutral float-left" title="Error-1:Python Callback API Mismatch: update_until() Missing Required Argument" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../implementation/index.html" class="btn btn-neutral float-right" title="Implementation (What has been successfully developed?)" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="error-2-segmentation-fault-during-world-builder-initialization">
+<h1>Error-2: Segmentation Fault During World Builder Initialization<a class="headerlink" href="#error-2-segmentation-fault-during-world-builder-initialization" title="Link to this heading"></a></h1>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Link to this heading"></a></h2>
+<p>After resolving the previous Python callback interface error, ASPECT was
+rebuilt from the <code class="docutils literal notranslate"><span class="pre">pr43</span></code> branch and executed again. Unlike the previous
+failure, the simulation does <strong>not</strong> reach the initialization of the
+Landlab interface or the first timestep.</p>
+<p>Instead, ASPECT terminates immediately with a segmentation fault during
+construction of the Geodynamic World Builder object.</p>
+</section>
+<section id="command">
+<h2>Command<a class="headerlink" href="#command" title="Link to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/opt/homebrew/bin/mpirun<span class="w"> </span>-np<span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>/Users/biraj/software/landlab_ASPECT_test_2/aspect/build/aspect-release<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>original_ll.prm
+</pre></div>
+</div>
+</section>
+<section id="software-environment">
+<h2>Software Environment<a class="headerlink" href="#software-environment" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>Version</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ASPECT</p></td>
+<td><p>3.1.0-pre (pr43, commit 41f098d71)</p></td>
+</tr>
+<tr class="row-odd"><td><p>deal.II</p></td>
+<td><p>9.7.0</p></td>
+</tr>
+<tr class="row-even"><td><p>Trilinos</p></td>
+<td><p>16.2.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>p4est</p></td>
+<td><p>2.8.7</p></td>
+</tr>
+<tr class="row-even"><td><p>MPI</p></td>
+<td><p>OpenMPI (Homebrew)</p></td>
+</tr>
+<tr class="row-odd"><td><p>MPI Processes</p></td>
+<td><p>23</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="simulation-progress">
+<h2>Simulation Progress<a class="headerlink" href="#simulation-progress" title="Link to this heading"></a></h2>
+<p>ASPECT starts normally and prints its version information.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>-----------------------------------------------------------------------------
+--                             This is ASPECT                              --
+-----------------------------------------------------------------------------
+</pre></div>
+</div>
+<p>Immediately afterwards, every MPI process terminates with</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Signal: Segmentation fault: 11
+Signal code: Invalid permissions (2)
+Failing at address: 0x440000f8
+</pre></div>
+</div>
+<p>No Python module is imported, and no Landlab initialization messages are
+printed.</p>
+</section>
+<section id="failure">
+<h2>Failure<a class="headerlink" href="#failure" title="Link to this heading"></a></h2>
+<p>Each MPI rank reports</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Signal: Segmentation fault: 11
+</pre></div>
+</div>
+<p>followed by</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Signal code: Invalid permissions (2)
+</pre></div>
+</div>
+<p>and finally</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Failing at address: 0x440000f8
+</pre></div>
+</div>
+<p>The MPI launcher subsequently reports</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>prterun noticed that process rank 7 exited on
+signal 11 (Segmentation fault)
+</pre></div>
+</div>
+</section>
+<section id="stack-trace">
+<h2>Stack Trace<a class="headerlink" href="#stack-trace" title="Link to this heading"></a></h2>
+<p>The first frames of the stack trace are</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>WorldBuilder::World::World(...)
+std::allocator&lt;WorldBuilder::World&gt;::construct(...)
+aspect::Simulator&lt;2&gt;::Simulator(...)
+main()
+</pre></div>
+</div>
+<p>The crash therefore occurs while constructing the
+<code class="docutils literal notranslate"><span class="pre">WorldBuilder::World</span></code> object inside the ASPECT simulator constructor.</p>
+</section>
+<section id="root-cause">
+<h2>Root Cause<a class="headerlink" href="#root-cause" title="Link to this heading"></a></h2>
+<p>Unlike the previous error, this failure does <strong>not</strong> originate from the
+Landlab Python interface.</p>
+<p>The simulation terminates before</p>
+<ul class="simple">
+<li><p>importing the Python module,</p></li>
+<li><p>constructing the RasterModelGrid,</p></li>
+<li><p>initializing Landlab components, or</p></li>
+<li><p>entering the timestep loop.</p></li>
+</ul>
+<p>The stack trace indicates that the failure occurs during initialization of
+the Geodynamic World Builder.</p>
+<p>Possible causes include</p>
+<ul class="simple">
+<li><p>an invalid or incompatible World Builder configuration,</p></li>
+<li><p>an ABI mismatch between ASPECT and the linked World Builder library,</p></li>
+<li><p>memory corruption introduced during recent code modifications,</p></li>
+<li><p>inconsistent rebuild after switching branches, or</p></li>
+<li><p>incompatible compiler or library versions.</p></li>
+</ul>
+</section>
+<section id="execution-flow">
+<h2>Execution Flow<a class="headerlink" href="#execution-flow" title="Link to this heading"></a></h2>
+<p>The execution sequence is</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>MPI starts
+    │
+    ▼
+ASPECT executable begins
+    │
+    ▼
+Simulator constructor
+    │
+    ▼
+Construct WorldBuilder::World
+    │
+    ▼
+Segmentation fault (SIGSEGV)
+    │
+    ▼
+MPI terminates all ranks
+</pre></div>
+</div>
+<p>Unlike the previous Python callback error, execution never reaches the
+Landlab interface.</p>
+</section>
+<section id="comparison-with-previous-failure">
+<h2>Comparison with Previous Failure<a class="headerlink" href="#comparison-with-previous-failure" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Stage</p></th>
+<th class="head"><p>Previous Failure</p></th>
+<th class="head"><p>Current Failure</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ASPECT starts</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>Python imported</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-even"><td><p>RasterModelGrid created</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p>Landlab initialized</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-even"><td><p>First timestep reached</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p>Failure type</p></td>
+<td><p>Python <code class="docutils literal notranslate"><span class="pre">TypeError</span></code></p></td>
+<td><p>Segmentation fault</p></td>
+</tr>
+<tr class="row-even"><td><p>Origin</p></td>
+<td><p>Python callback</p></td>
+<td><p>World Builder initialization</p></td>
+</tr>
+<tr class="row-odd"><td><p>MPI termination</p></td>
+<td><p>Consequence</p></td>
+<td><p>Consequence</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="resolution">
+<h2>Resolution<a class="headerlink" href="#resolution" title="Link to this heading"></a></h2>
+<p>Recommended debugging steps are</p>
+<ol class="arabic simple">
+<li><p>Rebuild ASPECT, World Builder, and all dependencies from a clean build
+directory.</p></li>
+<li><p>Verify that the World Builder library linked against ASPECT matches the
+version used during compilation.</p></li>
+<li><p>Run the executable without the World Builder plugin (if possible) to
+isolate the source of the crash.</p></li>
+<li><p>Execute the program under a debugger (e.g., <code class="docutils literal notranslate"><span class="pre">lldb</span></code> or <code class="docutils literal notranslate"><span class="pre">gdb</span></code>) to
+obtain a complete backtrace.</p></li>
+<li><p>Compare the <code class="docutils literal notranslate"><span class="pre">pr43</span></code> branch against the previous working
+<code class="docutils literal notranslate"><span class="pre">landlab-aspect</span></code> branch to identify changes affecting simulator
+initialization.</p></li>
+</ol>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Item</p></th>
+<th class="head"><p>Status</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Simulation startup</p></td>
+<td><p>Partial</p></td>
+</tr>
+<tr class="row-odd"><td><p>Python import</p></td>
+<td><p>Not reached</p></td>
+</tr>
+<tr class="row-even"><td><p>Landlab setup</p></td>
+<td><p>Not reached</p></td>
+</tr>
+<tr class="row-odd"><td><p>First timestep</p></td>
+<td><p>Not reached</p></td>
+</tr>
+<tr class="row-even"><td><p>Failure type</p></td>
+<td><p>Segmentation fault (SIGSEGV)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Origin</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">WorldBuilder::World</span></code> constructor</p></td>
+</tr>
+<tr class="row-even"><td><p>Root cause</p></td>
+<td><p>Initialization failure before Landlab interface</p></td>
+</tr>
+<tr class="row-odd"><td><p>MPI</p></td>
+<td><p>Secondary; terminates after SIGSEGV</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="denial_adalace_T-model_test.html" class="btn btn-neutral float-left" title="Error-1:Python Callback API Mismatch: update_until() Missing Required Argument" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../implementation/index.html" class="btn btn-neutral float-right" title="Implementation (What has been successfully developed?)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Biraj Borgohain.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

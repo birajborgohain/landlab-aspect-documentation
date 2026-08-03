@@ -1,0 +1,92 @@
+=====================================
+ASPECT-Landlab Execution Trace
+MPI Rank: 0
+Trace File: outputs/Landlab_defined_uplift_subset_1_trace/trace_logs/execution_trace_rank_0.txt
+=====================================
+
+
+================ ASPECT TIMESTEP 1 SUMMARY ================
+[STEP 1 | LINE 567]
+Total loops = 1
+[STEP 2 | LINE 571]
+Final elapsed_time = 0.0
+[STEP 3 | LINE 576]
+Final max elevation = 0.0
+
+================ LOOP 1 ================
+[STEP 4 | LINE 362]
+elapsed_time_before = 0.0
+[STEP 5 | LINE 367]
+dt = 1.0
+[STEP 6 | LINE 410]
+max diffusion_change = 0.0
+[STEP 7 | LINE 415]
+max elevation after diffusion = 0.0
+[STEP 8 | LINE 481]
+max uplift_change = 0.014
+[STEP 9 | LINE 486]
+max elevation after uplift = 0.014
+[STEP 10 | LINE 512]
+elapsed_time_after = 1.0
+[STEP 11 | LINE 517]
+max deposition_erosion = 0.014
+
+================ ASPECT TIMESTEP 2 SUMMARY ================
+[STEP 12 | LINE 567]
+Total loops = 1
+[STEP 13 | LINE 571]
+Final elapsed_time = 1.0
+[STEP 14 | LINE 576]
+Final max elevation = 0.014
+
+================ LOOP 2 ================
+[STEP 15 | LINE 362]
+elapsed_time_before = 1.0
+[STEP 16 | LINE 367]
+dt = 1.0
+[STEP 17 | LINE 410]
+max diffusion_change = 0.013360309497510336
+[STEP 18 | LINE 415]
+max elevation after diffusion = 0.005811528230866015
+[STEP 19 | LINE 481]
+max uplift_change = 0.014000000000000002
+[STEP 20 | LINE 486]
+max elevation after uplift = 0.016648757334992374
+[STEP 21 | LINE 512]
+elapsed_time_after = 2.0
+[STEP 22 | LINE 517]
+max deposition_erosion = 0.005811528230866015
+
+================ ASPECT TIMESTEP 3 SUMMARY ================
+[STEP 23 | LINE 567]
+Total loops = 1
+[STEP 24 | LINE 571]
+Final elapsed_time = 2.0
+[STEP 25 | LINE 576]
+Final max elevation = 0.016648757334992374
+
+================ LOOP 3 ================
+[STEP 26 | LINE 362]
+elapsed_time_before = 2.0
+[STEP 27 | LINE 367]
+dt = 1.0
+[STEP 28 | LINE 410]
+max diffusion_change = 0.01378280473326197
+[STEP 29 | LINE 415]
+max elevation after diffusion = 0.008331196503657717
+[STEP 30 | LINE 481]
+max uplift_change = 0.014000000000000002
+[STEP 31 | LINE 486]
+max elevation after uplift = 0.018530918906432436
+[STEP 32 | LINE 512]
+elapsed_time_after = 3.0
+[STEP 33 | LINE 517]
+max deposition_erosion = 0.0025580685258563586
+
+================ ASPECT TIMESTEP 4 SUMMARY ================
+[STEP 34 | LINE 567]
+Total loops = 1
+[STEP 35 | LINE 571]
+Final elapsed_time = 3.0
+[STEP 36 | LINE 576]
+Final max elevation = 0.018530918906432436

@@ -1,0 +1,15 @@
+# 1: Time step number
+# 2: Time (seconds)
+# 3: Time step size (seconds)
+# 4: Number of mesh cells
+# 5: Number of Stokes degrees of freedom
+# 6: Number of temperature degrees of freedom
+# 7: Number of nonlinear iterations
+# 8: Visualization file name
+# 9: Surface visualization file name
+# 10: Minimum topography (m)
+# 11: Maximum topography (m)
+0 0.000000000000e+00 0.000000000000e+00 171 7069 2223 0 outputs/Landlab_defined_uplift_N_SUBSET_1_ASPECT_end-time-3_Reference_end-time-3_standalone_Landlab_end-time-3_DT-0.5_trace/solution/solution-00000 outputs/Landlab_defined_uplift_N_SUBSET_1_ASPECT_end-time-3_Reference_end-time-3_standalone_Landlab_end-time-3_DT-0.5_trace/solution_surface/solution_surface-00000 4.69547619e-06 9.98847007e-04 
+1 1.000000000000e+00 1.000000000000e+00 171 7069 2223 0 outputs/Landlab_defined_uplift_N_SUBSET_1_ASPECT_end-time-3_Reference_end-time-3_standalone_Landlab_end-time-3_DT-0.5_trace/solution/solution-00001 outputs/Landlab_defined_uplift_N_SUBSET_1_ASPECT_end-time-3_Reference_end-time-3_standalone_Landlab_end-time-3_DT-0.5_trace/solution_surface/solution_surface-00001 4.69547619e-06 1.44766888e-02 
+2 2.000000000000e+00 1.000000000000e+00 171 7069 2223 0 outputs/Landlab_defined_uplift_N_SUBSET_1_ASPECT_end-time-3_Reference_end-time-3_standalone_Landlab_end-time-3_DT-0.5_trace/solution/solution-00002 outputs/Landlab_defined_uplift_N_SUBSET_1_ASPECT_end-time-3_Reference_end-time-3_standalone_Landlab_end-time-3_DT-0.5_trace/solution_surface/solution_surface-00002 4.69547619e-06 1.71344292e-02 
+3 3.000000000000e+00 1.000000000000e+00 171 7069 2223 0 outputs/Landlab_defined_uplift_N_SUBSET_1_ASPECT_end-time-3_Reference_end-time-3_standalone_Landlab_end-time-3_DT-0.5_trace/solution/solution-00003 outputs/Landlab_defined_uplift_N_SUBSET_1_ASPECT_end-time-3_Reference_end-time-3_standalone_Landlab_end-time-3_DT-0.5_trace/solution_surface/solution_surface-00003 4.69547619e-06 1.90091351e-02 

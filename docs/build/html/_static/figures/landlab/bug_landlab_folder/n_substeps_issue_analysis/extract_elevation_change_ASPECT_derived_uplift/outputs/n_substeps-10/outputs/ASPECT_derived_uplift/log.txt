@@ -1,0 +1,87 @@
+-----------------------------------------------------------------------------
+--                             This is ASPECT                              --
+-- The Advanced Solver for Planetary Evolution, Convection, and Tectonics. --
+-----------------------------------------------------------------------------
+--     . version 3.1.0-pre (pr43, 41f098d71)
+--     . using deal.II 9.7.0
+--     .       with 32 bit indices
+--     .       with vectorization level 1 (SSE2, 2 doubles, 128 bits)
+--     . using Trilinos 16.2.0
+--     . using p4est 2.8.7
+--     . using Geodynamic World Builder 1.0.0
+--     . running in OPTIMIZED mode
+--     . running with 17 MPI processes
+-----------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------
+-- For information on how to cite ASPECT, see:
+--   https://aspect.geodynamics.org/citing.html?ver=3.1.0-pre&sha=41f098d71&src=code
+-----------------------------------------------------------------------------
+Number of active cells: 171 (on 1 levels)
+Number of degrees of freedom: 9,292 (7,069+2,223)
+
+Number of mesh deformation degrees of freedom: 6,669
+   Solving mesh displacement system... 8 iterations.
+*** Timestep 0:  t=0 seconds, dt=0 seconds
+   Solving mesh displacement system... 0 iterations.
+   Solving temperature system... 0 iterations.
+   Solving Stokes system (direct)... done.
+
+   Postprocessing:
+     Writing graphical output: outputs/ASPECT_derived_uplift/solution/solution-00000
+     Topography min/max:       4.695e-06 m, 0.0009988 m
+
+*** Timestep 1:  t=1 seconds, dt=1 seconds
+   Solving mesh displacement system... 0 iterations.
+   Solving temperature system... 20 iterations.
+   Solving Stokes system (direct)... done.
+
+   Postprocessing:
+     Writing graphical output: outputs/ASPECT_derived_uplift/solution/solution-00001
+     Topography min/max:       4.695e-06 m, 0.0009988 m
+
+*** Timestep 2:  t=2 seconds, dt=1 seconds
+   Solving mesh displacement system... 0 iterations.
+   Solving temperature system... 20 iterations.
+   Solving Stokes system (direct)... done.
+
+   Postprocessing:
+     Writing graphical output: outputs/ASPECT_derived_uplift/solution/solution-00002
+     Topography min/max:       4.695e-06 m, 0.0009988 m
+
+*** Timestep 3:  t=3 seconds, dt=1 seconds
+   Solving mesh displacement system... 0 iterations.
+   Solving temperature system... 20 iterations.
+   Solving Stokes system (direct)... done.
+
+   Postprocessing:
+     Writing graphical output: outputs/ASPECT_derived_uplift/solution/solution-00003
+     Topography min/max:       4.695e-06 m, 0.0009988 m
+
+Termination requested by criterion: end time
+
+
++----------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start     |      1.95s |            |
+|                                              |            |            |
+| Section                          | no. calls |  wall time | % of total |
++----------------------------------+-----------+------------+------------+
+| Assemble Stokes system           |         4 |    0.0186s |      0.95% |
+| Assemble temperature system      |         4 |   0.00919s |      0.47% |
+| Build temperature preconditioner |         4 |  0.000949s |         0% |
+| Initialization                   |         1 |      1.38s |        71% |
+| Mesh deformation                 |         4 |      0.11s |       5.6% |
+| Mesh deformation initialize      |         1 |    0.0832s |       4.3% |
+| Postprocessing                   |         4 |    0.0775s |         4% |
+| Setup dof systems                |         1 |     0.088s |       4.5% |
+| Setup initial conditions         |         1 |   0.00288s |      0.15% |
+| Setup matrices                   |         1 |   0.00265s |      0.14% |
+| Solve Stokes system              |         4 |     0.235s |        12% |
+| Solve temperature system         |         4 |   0.00443s |      0.23% |
++----------------------------------+-----------+------------+------------+
+
+-- Total wallclock time elapsed including restarts: 2s
+-----------------------------------------------------------------------------
+-- For information on how to cite ASPECT, see:
+--   https://aspect.geodynamics.org/citing.html?ver=3.1.0-pre&sha=41f098d71&src=code
+-----------------------------------------------------------------------------

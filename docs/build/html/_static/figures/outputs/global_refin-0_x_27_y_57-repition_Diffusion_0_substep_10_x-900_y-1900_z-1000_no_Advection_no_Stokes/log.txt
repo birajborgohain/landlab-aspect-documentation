@@ -1,0 +1,74 @@
+-----------------------------------------------------------------------------
+--                             This is ASPECT                              --
+-- The Advanced Solver for Planetary Evolution, Convection, and Tectonics. --
+-----------------------------------------------------------------------------
+--     . version 3.1.0-pre (pr43, 23ad3f3ba)
+--     . using deal.II 9.7.0
+--     .       with 32 bit indices
+--     .       with vectorization level 1 (SSE2, 2 doubles, 128 bits)
+--     . using Trilinos 16.2.0
+--     . using p4est 2.8.7
+--     . using Geodynamic World Builder 1.0.0
+--     . running in OPTIMIZED mode
+--     . running with 25 MPI processes
+-----------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------
+-- For information on how to cite ASPECT, see:
+--   https://aspect.geodynamics.org/citing.html?ver=3.1.0-pre&mf=1&sha=23ad3f3ba&src=code
+-----------------------------------------------------------------------------
+Number of active cells: 30,780 (on 1 levels)
+Number of degrees of freedom: 1,071,404 (777,975+34,104+259,325)
+
+Number of mesh deformation degrees of freedom: 777,975
+   Solving mesh displacement system... 7 iterations.
+*** Timestep 0:  t=0 seconds, dt=0 seconds
+   Solving mesh displacement system... 0 iterations.
+
+   Postprocessing:
+     Writing graphical output: outputs/global_refin-0_x_27_y_57-repition_Diffusion_0_substep_10_x-900_y-1900_z-1000_no_Advection_no_Stokes/solution/solution-00000
+     Topography min/max:       4.695e-06 m, 0.0009988 m
+
+*** Timestep 1:  t=1 seconds, dt=1 seconds
+   Solving mesh displacement system... 4 iterations.
+
+   Postprocessing:
+     Writing graphical output: outputs/global_refin-0_x_27_y_57-repition_Diffusion_0_substep_10_x-900_y-1900_z-1000_no_Advection_no_Stokes/solution/solution-00001
+     Topography min/max:       4.695e-06 m, 0.01473 m
+
+*** Timestep 2:  t=2 seconds, dt=1 seconds
+   Solving mesh displacement system... 4 iterations.
+
+   Postprocessing:
+     Writing graphical output: outputs/global_refin-0_x_27_y_57-repition_Diffusion_0_substep_10_x-900_y-1900_z-1000_no_Advection_no_Stokes/solution/solution-00002
+     Topography min/max:       4.695e-06 m, 0.02873 m
+
+*** Timestep 3:  t=3 seconds, dt=1 seconds
+   Solving mesh displacement system... 4 iterations.
+
+   Postprocessing:
+     Writing graphical output: outputs/global_refin-0_x_27_y_57-repition_Diffusion_0_substep_10_x-900_y-1900_z-1000_no_Advection_no_Stokes/solution/solution-00003
+     Topography min/max:       4.695e-06 m, 0.04273 m
+
+Termination requested by criterion: end time
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |      5.43s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| Initialization                  |         1 |      1.68s |        31% |
+| Mesh deformation                |         4 |      1.74s |        32% |
+| Mesh deformation initialize     |         1 |     0.921s |        17% |
+| Postprocessing                  |         4 |     0.367s |       6.8% |
+| Setup dof systems               |         1 |      1.15s |        21% |
+| Setup initial conditions        |         1 |     0.085s |       1.6% |
+| Setup matrices                  |         1 |    0.0637s |       1.2% |
++---------------------------------+-----------+------------+------------+
+
+-- Total wallclock time elapsed including restarts: 5s
+-----------------------------------------------------------------------------
+-- For information on how to cite ASPECT, see:
+--   https://aspect.geodynamics.org/citing.html?ver=3.1.0-pre&mf=1&sha=23ad3f3ba&src=code
+-----------------------------------------------------------------------------
