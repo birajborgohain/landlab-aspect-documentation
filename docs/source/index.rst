@@ -19,4 +19,5 @@ benchmark recreations, and implementation.
    verifications/index
    implementation/index
    open_questions/index
+   development_journal/index
 
