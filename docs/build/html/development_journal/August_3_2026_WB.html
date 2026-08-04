@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>August 2, 2026, Investigation of Unit Conversion and Solver Failure in the ASPECT–Landlab Coupling &mdash; Landlab-Aspect Development Documentation 0.1 documentation</title>
+  <title>August 3, 2026, Running the Denial Ada Lovelace Extension Model without World Builder on macOS &mdash; Landlab-Aspect Development Documentation 0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d75fae25" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=fa26092b" />
@@ -17,13 +17,11 @@
       <script src="../_static/documentation_options.js?v=2709fde1"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       <script src="../_static/slides.js?v=4682ba28"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="August 3, 2026, Running the Denial Ada Lovelace Extension Model without World Builder on macOS" href="August_3_2026_WB.html" />
-    <link rel="prev" title="August 1, 2026, Varification - Deposition Implementation Tests - Deposition and Rift Basin" href="August_1_2026.html" /> 
+    <link rel="prev" title="August 2, 2026, Investigation of Unit Conversion and Solver Failure in the ASPECT–Landlab Coupling" href="August_2_2026_s2yr_debug.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -163,22 +161,24 @@
 <li class="toctree-l3"><a class="reference internal" href="August_1_2026.html#fastscapelandlab-integration-horizontal-surface-advection-parameter-mapping-and-code-refinement">FastScape–Landlab Integration: Horizontal Surface Advection, Parameter Mapping, and Code Refinement</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">August 2, 2026, Investigation of Unit Conversion and Solver Failure in the ASPECT–Landlab Coupling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_3_2026_WB.html">August 3, 2026, Running the Denial Ada Lovelace Extension Model without World Builder on macOS</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="August_3_2026_WB.html#objective">Objective</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_3_2026_WB.html#modifications-to-the-original-parameter-file">Modifications to the Original Parameter File</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="August_3_2026_WB.html#removal-of-world-builder">1. Removal of World Builder</a></li>
-<li class="toctree-l4"><a class="reference internal" href="August_3_2026_WB.html#landlab-script">2. Landlab Script</a></li>
-<li class="toctree-l4"><a class="reference internal" href="August_3_2026_WB.html#output-directory">3. Output Directory</a></li>
-<li class="toctree-l4"><a class="reference internal" href="August_3_2026_WB.html#solver-parameter-modifications">4. Solver Parameter Modifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="August_2_2026_s2yr_debug.html">August 2, 2026, Investigation of Unit Conversion and Solver Failure in the ASPECT–Landlab Coupling</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">August 3, 2026, Running the Denial Ada Lovelace Extension Model without World Builder on macOS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#objective">Objective</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modifications-to-the-original-parameter-file">Modifications to the Original Parameter File</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#removal-of-world-builder">1. Removal of World Builder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#landlab-script">2. Landlab Script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#output-directory">3. Output Directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#solver-parameter-modifications">4. Solver Parameter Modifications</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="August_3_2026_WB.html#observed-solver-behavior">Observed Solver Behavior</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_3_2026_WB.html#simulation-progress">Simulation Progress</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_3_2026_WB.html#fatal-error">Fatal Error</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_3_2026_WB.html#interpretation">Interpretation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_3_2026_WB.html#relationship-to-solver-changes">Relationship to Solver Changes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_3_2026_WB.html#conclusion">Conclusion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#observed-solver-behavior">Observed Solver Behavior</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#simulation-progress">Simulation Progress</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fatal-error">Fatal Error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#interpretation">Interpretation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#relationship-to-solver-changes">Relationship to Solver Changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#conclusion">Conclusion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#possible-relationship-to-removing-world-builder">Possible Relationship to Removing World Builder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#write-up-to-contribute-to-denial-agu-abstract-if-in-case">Write up to contribute to Denial AGU abstract (if in case)</a></li>
 </ul>
 </li>
 </ul>
@@ -200,295 +200,275 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="index.html">Development Journal</a></li>
-      <li class="breadcrumb-item active">August 2, 2026, Investigation of Unit Conversion and Solver Failure in the ASPECT–Landlab Coupling</li>
+      <li class="breadcrumb-item active">August 3, 2026, Running the Denial Ada Lovelace Extension Model without World Builder on macOS</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/development_journal/August_2_2026_s2yr_debug.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/development_journal/August_3_2026_WB.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
-        <a href="August_1_2026.html" class="btn btn-neutral float-left" title="August 1, 2026, Varification - Deposition Implementation Tests - Deposition and Rift Basin" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="August_3_2026_WB.html" class="btn btn-neutral float-right" title="August 3, 2026, Running the Denial Ada Lovelace Extension Model without World Builder on macOS" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="August_2_2026_s2yr_debug.html" class="btn btn-neutral float-left" title="August 2, 2026, Investigation of Unit Conversion and Solver Failure in the ASPECT–Landlab Coupling" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
   </div>
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="august-2-2026-investigation-of-unit-conversion-and-solver-failure-in-the-aspectlandlab-coupling">
-<h1>August 2, 2026, Investigation of Unit Conversion and Solver Failure in the ASPECT–Landlab Coupling<a class="headerlink" href="#august-2-2026-investigation-of-unit-conversion-and-solver-failure-in-the-aspectlandlab-coupling" title="Link to this heading"></a></h1>
-<p><strong>Objective</strong></p>
-<p>Today’s work focused on investigating a numerical instability encountered
-after replacing the original FastScape coupling with the new Landlab
-implementation while preserving the same parameter values from the original
-ASPECT FastScape model.</p>
-<p>The main objective was to determine whether the instability originated from</p>
+  <section id="august-3-2026-running-the-denial-ada-lovelace-extension-model-without-world-builder-on-macos">
+<h1>August 3, 2026, Running the Denial Ada Lovelace Extension Model without World Builder on macOS<a class="headerlink" href="#august-3-2026-running-the-denial-ada-lovelace-extension-model-without-world-builder-on-macos" title="Link to this heading"></a></h1>
+<section id="objective">
+<h2>Objective<a class="headerlink" href="#objective" title="Link to this heading"></a></h2>
+<p>The original Denial’s <code class="docutils literal notranslate"><span class="pre">original_II.prm</span></code> model depends on the ASPECT World Builder plugin for initializing the geological model. Since World Builder is currently unavailable on macOS, a modified version of the parameter file was created to allow the benchmark to run without the World Builder dependency.</p>
+<p>In addition, several nonlinear and linear solver parameters were relaxed in an attempt to improve convergence. Despite these modifications, the simulation ultimately terminated with a mesh mapping exception during the reaction computation stage.</p>
+</section>
+<section id="modifications-to-the-original-parameter-file">
+<h2>Modifications to the Original Parameter File<a class="headerlink" href="#modifications-to-the-original-parameter-file" title="Link to this heading"></a></h2>
+<p>The following changes were introduced relative to the original parameter file.</p>
+<section id="removal-of-world-builder">
+<h3>1. Removal of World Builder<a class="headerlink" href="#removal-of-world-builder" title="Link to this heading"></a></h3>
+<p>The World Builder initialization was disabled.</p>
+<p>Original:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>set World builder file = ada_lovelace.wb
+</pre></div>
+</div>
+<p>Modified:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span># set World builder file = ada_lovelace.wb
+</pre></div>
+</div>
+<p>Similarly, the initial composition model was changed from</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>set List of model names = function, world builder
+set List of model operators = add, add
+</pre></div>
+</div>
+<p>to</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>set Model name = function
+set List of model operators = add
+</pre></div>
+</div>
+<p>This allows the model to initialize using only the analytical function instead of requiring World Builder.</p>
+</section>
+<section id="landlab-script">
+<h3>2. Landlab Script<a class="headerlink" href="#landlab-script" title="Link to this heading"></a></h3>
+<p>The Landlab driver script was replaced.</p>
+<p>Original</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>set Script name = landlab_script_ada_lovelace
+</pre></div>
+</div>
+<p>Modified</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>set Script name = original_landlab
+</pre></div>
+</div>
+<p>This change was made to use the available Landlab implementation compatible with the local setup.</p>
+</section>
+<section id="output-directory">
+<h3>3. Output Directory<a class="headerlink" href="#output-directory" title="Link to this heading"></a></h3>
+<p>Original</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>landlab_250m_resolution
+</pre></div>
+</div>
+<p>Modified</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>outputs/no_web_test_1
+</pre></div>
+</div>
+<p>to keep the modified experiment separate from the original benchmark outputs.</p>
+</section>
+<section id="solver-parameter-modifications">
+<h3>4. Solver Parameter Modifications<a class="headerlink" href="#solver-parameter-modifications" title="Link to this heading"></a></h3>
+<p>Several solver parameters were relaxed in an attempt to improve nonlinear convergence.</p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-number">Table 6 </span><span class="caption-text">Solver parameter modifications</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 55.6%" />
+<col style="width: 22.2%" />
+<col style="width: 22.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Original</p></th>
+<th class="head"><p>Modified</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Cut back factor</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.5</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.25</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Linear solver tolerance</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1e-8</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1e-7</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>GMRES restart length</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">100</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">150</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Newton switch tolerance</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1e-5</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1e-3</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Maximum linear Stokes solver tolerance</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1e-8</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1e-6</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The remaining physical model parameters were kept identical to the benchmark.</p>
+</section>
+</section>
+<section id="observed-solver-behavior">
+<h2>Observed Solver Behavior<a class="headerlink" href="#observed-solver-behavior" title="Link to this heading"></a></h2>
+<p>The simulation successfully completed several timesteps and repeatedly solved:</p>
 <ul class="simple">
-<li><p>incorrect unit conversion,</p></li>
-<li><p>differences between FastScape and Landlab,</p></li>
-<li><p>the ASPECT–Landlab coupling,</p></li>
-<li><p>or the newly introduced ghost-node implementation.</p></li>
+<li><p>Temperature</p></li>
+<li><p>Stokes</p></li>
+<li><p>Viscoelastic stress</p></li>
+<li><p>Plastic strain</p></li>
+<li><p>Compositional fields</p></li>
 </ul>
-<p><strong>Background</strong></p>
-<p>Originally, the Landlab implementation converted several parameters from
-per-year units to per-second units before passing them to Landlab:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">D</span> <span class="o">=</span> <span class="mf">1e-2</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">s2yr</span>
-<span class="n">K</span> <span class="o">=</span> <span class="mf">1e-6</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">s2yr</span>
-<span class="n">shallow_water_diffusivity</span> <span class="o">=</span> <span class="mf">1e-2</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">s2yr</span>
+<p>The solver switched from Picard iterations to Newton iterations as expected:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Switching from defect correction form of Picard
+to the Newton solver scheme.
 </pre></div>
 </div>
-<p>The motivation for changing this was based on the ASPECT parameter file,
-which contains</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>set Use years in output instead of seconds = true
-</pre></div>
-</div>
-<p>Since the original FastScape parameters are documented in units of
-<code class="xref py py-meth docutils literal notranslate"><span class="pre">m/year()</span></code> and <span class="math notranslate nohighlight">\(m^2/year\)</span>, it appeared more natural to pass the
-same parameter values directly into Landlab:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">D</span> <span class="o">=</span> <span class="mf">1e-2</span>
-<span class="n">K</span> <span class="o">=</span> <span class="mf">1e-6</span>
-<span class="n">shallow_water_diffusivity</span> <span class="o">=</span> <span class="mf">1e-2</span>
-</pre></div>
-</div>
-<p>This modification was expected to make the Landlab implementation consistent
-with the original FastScape implementation.</p>
-<p><strong>Observed Error</strong></p>
-<p>Immediately after removing the <code class="docutils literal notranslate"><span class="pre">/</span> <span class="pre">self.s2yr</span></code> conversions, the coupled model
-failed.</p>
-<p>The ASPECT log first reported</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>RuntimeWarning:
-divide by zero encountered in divide
+<p>Throughout the run, the Stokes system converged with approximately 75–135 AMG iterations per nonlinear iteration.</p>
+<p>Although convergence improved significantly during each nonlinear solve, the nonlinear residual never reached the requested tolerance before the maximum number of nonlinear iterations (40) was exhausted.</p>
+<p>Near the end of timestep 10, the solver reported</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>WARNING:
+The nonlinear solver in the current timestep
+failed to converge.
 
-RuntimeWarning:
-overflow encountered in divide
+Continuing to the next timestep even though
+solution is not fully converged.
 </pre></div>
 </div>
-<p>Immediately afterwards, the topography became</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Max elevation = 51837293163
-
-Min elevation = -17681406182
+<p>This behavior is expected because the parameter</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>set Nonlinear solver failure strategy =
+    continue with next timestep
 </pre></div>
 </div>
-<p>These elevations are physically impossible and indicate that the numerical
-solution became unstable during the very first timestep.</p>
-<p>Following this instability, ASPECT terminated with</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>The iterative advection solver in
-Simulator::solve_advection did not converge.
+<p>explicitly instructs ASPECT to continue even when nonlinear convergence is not achieved.</p>
+</section>
+<section id="simulation-progress">
+<h2>Simulation Progress<a class="headerlink" href="#simulation-progress" title="Link to this heading"></a></h2>
+<p>The simulation nevertheless advanced to timestep 11.</p>
+<p>The reported state was</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Timestep 11
+t = 100741 years
+dt = 741 years
 </pre></div>
 </div>
-<p>Finally, MPI aborted the simulation.</p>
-<p><strong>Interpretation of the Error</strong></p>
-<p>Initially it appeared that the ASPECT temperature solver was responsible for
-the crash.</p>
-<p>However, after carefully reading the error log, the sequence of events became
-clear:</p>
-<ol class="arabic simple">
-<li><p>Landlab produces runtime warnings.</p></li>
-<li><p>The surface elevation becomes numerically unstable.</p></li>
-<li><p>Topography grows to approximately <span class="math notranslate nohighlight">\(10^{10}\)</span> m.</p></li>
-<li><p>ASPECT attempts to deform the surface.</p></li>
-<li><p>The temperature advection solver fails to converge.</p></li>
-<li><p>MPI aborts the simulation.</p></li>
-</ol>
-<p>Therefore, the ASPECT solver failure is not the root cause. Instead, it is a
-consequence of an earlier numerical instability occurring inside the
-landscape evolution model.</p>
-<p><strong>Initial Hypothesis</strong></p>
-<p>The first hypothesis was that removing</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">s2yr</span>
+<p>Landlab successfully produced a new surface mesh</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Writing output VTK file...
 </pre></div>
 </div>
-<p>increased the diffusivities and erosion coefficients by a factor of</p>
-<div class="math notranslate nohighlight">
-\[365.25 \times 24 \times 60 \times 60
-\approx
-3.16 \times 10^7\]</div>
-<p>This would make diffusion and erosion approximately thirty million times
-stronger than before and therefore provide a straightforward explanation for
-the numerical instability.</p>
-<p><strong>Inspection of LandLabTemplate</strong></p>
-<p>The next step was to inspect the implementation of
-<code class="docutils literal notranslate"><span class="pre">LandLabTemplate</span></code>.</p>
-<p>The objective was to determine whether ASPECT or the coupling framework was
-already performing hidden conversions between years and seconds.</p>
-<p>The following functions were examined:</p>
+<p>and ASPECT began solving the next timestep.</p>
+</section>
+<section id="fatal-error">
+<h2>Fatal Error<a class="headerlink" href="#fatal-error" title="Link to this heading"></a></h2>
+<p>The simulation ultimately terminated with</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Exception:
+Mapping&lt;2&gt;::ExcTransformationFailed()
+</pre></div>
+</div>
+<p>The important diagnostic message is</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Computing the mapping between a real space point
+and a point in reference space failed,
+typically because the given point lies outside
+the cell where the inverse mapping is not unique.
+</pre></div>
+</div>
+<p>The stack trace shows the failure occurred in</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>MappingQ::transform_real_to_unit_cell()
+</pre></div>
+</div>
+<p>during</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>StrainDependent::fill_reaction_outputs()
+</pre></div>
+</div>
+<p>called by</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ViscoPlastic::evaluate()
+</pre></div>
+</div>
+<p>while ASPECT was computing composition reactions.</p>
+</section>
+<section id="interpretation">
+<h2>Interpretation<a class="headerlink" href="#interpretation" title="Link to this heading"></a></h2>
+<p>The failure is <strong>not</strong> a linear solver failure.</p>
+<p>Likewise, it is <strong>not</strong> simply caused by the nonlinear solver reaching the maximum number of iterations.</p>
+<p>Instead, the exception indicates that ASPECT attempted to map a physical point back into a finite element cell, but the point no longer belonged to the expected cell.</p>
+<p>This generally occurs when one of the following situations develops:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">determine_uplift_velocity()</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">determine_horizontal_velocity()</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">dimensional_deposition_erosion()</span></code></p></li>
-<li><p>initialization of <code class="docutils literal notranslate"><span class="pre">self.s2yr</span></code></p></li>
+<li><p>excessive mesh deformation,</p></li>
+<li><p>invalid mesh geometry,</p></li>
+<li><p>highly distorted cells,</p></li>
+<li><p>surface displacement becoming inconsistent with the computational mesh,</p></li>
+<li><p>or a point generated during the reaction computation lies outside the deformed element.</p></li>
 </ul>
-<p><strong>Findings</strong></p>
-<p>No unit conversions were found.</p>
+<p>The fact that the error occurs inside</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>transform_real_to_unit_cell()
+</pre></div>
+</div>
+<p>rather than inside the Stokes or temperature solver strongly suggests that the mesh geometry (or the particle/reaction evaluation locations) became invalid after the mesh deformation step.</p>
+</section>
+<section id="relationship-to-solver-changes">
+<h2>Relationship to Solver Changes<a class="headerlink" href="#relationship-to-solver-changes" title="Link to this heading"></a></h2>
+<p>Relaxing the solver tolerances allowed the simulation to progress further than the original configuration.</p>
 <p>Specifically,</p>
 <ul class="simple">
-<li><p>uplift velocities are copied directly from ASPECT,</p></li>
-<li><p>horizontal velocities are copied directly from ASPECT,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">dimensional_deposition_erosion()</span></code> only averages values for 2-D models,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">self.s2yr</span></code> is simply defined and never used inside the template.</p></li>
+<li><p>larger linear solver tolerances,</p></li>
+<li><p>a looser Newton switching criterion,</p></li>
+<li><p>and a larger maximum linear Stokes tolerance</p></li>
 </ul>
-<p>This eliminated the possibility that the coupling framework was silently
-converting between years and seconds.</p>
-<p><strong>Inspection of Landlab Components</strong></p>
-<p>The next stage was to inspect the source code of the individual Landlab
-components to determine their expected time units.</p>
-<p><strong>LinearDiffuser</strong></p>
-<p>The first important observation was</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">_unit_agnostic</span> <span class="o">=</span> <span class="kc">True</span>
+<p>reduced the computational cost of each nonlinear solve and prevented early solver failure.</p>
+<p>However, these changes did <strong>not</strong> eliminate the underlying instability responsible for the mapping exception.</p>
+<p>Consequently, although the modified parameter file enabled the benchmark to advance beyond earlier timesteps without World Builder, the simulation still terminated because of an invalid geometric mapping during the reaction computation.</p>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading"></a></h2>
+<p>The modified parameter file successfully removed the World Builder dependency, allowing the Ada Lovelace benchmark to run on macOS. Relaxing several nonlinear solver parameters enabled the simulation to advance through multiple timesteps despite repeated nonlinear convergence warnings.</p>
+<p>Nevertheless, the simulation ultimately failed with a <code class="docutils literal notranslate"><span class="pre">MappingQ::transform_real_to_unit_cell()</span></code> exception during the visco-plastic reaction computation. This indicates that the primary issue is not the nonlinear solver tolerance itself, but rather an invalid geometric mapping caused by mesh deformation or inconsistent evaluation points during the reaction stage. Further investigation should therefore focus on the mesh deformation, Landlab surface update, and reaction evaluation workflow rather than additional adjustments to the solver tolerances.</p>
+</section>
+<section id="possible-relationship-to-removing-world-builder">
+<h2>Possible Relationship to Removing World Builder<a class="headerlink" href="#possible-relationship-to-removing-world-builder" title="Link to this heading"></a></h2>
+<p>The modified benchmark differs from the original benchmark by disabling World Builder and replacing it with a simplified analytical initial composition. In addition, several solver parameters and the Landlab driver script were also modified to allow execution on macOS.</p>
+<p>Because multiple changes were introduced simultaneously, it is <strong>not possible to conclude</strong> that the <code class="docutils literal notranslate"><span class="pre">MappingQ::transform_real_to_unit_cell()</span></code> exception is a direct consequence of removing World Builder.</p>
+<p>Nevertheless, removing World Builder changes the initial material distribution used by the visco-plastic model. This can alter the evolution of deformation, strain localization, and surface topography, which may indirectly influence mesh quality during later timesteps.</p>
+<p>Therefore, the observed mapping failure should be regarded as occurring <strong>after</strong> the World Builder removal, but <strong>not necessarily because of</strong> the World Builder removal. Additional controlled tests are required to isolate the cause, for example by varying one modification at a time (World Builder, Landlab script, or solver parameters).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The modified test was executed using:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/opt/homebrew/bin/mpirun<span class="w"> </span>-np<span class="w"> </span><span class="m">14</span><span class="w"> </span>/Users/biraj/software/landlab_ASPECT_test_2/aspect/build/aspect-release<span class="w"> </span>original_ll.prm
 </pre></div>
 </div>
-<p>The documentation specifies</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>linear_diffusivity : m² / time
-</pre></div>
+<p>with all outputs written to <code class="docutils literal notranslate"><span class="pre">/Users/biraj/cookbook_biraj/denial_ada_prm/outputs/no_web_test_1</span></code>.</p>
 </div>
-<p>rather than</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>m²/s
-</pre></div>
-</div>
-<p>Similarly, the timestep documentation specifies only</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>dt : time
-</pre></div>
-</div>
-<p>The internal CFL stability criterion is computed as</p>
-<div class="math notranslate nohighlight">
-\[\Delta t
-\propto
-\frac{\Delta x^2}{D}\]</div>
-<p>which remains dimensionally consistent regardless of whether the time unit is</p>
-<ul class="simple">
-<li><p>seconds,</p></li>
-<li><p>years,</p></li>
-<li><p>kyr,</p></li>
-<li><p>or Myr,</p></li>
-</ul>
-<p>provided both <code class="docutils literal notranslate"><span class="pre">D</span></code> and <code class="docutils literal notranslate"><span class="pre">dt</span></code> use the same unit.</p>
-<p><strong>Conclusion</strong></p>
-<p><code class="docutils literal notranslate"><span class="pre">LinearDiffuser</span></code> is genuinely unit agnostic.</p>
-<p><strong>SimpleSubmarineDiffuser</strong></p>
-<p>Unlike <code class="docutils literal notranslate"><span class="pre">LinearDiffuser</span></code>, the submarine diffuser explicitly documents its
-time units.</p>
-<p>Its constructor specifies</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>shallow_water_diffusivity (m² / y)
-</pre></div>
-</div>
-<p>Its timestep documentation specifies</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>dt : Time-step duration (y)
-</pre></div>
-</div>
-<p>The component also defines</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">_time_units</span> <span class="o">=</span> <span class="s2">&quot;y&quot;</span>
-</pre></div>
-</div>
-<p><strong>Conclusion</strong></p>
-<p><code class="docutils literal notranslate"><span class="pre">SimpleSubmarineDiffuser</span></code> is explicitly designed to operate using years.</p>
-<p><strong>ErosionDeposition</strong></p>
-<p>The erosion-deposition component documents its parameters using generic units</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>L / T
-</pre></div>
-</div>
-<p>and</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>dt : Model timestep [T]
-</pre></div>
-</div>
-<p>rather than seconds.</p>
-<p><strong>Conclusion</strong></p>
-<p><code class="docutils literal notranslate"><span class="pre">ErosionDeposition</span></code> is also unit agnostic provided all quantities are
-internally consistent.</p>
-<p><strong>Current Understanding</strong></p>
-<p>After inspecting both the coupling framework and the Landlab source code, the
-original hypothesis became significantly weaker.</p>
-<p>The investigation now indicates that</p>
-<ul class="simple">
-<li><p>ASPECT is operating in years.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">LandLabTemplate</span></code> performs no hidden unit conversions.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">LinearDiffuser</span></code> is unit agnostic.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ErosionDeposition</span></code> is unit agnostic.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">SimpleSubmarineDiffuser</span></code> explicitly expects years.</p></li>
-</ul>
-<p>Therefore, using</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">D</span> <span class="o">=</span> <span class="mf">1e-2</span>
-<span class="n">K</span> <span class="o">=</span> <span class="mf">1e-6</span>
-<span class="n">shallow_water_diffusivity</span> <span class="o">=</span> <span class="mf">1e-2</span>
-</pre></div>
-</div>
-<p>appears to be the more internally consistent implementation.</p>
-<p>This naturally raises the following question:</p>
-<p><strong>If the units are now internally consistent, why does the simulation still
-become unstable?</strong></p>
-<p><strong>Current Leading Hypotheses</strong></p>
-<p>The instability is now believed to originate from something other than the
-simple removal of <code class="docutils literal notranslate"><span class="pre">/</span> <span class="pre">self.s2yr</span></code>.</p>
-<p>The leading possibilities are</p>
-<ol class="arabic simple">
-<li><p>interaction between the newly introduced ghost nodes and one of the
-Landlab components,</p></li>
-<li><p>a mismatch between FastScape parameter definitions and the equivalent
-Landlab parameters,</p></li>
-<li><p>numerical instability within one specific Landlab component.</p></li>
-</ol>
-<p><strong>Planned Debugging Strategy</strong></p>
-<p>Rather than modifying the unit conversions again, the next debugging stage
-will isolate the component responsible for the instability.</p>
-<p>The components will be enabled sequentially.</p>
-<p><strong>Stage 1</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">flow_accumulator</span><span class="o">.</span><span class="n">run_one_step</span><span class="p">()</span>
-</pre></div>
-</div>
-<p><strong>Stage 2</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">flow_accumulator</span><span class="o">.</span><span class="n">run_one_step</span><span class="p">()</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">linear_diffuser</span><span class="o">.</span><span class="n">run_one_step</span><span class="p">(</span><span class="n">sub_dt</span><span class="p">)</span>
-</pre></div>
-</div>
-<p><strong>Stage 3</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">flow_accumulator</span><span class="o">.</span><span class="n">run_one_step</span><span class="p">()</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">linear_diffuser</span><span class="o">.</span><span class="n">run_one_step</span><span class="p">(</span><span class="n">sub_dt</span><span class="p">)</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">erosion_deposition</span><span class="o">.</span><span class="n">run_one_step</span><span class="p">(</span><span class="n">sub_dt</span><span class="p">)</span>
-</pre></div>
-</div>
-<p><strong>Stage 4</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">flow_accumulator</span><span class="o">.</span><span class="n">run_one_step</span><span class="p">()</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">linear_diffuser</span><span class="o">.</span><span class="n">run_one_step</span><span class="p">(</span><span class="n">sub_dt</span><span class="p">)</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">erosion_deposition</span><span class="o">.</span><span class="n">run_one_step</span><span class="p">(</span><span class="n">sub_dt</span><span class="p">)</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">submarine_diffuser</span><span class="o">.</span><span class="n">run_one_step</span><span class="p">(</span><span class="n">sub_dt</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>After each component call, the following diagnostic checks will be added:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span>
-    <span class="n">np</span><span class="o">.</span><span class="n">nanmin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">elevation</span><span class="p">),</span>
-    <span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">elevation</span><span class="p">),</span>
-    <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">elevation</span><span class="p">)),</span>
-    <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isinf</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">elevation</span><span class="p">))</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-<p>This should identify exactly which component first produces invalid
-elevations.</p>
-<p><strong>Next Steps</strong></p>
-<p>The immediate objectives for the next development session are</p>
-<ul class="simple">
-<li><p>isolate the first Landlab component that generates unstable elevations,</p></li>
-<li><p>determine whether ghost nodes participate correctly in all Landlab
-calculations,</p></li>
-<li><p>verify that the FastScape parameters have identical physical meanings in
-their corresponding Landlab implementations,</p></li>
-<li><p>investigate the origin of the divide-by-zero warning inside Landlab,</p></li>
-<li><p>determine whether the numerical instability originates before or after the
-first diffusion calculation.</p></li>
-</ul>
-<p><strong>Status</strong></p>
-<p>The unit-conversion investigation substantially improved the understanding of
-the ASPECT–Landlab coupling.</p>
-<p>At present, there is no clear evidence that the instability is caused solely
-by using years instead of seconds.</p>
-<p>Instead, the evidence increasingly suggests that the instability originates
-from a numerical issue within one of the coupled Landlab components or from
-its interaction with the modified grid containing ghost nodes.</p>
+</section>
+<section id="write-up-to-contribute-to-denial-agu-abstract-if-in-case">
+<h2>Write up to contribute to Denial AGU abstract (if in case)<a class="headerlink" href="#write-up-to-contribute-to-denial-agu-abstract-if-in-case" title="Link to this heading"></a></h2>
+<p>Current work is focused on developing and validating a coupled continental
+rift–deposition benchmark by reproducing an existing ASPECT–FastScape model
+within the ASPECT–LandLab framework. The objective is not only to reproduce
+published results, but also to systematically investigate where solutions
+begin to diverge and whether those differences arise from numerical
+implementation, coupling methodology, surface-process formulations, mesh
+representations, or parallel execution.</p>
+<p>The benchmark is being used as a diagnostic framework to understand how
+geodynamic and surface-process models interact across different temporal and
+spatial scales. Through controlled benchmark experiments, we are evaluating
+the influence of temporal coupling, operator splitting, mesh deformation,
+and data exchange between ASPECT and LandLab on sediment transport,
+deposition, and surface evolution. In particular, the benchmark is helping
+to identify the numerical strengths and current limitations of the coupling
+framework, including its fidelity, scalability, robustness, and parallel
+performance. These efforts will establish best practices for coupling
+geodynamic and landscape evolution models while providing a foundation for
+more realistic simulations of sedimentary basin development and continental
+rift evolution.</p>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="August_1_2026.html" class="btn btn-neutral float-left" title="August 1, 2026, Varification - Deposition Implementation Tests - Deposition and Rift Basin" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="August_3_2026_WB.html" class="btn btn-neutral float-right" title="August 3, 2026, Running the Denial Ada Lovelace Extension Model without World Builder on macOS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="August_2_2026_s2yr_debug.html" class="btn btn-neutral float-left" title="August 2, 2026, Investigation of Unit Conversion and Solver Failure in the ASPECT–Landlab Coupling" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

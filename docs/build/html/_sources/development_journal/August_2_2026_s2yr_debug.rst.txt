@@ -1,5 +1,5 @@
-2 August 2026 Investigation of Unit Conversion and Solver Failure in the ASPECT–Landlab Coupling
--------------------------------------------------------------------------------------------------
+August 2, 2026, Investigation of Unit Conversion and Solver Failure in the ASPECT–Landlab Coupling
+---------------------------------------------------------------------------------------------------
 
 **Objective**
 

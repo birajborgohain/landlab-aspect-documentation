@@ -626,7 +626,7 @@ Common Erosional Parameter Mapping
 
    * - ``Bedrock river incision rate = 1e-6``
      - ``K = 1e-6``
-     - Numerically identical.
+     - Numerically identical. Erodibility coefficient.
 
    * - ``Bedrock diffusivity = 1e-2``
      - ``D = 1e-2``
@@ -690,8 +690,9 @@ Deposition Parameter Mapping
 
    * - ``Bedrock deposition coefficient = 1``
      - ``v_s = 1000.0``
-     - Approximate mapping. ``v_s`` is the sediment settling velocity in ``ErosionDeposition`` and is **not** a direct equivalent of the FastScape bedrock deposition coefficient.
+     - Approximate mapping. ``v_s`` is the sediment settling velocity in ``ErosionDeposition`` and is **not** a direct equivalent of the FastScape bedrock deposition coefficient. The settling velocity parameter (dimensionless if drainage area is used instead of discharge).
 
+     
    * - ``Sediment deposition coefficient = 1``
      - —
      - No equivalent parameter in ``ErosionDeposition``.
@@ -1088,7 +1089,7 @@ All Landlab components are initialized in
                "v_s": 1000.0,
                "m_sp": 0.5,
                "n_sp": 1.0,
-               "sp_crit": 0.0,
+               "sp_crit": 0.0, # erosion threshold
            },
 
            "SimpleSubmarineDiffuser": {

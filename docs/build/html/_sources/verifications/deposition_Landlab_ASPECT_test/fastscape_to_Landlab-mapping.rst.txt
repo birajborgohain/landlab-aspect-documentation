@@ -690,8 +690,9 @@ Deposition Parameter Mapping
 
    * - ``Bedrock deposition coefficient = 1``
      - ``v_s = 1000.0``
-     - Approximate mapping. ``v_s`` is the sediment settling velocity in ``ErosionDeposition`` and is **not** a direct equivalent of the FastScape bedrock deposition coefficient.
+     - Approximate mapping. ``v_s`` is the sediment settling velocity in ``ErosionDeposition`` and is **not** a direct equivalent of the FastScape bedrock deposition coefficient. The settling velocity parameter (dimensionless if drainage area is used instead of discharge).
 
+     
    * - ``Sediment deposition coefficient = 1``
      - —
      - No equivalent parameter in ``ErosionDeposition``.
