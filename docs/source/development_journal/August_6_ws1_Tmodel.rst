@@ -17,46 +17,46 @@ Local (macOS) Setup
 
 .. code-block:: bash
 
-brew install uv
+   brew install uv
 
 **2. Clone the repository**
 
 .. code-block:: bash
 
-mkdir ~/software/landlab_aspect cd ~/software/landlab_aspect git clone
-–recurse-submodules https://github.com/landlab-aspect/aspect cd aspect
+   mkdir ~/software/landlab_aspect cd ~/software/landlab_aspect git clone
+   –recurse-submodules https://github.com/landlab-aspect/aspect cd aspect
 
 **3. Create the project virtual environment**
 
 .. code-block:: bash
 
-uv venv –python 3.12 source .venv/bin/activate
+   uv venv –python 3.12 source .venv/bin/activate
 
 **4. Install dependencies**
 
 .. code-block:: bash
 
-uv sync
+   uv sync
 
 Optional:
 
 .. code-block:: bash
 
-uv pip install numpy meshio
+   uv pip install numpy meshio
 
 **5. Configure and build ASPECT**
 
 .. code-block:: bash
 
-mkdir build cd build
+   mkdir build cd build
 
-| cmake
-| -DDEAL_II_DIR="$DEAL_II_DIR"
-| -DASPECT_WITH_PYTHON=ON
-| -DPython3_EXECUTABLE=$(which python)
-| ..
+   | cmake
+   | -DDEAL_II_DIR="$DEAL_II_DIR"
+   | -DASPECT_WITH_PYTHON=ON
+   | -DPython3_EXECUTABLE=$(which python)
+   | ..
 
-make -j8
+   make -j8
 
 Remote Workstation (ws1)
 ------------------------
@@ -73,9 +73,9 @@ Run from the Mac:
 
 .. code-block:: bash
 
-| rsync -avh
-| /Users/biraj/cookbook_biraj/denial_ada_prm/
-| biraj@129.138.56.150:/home/biraj/software/landlab_aspect_ws1/ws1_cookbooks/
+   | rsync -avh
+   | /Users/biraj/cookbook_biraj/denial_ada_prm/
+   | biraj@129.138.56.150:/home/biraj/software/landlab_aspect_ws1/ws1_cookbooks/
 
 VS Code Remote - SSH
 --------------------
@@ -91,7 +91,7 @@ SSH configuration:
 
 .. code-block:: text
 
-Host ws1 HostName 129.138.56.150 User biraj
+   Host ws1 HostName 129.138.56.150 User biraj
 
 Open:
 
@@ -112,14 +112,14 @@ Correct:
 
 .. code-block:: bash
 
-deactivate cd /home/biraj/software/landlab_aspect_ws1/aspect source
-.venv/bin/activate
+   deactivate cd /home/biraj/software/landlab_aspect_ws1/aspect source
+   .venv/bin/activate
 
 Verify:
 
 .. code-block:: bash
 
-which python echo $VIRTUAL_ENV
+   which python echo $VIRTUAL_ENV
 
 Expected:
 
@@ -131,7 +131,7 @@ Verify NumPy:
 
 .. code-block:: bash
 
-python -c “import numpy; print(numpy.\__version\_\_)”
+   python -c “import numpy; print(numpy.\__version\_\_)”
 
 Python Module Import
 --------------------
@@ -146,26 +146,26 @@ Test manually:
 
 .. code-block:: bash
 
-cd /home/biraj/software/landlab_aspect_ws1/ws1_cookbooks python -c
-“import original_landlab; print(‘OK’)”
+   cd /home/biraj/software/landlab_aspect_ws1/ws1_cookbooks python -c
+   “import original_landlab; print(‘OK’)”
 
 If successful:
 
 .. code-block:: bash
 
-export
-PYTHONPATH=/home/biraj/software/landlab_aspect_ws1/ws1_cookbooks:$PYTHONPATH
+   export
+   PYTHONPATH=/home/biraj/software/landlab_aspect_ws1/ws1_cookbooks:$PYTHONPATH
 
 Running ASPECT
 --------------
 
 .. code-block:: bash
 
-cd /home/biraj/software/landlab_aspect_ws1/ws1_cookbooks
+   cd /home/biraj/software/landlab_aspect_ws1/ws1_cookbooks
 
-| /usr/bin/mpirun -np 23
-| /home/biraj/software/landlab_aspect_ws1/aspect/build/aspect
-| original_ll.prm
+   | /usr/bin/mpirun -np 23
+   | /home/biraj/software/landlab_aspect_ws1/aspect/build/aspect
+   | original_ll.prm
 
 Lessons Learned
 ---------------
@@ -685,6 +685,8 @@ With the core architecture complete, future development can focus on
 adding new capabilities rather than redesigning the underlying
 framework.
 
+Objective 3 
+-------------
 SSH Connection Reset During ASPECT Simulation
 ---------------------------------------------
 
