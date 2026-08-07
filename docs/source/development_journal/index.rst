@@ -12,3 +12,4 @@ This section summarizes the day-to-day development, implementation, testing, and
     August_3_2026_WB
     August_4_landlab_vis
     August_5_2026_landlab_vis_day2
+    August_6_ws1_Tmodel
