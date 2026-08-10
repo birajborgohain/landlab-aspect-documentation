@@ -1,5 +1,5 @@
 
-August 6, 2026 Workstation 1 landlab-aspect setup and Day 3 of landlab_vis: Completing the Core Architecture and Preparing for Dataset I/O
+August 6, 2026 Workstation 1 landlab-aspect setup and `landlab_vis` (day 3): Completing the Core Architecture and Preparing for Dataset I/O
 ===================================================================================================================================================
 
 
@@ -104,9 +104,9 @@ Virtual Environment Pitfall
 
 The wrong environment was activated:
 
-::
-
-aspect/build/.venv
+.. code-block:: bash
+   
+   aspect/build/.venv
 
 Correct:
 
@@ -138,9 +138,9 @@ Python Module Import
 
 If ASPECT reports:
 
-::
-
-ModuleNotFoundError: No module named ‘original_landlab’
+.. code-block:: bash
+   
+   ModuleNotFoundError: No module named ‘original_landlab’
 
 Test manually:
 

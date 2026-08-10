@@ -1,5 +1,5 @@
-August 5, 2026 landlab_vis: A Python Visualization and Analysis Framework for Landlab and ASPECT Outputs
-==========================================================================================================
+August 5, 2026 `landlab_vis` (day 2): A Python Visualization and Analysis Framework for Landlab and ASPECT Outputs
+=====================================================================================================================
 
 
 
@@ -15,7 +15,7 @@ An important architectural discussion also emerged after investigating the inter
 --------------------------------------------------------------------------
 
 Investigation of Landlab VTK Mesh Structure
-------------------------------------------
+---------------------------------------------
 
 The first task was to understand how Landlab stores its computational mesh inside VTK files so that an appropriate visualization backend could be designed.
 
