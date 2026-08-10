@@ -1,0 +1,864 @@
+
+August 6, 2026 Workstation 1 landlab-aspect setup and `landlab_vis` (day 3): Completing the Core Architecture and Preparing for Dataset I/O
+===================================================================================================================================================
+
+
+Objective 1
+-------------
+
+Set up the ASPECT–Landlab development environment on both macOS and a
+remote Linux workstation (``ws1``), configure Python support, and
+successfully run a Landlab-coupled ASPECT simulation.
+
+Local (macOS) Setup
+-------------------
+
+**1. Install ``uv``**
+
+.. code-block:: bash
+
+   brew install uv
+
+**2. Clone the repository**
+
+.. code-block:: bash
+
+   mkdir ~/software/landlab_aspect cd ~/software/landlab_aspect git clone
+   –recurse-submodules https://github.com/landlab-aspect/aspect cd aspect
+
+**3. Create the project virtual environment**
+
+.. code-block:: bash
+
+   uv venv –python 3.12 source .venv/bin/activate
+
+**4. Install dependencies**
+
+.. code-block:: bash
+
+   uv sync
+
+Optional:
+
+.. code-block:: bash
+
+   uv pip install numpy meshio
+
+**5. Configure and build ASPECT**
+
+.. code-block:: bash
+
+   mkdir build cd build
+
+   | cmake
+   | -DDEAL_II_DIR="$DEAL_II_DIR"
+   | -DASPECT_WITH_PYTHON=ON
+   | -DPython3_EXECUTABLE=$(which python)
+   | ..
+
+   make -j8
+
+Remote Workstation (ws1)
+------------------------
+
+Repository:
+
+::
+
+/home/biraj/software/landlab_aspect_ws1/aspect
+
+Transfer cookbook files ~~~~~~~~~~~~~~~~~~~~~~~
+
+Run from the Mac:
+
+.. code-block:: bash
+
+   | rsync -avh
+   | /Users/biraj/cookbook_biraj/denial_ada_prm/
+   | biraj@129.138.56.150:/home/biraj/software/landlab_aspect_ws1/ws1_cookbooks/
+
+VS Code Remote - SSH
+--------------------
+
+Install:
+
+-  Remote - SSH
+-  C/C++
+-  Python
+-  CMake Tools
+
+SSH configuration:
+
+.. code-block:: text
+
+   Host ws1 HostName 129.138.56.150 User biraj
+
+Open:
+
+::
+
+/home/biraj/software/landlab_aspect_ws1/aspect
+
+Virtual Environment Pitfall
+---------------------------
+
+The wrong environment was activated:
+
+.. code-block:: bash
+   
+   aspect/build/.venv
+
+Correct:
+
+.. code-block:: bash
+
+   deactivate cd /home/biraj/software/landlab_aspect_ws1/aspect source
+   .venv/bin/activate
+
+Verify:
+
+.. code-block:: bash
+
+   which python echo $VIRTUAL_ENV
+
+Expected:
+
+::
+
+/home/biraj/software/landlab_aspect_ws1/aspect/.venv
+
+Verify NumPy:
+
+.. code-block:: bash
+
+   python -c “import numpy; print(numpy.\__version\_\_)”
+
+Python Module Import
+--------------------
+
+If ASPECT reports:
+
+.. code-block:: bash
+   
+   ModuleNotFoundError: No module named ‘original_landlab’
+
+Test manually:
+
+.. code-block:: bash
+
+   cd /home/biraj/software/landlab_aspect_ws1/ws1_cookbooks python -c
+   “import original_landlab; print(‘OK’)”
+
+If successful:
+
+.. code-block:: bash
+
+   export
+   PYTHONPATH=/home/biraj/software/landlab_aspect_ws1/ws1_cookbooks:$PYTHONPATH
+
+Running ASPECT
+--------------
+
+.. code-block:: bash
+
+   cd /home/biraj/software/landlab_aspect_ws1/ws1_cookbooks
+
+   | /usr/bin/mpirun -np 23
+   | /home/biraj/software/landlab_aspect_ws1/aspect/build/aspect
+   | original_ll.prm
+
+Lessons Learned
+---------------
+
+-  Keep only one virtual environment at ``aspect/.venv``.
+
+-  Do not create or activate ``build/.venv``.
+
+-  Verify the interpreter with ``which python`` and
+   ``echo $VIRTUAL_ENV``.
+
+-  Run ``rsync`` from the machine containing the source files.
+
+-  Use VS Code Remote - SSH for development.
+
+-  Set ``PYTHONPATH`` when cookbook modules are outside the project
+   tree.
+
+-  Debug in this order:
+
+   #. Python environment
+   #. NumPy
+   #. Python module import
+   #. ASPECT execution
+
+
+Objective 2
+--------------
+
+**landlab_vis: Completing the Core Architecture and Preparing for Dataset I/O**
+
+Overview
+--------
+
+Today's development session marked an important milestone in the
+development of **landlab_vis**. The focus shifted from implementing
+individual classes toward refining the overall architecture of the
+library. Several core classes were redesigned for consistency, the
+visualization workflow was expanded, and a new ``Dataset`` abstraction
+was introduced.
+
+By the end of the session, the complete **core object model** of
+landlab_vis was established and standardized.
+
+Objectives
+----------
+
+The goals for today's work were:
+
+* Improve the overall architecture of the library.
+* Standardize all core classes using a common design philosophy.
+* Separate static plotting from interactive visualization.
+* Introduce a ``Dataset`` abstraction for handling multiple simulation
+  frames.
+* Prepare the library for higher-level workflows.
+
+--------------------------------------------------------------------------
+
+1. Fixing the VTK Reader
+------------------------
+
+The day began by debugging the VTK loading process.
+
+Initially, the reader attempted to extract triangular connectivity using
+
+.. code-block:: python
+
+   tri_mesh.regular_faces
+
+However, the Landlab VTK files were loaded as
+
+.. code-block:: text
+
+   pyvista.UnstructuredGrid
+
+rather than ``PolyData``.
+
+Because ``UnstructuredGrid`` does not provide the
+``regular_faces`` attribute, the reader failed with
+
+.. code-block:: text
+
+   AttributeError:
+   'UnstructuredGrid' object has no attribute 'regular_faces'
+
+After inspecting the mesh structure, it became clear that the current
+Landlab visualization workflow only required
+
+* point coordinates
+* scalar point fields
+* the original PyVista mesh
+
+The triangle connectivity was therefore removed from the loading process.
+
+The updated reader now
+
+* reads the VTK file,
+* stores the original PyVista mesh,
+* loads mesh points,
+* imports all point-data fields,
+* marks the frame as loaded.
+
+This significantly simplified the reader while preserving all required
+information for visualization.
+
+--------------------------------------------------------------------------
+
+2. Improving the Frame Class
+----------------------------
+
+The ``Frame`` class underwent several refinements.
+
+The class now clearly represents a **single simulation timestep** and
+contains
+
+* geometry,
+* fields,
+* metadata,
+* original PyVista mesh,
+* plotting interface,
+* interactive viewer.
+
+The internal reset logic was simplified through
+
+.. code-block:: python
+
+   _reset()
+
+allowing
+
+.. code-block:: python
+
+   unload()
+
+to simply call
+
+.. code-block:: python
+
+   self._reset()
+
+This keeps the public interface small while centralizing cleanup logic.
+
+--------------------------------------------------------------------------
+
+3. Separating Plotting and Interactive Visualization
+----------------------------------------------------
+
+One of the most important architectural decisions made today was to
+separate visualization into two independent backends.
+
+Instead of replacing the existing Matplotlib implementation with
+PyVista, the library now provides two complementary interfaces.
+
+Static visualization
+
+.. code-block:: python
+
+   frame.plot("topographic__elevation")
+
+Interactive visualization
+
+.. code-block:: python
+
+   frame.view("topographic__elevation")
+
+The responsibilities are now clearly divided.
+
+``FramePlotter``
+
+* publication-quality figures
+* reports
+* documentation
+* scientific papers
+
+``FrameViewer``
+
+* interactive PyVista rendering
+* rotation
+* zoom
+* mesh exploration
+
+This separation follows the single-responsibility principle and provides
+a much cleaner long-term architecture.
+
+Future improvements can now be developed independently for each backend.
+
+Examples include
+
+Matplotlib
+
+* hillshading
+* contours
+* scale bars
+* publication styling
+
+PyVista
+
+* clipping
+* slicing
+* point picking
+* mesh inspection
+
+--------------------------------------------------------------------------
+
+4. Standardizing the BaseObject Architecture
+--------------------------------------------
+
+A major goal for today's work was architectural consistency.
+
+Every major core class now inherits from
+
+.. code-block:: text
+
+   BaseObject
+
+This provides
+
+* object naming,
+* metadata storage,
+* common summaries,
+* reset philosophy.
+
+The common interface now includes
+
+* ``summary()``
+* ``clear()``
+* ``_reset()``
+* metadata support
+
+This creates a consistent programming model across the entire library.
+
+--------------------------------------------------------------------------
+
+5. Refining Geometry
+--------------------
+
+The ``Geometry`` class was redesigned to provide a richer description of
+the computational mesh.
+
+New convenience properties were added.
+
+Coordinates
+
+* ``x``
+* ``y``
+* ``z``
+
+Bounds
+
+* ``xmin``
+* ``xmax``
+* ``ymin``
+* ``ymax``
+* ``zmin``
+* ``zmax``
+
+Domain size
+
+* ``width``
+* ``height``
+* ``depth``
+
+The class now also supports
+
+* ``clear()``
+* ``_reset()``
+* ``summary()``
+
+making it fully consistent with the rest of the core package.
+
+--------------------------------------------------------------------------
+
+6. Refining Field
+-----------------
+
+The ``Field`` class was expanded beyond simple storage.
+
+New properties include
+
+* ``dtype``
+* ``is_empty``
+* ``std``
+
+The class now also supports
+
+* deep copying,
+* reset logic,
+* summary generation,
+* consistent metadata handling.
+
+Its representation was improved to include
+
+* name,
+* size,
+* data type,
+* units.
+
+--------------------------------------------------------------------------
+
+7. Refining FieldCollection
+---------------------------
+
+The ``FieldCollection`` class evolved into a fully featured container.
+
+Capabilities now include
+
+* adding fields,
+* removing fields,
+* iteration,
+* copying,
+* clearing,
+* reset,
+* summaries.
+
+Duplicate field names are rejected, improving robustness during VTK
+imports.
+
+The overall API now closely mirrors Python container behavior.
+
+--------------------------------------------------------------------------
+
+8. Completing the Dataset Class
+-------------------------------
+
+The largest new component introduced today was the ``Dataset`` class.
+
+A ``Dataset`` represents an entire simulation consisting of multiple
+frames.
+
+Conceptually
+
+.. code-block:: text
+
+   Dataset
+
+       ├── Frame 0000
+       ├── Frame 0001
+       ├── Frame 0002
+       ├── Frame 0003
+       └── ...
+
+The class provides
+
+Container operations
+
+* add
+* remove
+* clear
+* iteration
+* indexing
+
+Convenience properties
+
+* number of frames
+* simulation steps
+* simulation times
+* empty status
+
+Utility functions
+
+* shallow copy
+* summaries
+
+The final implementation follows exactly the same design philosophy used
+throughout the rest of the core package.
+
+--------------------------------------------------------------------------
+
+9. Final Core Architecture
+--------------------------
+
+At the conclusion of today's work, the core architecture of
+``landlab_vis`` became
+
+.. code-block:: text
+
+   landlab_vis
+
+   core/
+   │
+   ├── BaseObject
+   ├── Geometry
+   ├── Field
+   ├── FieldCollection
+   ├── Frame
+   └── Dataset
+
+   io/
+   │
+   └── VTKReader
+
+   plotting/
+   │
+   ├── FramePlotter
+   └── FrameViewer
+
+This represents the first complete version of the internal object model.
+
+Every major object now follows a consistent design philosophy.
+
+--------------------------------------------------------------------------
+
+Lessons Learned
+---------------
+
+Several architectural lessons emerged during today's development.
+
+* Simplicity generally leads to better long-term maintainability.
+
+* Readers should only read data.
+
+* Core objects should only store and organize data.
+
+* Plotting classes should remain independent of the data model.
+
+* Interactive visualization and publication plotting serve different
+  purposes and should remain separate.
+
+* A consistent API across all core classes greatly improves usability
+  and maintainability.
+
+--------------------------------------------------------------------------
+
+Current Status
+--------------
+
+Completed
+
+✓ BaseObject
+
+✓ Geometry
+
+✓ Field
+
+✓ FieldCollection
+
+✓ Frame
+
+✓ Dataset
+
+✓ VTKReader
+
+✓ FramePlotter
+
+✓ FrameViewer
+
+Overall, the **core architecture of landlab_vis is now considered
+stable**.
+
+--------------------------------------------------------------------------
+
+Next Development Session
+------------------------
+
+The next stage of development will focus on completing the input/output
+workflow by introducing a dedicated ``DatasetReader``.
+
+The goal is to allow an entire simulation directory to be loaded with a
+single command.
+
+Current workflow
+
+.. code-block:: python
+
+   dataset = Dataset()
+
+   reader = VTKReader()
+
+   for filename in sorted(output.glob("*.vtk")):
+
+       frame = Frame(filename)
+
+       reader.read(frame)
+
+       dataset.add(frame)
+
+Target workflow
+
+.. code-block:: python
+
+   from landlab_vis.io import DatasetReader
+
+   reader = DatasetReader()
+
+   dataset = reader.read("output")
+
+Internally, ``DatasetReader`` will
+
+1. discover all VTK files,
+2. sort them correctly,
+3. create ``Frame`` objects,
+4. populate each frame using ``VTKReader``,
+5. assemble the complete ``Dataset``,
+6. return the fully populated simulation.
+
+This will complete the I/O layer and provide users with a simple,
+high-level interface for loading simulation results.
+
+--------------------------------------------------------------------------
+
+Overall Progress
+----------------
+
+Today's work represents one of the most significant milestones in the
+development of **landlab_vis**.
+
+The project has progressed from a collection of independent utilities to
+a coherent object-oriented scientific visualization framework with a
+clean separation between
+
+* data representation,
+* file input/output,
+* static visualization,
+* interactive visualization.
+
+With the core architecture complete, future development can focus on
+adding new capabilities rather than redesigning the underlying
+framework.
+
+Objective 3 
+-------------
+SSH Connection Reset During ASPECT Simulation
+---------------------------------------------
+
+Overview
+--------
+
+The uploaded log does **not** indicate an ASPECT solver failure. The
+simulation was progressing normally, successfully advancing through
+multiple timesteps, converging the nonlinear solver, and writing output
+files. The main issue was that the SSH connection between the local
+machine and the remote workstation (``ws1``) was interrupted. :contentReference[oaicite:0]{index=0}
+
+SSH Connection Reset
+--------------------
+
+The log contains the following message:
+
+.. code-block:: text
+
+   Read from remote host 129.138.56.150: Connection reset by peer
+   Connection to 129.138.56.150 closed.
+   client_loop: send disconnect: Broken pipe
+
+This message indicates that the **SSH session was disconnected**. It is
+not an ASPECT error.
+
+Possible reasons include:
+
+* Temporary network interruption.
+* Local internet connection dropped.
+* SSH idle timeout.
+* Laptop entering sleep mode.
+* VPN or firewall interruption.
+* Remote server resetting the SSH connection.
+
+The user was able to reconnect immediately afterward:
+
+.. code-block:: text
+
+   ssh ws1
+   ...
+   Welcome to Ubuntu 24.04.4 LTS
+
+showing that the remote machine itself was operating normally. :contentReference[oaicite:1]{index=1}
+
+Runtime
+-------
+
+The terminal prompt shows:
+
+.. code-block:: text
+
+   took 2h 28m 49s
+
+indicating that the simulation (or terminal session) had been running
+for approximately **2 hours 28 minutes 49 seconds** before the SSH
+connection was interrupted.
+
+This runtime **does not imply that ASPECT failed after 2 hours 28
+minutes**. It only indicates how long the command had been running when
+the SSH session was disconnected. :contentReference[oaicite:2]{index=2}
+
+Authorization Warnings
+----------------------
+
+After reconnecting, the following warning appeared repeatedly:
+
+.. code-block:: text
+
+   Authorization required, but no authorization protocol specified
+
+This warning usually occurs when a Python library attempts to access an
+X11 graphical display without proper authorization.
+
+Possible causes include:
+
+* ``matplotlib``
+* ``tkinter``
+* Qt or GTK libraries
+* Any plotting routine executed within the Landlab Python script
+
+Since the simulation continues normally afterward, these messages appear
+to be warnings rather than fatal errors. :contentReference[oaicite:3]{index=3}
+
+Evaluation Point Warning
+------------------------
+
+The simulation also reports:
+
+.. code-block:: text
+
+   WARNING: not all evaluation points were found inside the domain!
+
+with a few coordinates such as:
+
+.. code-block:: text
+
+   Point 0: -500 80000
+   Point 884: 220500 80000
+
+This means that a few interpolation or evaluation points lie just
+outside the computational domain.
+
+Possible reasons include:
+
+* Slight mismatch between the ASPECT mesh and the Landlab grid.
+* Inclusion of ghost cells.
+* Off-by-one indexing during grid generation.
+* Grid spacing extending slightly beyond the model boundaries.
+
+Only **4 points** out of approximately **358,425 nodes** were outside
+the domain, so this warning is relatively minor and does not stop the
+simulation. :contentReference[oaicite:4]{index=4}
+
+Resume from Snapshot
+--------------------
+
+The log reports:
+
+.. code-block:: text
+
+   *** Resuming from snapshot outputs/ws1_no_web_test_1/restart/01/
+
+This is expected behavior when restart files are enabled.
+
+ASPECT successfully resumed from a previously saved checkpoint rather
+than starting from the beginning of the simulation. :contentReference[oaicite:5]{index=5}
+
+Simulation Status
+-----------------
+
+The solver continued to perform normally throughout the recorded log:
+
+* Restart file loaded successfully.
+* Landlab initialized correctly.
+* Timesteps 5 through 8 executed.
+* Newton iterations converged.
+* VTK output files were written successfully.
+* Nonlinear residuals decreased as expected.
+
+The log does **not** contain evidence of an ASPECT solver crash. The
+only interruption recorded is the loss of the SSH connection. :contentReference[oaicite:6]{index=6}
+
+Recommended Checks After Reconnecting
+-------------------------------------
+
+After reconnecting to the remote machine, verify whether the simulation
+is still running.
+
+Check for the ASPECT process:
+
+.. code-block:: bash
+
+   ps -ef | grep aspect
+
+or
+
+.. code-block:: bash
+
+   pgrep -a aspect
+
+Check whether output files are still being written:
+
+.. code-block:: bash
+
+   ls -ltr outputs/ws1_no_web_test_1/
+
+If output was redirected to a log file, monitor it using:
+
+.. code-block:: bash
+
+   tail -f log.txt
+
+These commands help determine whether the simulation continued after the
+SSH session was disconnected.

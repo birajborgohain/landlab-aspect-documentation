@@ -10,3 +10,9 @@ This section summarizes the day-to-day development, implementation, testing, and
     August_1_2026
     August_2_2026_s2yr_debug
     August_3_2026_WB
+    August_4_landlab_vis
+    August_5_2026_landlab_vis_day2
+    August_6_ws1_Tmodel_landlab_vis_day_3
+    August_7_T-model_error
+    August_8t_2026_s2yr
+    August_9_2026_landlab_viz_day_4

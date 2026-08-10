@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Development Journal &mdash; Landlab-Aspect Development Documentation 0.1 documentation</title>
+  <title>August 4, 2026, FastScape Benchmark Investigation and Transition from ParaView to landlab_vis (Day 1) a Reusable Landlab (.vtk files) Visualization Framework &mdash; Landlab-Aspect Development Documentation 0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d75fae25" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=fa26092b" />
@@ -21,8 +21,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="August 1, 2026, Varification - Deposition Implementation Tests - Deposition and Rift Basin" href="August_1_2026.html" />
-    <link rel="prev" title="Open Questions (What remains to be understood?)" href="../open_questions/index.html" /> 
+    <link rel="next" title="August 5, 2026 landlab_vis (day 2): A Python Visualization and Analysis Framework for Landlab and ASPECT Outputs" href="August_5_2026_landlab_vis_day2.html" />
+    <link rel="prev" title="August 3, 2026, Running the Denial Ada Lovelace Extension Model without World Builder on macOS" href="August_3_2026_WB.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -157,7 +157,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../open_questions/index.html">Open Questions (What remains to be understood?)</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Development Journal</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Development Journal</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="August_1_2026.html">August 1, 2026, Varification - Deposition Implementation Tests - Deposition and Rift Basin</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="August_1_2026.html#fastscapelandlab-integration-horizontal-surface-advection-parameter-mapping-and-code-refinement">FastScape–Landlab Integration: Horizontal Surface Advection, Parameter Mapping, and Code Refinement</a></li>
 </ul>
@@ -182,19 +182,19 @@
 <li class="toctree-l3"><a class="reference internal" href="August_3_2026_WB.html#write-up-to-contribute-to-denial-agu-abstract-if-in-case">Write up to contribute to Denial AGU abstract (if in case)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="August_4_landlab_vis.html">August 4, 2026, FastScape Benchmark Investigation and Transition from ParaView to <cite>landlab_vis</cite> (Day 1) a Reusable Landlab (.vtk files) Visualization Framework</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="August_4_landlab_vis.html#overview">Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_4_landlab_vis.html#investigation-of-fastscape-unit-handling">Investigation of FastScape Unit Handling</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_4_landlab_vis.html#evaluation-of-paraview-based-visualization">Evaluation of ParaView-Based Visualization</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_4_landlab_vis.html#development-of-landlab-vis">Development of <code class="docutils literal notranslate"><span class="pre">landlab_vis</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_4_landlab_vis.html#documentation-infrastructure">Documentation Infrastructure</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_4_landlab_vis.html#development-of-the-core-software-architecture">Development of the Core Software Architecture</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="August_4_landlab_vis.html#implemented-components">Implemented Components</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">August 4, 2026, FastScape Benchmark Investigation and Transition from ParaView to <cite>landlab_vis</cite> (Day 1) a Reusable Landlab (.vtk files) Visualization Framework</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#investigation-of-fastscape-unit-handling">Investigation of FastScape Unit Handling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#evaluation-of-paraview-based-visualization">Evaluation of ParaView-Based Visualization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#development-of-landlab-vis">Development of <code class="docutils literal notranslate"><span class="pre">landlab_vis</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#documentation-infrastructure">Documentation Infrastructure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#development-of-the-core-software-architecture">Development of the Core Software Architecture</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#implemented-components">Implemented Components</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="August_4_landlab_vis.html#software-engineering-infrastructure">Software Engineering Infrastructure</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_4_landlab_vis.html#current-status">Current Status</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_4_landlab_vis.html#next-steps">Next Steps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#software-engineering-infrastructure">Software Engineering Infrastructure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#current-status">Current Status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#next-steps">Next Steps</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="August_5_2026_landlab_vis_day2.html">August 5, 2026 <cite>landlab_vis</cite> (day 2): A Python Visualization and Analysis Framework for Landlab and ASPECT Outputs</a><ul>
@@ -238,41 +238,41 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html">August 6, 2026 Workstation 1 landlab-aspect setup and <cite>landlab_vis</cite> (day 3): Completing the Core Architecture and Preparing for Dataset I/O</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#objective-1">Objective 1</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#local-macos-setup">Local (macOS) Setup</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#remote-workstation-ws1">Remote Workstation (ws1)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#vs-code-remote-ssh">VS Code Remote - SSH</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#virtual-environment-pitfall">Virtual Environment Pitfall</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#python-module-import">Python Module Import</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#running-aspect">Running ASPECT</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#lessons-learned">Lessons Learned</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#objective-2">Objective 2</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#overview">Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#objectives">Objectives</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#fixing-the-vtk-reader">1. Fixing the VTK Reader</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#improving-the-frame-class">2. Improving the Frame Class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#separating-plotting-and-interactive-visualization">3. Separating Plotting and Interactive Visualization</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#standardizing-the-baseobject-architecture">4. Standardizing the BaseObject Architecture</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#refining-geometry">5. Refining Geometry</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#refining-field">6. Refining Field</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#refining-fieldcollection">7. Refining FieldCollection</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#completing-the-dataset-class">8. Completing the Dataset Class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#final-core-architecture">9. Final Core Architecture</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#id1">Lessons Learned</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#current-status">Current Status</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#next-development-session">Next Development Session</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#overall-progress">Overall Progress</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#objective-3">Objective 3</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#ssh-connection-reset-during-aspect-simulation">SSH Connection Reset During ASPECT Simulation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#id2">Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#ssh-connection-reset">SSH Connection Reset</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#runtime">Runtime</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#authorization-warnings">Authorization Warnings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#evaluation-point-warning">Evaluation Point Warning</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#resume-from-snapshot">Resume from Snapshot</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#simulation-status">Simulation Status</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#recommended-checks-after-reconnecting">Recommended Checks After Reconnecting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="August_6_ws1_Tmodel.html">August 6, 2026 Workstation 1 landlab-aspect setup and Day 3 of landlab_vis: Completing the Core Architecture and Preparing for Dataset I/O</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel.html#objective-1">Objective 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel.html#local-macos-setup">Local (macOS) Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel.html#remote-workstation-ws1">Remote Workstation (ws1)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel.html#vs-code-remote-ssh">VS Code Remote - SSH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel.html#virtual-environment-pitfall">Virtual Environment Pitfall</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel.html#python-module-import">Python Module Import</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel.html#running-aspect">Running ASPECT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel.html#lessons-learned">Lessons Learned</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel.html#objective-2">Objective 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel.html#objectives">Objectives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel.html#fixing-the-vtk-reader">1. Fixing the VTK Reader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel.html#improving-the-frame-class">2. Improving the Frame Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel.html#separating-plotting-and-interactive-visualization">3. Separating Plotting and Interactive Visualization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel.html#standardizing-the-baseobject-architecture">4. Standardizing the BaseObject Architecture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel.html#refining-geometry">5. Refining Geometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel.html#refining-field">6. Refining Field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel.html#refining-fieldcollection">7. Refining FieldCollection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel.html#completing-the-dataset-class">8. Completing the Dataset Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel.html#final-core-architecture">9. Final Core Architecture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel.html#id1">Lessons Learned</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel.html#current-status">Current Status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel.html#next-development-session">Next Development Session</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel.html#overall-progress">Overall Progress</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel.html#objective-3">Objective 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel.html#ssh-connection-reset-during-aspect-simulation">SSH Connection Reset During ASPECT Simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel.html#id2">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel.html#ssh-connection-reset">SSH Connection Reset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel.html#runtime">Runtime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel.html#authorization-warnings">Authorization Warnings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel.html#evaluation-point-warning">Evaluation Point Warning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel.html#resume-from-snapshot">Resume from Snapshot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel.html#simulation-status">Simulation Status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_6_ws1_Tmodel.html#recommended-checks-after-reconnecting">Recommended Checks After Reconnecting</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="August_7_T-model_error.html">August 7, 2026 Denial Ada error, case 1 with <code class="docutils literal notranslate"><span class="pre">s2yr</span></code> and case 2 without s2yr</a><ul>
@@ -305,18 +305,18 @@
 <li class="toctree-l3"><a class="reference internal" href="August_8t_2026_s2yr.html#aspect-parameter-file">ASPECT Parameter File</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="August_9_2026_landlab_viz_day_4.html">August 9, 2026, <code class="docutils literal notranslate"><span class="pre">landlab_vis</span></code> (day 3) 2D Profile Analysis and Comparison</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="August_9_2026_landlab_viz_day_4.html#profile-extraction">Profile Extraction</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_9_2026_landlab_viz_day_4.html#profile-comparison-across-timesteps">Profile Comparison Across Timesteps</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_9_2026_landlab_viz_day_4.html#flexible-profile-labels">Flexible Profile Labels</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_9_2026_landlab_viz_day_4.html#unit-conversion">Unit Conversion</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_9_2026_landlab_viz_day_4.html#field-metadata">Field Metadata</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_9_2026_landlab_viz_day_4.html#metadata-aware-profiles">Metadata-Aware Profiles</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_9_2026_landlab_viz_day_4.html#unit-validation">Unit Validation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_9_2026_landlab_viz_day_4.html#human-readable-field-labels">Human-Readable Field Labels</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_9_2026_landlab_viz_day_4.html#two-folder-dataset-comparison">Two-Folder Dataset Comparison</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_9_2026_landlab_viz_day_4.html#current-development-status">Current Development Status</a></li>
-<li class="toctree-l3"><a class="reference internal" href="August_9_2026_landlab_viz_day_4.html#next-step">Next Step</a></li>
+<li class="toctree-l2"><a class="reference internal" href="August_9_2026_landlab_viz_day_3.html">August 9, 2026, <code class="docutils literal notranslate"><span class="pre">landlab_vis</span></code> (day 3) 2D Profile Analysis and Comparison</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="August_9_2026_landlab_viz_day_3.html#profile-extraction">Profile Extraction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_9_2026_landlab_viz_day_3.html#profile-comparison-across-timesteps">Profile Comparison Across Timesteps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_9_2026_landlab_viz_day_3.html#flexible-profile-labels">Flexible Profile Labels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_9_2026_landlab_viz_day_3.html#unit-conversion">Unit Conversion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_9_2026_landlab_viz_day_3.html#field-metadata">Field Metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_9_2026_landlab_viz_day_3.html#metadata-aware-profiles">Metadata-Aware Profiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_9_2026_landlab_viz_day_3.html#unit-validation">Unit Validation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_9_2026_landlab_viz_day_3.html#human-readable-field-labels">Human-Readable Field Labels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_9_2026_landlab_viz_day_3.html#two-folder-dataset-comparison">Two-Folder Dataset Comparison</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_9_2026_landlab_viz_day_3.html#current-development-status">Current Development Status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_9_2026_landlab_viz_day_3.html#next-step">Next Step</a></li>
 </ul>
 </li>
 </ul>
@@ -337,153 +337,227 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Development Journal</li>
+          <li class="breadcrumb-item"><a href="index.html">Development Journal</a></li>
+      <li class="breadcrumb-item active">August 4, 2026, FastScape Benchmark Investigation and Transition from ParaView to <cite>landlab_vis</cite> (Day 1) a Reusable Landlab (.vtk files) Visualization Framework</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/development_journal/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/development_journal/August_4_landlab_vis.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
-        <a href="../open_questions/index.html" class="btn btn-neutral float-left" title="Open Questions (What remains to be understood?)" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="August_1_2026.html" class="btn btn-neutral float-right" title="August 1, 2026, Varification - Deposition Implementation Tests - Deposition and Rift Basin" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="August_3_2026_WB.html" class="btn btn-neutral float-left" title="August 3, 2026, Running the Denial Ada Lovelace Extension Model without World Builder on macOS" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="August_5_2026_landlab_vis_day2.html" class="btn btn-neutral float-right" title="August 5, 2026 landlab_vis (day 2): A Python Visualization and Analysis Framework for Landlab and ASPECT Outputs" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
   </div>
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="development-journal">
-<h1>Development Journal<a class="headerlink" href="#development-journal" title="Link to this heading"></a></h1>
-<p>This section summarizes the day-to-day development, implementation, testing, and documentation of the Landlab–ASPECT framework.</p>
-<div class="toctree-wrapper compound">
+  <section id="august-4-2026-fastscape-benchmark-investigation-and-transition-from-paraview-to-landlab-vis-day-1-a-reusable-landlab-vtk-files-visualization-framework">
+<h1>August 4, 2026, FastScape Benchmark Investigation and Transition from ParaView to <cite>landlab_vis</cite> (Day 1) a Reusable Landlab (.vtk files) Visualization Framework<a class="headerlink" href="#august-4-2026-fastscape-benchmark-investigation-and-transition-from-paraview-to-landlab-vis-day-1-a-reusable-landlab-vtk-files-visualization-framework" title="Link to this heading"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>Today’s work focused on two major objectives:</p>
+<ol class="arabic simple">
+<li><p>Investigating the FastScape implementation to understand parameter units and identify the source of discrepancies observed in the ASPECT–Landlab coupling.</p></li>
+<li><p>Transitioning from a ParaView-based visualization workflow toward developing a dedicated Python visualization framework, <strong>landlab_vis</strong>, together with its supporting documentation infrastructure.</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="investigation-of-fastscape-unit-handling">
+<h2>Investigation of FastScape Unit Handling<a class="headerlink" href="#investigation-of-fastscape-unit-handling" title="Link to this heading"></a></h2>
+<p>The first task of the day was to investigate the FastScape implementation with the goal of reproducing the published FastScape benchmark within the ASPECT–Landlab framework.</p>
+<p>The primary focus was understanding how FastScape handles physical units for:</p>
+<ul class="simple">
+<li><p>Bedrock river incision coefficient (<strong>K</strong>)</p></li>
+<li><p>Hillslope diffusivity (<strong>D</strong>)</p></li>
+<li><p>Marine (submarine) diffusivity</p></li>
+<li><p>Internal time stepping</p></li>
+<li><p>Unit conversions</p></li>
+</ul>
+<p>During the investigation it became increasingly evident that the current handling of the <strong>seconds-to-years conversion (``s2yr``)</strong> inside the Landlab coupling is likely introducing inconsistencies.</p>
+<p>Previous diffusion benchmark experiments had already indicated suspicious behavior, and today’s code inspection further strengthened the hypothesis that automatic conversion between SI units (seconds) and geological units (years) is not being handled consistently across ASPECT, Landlab, and FastScape.</p>
+<p>Several questions remain to be answered before reproducing the FastScape benchmark:</p>
+<ul class="simple">
+<li><p>What are the native units expected by FastScape for <strong>K</strong>?</p></li>
+<li><p>What units are expected for hillslope diffusivity (<strong>D</strong>)?</p></li>
+<li><p>How is submarine diffusivity parameterized?</p></li>
+<li><p>Does FastScape internally assume years or SI units?</p></li>
+<li><p>Where are unit conversions performed inside the FastScape code?</p></li>
+</ul>
+<p>Answering these questions is essential before reproducing published benchmark experiments within the coupled ASPECT–Landlab framework.</p>
+</section>
+<hr class="docutils" />
+<section id="evaluation-of-paraview-based-visualization">
+<h2>Evaluation of ParaView-Based Visualization<a class="headerlink" href="#evaluation-of-paraview-based-visualization" title="Link to this heading"></a></h2>
+<p>The second objective was to investigate whether ParaView could serve as the primary visualization platform for Landlab VTK outputs.</p>
+<p>Several workflows were explored, including:</p>
+<ul class="simple">
+<li><p>Trace generation</p></li>
+<li><p>Automatic Python script generation</p></li>
+<li><p>Cross-section extraction</p></li>
+<li><p>Profile plotting</p></li>
+<li><p>General visualization workflows</p></li>
+</ul>
+<p>The ParaView <strong>Trace</strong> functionality proved useful for learning the processing pipeline because it automatically generates equivalent Python code.</p>
+<p>However, several limitations became apparent:</p>
+<ul class="simple">
+<li><p>Generated Python scripts are lengthy and difficult to interpret.</p></li>
+<li><p>The workflow depends heavily on ParaView-specific filters.</p></li>
+<li><p>Generated scripts become difficult to maintain.</p></li>
+<li><p>Scaling the workflow to many simulations or hundreds of timesteps would become increasingly cumbersome.</p></li>
+<li><p>Building reusable analysis tools on top of ParaView-generated scripts would require substantial effort.</p></li>
+</ul>
+<p>Although ParaView remains an excellent interactive visualization environment, it became clear that it is not an ideal foundation for a reusable scientific visualization framework.</p>
+<p>This realization motivated a shift toward developing a dedicated Python package specifically tailored for Landlab and ASPECT visualization.</p>
+</section>
+<hr class="docutils" />
+<section id="development-of-landlab-vis">
+<h2>Development of <code class="docutils literal notranslate"><span class="pre">landlab_vis</span></code><a class="headerlink" href="#development-of-landlab-vis" title="Link to this heading"></a></h2>
+<p>A strategic decision was made to begin developing <strong>``landlab_vis``</strong>, a reusable Python visualization and analysis framework for Landlab and ASPECT outputs.</p>
+<p>The long-term goals of the project include:</p>
+<ul class="simple">
+<li><p>Native reading of Landlab VTK files</p></li>
+<li><p>Time-series management</p></li>
+<li><p>Cross-section extraction</p></li>
+<li><p>Profile visualization</p></li>
+<li><p>Statistical analysis</p></li>
+<li><p>Interactive visualization</p></li>
+<li><p>Animation generation</p></li>
+<li><p>Comparison between multiple simulation runs</p></li>
+<li><p>Integration with modern scientific Python visualization tools</p></li>
+</ul>
+<p>Rather than relying on ParaView-generated scripts, the framework will provide a scalable, maintainable, and extensible platform dedicated to geomorphic and geodynamic visualization.</p>
+</section>
+<hr class="docutils" />
+<section id="documentation-infrastructure">
+<h2>Documentation Infrastructure<a class="headerlink" href="#documentation-infrastructure" title="Link to this heading"></a></h2>
+<p>A complete documentation infrastructure was established using <strong>Sphinx</strong>.</p>
+<p>Major accomplishments include:</p>
+<ul class="simple">
+<li><p>Repository bootstrap</p></li>
+<li><p>Modular project structure</p></li>
+<li><p>Automated documentation generation scripts</p></li>
+<li><p>Markdown support through MyST</p></li>
+<li><p>Successful Sphinx documentation build</p></li>
+<li><p>Editable package installation using <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code></p></li>
+<li><p>Documentation hierarchy for:</p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="August_1_2026.html">August 1, 2026, Varification - Deposition Implementation Tests - Deposition and Rift Basin</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="August_1_2026.html#fastscapelandlab-integration-horizontal-surface-advection-parameter-mapping-and-code-refinement">FastScape–Landlab Integration: Horizontal Surface Advection, Parameter Mapping, and Code Refinement</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="August_2_2026_s2yr_debug.html">August 2, 2026, Investigation of Unit Conversion and Solver Failure in the ASPECT–Landlab Coupling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="August_3_2026_WB.html">August 3, 2026, Running the Denial Ada Lovelace Extension Model without World Builder on macOS</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="August_3_2026_WB.html#objective">Objective</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_3_2026_WB.html#modifications-to-the-original-parameter-file">Modifications to the Original Parameter File</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_3_2026_WB.html#observed-solver-behavior">Observed Solver Behavior</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_3_2026_WB.html#simulation-progress">Simulation Progress</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_3_2026_WB.html#fatal-error">Fatal Error</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_3_2026_WB.html#interpretation">Interpretation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_3_2026_WB.html#relationship-to-solver-changes">Relationship to Solver Changes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_3_2026_WB.html#conclusion">Conclusion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_3_2026_WB.html#possible-relationship-to-removing-world-builder">Possible Relationship to Removing World Builder</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_3_2026_WB.html#write-up-to-contribute-to-denial-agu-abstract-if-in-case">Write up to contribute to Denial AGU abstract (if in case)</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="August_4_landlab_vis.html">August 4, 2026, FastScape Benchmark Investigation and Transition from ParaView to <cite>landlab_vis</cite> (Day 1) a Reusable Landlab (.vtk files) Visualization Framework</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="August_4_landlab_vis.html#overview">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_4_landlab_vis.html#investigation-of-fastscape-unit-handling">Investigation of FastScape Unit Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_4_landlab_vis.html#evaluation-of-paraview-based-visualization">Evaluation of ParaView-Based Visualization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_4_landlab_vis.html#development-of-landlab-vis">Development of <code class="docutils literal notranslate"><span class="pre">landlab_vis</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_4_landlab_vis.html#documentation-infrastructure">Documentation Infrastructure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_4_landlab_vis.html#development-of-the-core-software-architecture">Development of the Core Software Architecture</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_4_landlab_vis.html#software-engineering-infrastructure">Software Engineering Infrastructure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_4_landlab_vis.html#current-status">Current Status</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_4_landlab_vis.html#next-steps">Next Steps</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="August_5_2026_landlab_vis_day2.html">August 5, 2026 <cite>landlab_vis</cite> (day 2): A Python Visualization and Analysis Framework for Landlab and ASPECT Outputs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="August_5_2026_landlab_vis_day2.html#overview">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_5_2026_landlab_vis_day2.html#investigation-of-landlab-vtk-mesh-structure">Investigation of Landlab VTK Mesh Structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_5_2026_landlab_vis_day2.html#development-of-landlab-vis">Development of <code class="docutils literal notranslate"><span class="pre">landlab_vis</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_5_2026_landlab_vis_day2.html#core-object-model">Core Object Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_5_2026_landlab_vis_day2.html#geometry">Geometry</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_5_2026_landlab_vis_day2.html#field">Field</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_5_2026_landlab_vis_day2.html#fieldcollection">FieldCollection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_5_2026_landlab_vis_day2.html#frame">Frame</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_5_2026_landlab_vis_day2.html#dataset">Dataset</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_5_2026_landlab_vis_day2.html#input-output-layer">Input / Output Layer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_5_2026_landlab_vis_day2.html#testing">Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_5_2026_landlab_vis_day2.html#visualization-framework">Visualization Framework</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_5_2026_landlab_vis_day2.html#notebook-based-development-workflow">Notebook-Based Development Workflow</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_5_2026_landlab_vis_day2.html#current-status">Current Status</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_5_2026_landlab_vis_day2.html#plans-for-the-next-development-session">Plans for the Next Development Session</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html">August 6, 2026 Workstation 1 landlab-aspect setup and <cite>landlab_vis</cite> (day 3): Completing the Core Architecture and Preparing for Dataset I/O</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#objective-1">Objective 1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#local-macos-setup">Local (macOS) Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#remote-workstation-ws1">Remote Workstation (ws1)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#vs-code-remote-ssh">VS Code Remote - SSH</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#virtual-environment-pitfall">Virtual Environment Pitfall</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#python-module-import">Python Module Import</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#running-aspect">Running ASPECT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#lessons-learned">Lessons Learned</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#objective-2">Objective 2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#overview">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#objectives">Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#fixing-the-vtk-reader">1. Fixing the VTK Reader</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#improving-the-frame-class">2. Improving the Frame Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#separating-plotting-and-interactive-visualization">3. Separating Plotting and Interactive Visualization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#standardizing-the-baseobject-architecture">4. Standardizing the BaseObject Architecture</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#refining-geometry">5. Refining Geometry</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#refining-field">6. Refining Field</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#refining-fieldcollection">7. Refining FieldCollection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#completing-the-dataset-class">8. Completing the Dataset Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#final-core-architecture">9. Final Core Architecture</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#id1">Lessons Learned</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#current-status">Current Status</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#next-development-session">Next Development Session</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#overall-progress">Overall Progress</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#objective-3">Objective 3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#ssh-connection-reset-during-aspect-simulation">SSH Connection Reset During ASPECT Simulation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#id2">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#ssh-connection-reset">SSH Connection Reset</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#runtime">Runtime</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#authorization-warnings">Authorization Warnings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#evaluation-point-warning">Evaluation Point Warning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#resume-from-snapshot">Resume from Snapshot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#simulation-status">Simulation Status</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_6_ws1_Tmodel_landlab_vis_day_3.html#recommended-checks-after-reconnecting">Recommended Checks After Reconnecting</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="August_7_T-model_error.html">August 7, 2026 Denial Ada error, case 1 with <code class="docutils literal notranslate"><span class="pre">s2yr</span></code> and case 2 without s2yr</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="August_7_T-model_error.html#error-summary-case-1-k-s2yr-d-s2yr"><strong>Error Summary case 1, k/s2yr, d/s2yr</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_7_T-model_error.html#error-summary-case-2-without-s2yr">Error Summary case 2: Without <code class="docutils literal notranslate"><span class="pre">s2yr</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_7_T-model_error.html#landlab-coupling-script">Landlab Coupling Script</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_7_T-model_error.html#aspect-parameter-file">ASPECT Parameter File</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_7_T-model_error.html#world-builder-configuration">World Builder Configuration</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="August_8t_2026_s2yr.html">August 8, 2026, Clarification of Units in the ASPECT–Landlab Coupling</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="August_8t_2026_s2yr.html#unit-conversion">Unit conversion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_8t_2026_s2yr.html#landlab-and-units">Landlab and units</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_8t_2026_s2yr.html#current-coupling-question">Current coupling question</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_8t_2026_s2yr.html#numerical-stability-versus-physical-parameter-values">Numerical stability versus physical parameter values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_8t_2026_s2yr.html#what-i-would-like-to-clarify">What I would like to clarify</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_8t_2026_s2yr.html#comparison-between-fastscape-aspect-and-landlab-aspect">Comparison between FastScape–ASPECT and Landlab–ASPECT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_8t_2026_s2yr.html#figures">Figures</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_8t_2026_s2yr.html#landlab-aspect-coupling-implementation">Landlab–ASPECT Coupling Implementation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_8t_2026_s2yr.html#aspect-parameter-file">ASPECT Parameter File</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="August_9_2026_landlab_viz_day_4.html">August 9, 2026, <code class="docutils literal notranslate"><span class="pre">landlab_vis</span></code> (day 3) 2D Profile Analysis and Comparison</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="August_9_2026_landlab_viz_day_4.html#profile-extraction">Profile Extraction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_9_2026_landlab_viz_day_4.html#profile-comparison-across-timesteps">Profile Comparison Across Timesteps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_9_2026_landlab_viz_day_4.html#flexible-profile-labels">Flexible Profile Labels</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_9_2026_landlab_viz_day_4.html#unit-conversion">Unit Conversion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_9_2026_landlab_viz_day_4.html#field-metadata">Field Metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_9_2026_landlab_viz_day_4.html#metadata-aware-profiles">Metadata-Aware Profiles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_9_2026_landlab_viz_day_4.html#unit-validation">Unit Validation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_9_2026_landlab_viz_day_4.html#human-readable-field-labels">Human-Readable Field Labels</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_9_2026_landlab_viz_day_4.html#two-folder-dataset-comparison">Two-Folder Dataset Comparison</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_9_2026_landlab_viz_day_4.html#current-development-status">Current Development Status</a></li>
-<li class="toctree-l2"><a class="reference internal" href="August_9_2026_landlab_viz_day_4.html#next-step">Next Step</a></li>
+<li><p>Getting Started</p></li>
+<li><p>Theory</p></li>
+<li><p>Tutorials</p></li>
+<li><p>API Reference</p></li>
+<li><p>Interactive Components</p></li>
+<li><p>Gallery</p></li>
+<li><p>Developer Guide</p></li>
+<li><p>Project Documentation</p></li>
 </ul>
 </li>
 </ul>
+<p>This documentation system will evolve alongside software development to ensure implementation and documentation remain synchronized.</p>
+</section>
+<hr class="docutils" />
+<section id="development-of-the-core-software-architecture">
+<h2>Development of the Core Software Architecture<a class="headerlink" href="#development-of-the-core-software-architecture" title="Link to this heading"></a></h2>
+<p>Development then shifted from documentation to implementing the core software architecture of <code class="docutils literal notranslate"><span class="pre">landlab_vis</span></code>.</p>
+<p>Instead of beginning with plotting routines, emphasis was placed on designing a clean object-oriented data model.</p>
+<p>The current architecture is:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>BaseObject
+      │
+      ▼
+Frame
+├── Geometry
+├── Metadata
+└── Fields (temporary dictionary)
+</pre></div>
 </div>
+<section id="implemented-components">
+<h3>Implemented Components<a class="headerlink" href="#implemented-components" title="Link to this heading"></a></h3>
+<p><strong>BaseObject</strong></p>
+<p>Provides common functionality shared across future classes, including:</p>
+<ul class="simple">
+<li><p>Metadata management</p></li>
+<li><p>Summary generation</p></li>
+<li><p>Object representation</p></li>
+<li><p>Shared utility methods</p></li>
+</ul>
+<p><strong>Geometry</strong></p>
+<p>A dedicated container for mesh geometry including:</p>
+<ul class="simple">
+<li><p>Point coordinates</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code> and <code class="docutils literal notranslate"><span class="pre">z</span></code> coordinate accessors</p></li>
+<li><p>Geometry management</p></li>
+</ul>
+<p>Separating geometry from field data mirrors the internal organization of VTK datasets and provides a clean software architecture.</p>
+<p><strong>Frame</strong></p>
+<p>Represents a single Landlab VTK timestep.</p>
+<p>Current functionality includes:</p>
+<ul class="simple">
+<li><p>Lazy loading architecture</p></li>
+<li><p>Filename management</p></li>
+<li><p>Simulation timestep storage</p></li>
+<li><p>Physical time storage</p></li>
+<li><p>Geometry ownership</p></li>
+<li><p>Field storage</p></li>
+<li><p>Metadata inheritance</p></li>
+<li><p>Summary reporting</p></li>
+<li><p>Loading state management</p></li>
+<li><p>Comprehensive unit tests</p></li>
+</ul>
+<p>The design intentionally keeps <code class="docutils literal notranslate"><span class="pre">Frame</span></code> lightweight. It represents a single timestep and deliberately avoids responsibilities such as plotting, interpolation, or file parsing.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="software-engineering-infrastructure">
+<h2>Software Engineering Infrastructure<a class="headerlink" href="#software-engineering-infrastructure" title="Link to this heading"></a></h2>
+<p>The project was converted into a fully installable Python package.</p>
+<p>Major milestones include:</p>
+<ul>
+<li><p>Creation of <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code></p></li>
+<li><p>Editable installation using:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
+</pre></div>
+</div>
+</li>
+<li><p>Successful package import</p></li>
+<li><p>Unit testing using <code class="docutils literal notranslate"><span class="pre">pytest</span></code></p></li>
+<li><p>Successful execution of all current tests</p></li>
+</ul>
+<p>This establishes a solid software engineering foundation for future development.</p>
+</section>
+<hr class="docutils" />
+<section id="current-status">
+<h2>Current Status<a class="headerlink" href="#current-status" title="Link to this heading"></a></h2>
+<p>At the conclusion of today’s work:</p>
+<ul class="simple">
+<li><p>The documentation infrastructure is fully operational.</p></li>
+<li><p>The Python package can be installed and imported successfully.</p></li>
+<li><p>The object-oriented architecture has been established.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BaseObject</span></code>, <code class="docutils literal notranslate"><span class="pre">Geometry</span></code>, and <code class="docutils literal notranslate"><span class="pre">Frame</span></code> have been implemented and tested.</p></li>
+<li><p>Investigation into FastScape unit handling has identified the <code class="docutils literal notranslate"><span class="pre">s2yr</span></code> conversion as a likely source of discrepancies that must be resolved before benchmark reproduction.</p></li>
+<li><p>A strategic transition has been made from ParaView-based scripting toward the development of a dedicated visualization framework (<code class="docutils literal notranslate"><span class="pre">landlab_vis</span></code>) designed specifically for Landlab and ASPECT outputs.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="next-steps">
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Link to this heading"></a></h2>
+<p>The immediate development priorities are:</p>
+<ol class="arabic simple">
+<li><p>Implement <code class="docutils literal notranslate"><span class="pre">Field</span></code>.</p></li>
+<li><p>Implement <code class="docutils literal notranslate"><span class="pre">FieldCollection</span></code>.</p></li>
+<li><p>Replace the temporary field dictionary within <code class="docutils literal notranslate"><span class="pre">Frame</span></code> by <code class="docutils literal notranslate"><span class="pre">FieldCollection</span></code>.</p></li>
+<li><p>Implement <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> as a collection of <code class="docutils literal notranslate"><span class="pre">Frame</span></code> objects.</p></li>
+<li><p>Develop <code class="docutils literal notranslate"><span class="pre">FolderReader</span></code> for automatic discovery of Landlab VTK timesteps.</p></li>
+<li><p>Implement <code class="docutils literal notranslate"><span class="pre">VTKReader</span></code> to populate <code class="docutils literal notranslate"><span class="pre">Frame</span></code> objects from VTK files.</p></li>
+<li><p>Continue investigating FastScape parameter units, particularly <strong>K</strong>, <strong>D</strong>, and submarine diffusivity, to ensure consistent unit handling in the ASPECT–Landlab benchmark implementation.</p></li>
+</ol>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../open_questions/index.html" class="btn btn-neutral float-left" title="Open Questions (What remains to be understood?)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="August_1_2026.html" class="btn btn-neutral float-right" title="August 1, 2026, Varification - Deposition Implementation Tests - Deposition and Rift Basin" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="August_3_2026_WB.html" class="btn btn-neutral float-left" title="August 3, 2026, Running the Denial Ada Lovelace Extension Model without World Builder on macOS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="August_5_2026_landlab_vis_day2.html" class="btn btn-neutral float-right" title="August 5, 2026 landlab_vis (day 2): A Python Visualization and Analysis Framework for Landlab and ASPECT Outputs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

@@ -626,7 +626,7 @@ Common Erosional Parameter Mapping
 
    * - ``Bedrock river incision rate = 1e-6``
      - ``K = 1e-6``
-     - Numerically identical.
+     - Numerically identical. Erodibility coefficient.
 
    * - ``Bedrock diffusivity = 1e-2``
      - ``D = 1e-2``
@@ -1089,7 +1089,7 @@ All Landlab components are initialized in
                "v_s": 1000.0,
                "m_sp": 0.5,
                "n_sp": 1.0,
-               "sp_crit": 0.0,
+               "sp_crit": 0.0, # erosion threshold
            },
 
            "SimpleSubmarineDiffuser": {
