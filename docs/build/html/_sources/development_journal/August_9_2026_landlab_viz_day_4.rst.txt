@@ -1,4 +1,4 @@
-August 9, 2026, ``landlab_vis`` (day 3) 2D Profile Analysis and Comparison
+August 9, 2026, ``landlab_vis`` (day 4) 2D Profile Analysis and Comparison
 ===========================================================================
 
 Today we focused mainly on building the **2D profile-analysis and comparison system** for ``landlab_vis``.
