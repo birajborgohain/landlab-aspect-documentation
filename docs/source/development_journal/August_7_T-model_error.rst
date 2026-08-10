@@ -1202,3 +1202,29 @@ temperature, and compositional structure used in the ASPECT model.
            }
        ]
    }
+
+
+.. note::
+
+   **File locations and ASPECT run configuration on NMT HPC**
+
+   Files::
+
+       /home/900369162/software/landlab-aspect/HPC_nmt_cookbook/orginal_files
+
+   ASPECT executable::
+
+       ~/software/landlab-aspect/aspect/build/aspect-release
+
+   Parameter file::
+
+       ~/software/landlab-aspect/HPC_nmt_cookbook/orginal_files/original_ll_original_copy.prm
+
+   Environment variables::
+
+       ASPECT=~/software/landlab-aspect/aspect/build/aspect-release
+       PRM=~/software/landlab-aspect/HPC_nmt_cookbook/orginal_files/original_ll_original_copy.prm
+
+   Run command::
+
+       mpirun -np 8 "$ASPECT" "$PRM"
