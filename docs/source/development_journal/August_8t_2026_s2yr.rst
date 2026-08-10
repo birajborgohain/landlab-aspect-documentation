@@ -253,8 +253,8 @@ Figures
 Landlab--ASPECT Coupling Implementation
 ----------------------------------------
 
-The following code shows the current implementation of the custom
-``LandLabTemplate`` model used for the Landlab--ASPECT coupling.
+The following code shows    Landlab ``.py``
+``original_landlab.py`` model used for the Landlab--ASPECT coupling.
 
 .. code-block:: python
    :linenos:
@@ -650,7 +650,7 @@ The following code shows the current implementation of the custom
 ASPECT Parameter File
 ---------------------
 
-The following parameter file was used for the Landlab--ASPECT coupled
+The following ``.prm`` parameter file was used for the Landlab--ASPECT coupled
 simulation.
 
 .. code-block:: text
