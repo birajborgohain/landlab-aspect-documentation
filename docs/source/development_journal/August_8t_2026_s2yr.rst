@@ -29,6 +29,8 @@ Based on the literature ranges we have been using, typical values are approximat
 
 These values depend, of course, on the particular landscape and modeling scenario.
 
+.. figure:: /INKSCAPE/PR_s2yr.png
+
 Unit conversion
 ----------------
 

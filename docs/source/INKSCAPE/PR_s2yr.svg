@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   sodipodi:docname="PR_s2yr.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.91846942"
+     inkscape:cx="339.69558"
+     inkscape:cy="513.35406"
+     inkscape:window-width="1961"
+     inkscape:window-height="1186"
+     inkscape:window-x="956"
+     inkscape:window-y="30"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1"
+     inkscape:export-bgcolor="#ffffffff" />
+  <defs
+     id="defs1">
+    <marker
+       style="overflow:visible"
+       id="marker12"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Stylized triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="m 6,0 c -3,1 -7,3 -9,5 0,0 0,-4 2,-5 -2,-1 -2,-5 -2,-5 2,2 6,4 9,5 z"
+         id="path12" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker12-4"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Stylized triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="m 6,0 c -3,1 -7,3 -9,5 0,0 0,-4 2,-5 -2,-1 -2,-5 -2,-5 2,2 6,4 9,5 z"
+         id="path12-5" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-size:12.7px;font-family:Helvetica, Helvetica;-inkscape-font-specification:'Helvetica, Helvetica';writing-mode:lr-tb;direction:ltr;fill:none;stroke-width:0.4;stroke-linejoin:round;stroke-miterlimit:0.6;paint-order:stroke fill markers"
+       x="51.846333"
+       y="109.04956"
+       id="text1"
+       inkscape:export-filename="PR_s2yr.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         style="font-size:12.7px;fill:#000000;stroke-width:0.4"
+         x="51.846333"
+         y="109.04956">Landlab</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12.7px;font-family:Helvetica, Helvetica;-inkscape-font-specification:'Helvetica, Helvetica';writing-mode:lr-tb;direction:ltr;fill:none;stroke-width:0.4;stroke-linejoin:round;stroke-miterlimit:0.6;paint-order:stroke fill markers"
+       x="50.773514"
+       y="201.98744"
+       id="text1-6"><tspan
+         sodipodi:role="line"
+         id="tspan1-5"
+         style="font-size:12.7px;fill:#000000;stroke-width:0.4"
+         x="50.773514"
+         y="201.98744">Landlab</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:5.64444px;font-family:Helvetica, Helvetica;-inkscape-font-specification:'Helvetica, Helvetica';writing-mode:lr-tb;direction:ltr;fill:none;stroke-width:0.4;stroke-linejoin:round;stroke-miterlimit:0.6;paint-order:stroke fill markers"
+       x="23.915445"
+       y="30.033852"
+       id="text1-7"><tspan
+         sodipodi:role="line"
+         id="tspan1-3"
+         style="font-size:5.64444px;fill:#000000;stroke-width:0.4"
+         x="23.915445"
+         y="30.033852">ASPECT .prm</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:9.87778px;font-family:Helvetica, Helvetica;-inkscape-font-specification:'Helvetica, Helvetica';writing-mode:lr-tb;direction:ltr;fill:none;stroke-width:0.4;stroke-linejoin:round;stroke-miterlimit:0.6;paint-order:stroke fill markers"
+       x="53.279091"
+       y="158.09038"
+       id="text1-7-0"><tspan
+         sodipodi:role="line"
+         id="tspan1-3-2"
+         style="font-size:9.87778px;fill:#000000;stroke-width:0.4"
+         x="53.279091"
+         y="158.09038">ASPECT</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:9.87777px;font-family:Helvetica, Helvetica;-inkscape-font-specification:'Helvetica, Helvetica';writing-mode:lr-tb;direction:ltr;fill:#000000;stroke-width:0.4;stroke-linejoin:round;stroke-miterlimit:0.6;paint-order:stroke fill markers"
+       x="106.86765"
+       y="88.0205"
+       id="text2"><tspan
+         sodipodi:role="line"
+         id="tspan2"
+         style="stroke-width:0.4"
+         x="106.86765"
+         y="88.0205">K= 10<tspan
+   style="font-size:65%;baseline-shift:super"
+   id="tspan3">-5</tspan> m/year</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:9.87777px;font-family:Helvetica, Helvetica;-inkscape-font-specification:'Helvetica, Helvetica';writing-mode:lr-tb;direction:ltr;fill:#000000;stroke-width:0.4;stroke-linejoin:round;stroke-miterlimit:0.6;paint-order:stroke fill markers"
+       x="110.13412"
+       y="203.23822"
+       id="text2-40"><tspan
+         sodipodi:role="line"
+         id="tspan2-4"
+         style="stroke-width:0.4"
+         x="110.13412"
+         y="203.23822">K= 10<tspan
+   style="font-size:65%;baseline-shift:super"
+   id="tspan3-6">-5</tspan> m/year</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:9.87777px;font-family:Helvetica, Helvetica;-inkscape-font-specification:'Helvetica, Helvetica';writing-mode:lr-tb;direction:ltr;fill:#000000;stroke-width:0.4;stroke-linejoin:round;stroke-miterlimit:0.6;paint-order:stroke fill markers"
+       x="113.00237"
+       y="125.8187"
+       id="text2-4"><tspan
+         sodipodi:role="line"
+         id="tspan2-1"
+         style="stroke-width:0.4"
+         x="113.00237"
+         y="125.8187">10<tspan
+   style="font-size:65%;baseline-shift:super"
+   id="tspan3-8">-5</tspan> </tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:9.87777px;font-family:Helvetica, Helvetica;-inkscape-font-specification:'Helvetica, Helvetica';writing-mode:lr-tb;direction:ltr;fill:#000000;stroke-width:0.4;stroke-linejoin:round;stroke-miterlimit:0.6;paint-order:stroke fill markers"
+       x="113.62938"
+       y="137.51257"
+       id="text4"><tspan
+         sodipodi:role="line"
+         id="tspan4"
+         style="stroke-width:0.4"
+         x="113.62938"
+         y="137.51257">s2yr</tspan></text>
+    <g
+       id="g7"
+       transform="translate(-17.462505,59.266698)">
+      <text
+         xml:space="preserve"
+         style="font-size:9.87777px;font-family:Helvetica, Helvetica;-inkscape-font-specification:'Helvetica, Helvetica';writing-mode:lr-tb;direction:ltr;fill:#000000;stroke-width:0.4;stroke-linejoin:round;stroke-miterlimit:0.6;paint-order:stroke fill markers"
+         x="154.58716"
+         y="72.017464"
+         id="text5"><tspan
+           sodipodi:role="line"
+           id="tspan5"
+           style="stroke-width:0.4"
+           x="154.58716"
+           y="72.017464">=10<tspan
+   style="font-size:65%;baseline-shift:super"
+   id="tspan6">-13 </tspan></tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:9.87777px;font-family:Helvetica, Helvetica;-inkscape-font-specification:'Helvetica, Helvetica';writing-mode:lr-tb;direction:ltr;fill:#000000;stroke-width:0.4;stroke-linejoin:round;stroke-miterlimit:0.6;paint-order:stroke fill markers"
+         x="181.92938"
+         y="72.017464"
+         id="text7"><tspan
+           sodipodi:role="line"
+           id="tspan7"
+           style="stroke-width:0.4"
+           x="181.92938"
+           y="72.017464">m/sec</tspan></text>
+    </g>
+    <path
+       style="fill:#000000;stroke:#000000;stroke-width:0.9;stroke-linejoin:round;stroke-miterlimit:0.6;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       d="M 113.00235,128.46468 H 132.4427"
+       id="path7" />
+    <text
+       xml:space="preserve"
+       style="font-size:5.64444px;font-family:Helvetica, Helvetica;-inkscape-font-specification:'Helvetica, Helvetica';writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:#000000;stroke-width:0;stroke-linejoin:round;stroke-miterlimit:0.6;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       x="64.787445"
+       y="30.231533"
+       id="text8"><tspan
+         sodipodi:role="line"
+         id="tspan8"
+         style="font-size:5.64444px;stroke-width:0;stroke-dasharray:none"
+         x="64.787445"
+         y="30.231533">set Use years instead of seconds  = true,          <tspan
+   style="fill:#ff0000"
+   id="tspan9">Year</tspan></tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.799999;stroke-linejoin:round;stroke-miterlimit:0.6;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker12);paint-order:stroke fill markers"
+       d="m 97.046678,109.04963 c 8.073822,11.96037 7.698602,23.8893 -1.125658,35.78682"
+       id="path11"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.799999;stroke-linejoin:round;stroke-miterlimit:0.6;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker12-4);paint-order:stroke fill markers"
+       d="m 98.547889,154.45551 c 8.073831,11.96032 7.698611,23.88925 -1.125644,35.78677"
+       id="path11-5"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-size:9.87777px;font-family:Helvetica, Helvetica;-inkscape-font-specification:'Helvetica, Helvetica';writing-mode:lr-tb;direction:ltr;fill:#000000;stroke-width:0.4;stroke-linejoin:round;stroke-miterlimit:0.6;paint-order:stroke fill markers"
+       x="123.94812"
+       y="174.5825"
+       id="text4-6"><tspan
+         sodipodi:role="line"
+         id="tspan4-8"
+         style="stroke-width:0.4"
+         x="123.94812"
+         y="174.5825">???? s2yr</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:5.64444px;font-family:Helvetica, Helvetica;-inkscape-font-specification:'Helvetica, Helvetica';writing-mode:lr-tb;direction:ltr;fill:none;stroke:#000000;stroke-width:0.2;stroke-linejoin:round;stroke-miterlimit:0.6;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       x="54.157131"
+       y="46.379242"
+       id="text12"><tspan
+         sodipodi:role="line"
+         id="tspan12"
+         style="fill:#000000;stroke-width:0.2;stroke-dasharray:none"
+         x="54.157131"
+         y="46.379242">s2yr = 60 * 60 * 24 * 365.25.</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:5.64444px;font-family:Helvetica, Helvetica;-inkscape-font-specification:'Helvetica, Helvetica';writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:#000000;stroke-width:0.2;stroke-linejoin:round;stroke-miterlimit:0.6;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       x="44.650826"
+       y="59.918526"
+       id="text13"><tspan
+         sodipodi:role="line"
+         id="tspan13"
+         style="stroke-width:0.2"
+         x="44.650826"
+         y="59.918526">Bedrock river incision rate (K) = 1e<tspan
+   style="font-size:65%;baseline-shift:super"
+   id="tspan14">-5</tspan></tspan></text>
+  </g>
+</svg>
