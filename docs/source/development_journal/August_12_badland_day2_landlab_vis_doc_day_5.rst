@@ -13,8 +13,7 @@ Main Activities
 
    The goal was to develop a clearer understanding of how the Badlands model
    is structured, how its major components work together, and how the
-   algorithms are implemented. Relevant information was summarized for
-   future reference and comparison with other landscape-evolution models.
+   algorithms are implemented. 
 
 2. **landlab_vis – Day 5: Source Code and Documentation**
 
