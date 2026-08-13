@@ -16,3 +16,6 @@ This section summarizes the day-to-day development, implementation, testing, and
     August_7_T-model_error
     August_8t_2026_s2yr
     August_9_2026_landlab_viz_day_4
+    August_10_badland_day_1_Ada_summarisation
+    August_11_PR_response_Day_1
+    August_12_badland_day2_landlab_vis_doc_day_5
