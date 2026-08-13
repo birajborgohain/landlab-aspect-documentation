@@ -15,6 +15,16 @@ rift basin development in a broader range of tectonic settings.
 | *Earth and Planetary Science Letters*, **657**, 119565.
 | DOI: https://doi.org/10.1016/j.epsl.2025.119565
 
+Figures
+--------
+.. figure:: /_images/deposition/depo_drainage_topo_combine_Landlab_Fastscape.png
+   :width: 100%
+   :align: center
+
+.. figure:: /_images/random_noise.png
+   :width: 100%
+   :align: center
+
 
 Table of FastScape--ASPECT to Landlab--ASPECT Mapping
 ------------------------------------------------------
@@ -1208,11 +1218,7 @@ Marine parameters
 * **Marine compaction**
   - Not implemented.
 
-Figures
---------
-.. figure:: /_images/deposition/depo_drainage_topo_combine_Landlab_Fastscape.png
-   :width: 100%
-   :align: center
+
 
 
 Reproducing the Liang (2025) EPSL Landlab--ASPECT Test
