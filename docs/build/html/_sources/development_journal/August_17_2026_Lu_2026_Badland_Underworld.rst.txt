@@ -1,5 +1,5 @@
 
-August 17, 2026 Badlan (Day 6) Underworld-Badland ALE-IB Free-Surface Modeling Lu et al., 2026 (GMD)
+August 17, 2026 Badland  (Day 6) Underworld-Badland ALE-IB Free-Surface Modeling Lu et al., 2026 (GMD)
 ========================================================================================================
 
 **Focus:** Interpretation of two related Lu et al. papers and their
@@ -558,7 +558,7 @@ Potential applications include:
    +-------------------+-----------------------+--------------------------+
 
 8. Why a rift experiment may be particularly powerful
------------------------------------------------------------------------------===
+-----------------------------------------------------------------------------
 
 A collision model is useful, but a rift experiment may provide a more
 distinct scientific application for ASPECT--Landlab.
@@ -764,7 +764,7 @@ How does erosion and deposition feed back onto tectonic deformation?
    \text{tectonic response}.
 
 11. Proposed numerical experiment matrix
-========================================
+-----------------------------------------------------
 
 .. table:: Proposed ASPECT--Landlab experiment matrix
 
@@ -961,7 +961,7 @@ Show:
       v
    basin filling
 
-15. What would make the manuscript genuinely new?
+15. Novality in manuscript?
 ---------------------------------------------------
 
 The manuscript should avoid presenting the contribution as merely:
@@ -1001,7 +1001,7 @@ The novelty should instead come from one or more of:
    Demonstrating when the coupled solution becomes insensitive to grid
    resolution and coupling frequency.
 
-16. Recommended manuscript hypothesis
+16. Tentative manuscript hypothesis
 ---------------------------------------
 
 The most testable hypothesis is:
@@ -1025,7 +1025,7 @@ A more specific version is:
    ASPECT and Landlab.}
    }
 
-17. Recommended experiment for immediate implementation
+17. Likeley experiment for immediate implementation
 -----------------------------------------------------------------------------
 A scientifically defensible sequence is:
 
@@ -1076,7 +1076,7 @@ A scientifically defensible sequence is:
 This gives a clean progression from **verification** to **numerical
 convergence** to **scientific application**.
 
-18. Key conclusions from today's discussion
+18. Key conclusions from today's readings
 ---------------------------------------------
 
 The two Lu et al. papers provide a useful roadmap for ASPECT--Landlab.

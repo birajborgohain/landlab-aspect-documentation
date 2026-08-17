@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>August 17, 2026 Badlan (Day 6) Underworld-Badland ALE-IB Free-Surface Modeling Lu et al., 2026 (GMD) &mdash; Landlab-Aspect Development Documentation 0.1 documentation</title>
+  <title>August 17, 2026 Badland (Day 6) Underworld-Badland ALE-IB Free-Surface Modeling Lu et al., 2026 (GMD) &mdash; Landlab-Aspect Development Documentation 0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d75fae25" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=fa26092b" />
@@ -487,7 +487,7 @@
 <li class="toctree-l3"><a class="reference internal" href="August_16_2026_analytical_collision_rift.html#key-conclusions">Key conclusions</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">August 17, 2026 Badlan (Day 6) Underworld-Badland ALE-IB Free-Surface Modeling Lu et al., 2026 (GMD)</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">August 17, 2026 Badland  (Day 6) Underworld-Badland ALE-IB Free-Surface Modeling Lu et al., 2026 (GMD)</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#two-paper-conceptual-progression">Two-paper conceptual progression</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lu-et-al-2026a-true-free-surface-simulation">1. Lu et al. (2026a): True free-surface simulation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#scientific-motivation">Scientific motivation</a></li>
@@ -509,14 +509,13 @@
 <li class="toctree-l3"><a class="reference internal" href="#level-1-numerical-verification">Level 1: Numerical verification</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#level-2-coupling-verification">Level 2: Coupling verification</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#level-3-scientific-application">Level 3: Scientific application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#why-a-rift-experiment-may-be-particularly-powerful">8. Why a rift experiment may be particularly powerful</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#sediment-routing-as-a-longer-term-opportunity">9. Sediment routing as a longer-term opportunity</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#central-research-question">10. Central research question</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#question-1-spatial-coupling">Question 1: Spatial coupling</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#question-2-temporal-coupling">Question 2: Temporal coupling</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#question-3-physical-coupling">Question 3: Physical coupling</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#proposed-numerical-experiment-matrix">11. Proposed numerical experiment matrix</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#proposed-numerical-experiment-matrix">11. Proposed numerical experiment matrix</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#numerical-convergence-experiment">12. Numerical convergence experiment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#spatial-versus-temporal-coupling-error">13. Spatial versus temporal coupling error</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#figure-1-coupling-architecture">Figure 1: Coupling architecture</a></li>
@@ -526,10 +525,10 @@
 <li class="toctree-l3"><a class="reference internal" href="#figure-5-erosion-deposition">Figure 5: Erosion/deposition</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#figure-6-tectonic-application">Figure 6: Tectonic application</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#figure-7-source-to-sink-evolution">Figure 7: Source-to-sink evolution</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#what-would-make-the-manuscript-genuinely-new">15. What would make the manuscript genuinely new?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#recommended-manuscript-hypothesis">16. Recommended manuscript hypothesis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#recommended-experiment-for-immediate-implementation">17. Recommended experiment for immediate implementation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#key-conclusions-from-today-s-discussion">18. Key conclusions from today’s discussion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#novality-in-manuscript">15. Novality in manuscript?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tentative-manuscript-hypothesis">16. Tentative manuscript hypothesis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#likeley-experiment-for-immediate-implementation">17. Likeley experiment for immediate implementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#key-conclusions-from-today-s-readings">18. Key conclusions from today’s readings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#central-question-to-carry-forward">19. Central question to carry forward</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#references">References</a></li>
 </ul>
@@ -553,7 +552,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="index.html">Development Journal</a></li>
-      <li class="breadcrumb-item active">August 17, 2026 Badlan (Day 6) Underworld-Badland ALE-IB Free-Surface Modeling Lu et al., 2026 (GMD)</li>
+      <li class="breadcrumb-item active">August 17, 2026 Badland  (Day 6) Underworld-Badland ALE-IB Free-Surface Modeling Lu et al., 2026 (GMD)</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/development_journal/August_17_2026_Lu_2026_Badland_Underworld.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -565,8 +564,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="august-17-2026-badlan-day-6-underworld-badland-ale-ib-free-surface-modeling-lu-et-al-2026-gmd">
-<h1>August 17, 2026 Badlan (Day 6) Underworld-Badland ALE-IB Free-Surface Modeling Lu et al., 2026 (GMD)<a class="headerlink" href="#august-17-2026-badlan-day-6-underworld-badland-ale-ib-free-surface-modeling-lu-et-al-2026-gmd" title="Link to this heading"></a></h1>
+  <section id="august-17-2026-badland-day-6-underworld-badland-ale-ib-free-surface-modeling-lu-et-al-2026-gmd">
+<h1>August 17, 2026 Badland  (Day 6) Underworld-Badland ALE-IB Free-Surface Modeling Lu et al., 2026 (GMD)<a class="headerlink" href="#august-17-2026-badland-day-6-underworld-badland-ale-ib-free-surface-modeling-lu-et-al-2026-gmd" title="Link to this heading"></a></h1>
 <p><strong>Focus:</strong> Interpretation of two related Lu et al. papers and their
 implications for developing a scientific manuscript and numerical
 experiments with the ASPECT–Landlab coupling framework.</p>
@@ -1088,8 +1087,9 @@ deposition?</p></td>
 </tr>
 </tbody>
 </table>
-<p>8. Why a rift experiment may be particularly powerful
-—————————————————————————–===</p>
+</section>
+<section id="why-a-rift-experiment-may-be-particularly-powerful">
+<h2>8. Why a rift experiment may be particularly powerful<a class="headerlink" href="#why-a-rift-experiment-may-be-particularly-powerful" title="Link to this heading"></a></h2>
 <p>A collision model is useful, but a rift experiment may provide a more
 distinct scientific application for ASPECT–Landlab.</p>
 <p>In a collision:</p>
@@ -1248,9 +1248,8 @@ operator-splitting error}
 \rightarrow
 \text{tectonic response}.\]</div>
 </section>
-</section>
 <section id="proposed-numerical-experiment-matrix">
-<h1>11. Proposed numerical experiment matrix<a class="headerlink" href="#proposed-numerical-experiment-matrix" title="Link to this heading"></a></h1>
+<h2>11. Proposed numerical experiment matrix<a class="headerlink" href="#proposed-numerical-experiment-matrix" title="Link to this heading"></a></h2>
 <table class="docutils align-default" id="id5">
 <caption><span class="caption-number">Table 18 </span><span class="caption-text">Proposed ASPECT–Landlab experiment matrix</span><a class="headerlink" href="#id5" title="Link to this table"></a></caption>
 <thead>
@@ -1311,6 +1310,7 @@ evolution</p></td>
 </tr>
 </tbody>
 </table>
+</section>
 <section id="numerical-convergence-experiment">
 <h2>12. Numerical convergence experiment<a class="headerlink" href="#numerical-convergence-experiment" title="Link to this heading"></a></h2>
 <p>Define a reference solution:</p>
@@ -1448,8 +1448,8 @@ basin filling
 </pre></div>
 </div>
 </section>
-<section id="what-would-make-the-manuscript-genuinely-new">
-<h2>15. What would make the manuscript genuinely new?<a class="headerlink" href="#what-would-make-the-manuscript-genuinely-new" title="Link to this heading"></a></h2>
+<section id="novality-in-manuscript">
+<h2>15. Novality in manuscript?<a class="headerlink" href="#novality-in-manuscript" title="Link to this heading"></a></h2>
 <p>The manuscript should avoid presenting the contribution as merely:</p>
 <blockquote>
 <div><p>ASPECT + Landlab coupling</p>
@@ -1482,8 +1482,8 @@ resolution and coupling frequency.</p>
 </li>
 </ol>
 </section>
-<section id="recommended-manuscript-hypothesis">
-<h2>16. Recommended manuscript hypothesis<a class="headerlink" href="#recommended-manuscript-hypothesis" title="Link to this heading"></a></h2>
+<section id="tentative-manuscript-hypothesis">
+<h2>16. Tentative manuscript hypothesis<a class="headerlink" href="#tentative-manuscript-hypothesis" title="Link to this heading"></a></h2>
 <p>The most testable hypothesis is:</p>
 <div class="math notranslate nohighlight">
 \[\boxed{
@@ -1500,8 +1500,8 @@ rate depends on spatial resolution and the transfer method between
 ASPECT and Landlab.}
 }\]</div>
 </section>
-<section id="recommended-experiment-for-immediate-implementation">
-<h2>17. Recommended experiment for immediate implementation<a class="headerlink" href="#recommended-experiment-for-immediate-implementation" title="Link to this heading"></a></h2>
+<section id="likeley-experiment-for-immediate-implementation">
+<h2>17. Likeley experiment for immediate implementation<a class="headerlink" href="#likeley-experiment-for-immediate-implementation" title="Link to this heading"></a></h2>
 <p>A scientifically defensible sequence is:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>STEP 1
 ------
@@ -1549,8 +1549,8 @@ STEP 6
 <p>This gives a clean progression from <strong>verification</strong> to <strong>numerical
 convergence</strong> to <strong>scientific application</strong>.</p>
 </section>
-<section id="key-conclusions-from-today-s-discussion">
-<h2>18. Key conclusions from today’s discussion<a class="headerlink" href="#key-conclusions-from-today-s-discussion" title="Link to this heading"></a></h2>
+<section id="key-conclusions-from-today-s-readings">
+<h2>18. Key conclusions from today’s readings<a class="headerlink" href="#key-conclusions-from-today-s-readings" title="Link to this heading"></a></h2>
 <p>The two Lu et al. papers provide a useful roadmap for ASPECT–Landlab.</p>
 <p>First, Lu et al. (2026a) establishes that accurate free-surface
 evolution requires careful treatment of mesh motion, surface advection,

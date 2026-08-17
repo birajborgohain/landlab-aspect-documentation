@@ -1,5 +1,5 @@
-August 14, 2026, Badland Day 5 Gasparini & Brandon (2011) and Salles et al. (2018) LEM, Sediment Transport, and the Evolution of Deposition Modeling
-====================================================================================================================================================
+August 14, 2026, Badland (Day 4) Gasparini & Brandon (2011) and Salles et al. (2018) LEM, Sediment Transport, and the Evolution of Deposition Modeling
+=========================================================================================================================================================
 
 Papers
 ------
