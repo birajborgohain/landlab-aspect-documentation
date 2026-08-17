@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="0.91846942"
-     inkscape:cx="339.69558"
-     inkscape:cy="513.35406"
+     inkscape:zoom="0.90509668"
+     inkscape:cx="175.67184"
+     inkscape:cy="571.76213"
      inkscape:window-width="1961"
      inkscape:window-height="1186"
      inkscape:window-x="956"
@@ -175,6 +175,37 @@
          style="stroke-width:0.4"
          x="113.62938"
          y="137.51257">s2yr</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:9.87777px;font-family:Helvetica, Helvetica;-inkscape-font-specification:'Helvetica, Helvetica';writing-mode:lr-tb;direction:ltr;fill:#000000;stroke-width:0.4;stroke-linejoin:round;stroke-miterlimit:0.6;paint-order:stroke fill markers"
+       x="35.491989"
+       y="241.48729"
+       id="text4-5"><tspan
+         sodipodi:role="line"
+         id="tspan4-7"
+         style="stroke-width:0.4"
+         x="35.491989"
+         y="241.48729">s2yr = second to year</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.4"
+         x="35.491989"
+         y="253.8345"
+         id="tspan15" /></text>
+    <g
+       id="layer1-3"
+       transform="translate(-78.114392,119.09554)">
+      <text
+         xml:space="preserve"
+         style="font-size:9.87777px;font-family:Helvetica, Helvetica;-inkscape-font-specification:'Helvetica, Helvetica';writing-mode:lr-tb;direction:ltr;fill:#000000;stroke-width:0.4;stroke-linejoin:round;stroke-miterlimit:0.6;paint-order:stroke fill markers"
+         x="113.62938"
+         y="137.51257"
+         id="text4-9"><tspan
+           sodipodi:role="line"
+           id="tspan4-77"
+           style="stroke-width:0.4"
+           x="113.62938"
+           y="137.51257">yr2s  = year to second</tspan></text>
+    </g>
     <g
        id="g7"
        transform="translate(-17.462505,59.266698)">
@@ -265,5 +296,16 @@
          y="59.918526">Bedrock river incision rate (K) = 1e<tspan
    style="font-size:65%;baseline-shift:super"
    id="tspan14">-5</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:5.64444px;font-family:Helvetica, Helvetica;-inkscape-font-specification:'Helvetica, Helvetica';writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:#000000;stroke-width:0.2;stroke-linejoin:round;stroke-miterlimit:0.6;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       x="185.20833"
+       y="9577.917"
+       id="text16"><tspan
+         sodipodi:role="line"
+         id="tspan16"
+         style="stroke-width:0.2"
+         x="185.20833"
+         y="9577.917">===</tspan></text>
   </g>
 </svg>

@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>August 12, 2026 – Badlands (Day 2): Alluvial and Marine Deposition and landlab_vis Documentation Development (Day 5) &mdash; Landlab-Aspect Development Documentation 0.1 documentation</title>
+  <title>August 14, 2026, Badland Day 5 Gasparini &amp; Brandon (2011) and Salles et al. (2018) LEM, Sediment Transport, and the Evolution of Deposition Modeling &mdash; Landlab-Aspect Development Documentation 0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d75fae25" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=fa26092b" />
@@ -22,7 +22,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="August 11, 2026, PR-1 response (Day1) PR #47: Cleanup of Inherited Commit History" href="August_11_PR_response_Day_1.html" /> 
+    <link rel="prev" title="August 13, 2026 – Badlands (Day 3): Deposition Processes and Exploring Fastscape and landlab_vis Documentation (Day 6)" href="August_13_2026_badland_day_3_deposition_algo_fastscape.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -359,32 +359,113 @@
 <li class="toctree-l3"><a class="reference internal" href="August_11_PR_response_Day_1.html#shared-library-issue">Shared Library Issue</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">August 12, 2026 – Badlands (Day 2): Alluvial and Marine Deposition and landlab_vis Documentation Development (Day 5)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#main-activities">Main Activities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#badlands-day-2-website-documentation-and-algorithm-review">1. Badlands – Day 2: Website, Documentation, and Algorithm Review</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#alluvial-plain-forced-deposition">Alluvial plain forced deposition</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#alluvial-deposition-versus-transport-limited-deposition">Alluvial deposition versus transport-limited deposition</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#marine-deposition">Marine deposition</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#the-broader-picture-emerging-from-badlands">The broader picture emerging from Badlands</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#comparison-with-fastscape">Comparison with FastScape</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#comparison-with-landlab">Comparison with Landlab</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#landlab-erosiondeposition">Landlab <code class="docutils literal notranslate"><span class="pre">ErosionDeposition</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#landlab-simplesubmarinediffuser">Landlab <code class="docutils literal notranslate"><span class="pre">SimpleSubmarineDiffuser</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="August_12_badland_day2_landlab_vis_doc_day_5.html">August 12, 2026 – Badlands (Day 2): Alluvial and Marine Deposition and landlab_vis Documentation Development (Day 5)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="August_12_badland_day2_landlab_vis_doc_day_5.html#main-activities">Main Activities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_12_badland_day2_landlab_vis_doc_day_5.html#badlands-day-2-website-documentation-and-algorithm-review">1. Badlands – Day 2: Website, Documentation, and Algorithm Review</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_12_badland_day2_landlab_vis_doc_day_5.html#alluvial-plain-forced-deposition">Alluvial plain forced deposition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_12_badland_day2_landlab_vis_doc_day_5.html#alluvial-deposition-versus-transport-limited-deposition">Alluvial deposition versus transport-limited deposition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_12_badland_day2_landlab_vis_doc_day_5.html#marine-deposition">Marine deposition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_12_badland_day2_landlab_vis_doc_day_5.html#the-broader-picture-emerging-from-badlands">The broader picture emerging from Badlands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_12_badland_day2_landlab_vis_doc_day_5.html#comparison-with-fastscape">Comparison with FastScape</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_12_badland_day2_landlab_vis_doc_day_5.html#comparison-with-landlab">Comparison with Landlab</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="August_12_badland_day2_landlab_vis_doc_day_5.html#landlab-erosiondeposition">Landlab <code class="docutils literal notranslate"><span class="pre">ErosionDeposition</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="August_12_badland_day2_landlab_vis_doc_day_5.html#landlab-simplesubmarinediffuser">Landlab <code class="docutils literal notranslate"><span class="pre">SimpleSubmarineDiffuser</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#a-conceptual-comparison">A conceptual comparison</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#what-particularly-caught-my-attention">What particularly caught my attention</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#questions-for-the-next-stage">Questions for the next stage</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#badlands">Badlands</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#badlands-marine-system">Badlands marine system</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#fastscape">FastScape</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#landlab">Landlab</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#coupled-aspect-landlab">Coupled ASPECT–Landlab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_12_badland_day2_landlab_vis_doc_day_5.html#a-conceptual-comparison">A conceptual comparison</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_12_badland_day2_landlab_vis_doc_day_5.html#what-particularly-caught-my-attention">What particularly caught my attention</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_12_badland_day2_landlab_vis_doc_day_5.html#questions-for-the-next-stage">Questions for the next stage</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="August_12_badland_day2_landlab_vis_doc_day_5.html#badlands">Badlands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="August_12_badland_day2_landlab_vis_doc_day_5.html#badlands-marine-system">Badlands marine system</a></li>
+<li class="toctree-l4"><a class="reference internal" href="August_12_badland_day2_landlab_vis_doc_day_5.html#fastscape">FastScape</a></li>
+<li class="toctree-l4"><a class="reference internal" href="August_12_badland_day2_landlab_vis_doc_day_5.html#landlab">Landlab</a></li>
+<li class="toctree-l4"><a class="reference internal" href="August_12_badland_day2_landlab_vis_doc_day_5.html#coupled-aspect-landlab">Coupled ASPECT–Landlab</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#current-interpretation">Current interpretation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#see-also">See also</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#landlab-vis-day-5-source-code-and-documentation">2. landlab_vis – Day 5: Source Code and Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_12_badland_day2_landlab_vis_doc_day_5.html#current-interpretation">Current interpretation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_12_badland_day2_landlab_vis_doc_day_5.html#see-also">See also</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_12_badland_day2_landlab_vis_doc_day_5.html#landlab-vis-day-5-source-code-and-documentation">2. landlab_vis – Day 5: Source Code and Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="August_13_2026_badland_day_3_deposition_algo_fastscape.html">August 13, 2026 – Badlands (Day 3): Deposition Processes and Exploring Fastscape and landlab_vis Documentation (Day 6)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="August_13_2026_badland_day_3_deposition_algo_fastscape.html#study-focus">Study focus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_13_2026_badland_day_3_deposition_algo_fastscape.html#fastscape-software-architecture">Fastscape software architecture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_13_2026_badland_day_3_deposition_algo_fastscape.html#fastscape-and-xarray-simlab">Fastscape and Xarray-simlab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_13_2026_badland_day_3_deposition_algo_fastscape.html#fastscape-model-hierarchy">Fastscape model hierarchy</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="August_13_2026_badland_day_3_deposition_algo_fastscape.html#bootstrap-model"><code class="docutils literal notranslate"><span class="pre">bootstrap_model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="August_13_2026_badland_day_3_deposition_algo_fastscape.html#basic-model"><code class="docutils literal notranslate"><span class="pre">basic_model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="August_13_2026_badland_day_3_deposition_algo_fastscape.html#sediment-model"><code class="docutils literal notranslate"><span class="pre">sediment_model</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="August_13_2026_badland_day_3_deposition_algo_fastscape.html#fastscape-spl-process">Fastscape <code class="docutils literal notranslate"><span class="pre">spl</span></code> process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_13_2026_badland_day_3_deposition_algo_fastscape.html#fastscape-uniformsedimentlayer">Fastscape <code class="docutils literal notranslate"><span class="pre">UniformSedimentLayer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_13_2026_badland_day_3_deposition_algo_fastscape.html#fastscape-marine-model">Fastscape <code class="docutils literal notranslate"><span class="pre">marine_model</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_13_2026_badland_day_3_deposition_algo_fastscape.html#fastscape-marine-parameters">Fastscape marine parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_13_2026_badland_day_3_deposition_algo_fastscape.html#comparison-with-landlab">Comparison with Landlab</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="August_13_2026_badland_day_3_deposition_algo_fastscape.html#landlab-erosiondeposition">Landlab <code class="docutils literal notranslate"><span class="pre">ErosionDeposition</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="August_13_2026_badland_day_3_deposition_algo_fastscape.html#landlab-simplesubmarinediffuser">Landlab <code class="docutils literal notranslate"><span class="pre">SimpleSubmarineDiffuser</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="August_13_2026_badland_day_3_deposition_algo_fastscape.html#badlands-fastscape-and-landlab">Badlands, Fastscape, and Landlab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_13_2026_badland_day_3_deposition_algo_fastscape.html#where-to-find-fastscape-sediment-deposition-code">Where to find Fastscape sediment-deposition code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_13_2026_badland_day_3_deposition_algo_fastscape.html#python-versus-fortran-versus-c">Python versus Fortran versus C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_13_2026_badland_day_3_deposition_algo_fastscape.html#best-approach-for-studying-the-code">Best approach for studying the code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_13_2026_badland_day_3_deposition_algo_fastscape.html#source-code-investigation-strategy">Source-code investigation strategy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_13_2026_badland_day_3_deposition_algo_fastscape.html#current-conceptual-understanding">Current conceptual understanding</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="August_13_2026_badland_day_3_deposition_algo_fastscape.html#badlands">Badlands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="August_13_2026_badland_day_3_deposition_algo_fastscape.html#fastscape">Fastscape</a></li>
+<li class="toctree-l4"><a class="reference internal" href="August_13_2026_badland_day_3_deposition_algo_fastscape.html#landlab">Landlab</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="August_13_2026_badland_day_3_deposition_algo_fastscape.html#what-particularly-caught-my-attention-today">What particularly caught my attention today</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_13_2026_badland_day_3_deposition_algo_fastscape.html#important-questions-for-the-next-stage">Important questions for the next stage</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="August_13_2026_badland_day_3_deposition_algo_fastscape.html#fastscape-fluvial-deposition">Fastscape fluvial deposition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="August_13_2026_badland_day_3_deposition_algo_fastscape.html#fastscape-sediment-storage">Fastscape sediment storage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="August_13_2026_badland_day_3_deposition_algo_fastscape.html#fastscape-marine-system">Fastscape marine system</a></li>
+<li class="toctree-l4"><a class="reference internal" href="August_13_2026_badland_day_3_deposition_algo_fastscape.html#badlands-comparison">Badlands comparison</a></li>
+<li class="toctree-l4"><a class="reference internal" href="August_13_2026_badland_day_3_deposition_algo_fastscape.html#landlab-comparison">Landlab comparison</a></li>
+<li class="toctree-l4"><a class="reference internal" href="August_13_2026_badland_day_3_deposition_algo_fastscape.html#aspect-landlab-coupling">ASPECT–Landlab coupling</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="August_13_2026_badland_day_3_deposition_algo_fastscape.html#current-conclusion">Current conclusion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_13_2026_badland_day_3_deposition_algo_fastscape.html#see-also">See also</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_13_2026_badland_day_3_deposition_algo_fastscape.html#landlab-vis-documentation-day-6">landlab_vis Documentation (Day 6)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_13_2026_badland_day_3_deposition_algo_fastscape.html#main-activities">Main activities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_13_2026_badland_day_3_deposition_algo_fastscape.html#python-basics">Python Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_13_2026_badland_day_3_deposition_algo_fastscape.html#important-documentation-style-decisions">Important documentation style decisions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="August_13_2026_badland_day_3_deposition_algo_fastscape.html#next-session">Next session</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">August 14, 2026, Badland Day 5 Gasparini &amp; Brandon (2011) and Salles et al. (2018) LEM, Sediment Transport, and the Evolution of Deposition Modeling</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#papers">Papers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#what-salles-et-al-2018-is-trying-to-do">1. What Salles et al. (2018) is trying to do</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-traditional-stream-power-approach">2. The traditional stream-power approach</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#what-reference-18-contributes">3. What Reference 18 contributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#why-this-is-not-simply-changing-m-and-n">4. Why this is NOT simply changing m and n</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#interpretation-of-the-effective-exponents">5. Interpretation of the effective exponents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-transition-toward-explicit-sediment-modeling">6. The transition toward explicit sediment modeling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sediment-supply-versus-transport-capacity">7. Sediment supply versus transport capacity</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#case-1-q-s-q-t">Case 1: <span class="math notranslate nohighlight">\(Q_s &lt; Q_t\)</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#case-2-q-s-q-t">Case 2: <span class="math notranslate nohighlight">\(Q_s = Q_t\)</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#case-3-q-s-q-t">Case 3: <span class="math notranslate nohighlight">\(Q_s &gt; Q_t\)</span></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#why-this-matters-for-deposition-modeling">8. Why this matters for deposition modeling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tool-effect-and-cover-effect">9. Tool effect and cover effect</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#tool-effect">Tool effect</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cover-effect">Cover effect</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#what-salles-et-al-adds-beyond-the-incision-problem">10. What Salles et al. adds beyond the incision problem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#source-to-sink-perspective">11. Source-to-sink perspective</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#relevance-to-aspect-landlab-coupling">12. Relevance to ASPECT–Landlab coupling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#key-distinction-for-future-lem-studies">13. Key distinction for future LEM studies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#main-lesson-from-reference-18">14. Main lesson from Reference 18</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#main-lesson-from-salles-et-al-2018">15. Main lesson from Salles et al. (2018)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#research-questions-to-carry-forward">16. Research questions to carry forward</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#conceptual-summary">17. Conceptual summary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#key-takeaway">Key takeaway</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#references">References</a></li>
 </ul>
 </li>
 </ul>
@@ -406,685 +487,751 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="index.html">Development Journal</a></li>
-      <li class="breadcrumb-item active">August 12, 2026 – Badlands (Day 2): Alluvial and Marine Deposition and landlab_vis Documentation Development (Day 5)</li>
+      <li class="breadcrumb-item active">August 14, 2026, Badland Day 5 Gasparini &amp; Brandon (2011) and Salles et al. (2018) LEM, Sediment Transport, and the Evolution of Deposition Modeling</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/development_journal/August_12_badland_day2_landlab_vis_doc_day_5.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/development_journal/August_14_2026_badland_day4__gasparni_brandon_2011_Salles_2011.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
-        <a href="August_11_PR_response_Day_1.html" class="btn btn-neutral float-left" title="August 11, 2026, PR-1 response (Day1) PR #47: Cleanup of Inherited Commit History" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="August_13_2026_badland_day_3_deposition_algo_fastscape.html" class="btn btn-neutral float-left" title="August 13, 2026 – Badlands (Day 3): Deposition Processes and Exploring Fastscape and landlab_vis Documentation (Day 6)" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
   </div>
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="august-12-2026-badlands-day-2-alluvial-and-marine-deposition-and-landlab-vis-documentation-development-day-5">
-<h1>August 12, 2026 – Badlands (Day 2): Alluvial and Marine Deposition and landlab_vis Documentation Development (Day 5)<a class="headerlink" href="#august-12-2026-badlands-day-2-alluvial-and-marine-deposition-and-landlab-vis-documentation-development-day-5" title="Link to this heading"></a></h1>
-<section id="main-activities">
-<h2>Main Activities<a class="headerlink" href="#main-activities" title="Link to this heading"></a></h2>
-</section>
-<section id="badlands-day-2-website-documentation-and-algorithm-review">
-<h2>1. Badlands – Day 2: Website, Documentation, and Algorithm Review<a class="headerlink" href="#badlands-day-2-website-documentation-and-algorithm-review" title="Link to this heading"></a></h2>
-<p>Continued studying Badlands as part of the second day of the Badlands
-review. The focus was mainly on the Badlands website and documentation,
-with additional attention to understanding the underlying algorithms and
-overall model workflow.</p>
-<p>The goal was to develop a clearer understanding of how the Badlands model
-is structured, how its major components work together, and how the
-algorithms are implemented.</p>
-<p>I continued going through the Badlands documentation and source-code
-structure, with particular attention to the description of <strong>deposition
-processes</strong>.</p>
-<p>The section that particularly caught my attention was the discussion of
-<strong>alluvial plain forced deposition</strong> and the separate treatment of
-<strong>marine deposition</strong>.</p>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p>Badlands documentation: Section: XML input parameters: Alluvial plain forced deposition and Marine deposition
-<a class="reference external" href="https://badlands.readthedocs.io/en/latest/xml.html">https://badlands.readthedocs.io/en/latest/xml.html</a></p>
-</div>
-<p>This made me realize that deposition in a landscape-evolution model may not
-be represented by a single formulation. Instead, different depositional
-environments may require different physical or numerical treatments.</p>
-<p>The main question that emerged during this reading was:</p>
-<blockquote>
-<div><p>Are alluvial/fluvial deposition and marine deposition represented by
-fundamentally different formulations in Badlands, and how do these
-approaches compare with the corresponding implementations in FastScape
-and Landlab?</p>
-</div></blockquote>
-</section>
-<section id="alluvial-plain-forced-deposition">
-<h2>Alluvial plain forced deposition<a class="headerlink" href="#alluvial-plain-forced-deposition" title="Link to this heading"></a></h2>
-<p>The Badlands documentation points out an important limitation of the
-detachment-limited incision law.</p>
-<p>The advantage of the detachment law over transport-limited approaches is the
-relatively small restriction it places on computational time steps. However,
-the detachment formulation is more appropriate for mountainous regions and
-does not by itself account for deposition on alluvial plains.</p>
-<p>To address this limitation, Badlands provides an <strong>alluvial plain forced
-deposition</strong> mechanism.</p>
-<p>The basic idea is that when a river reaches a sufficiently low or critical
-slope, deposition can be forced.</p>
-<p>Two parameters are particularly important:</p>
-<dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">&lt;slp_cr&gt;</span></code></dt><dd><p>Critical slope at which forced deposition is activated.</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">&lt;perc_dep&gt;</span></code></dt><dd><p>Percentage of the maximum deposition that can occur while ensuring that
-the local slope does not reverse.</p>
-</dd>
-</dl>
-<p>Conceptually, the process can be represented as:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Mountainous region
-       |
-       v
-Detachment-limited erosion
-       |
-       v
-Sediment production
-       |
-       v
-Downstream sediment transport
-       |
-       v
-River reaches low / critical slope
-       |
-       v
-Forced alluvial deposition
-       |
-       v
-   Alluvial plain
-</pre></div>
-</div>
-<p>This caught my attention because the deposition is not simply being treated
-as a generic consequence of sediment transport capacity.</p>
-<p>Instead, Badlands introduces a specific condition associated with the
-development of an <strong>alluvial plain</strong>.</p>
-<p>This raises an important question:</p>
-<blockquote>
-<div><p>Is this forced deposition intended as a numerical treatment for a
-limitation of the detachment-limited formulation, or does it represent
-an additional physical approximation for alluvial-plain development?</p>
-</div></blockquote>
-<p>This distinction is something I want to investigate further by examining the
-Badlands source code.</p>
-</section>
-<section id="alluvial-deposition-versus-transport-limited-deposition">
-<h2>Alluvial deposition versus transport-limited deposition<a class="headerlink" href="#alluvial-deposition-versus-transport-limited-deposition" title="Link to this heading"></a></h2>
-<p>The discussion of forced deposition also made me reconsider the distinction
-between several possible ways of representing deposition.</p>
-<p>One possibility is that deposition emerges naturally from the relationship
-between sediment supply and transport capacity:</p>
-<div class="math notranslate nohighlight">
-\[Q_s &gt; Q_t
-\quad \Rightarrow \quad
-\text{sediment accumulation / deposition}.\]</div>
-<p>Another possibility is a <strong>forced deposition rule</strong>, in which deposition is
-activated when a geomorphic condition such as a critical channel slope is
-reached.</p>
-<p>Therefore, Badlands appears to provide at least two conceptually different
-ways of thinking about deposition:</p>
-<ol class="arabic simple">
-<li><p>deposition associated with sediment transport and transport capacity;</p></li>
-<li><p>forced deposition used to represent alluvial-plain development when a
-critical slope condition is reached.</p></li>
-</ol>
-<p>I want to distinguish these carefully rather than treating them as the same
-deposition mechanism.</p>
-</section>
-<section id="marine-deposition">
-<h2>Marine deposition<a class="headerlink" href="#marine-deposition" title="Link to this heading"></a></h2>
-<p>The Badlands documentation then introduces a separate section on
-<strong>marine deposition</strong>.</p>
-<p>Once sediment reaches the marine environment, rivers no longer transport it
-in the same way as they do within the fluvial system. The documentation
-describes sediment as generally being deposited close to the shoreline.</p>
-<p>This immediately suggests that the model changes the way sediment is treated
-once it crosses from the terrestrial/fluvial environment into the marine
-environment.</p>
-<p>The Badlands documentation also states that a <strong>diffusion law</strong>, defined
-within the hillslope structure, can be used to redistribute marine sediment.</p>
-<p>Conceptually:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Fluvial system
-     |
-     | sediment delivery
-     v
-Coastal environment
-     |
-     v
-Initial marine deposition
-     |
-     v
-Marine sediment redistribution
-     |
-     +--------------------+
-     |                    |
-     v                    v
-Diffusive transport   Further marine transport
-                      based on coastal/marine
-                      slope and sediment delivery
-</pre></div>
-</div>
-<p>The documentation also describes two additional parameters for transporting
-sediment farther into the marine realm:</p>
-<dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">&lt;diffnb&gt;</span></code></dt><dd><p>Divides the initial sediment volume into several equal parts that are
-distributed iteratively over the model timestep.</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">&lt;diffprop&gt;</span></code></dt><dd><p>Controls the proportion of the maximum thickness that can be deposited
-at a node based on surrounding elevations.</p>
-</dd>
-</dl>
-<p>This is particularly interesting because it suggests that marine deposition
-is not simply the same fluvial deposition algorithm operating below sea
-level.</p>
-<p>Instead, there appears to be a separate <strong>marine sediment redistribution
-process</strong>.</p>
-</section>
-<section id="the-broader-picture-emerging-from-badlands">
-<h2>The broader picture emerging from Badlands<a class="headerlink" href="#the-broader-picture-emerging-from-badlands" title="Link to this heading"></a></h2>
-<p>At this stage, my interpretation is that the Badlands sediment system can be
-thought of as a sequence of environments:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Uplands / mountains
-       |
-       | erosion
-       v
-Fluvial channels
-       |
-       | sediment transport
-       v
-Alluvial plain
-       |
-       | deposition / storage
-       v
-Coastal zone
-       |
-       | marine deposition
-       v
-Marine environment
-       |
-       | diffusion / marine redistribution
-       v
-Offshore sediment accumulation
-</pre></div>
-</div>
-<p>This provides a more useful framework for understanding basin development.</p>
-<p>Rather than asking only:</p>
-<blockquote>
-<div><p>“How does Badlands calculate deposition?”</p>
-</div></blockquote>
-<p>I now want to ask:</p>
-<blockquote>
-<div><p>“How does Badlands move sediment between different depositional
-environments, and does the mathematical formulation change as sediment
-moves from the fluvial system to the marine system?”</p>
-</div></blockquote>
-<p>This distinction is important for understanding how the model can simulate a
-complete <strong>source-to-sink system</strong>.</p>
-</section>
-<section id="comparison-with-fastscape">
-<h2>Comparison with FastScape<a class="headerlink" href="#comparison-with-fastscape" title="Link to this heading"></a></h2>
-<p>This observation immediately reminded me of the FastScape implementation I
-have been working with.</p>
-<p>In the ASPECT–FastScape parameter file, the FastScape component contains a
-specific option:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>set Use marine component = false
-</pre></div>
-</div>
-<p>The FastScape configuration also contains separate parameters for bedrock
-and sediment:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>set Bedrock deposition coefficient   = 1
-set Sediment deposition coefficient = 1
-</pre></div>
-</div>
-<p>and separate erosion and diffusion parameters:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>set Bedrock river incision rate      = 1e-5
-set Sediment river incision rate     = 1e-5
-
-set Bedrock diffusivity              = 1e-2
-set Sediment diffusivity             = 1e-2
-</pre></div>
-</div>
-<p>The presence of a separate <strong>Marine parameters</strong> subsection is especially
-interesting:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>subsection Marine parameters
-
-   set Sea level = 0
-   set Sand porosity = 0
-   set Silt porosity = 0
-   set Sand e-folding depth = 1e3
-   set Silt e-folding depth = 1e3
-   set Depth averaging thickness = 1e2
-   set Sand transport coefficient = 50
-   set Silt transport coefficient = 50
-
-end
-</pre></div>
-</div>
-<p>This makes me suspect that FastScape also distinguishes between the
-terrestrial/fluvial sediment system and the marine sediment system.</p>
-<p>However, I do <strong>not</strong> want to conclude yet that the FastScape formulation is
-the same as the Badlands formulation.</p>
-<p>The configuration only demonstrates that FastScape has a distinct marine
-component and marine parameters. The actual equations and implementation
-still need to be traced.</p>
-<p>FastScape therefore raises several questions:</p>
+  <section id="august-14-2026-badland-day-5-gasparini-brandon-2011-and-salles-et-al-2018-lem-sediment-transport-and-the-evolution-of-deposition-modeling">
+<h1>August 14, 2026, Badland Day 5 Gasparini &amp; Brandon (2011) and Salles et al. (2018) LEM, Sediment Transport, and the Evolution of Deposition Modeling<a class="headerlink" href="#august-14-2026-badland-day-5-gasparini-brandon-2011-and-salles-et-al-2018-lem-sediment-transport-and-the-evolution-of-deposition-modeling" title="Link to this heading"></a></h1>
+<section id="papers">
+<h2>Papers<a class="headerlink" href="#papers" title="Link to this heading"></a></h2>
+<p>The main paper is Salles, Ding, and Brocard (2018), <code class="docutils literal notranslate"><span class="pre">pyBadlands:</span>
+<span class="pre">A</span> <span class="pre">framework</span> <span class="pre">to</span> <span class="pre">simulate</span> <span class="pre">sediment</span> <span class="pre">transport,</span> <span class="pre">landscape</span> <span class="pre">dynamics</span> <span class="pre">and</span> <span class="pre">basin</span>
+<span class="pre">stratigraphic</span> <span class="pre">evolution</span> <span class="pre">through</span> <span class="pre">space</span> <span class="pre">and</span> <span class="pre">time</span></code>.</p>
+<p>The paper is available at:</p>
+<p><a class="reference external" href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0195557">https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0195557</a></p>
+<p>The particularly important cited paper is Reference 18:</p>
+<p>Gasparini and Brandon (2011), <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">generalized</span> <span class="pre">power</span> <span class="pre">law</span> <span class="pre">approximation</span> <span class="pre">for</span>
+<span class="pre">fluvial</span> <span class="pre">incision</span> <span class="pre">of</span> <span class="pre">bedrock</span> <span class="pre">channels</span></code>.</p>
+<p>The main study questions are:</p>
 <ul class="simple">
-<li><p>What happens to sediment when it crosses sea level?</p></li>
-<li><p>How is terrestrial/alluvial deposition calculated?</p></li>
-<li><p>How is marine deposition calculated?</p></li>
-<li><p>What role do the <code class="docutils literal notranslate"><span class="pre">Sand</span></code> and <code class="docutils literal notranslate"><span class="pre">Silt</span></code> parameters play?</p></li>
-<li><p>What is the physical meaning of the e-folding depth?</p></li>
-<li><p>How are marine transport coefficients used?</p></li>
-<li><p>Does the marine component solve a diffusion equation?</p></li>
-<li><p>How does the marine component interact with the fluvial sediment flux?</p></li>
-<li><p>Is the FastScape deposition formulation related to Yuan et al. (2019)?</p></li>
+<li><p>How did Landscape-Evolution Models (LEMs) move from simple empirical
+erosion laws toward more physically meaningful representations of
+sediment transport and deposition?</p></li>
+<li><p>Is the improvement simply a matter of changing stream-power exponents,
+or does it involve introducing a different physical representation of
+sediment?</p></li>
 </ul>
-<p>These questions should be investigated directly from the FastScape source
-and equations.</p>
 </section>
-<section id="comparison-with-landlab">
-<h2>Comparison with Landlab<a class="headerlink" href="#comparison-with-landlab" title="Link to this heading"></a></h2>
-<p>The same distinction becomes even clearer when looking at the Landlab
-implementation.</p>
-<p>There appear to be at least two relevant components that should not be
-treated as one model.</p>
-<p>The first is the <strong>fluvial erosion-deposition component</strong>:</p>
-<p><code class="docutils literal notranslate"><span class="pre">ErosionDeposition</span></code></p>
-<p>The second is the <strong>marine sediment redistribution component</strong>:</p>
-<p><code class="docutils literal notranslate"><span class="pre">SimpleSubmarineDiffuser</span></code></p>
-<p>These two components represent different processes.</p>
-<section id="landlab-erosiondeposition">
-<h3>Landlab <code class="docutils literal notranslate"><span class="pre">ErosionDeposition</span></code><a class="headerlink" href="#landlab-erosiondeposition" title="Link to this heading"></a></h3>
-<p>The Landlab <code class="docutils literal notranslate"><span class="pre">ErosionDeposition</span></code> component is described as an
-erosion-deposition model in the style of <strong>Davy and Lague (2009)</strong>.</p>
-<p>It uses a mass-balance approach involving sediment both in the bed and in
-transport, with an explicit sediment transport length scale.</p>
-<p>The source code describes the erosion term as:</p>
-<div class="math notranslate nohighlight">
-\[E = K q^{m_{sp}} S^{n_{sp}} - \omega.\]</div>
-<p>The model then calculates sediment influx and deposition rate.</p>
-<p>The source code contains:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">_depo_rate</span><span class="p">[</span><span class="n">positive_q</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_qs</span><span class="p">[</span><span class="n">positive_q</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span>
-    <span class="n">v_s</span><span class="p">[</span><span class="n">positive_q</span><span class="p">]</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">_q</span><span class="p">[</span><span class="n">positive_q</span><span class="p">]</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-<p>and subsequently updates the surface elevation through:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dzdt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_depo_rate</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_erosion_term</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">_topographic__elevation</span><span class="p">[</span><span class="n">cores</span><span class="p">]</span> <span class="o">+=</span> <span class="n">dzdt</span><span class="p">[</span><span class="n">cores</span><span class="p">]</span> <span class="o">*</span> <span class="n">dt</span>
-</pre></div>
-</div>
-<p>This is an important implementation detail because it explicitly shows that
-the elevation change is calculated from the difference between deposition
-and erosion.</p>
-<p>The Landlab source also describes <code class="docutils literal notranslate"><span class="pre">v_s</span></code> as an effective settling velocity
-and explains that the ratio between <code class="docutils literal notranslate"><span class="pre">v_s</span></code> and the runoff ratio controls the
-transition between detachment-limited and transport-limited response styles.
-:contentReference[oaicite:0]{index=0}</p>
-<p>Therefore, the Landlab fluvial erosion-deposition component is conceptually
-different from simply applying a generic diffusion process.</p>
-</section>
-<section id="landlab-simplesubmarinediffuser">
-<h3>Landlab <code class="docutils literal notranslate"><span class="pre">SimpleSubmarineDiffuser</span></code><a class="headerlink" href="#landlab-simplesubmarinediffuser" title="Link to this heading"></a></h3>
-<p>The marine component is different.</p>
-<p><code class="docutils literal notranslate"><span class="pre">SimpleSubmarineDiffuser</span></code> is explicitly described as a model for transporting
-marine sediment using a <strong>water-depth-dependent diffusion model</strong>.</p>
-<p>Its diffusion coefficient is:</p>
-<div class="math notranslate nohighlight">
-\[D(h) = D_0 f_1(h) f_2(h).\]</div>
-<p>Here the transport coefficient changes with water depth.</p>
-<p>The first function accounts for the decrease in transport efficiency below
-the wave-base depth:</p>
-<div class="math notranslate nohighlight">
-\[f_1(h) =
-\exp\left(-\frac{h-h_w}{h_w}\right)\]</div>
-<p>for depths below the wave base.</p>
-<p>The second function accounts for the transition around the shoreline:</p>
-<div class="math notranslate nohighlight">
-\[f_2(h)
-=
-\frac{\tanh(-h/R_t)+1}{2}.\]</div>
-<p>Thus, the marine Landlab component is fundamentally a
-<strong>depth-dependent diffusion model</strong>.</p>
-<p>The source code calculates water depth as:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">_depth</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="n">sea_level</span>
-    <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_grid</span><span class="o">.</span><span class="n">at_node</span><span class="p">[</span><span class="s2">&quot;topographic__elevation&quot;</span><span class="p">]</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-<p>and calculates the diffusion coefficient using:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">k</span><span class="p">[:]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_shallow_water_diffusivity</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">depth_function</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_depth</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>with an additional reduction below the wave base.</p>
-<p>The component then calls the inherited diffusion solver:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">run_one_step</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>and records the resulting topographic change as sediment deposition or
-erosion:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">depo</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">at_node</span><span class="p">[</span><span class="s2">&quot;topographic__elevation&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">z_before</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-<p>The uploaded source therefore gives a clear indication that
-<code class="docutils literal notranslate"><span class="pre">SimpleSubmarineDiffuser</span></code> is not simply another implementation of the
-fluvial <code class="docutils literal notranslate"><span class="pre">ErosionDeposition</span></code> model. :contentReference[oaicite:1]{index=1}</p>
-</section>
-</section>
-<section id="a-conceptual-comparison">
-<h2>A conceptual comparison<a class="headerlink" href="#a-conceptual-comparison" title="Link to this heading"></a></h2>
-<p>The distinction that is beginning to emerge can be summarized as:</p>
-<table class="docutils align-default" id="id1">
-<caption><span class="caption-number">Table 9 </span><span class="caption-text">Preliminary comparison of depositional processes</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
-<colgroup>
-<col style="width: 22.0%" />
-<col style="width: 28.0%" />
-<col style="width: 28.0%" />
-<col style="width: 22.0%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Model / process</p></th>
-<th class="head"><p>Environment</p></th>
-<th class="head"><p>Main mechanism</p></th>
-<th class="head"><p>Question to investigate</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Badlands alluvial forced deposition</p></td>
-<td><p>Alluvial plain</p></td>
-<td><p>Critical-slope-based forced deposition</p></td>
-<td><p>How does <code class="docutils literal notranslate"><span class="pre">slp_cr</span></code> and <code class="docutils literal notranslate"><span class="pre">perc_dep</span></code> determine deposition?</p></td>
-</tr>
-<tr class="row-odd"><td><p>Badlands marine deposition</p></td>
-<td><p>Marine</p></td>
-<td><p>Deposition near shoreline + diffusion / marine redistribution</p></td>
-<td><p>How are <code class="docutils literal notranslate"><span class="pre">diffnb</span></code> and <code class="docutils literal notranslate"><span class="pre">diffprop</span></code> implemented?</p></td>
-</tr>
-<tr class="row-even"><td><p>FastScape fluvial</p></td>
-<td><p>Terrestrial / fluvial</p></td>
-<td><p>Bedrock and sediment erosion/deposition parameters</p></td>
-<td><p>What is the exact governing formulation?</p></td>
-</tr>
-<tr class="row-odd"><td><p>FastScape marine component</p></td>
-<td><p>Marine</p></td>
-<td><p>Separate marine parameterization</p></td>
-<td><p>How are sand/silt transport and depth dependence calculated?</p></td>
-</tr>
-<tr class="row-even"><td><p>Landlab <code class="docutils literal notranslate"><span class="pre">ErosionDeposition</span></code></p></td>
-<td><p>Fluvial</p></td>
-<td><p>Sediment mass balance + transport length scale</p></td>
-<td><p>How does <code class="docutils literal notranslate"><span class="pre">v_s</span></code> control the response?</p></td>
-</tr>
-<tr class="row-odd"><td><p>Landlab <code class="docutils literal notranslate"><span class="pre">SimpleSubmarineDiffuser</span></code></p></td>
-<td><p>Marine</p></td>
-<td><p>Water-depth-dependent diffusion</p></td>
-<td><p>How does marine diffusion redistribute sediment?</p></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="what-particularly-caught-my-attention">
-<h2>What particularly caught my attention<a class="headerlink" href="#what-particularly-caught-my-attention" title="Link to this heading"></a></h2>
-<p>The main thing that caught my attention on this second day is the possibility
-that <strong>sediment deposition is not one single physical or numerical process</strong>.</p>
-<p>Instead, the model may need different formulations for different
-environments.</p>
-<p>I am beginning to think about the sediment system as:</p>
+<section id="what-salles-et-al-2018-is-trying-to-do">
+<h2>1. What Salles et al. (2018) is trying to do<a class="headerlink" href="#what-salles-et-al-2018-is-trying-to-do" title="Link to this heading"></a></h2>
+<p>Salles et al. (2018) develops pyBadlands as a framework for simulating:</p>
+<ul class="simple">
+<li><p>landscape dynamics;</p></li>
+<li><p>erosion;</p></li>
+<li><p>sediment transport;</p></li>
+<li><p>sediment deposition;</p></li>
+<li><p>marine sediment redistribution; and</p></li>
+<li><p>basin stratigraphic evolution.</p></li>
+</ul>
+<p>The important conceptual shift is that landscape evolution is not treated
+only as a problem of erosion or bedrock incision.</p>
+<p>Instead, the model attempts to represent the sediment-routing system:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>SOURCE
-  |
-  v
-Bedrock erosion
-  |
-  v
-Fluvial sediment production
-  |
-  v
-Fluvial sediment transport
-  |
-  +-------------------------+
-  |                         |
-  v                         v
-Alluvial deposition     Continued transport
-  |                         |
-  |                         v
-  |                    Coastal delivery
-  |                         |
-  +------------+------------+
-               |
-               v
-       Marine deposition
-               |
-               v
-       Marine redistribution
-               |
-               v
-           SINK / BASIN
-</pre></div>
-</div>
-<p>This perspective is particularly useful for thinking about <strong>source-to-sink
-systems</strong>.</p>
-<p>The important issue is that the governing process may change as sediment
-moves through the system:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>erosion
    |
    v
-transport
+erosion
    |
    v
-alluvial deposition
+sediment production
    |
    v
-coastal transfer
+sediment transport
    |
    v
-marine deposition
+deposition
    |
    v
 marine redistribution
    |
    v
-basin accumulation
+sediment sink / basin
+   |
+   v
+stratigraphy
 </pre></div>
 </div>
-<p>This is now making me interested in determining whether Badlands, FastScape,
-and Landlab are actually implementing the same conceptual source-to-sink
-system using different numerical formulations, or whether they make
-fundamentally different assumptions about sediment storage and redistribution.</p>
+<p>This makes the model relevant to stratigraphic evolution because sediment
+produced in one location can be transported and deposited somewhere else.</p>
 </section>
-<section id="questions-for-the-next-stage">
-<h2>Questions for the next stage<a class="headerlink" href="#questions-for-the-next-stage" title="Link to this heading"></a></h2>
-<p>The following questions emerged from this second day of reading.</p>
-<section id="badlands">
-<h3>Badlands<a class="headerlink" href="#badlands" title="Link to this heading"></a></h3>
+<section id="the-traditional-stream-power-approach">
+<h2>2. The traditional stream-power approach<a class="headerlink" href="#the-traditional-stream-power-approach" title="Link to this heading"></a></h2>
+<p>A classical stream-power incision model can be written as</p>
+<div class="math notranslate nohighlight">
+\[I = K A^m S^n\]</div>
+<p>where:</p>
 <ul class="simple">
-<li><p>How exactly is forced alluvial deposition implemented?</p></li>
-<li><p>What is the mathematical role of <code class="docutils literal notranslate"><span class="pre">slp_cr</span></code>?</p></li>
-<li><p>How is <code class="docutils literal notranslate"><span class="pre">perc_dep</span></code> used to prevent slope reversal?</p></li>
-<li><p>Is forced deposition applied only when using the detachment-limited law?</p></li>
-<li><p>How does it interact with transport-limited deposition?</p></li>
-<li><p>How is sediment thickness or sediment storage represented?</p></li>
-<li><p>How does sediment move from the alluvial system into the marine system?</p></li>
+<li><p><span class="math notranslate nohighlight">\(I\)</span> is incision rate;</p></li>
+<li><p><span class="math notranslate nohighlight">\(K\)</span> is an erodibility or efficiency coefficient;</p></li>
+<li><p><span class="math notranslate nohighlight">\(A\)</span> is drainage area;</p></li>
+<li><p><span class="math notranslate nohighlight">\(S\)</span> is channel slope; and</p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(n\)</span> are scaling exponents.</p></li>
 </ul>
+<p>This formulation is useful because it is simple and computationally
+efficient for large-scale LEM simulations.</p>
+<p>However, real rivers also depend strongly on sediment.</p>
+<p>Sediment can affect bedrock incision in two opposing ways.</p>
+<p>A low to moderate sediment supply can produce a <code class="docutils literal notranslate"><span class="pre">tool</span> <span class="pre">effect</span></code>:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>sediment
+    |
+    v
+impacts bedrock
+    |
+    v
+abrasion
+    |
+    v
+increased incision
+</pre></div>
+</div>
+<p>Very high sediment supply can produce a <code class="docutils literal notranslate"><span class="pre">cover</span> <span class="pre">effect</span></code>:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>large sediment supply
+    |
+    v
+bedrock becomes covered
+    |
+    v
+less bedrock exposure
+    |
+    v
+reduced incision
+</pre></div>
+</div>
+<p>Thus sediment is not simply a passive product of erosion. It can also
+modify the erosion process itself.</p>
 </section>
-<section id="badlands-marine-system">
-<h3>Badlands marine system<a class="headerlink" href="#badlands-marine-system" title="Link to this heading"></a></h3>
+<section id="what-reference-18-contributes">
+<h2>3. What Reference 18 contributes<a class="headerlink" href="#what-reference-18-contributes" title="Link to this heading"></a></h2>
+<p>Gasparini and Brandon (2011) examines more complicated, sediment-dependent
+models of bedrock incision and asks whether their large-scale behavior can
+still resemble a simple stream-power law.</p>
+<p>A more physically detailed representation can be written schematically as</p>
+<div class="math notranslate nohighlight">
+\[I = f(A,S,Q_s,\ldots)\]</div>
+<p>where <span class="math notranslate nohighlight">\(Q_s\)</span> represents sediment flux.</p>
+<p>This differs from</p>
+<div class="math notranslate nohighlight">
+\[I = K A^m S^n.\]</div>
+<p>The sediment-dependent formulation can represent effects such as:</p>
 <ul class="simple">
-<li><p>Is marine deposition a separate equation from fluvial deposition?</p></li>
-<li><p>How is shoreline deposition calculated?</p></li>
-<li><p>What exactly does <code class="docutils literal notranslate"><span class="pre">diffnb</span></code> control numerically?</p></li>
-<li><p>What exactly does <code class="docutils literal notranslate"><span class="pre">diffprop</span></code> represent?</p></li>
-<li><p>How does the marine diffusion law interact with hillslope diffusion?</p></li>
+<li><p>sediment tools;</p></li>
+<li><p>sediment cover;</p></li>
+<li><p>sediment transport;</p></li>
+<li><p>abrasion; and</p></li>
+<li><p>transport limitation.</p></li>
 </ul>
+<p>The important result is that a complicated physical model can nevertheless
+produce an effective relationship that looks approximately like</p>
+<div class="math notranslate nohighlight">
+\[I \approx K' A^{m'} S^{n'}.\]</div>
+<p>Thus a landscape generated by a physically richer sediment-dependent model
+can appear, at landscape scale, to follow a simple power-law relationship.</p>
 </section>
-<section id="fastscape">
-<h3>FastScape<a class="headerlink" href="#fastscape" title="Link to this heading"></a></h3>
-<ul class="simple">
-<li><p>What is the exact formulation associated with the FastScape deposition
-parameters?</p></li>
-<li><p>Is the non-marine formulation related to Yuan et al. (2019)?</p></li>
-<li><p>What changes when <code class="docutils literal notranslate"><span class="pre">Use</span> <span class="pre">marine</span> <span class="pre">component</span> <span class="pre">=</span> <span class="pre">true</span></code>?</p></li>
-<li><p>How are sand and silt represented?</p></li>
-<li><p>What are the e-folding depths?</p></li>
-<li><p>How is marine transport coupled to the fluvial sediment flux?</p></li>
-</ul>
-</section>
-<section id="landlab">
-<h3>Landlab<a class="headerlink" href="#landlab" title="Link to this heading"></a></h3>
-<ul class="simple">
-<li><p>How does <code class="docutils literal notranslate"><span class="pre">ErosionDeposition</span></code> differ mathematically from Badlands?</p></li>
-<li><p>How does the Davy and Lague formulation determine deposition?</p></li>
-<li><p>What is the precise role of <code class="docutils literal notranslate"><span class="pre">v_s</span></code>?</p></li>
-<li><p>How does <code class="docutils literal notranslate"><span class="pre">ErosionDeposition</span></code> handle alluvial sediment storage?</p></li>
-<li><p>How does <code class="docutils literal notranslate"><span class="pre">SimpleSubmarineDiffuser</span></code> differ from the fluvial
-<code class="docutils literal notranslate"><span class="pre">ErosionDeposition</span></code> component?</p></li>
-<li><p>Is the marine component intended to represent the same physical process
-as the marine component in FastScape?</p></li>
-</ul>
-</section>
-<section id="coupled-aspect-landlab">
-<h3>Coupled ASPECT–Landlab<a class="headerlink" href="#coupled-aspect-landlab" title="Link to this heading"></a></h3>
-<ul class="simple">
-<li><p>If the surface-process model contains separate terrestrial and marine
-components, how should these be coupled to ASPECT?</p></li>
-<li><p>How is sea level represented?</p></li>
-<li><p>How is sediment thickness transferred back to the ASPECT surface?</p></li>
-<li><p>How should deposition be mapped when the Landlab surface crosses the
-shoreline?</p></li>
-<li><p>Does the coupling need separate treatment for fluvial and marine
-sediment fields?</p></li>
-</ul>
-</section>
-</section>
-<section id="current-interpretation">
-<h2>Current interpretation<a class="headerlink" href="#current-interpretation" title="Link to this heading"></a></h2>
-<p>At this stage, I do <strong>not</strong> want to claim that Badlands, FastScape, and
-Landlab use equivalent deposition formulations.</p>
-<p>Instead, the second day of Badlands reading has identified a more fundamental
-question:</p>
-<blockquote>
-<div><p><strong>How does a landscape-evolution model represent the transition from
-bedrock erosion, through fluvial sediment transport and alluvial storage,
-to coastal and marine deposition?</strong></p>
-</div></blockquote>
-<p>The initial evidence suggests that different environments may be represented
-using different numerical formulations:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>FLUVIAL / ALLUVIAL
+<section id="why-this-is-not-simply-changing-m-and-n">
+<h2>4. Why this is NOT simply changing m and n<a class="headerlink" href="#why-this-is-not-simply-changing-m-and-n" title="Link to this heading"></a></h2>
+<p>This is the key point.</p>
+<p>Suppose the original model is</p>
+<div class="math notranslate nohighlight">
+\[I = K A^m S^n.\]</div>
+<p>One approach is to change the exponents:</p>
+<div class="math notranslate nohighlight">
+\[I = K' A^{0.35} S^{0.8}.\]</div>
+<p>This changes the empirical sensitivity of incision to drainage area and
+slope.</p>
+<p>However, changing the exponents does not necessarily introduce a new
+physical process.</p>
+<p>Gasparini and Brandon show something more subtle. A physically richer model
+may be written as</p>
+<div class="math notranslate nohighlight">
+\[I = f(A,S,Q_s).\]</div>
+<p>If sediment flux itself depends on landscape variables,</p>
+<div class="math notranslate nohighlight">
+\[Q_s = g(A,S,\ldots),\]</div>
+<p>then</p>
+<div class="math notranslate nohighlight">
+\[I = f[A,S,g(A,S)].\]</div>
+<p>Over a particular range, this complicated relationship may be approximated
+by</p>
+<div class="math notranslate nohighlight">
+\[I \approx K' A^{m'} S^{n'}.\]</div>
+<p>Therefore the effective exponents <span class="math notranslate nohighlight">\(m'\)</span> and <span class="math notranslate nohighlight">\(n'\)</span> can emerge from
+the underlying physical system.</p>
+<p>The important distinction is:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>CHANGING EXPONENTS
 ------------------
 
-stream power
-     +
-sediment transport
-     +
-erosion / deposition
-     +
-alluvial storage
+I = K A^m S^n
+
+changes the effective scaling relationship.
+
+It does NOT necessarily introduce
+a new physical process.
 
 
-MARINE
-------
+ADDING SEDIMENT FLUX
+--------------------
 
-shoreline sediment delivery
-     +
-water-depth-dependent transport
-     +
-diffusion / redistribution
-     +
-marine sediment accumulation
+I = f(A, S, Qs)
+
+introduces sediment as an explicit
+control on incision.
 </pre></div>
 </div>
-<p>This distinction will be important for the next stage of the Badlands,
-FastScape, and Landlab comparison.</p>
-<p>The next step is therefore not simply to compare parameter names between
-Badlands, FastScape, and Landlab. I need to trace the <strong>governing equations
-and source-code implementation</strong> for each environment and determine how
-sediment mass is transferred between them.</p>
 </section>
-<section id="see-also">
-<h2>See also<a class="headerlink" href="#see-also" title="Link to this heading"></a></h2>
-<p><a class="reference external" href="https://badlands.readthedocs.io/en/latest/xml.html">Badlands documentation: XML input parameters</a></p>
-<p><a class="reference external" href="https://badlands.readthedocs.io/en/latest/proc.html">Badlands documentation: Simulated Processes</a></p>
-<p>Shobe, C. M., Tucker, G. E., &amp; Barnhart, K. R. (2017):
-<em>The SPACE 1.0 model: A Landlab component for 2-D calculation of sediment
-transport, bedrock erosion, and landscape evolution</em> –
-<em>Geoscientific Model Development</em>, 10, 4577–4604.</p>
-<p>Yuan, X. P., Braun, J., Guerit, L., Rouby, D., &amp; Cordonnier, G. (2019):
-<em>A new efficient method to solve the stream power law model taking into
-account sediment deposition</em> –
-<em>Journal of Geophysical Research: Earth Surface</em>, 124, 1346–1365,
-<a class="reference external" href="https://doi.org/10.1029/2018JF004867">doi:10.1029/2018JF004867</a>.</p>
-<p>Davy, P. &amp; Lague, D. (2009):
-<em>Fluvial erosion/transport equation of landscape evolution models revisited</em> –
-<em>Journal of Geophysical Research: Earth Surface</em>, 114, F03007,
-<a class="reference external" href="https://doi.org/10.1029/2008JF001146">doi:10.1029/2008JF001146</a>.</p>
-<p>Braun, J. &amp; Willett, S. D. (2013):
-<em>A very efficient O(n), implicit and parallel method to solve the stream
-power equation governing fluvial incision and landscape evolution</em> –
-<em>Geomorphology</em>, 170–179,
-<a class="reference external" href="https://doi.org/10.1016/j.geomorph.2012.10.008">doi:10.1016/j.geomorph.2012.10.008</a>.</p>
+<section id="interpretation-of-the-effective-exponents">
+<h2>5. Interpretation of the effective exponents<a class="headerlink" href="#interpretation-of-the-effective-exponents" title="Link to this heading"></a></h2>
+<p>The effective exponents can be interpreted as measures of the sensitivity
+of incision to drainage area and slope.</p>
+<p>Schematically,</p>
+<div class="math notranslate nohighlight">
+\[m' \sim \frac{\partial \ln I}{\partial \ln A}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[n' \sim \frac{\partial \ln I}{\partial \ln S}.\]</div>
+<p>Thus the exponents can describe the local response of a more complicated
+incision system.</p>
+<p>They should not automatically be interpreted as fundamental constants that
+uniquely identify a physical erosion mechanism.</p>
+<p>Gasparini and Brandon found that effective exponents can depend on the
+conditions under which the landscape evolves, including the spatial pattern
+of rock uplift.</p>
+<p>This gives an important warning:</p>
+<blockquote>
+<div><p>Similar stream-power exponents do not necessarily imply identical
+underlying erosion physics.</p>
+</div></blockquote>
 </section>
-<section id="landlab-vis-day-5-source-code-and-documentation">
-<h2>2. landlab_vis – Day 5: Source Code and Documentation<a class="headerlink" href="#landlab-vis-day-5-source-code-and-documentation" title="Link to this heading"></a></h2>
-<p>Continued development of the <code class="docutils literal notranslate"><span class="pre">landlab_vis</span></code> documentation, with a focus
-on connecting the documentation more closely to the source code and
-establishing a consistent structure for explaining the software.</p>
-<p>The overall documentation structure was organized into:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Introduction
-Getting Started
-Installation
-Python / Coding Basics
-Cookbook
-API Documentation
-Detailed API Guide
-Developer Guide
+<section id="the-transition-toward-explicit-sediment-modeling">
+<h2>6. The transition toward explicit sediment modeling<a class="headerlink" href="#the-transition-toward-explicit-sediment-modeling" title="Link to this heading"></a></h2>
+<p>The conceptual development can be summarized as:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>LEVEL 1
+-------
+Simple stream-power model
+
+    I = K A^m S^n
+
+        |
+        v
+
+LEVEL 2
+-------
+Recognition that sediment matters
+
+    I = f(A, S, Qs)
+
+        |
+        v
+
+LEVEL 3
+-------
+More physical sediment-dependent incision
+
+    tool effect
+    +
+    cover effect
+    +
+    transport limitation
+
+        |
+        v
+
+LEVEL 4
+-------
+Explicit sediment routing
+
+    erosion
+       |
+       v
+    sediment flux
+       |
+       v
+    transport capacity
+       |
+       v
+    erosion / transport / deposition
+
+        |
+        v
+
+LEVEL 5
+-------
+Source-to-sink and stratigraphic evolution
+
+    landscape
+       |
+       v
+    river system
+       |
+       v
+    coastal / marine system
+       |
+       v
+    basin
+       |
+       v
+    stratigraphy
 </pre></div>
 </div>
-<p>A clear distinction was established between the concise <strong>API
-Documentation</strong> and the more explanatory <strong>Detailed API Guide</strong>. The API
-documentation describes what the public classes, methods, properties, and
-functions provide, while the Detailed API Guide explains how the classes
-work internally and why particular Python structures are used.</p>
-<p>Work also continued on documenting the <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> class, including its
-relationship with <code class="docutils literal notranslate"><span class="pre">Frame</span></code>, loading Landlab <code class="docutils literal notranslate"><span class="pre">.vtk</span></code> output, frame
-selection and navigation, data-location handling, properties and methods,
-class methods, Python special methods, and practical examples.</p>
-<p>A <code class="docutils literal notranslate"><span class="pre">python_basics</span></code> section was also established to explain fundamental
-Python concepts used throughout <code class="docutils literal notranslate"><span class="pre">landlab_vis</span></code>. In particular,
-<code class="docutils literal notranslate"><span class="pre">paths.rst</span></code> documents <code class="docutils literal notranslate"><span class="pre">pathlib.Path</span></code>, relative and absolute paths,
-operating-system-specific paths, and specifying Landlab output
-directories.</p>
-<p>The documentation philosophy was further refined into the following
-structure:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Concept
-    |
-    v
-Example
-    |
-    v
-Example output
-    |
-    v
-Python / Coding Basics
-    |
-    v
-Concise API
-    |
-    v
-Detailed API
-    |
-    v
-Automatically generated API
+<p>The important development is therefore not simply changing the exponents.
+It is progressively introducing sediment as an explicit component of the
+landscape-evolution system.</p>
+</section>
+<section id="sediment-supply-versus-transport-capacity">
+<h2>7. Sediment supply versus transport capacity<a class="headerlink" href="#sediment-supply-versus-transport-capacity" title="Link to this heading"></a></h2>
+<p>For the deposition problem, one of the most important ideas in the Salles
+et al. framework is the distinction between sediment supply and sediment
+transport capacity.</p>
+<p>Let</p>
+<div class="math notranslate nohighlight">
+\[Q_s = \text{actual sediment flux}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[Q_t = \text{sediment transport capacity}.\]</div>
+<p>The model can distinguish several regimes.</p>
+<section id="case-1-q-s-q-t">
+<h3>Case 1: <span class="math notranslate nohighlight">\(Q_s &lt; Q_t\)</span><a class="headerlink" href="#case-1-q-s-q-t" title="Link to this heading"></a></h3>
+<p>The sediment supply is smaller than the amount of sediment that the flow
+can transport.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>sediment supply &lt; transport capacity
+                 |
+                 v
+          available capacity
+                 |
+                 v
+          sediment can move
+            downstream
 </pre></div>
 </div>
-<p>This structure provides a consistent separation between what the
-software provides, how it works internally, why the underlying Python
-concepts are used, how the software is used, and how it can be developed.</p>
-<p>The same documentation approach will be applied to the remaining
-<code class="docutils literal notranslate"><span class="pre">landlab_vis</span></code> components, including <code class="docutils literal notranslate"><span class="pre">Frame</span></code>, <code class="docutils literal notranslate"><span class="pre">DatasetReader</span></code>,
-<code class="docutils literal notranslate"><span class="pre">Profile</span></code>, <code class="docutils literal notranslate"><span class="pre">ProfileExtractor</span></code>, and <code class="docutils literal notranslate"><span class="pre">ProfilePlotter</span></code>.</p>
+</section>
+<section id="case-2-q-s-q-t">
+<h3>Case 2: <span class="math notranslate nohighlight">\(Q_s = Q_t\)</span><a class="headerlink" href="#case-2-q-s-q-t" title="Link to this heading"></a></h3>
+<p>The sediment supply approximately matches transport capacity. The system is
+at transport capacity.</p>
+</section>
+<section id="case-3-q-s-q-t">
+<h3>Case 3: <span class="math notranslate nohighlight">\(Q_s &gt; Q_t\)</span><a class="headerlink" href="#case-3-q-s-q-t" title="Link to this heading"></a></h3>
+<p>The sediment supply exceeds transport capacity.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>sediment supply &gt; transport capacity
+                 |
+                 v
+          excess sediment
+                 |
+                 v
+             deposition
+</pre></div>
+</div>
+<p>This provides a more physically interpretable basis for deposition than
+simply selecting an exponent that produces more deposition.</p>
+</section>
+</section>
+<section id="why-this-matters-for-deposition-modeling">
+<h2>8. Why this matters for deposition modeling<a class="headerlink" href="#why-this-matters-for-deposition-modeling" title="Link to this heading"></a></h2>
+<p>The conceptual transition is:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>OLD APPROACH
+
+prescribe surface response
+        |
+        v
+use empirical erosion/deposition
+relationship
+
+
+MORE EXPLICIT APPROACH
+
+sediment production
+        |
+        v
+sediment flux Qs
+        |
+        v
+transport capacity Qt
+        |
+        v
+compare Qs and Qt
+        |
+    +---+---+
+    |       |
+  Qs&lt;Qt   Qs&gt;Qt
+    |       |
+transport deposition
+    |       |
+    +---+---+
+        |
+        v
+  downstream sediment
+        |
+        v
+    basin filling
+</pre></div>
+</div>
+<p>The latter approach allows deposition to emerge from the balance between
+sediment supply and transport capacity.</p>
+</section>
+<section id="tool-effect-and-cover-effect">
+<h2>9. Tool effect and cover effect<a class="headerlink" href="#tool-effect-and-cover-effect" title="Link to this heading"></a></h2>
+<p>A physically richer sediment-dependent incision model does not assume that
+more sediment always means more erosion.</p>
+<section id="tool-effect">
+<h3>Tool effect<a class="headerlink" href="#tool-effect" title="Link to this heading"></a></h3>
+<p>Sediment acts as tools that impact and abrade bedrock:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>sediment tools
+     |
+     v
+bedrock impacts
+     |
+     v
+   abrasion
+     |
+     v
+greater incision
+</pre></div>
+</div>
+</section>
+<section id="cover-effect">
+<h3>Cover effect<a class="headerlink" href="#cover-effect" title="Link to this heading"></a></h3>
+<p>Excess sediment covers the bed:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>excess sediment
+     |
+     v
+bedrock cover
+     |
+     v
+reduced bed exposure
+     |
+     v
+reduced incision
+</pre></div>
+</div>
+<p>Thus sediment can both enhance and inhibit incision depending on the
+sediment regime.</p>
+</section>
+</section>
+<section id="what-salles-et-al-adds-beyond-the-incision-problem">
+<h2>10. What Salles et al. adds beyond the incision problem<a class="headerlink" href="#what-salles-et-al-adds-beyond-the-incision-problem" title="Link to this heading"></a></h2>
+<p>Gasparini and Brandon primarily help explain the relationship between
+sediment-dependent bedrock incision and the apparent stream-power law.</p>
+<p>Salles et al. take the problem further by developing a framework for
+landscape and sedimentary-basin evolution.</p>
+<p>The framework includes processes associated with:</p>
+<ul class="simple">
+<li><p>detachment-limited incision;</p></li>
+<li><p>transport-limited incision;</p></li>
+<li><p>sediment-flux-dependent incision;</p></li>
+<li><p>tool effects;</p></li>
+<li><p>cover effects;</p></li>
+<li><p>sediment transport;</p></li>
+<li><p>deposition;</p></li>
+<li><p>marine sediment redistribution; and</p></li>
+<li><p>stratigraphic accumulation.</p></li>
+</ul>
+<p>The major conceptual shift is:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>FROM
+
+erosion law
+
+TO
+
+sediment-routing system
+</pre></div>
+</div>
+<p>The latter is much more appropriate when the objective is basin development
+and stratigraphy.</p>
+</section>
+<section id="source-to-sink-perspective">
+<h2>11. Source-to-sink perspective<a class="headerlink" href="#source-to-sink-perspective" title="Link to this heading"></a></h2>
+<p>The sediment system can be viewed as:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>     SOURCE
+        |
+        v
+   rock uplift
+        |
+        v
+     erosion
+        |
+        v
+sediment production
+        |
+        v
+  fluvial transport
+        |
+        v
+  deposition /
+  remobilization
+        |
+        v
+      coast
+        |
+        v
+marine redistribution
+        |
+        v
+     sediment
+       sink
+        |
+        v
+   stratigraphy
+</pre></div>
+</div>
+<p>The location where sediment is produced is not necessarily the location
+where it is finally stored.</p>
+</section>
+<section id="relevance-to-aspect-landlab-coupling">
+<h2>12. Relevance to ASPECT–Landlab coupling<a class="headerlink" href="#relevance-to-aspect-landlab-coupling" title="Link to this heading"></a></h2>
+<p>This conceptual development is highly relevant to an ASPECT–Landlab
+sediment model.</p>
+<p>Instead of beginning with:</p>
+<blockquote>
+<div><p>What values should be used for <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(n\)</span>?</p>
+</div></blockquote>
+<p>a more physically meaningful framework starts with:</p>
+<ol class="arabic">
+<li><p>What is the sediment supply?</p>
+<div class="math notranslate nohighlight">
+\[Q_s\]</div>
+</li>
+<li><p>What is the transport capacity?</p>
+<div class="math notranslate nohighlight">
+\[Q_t\]</div>
+</li>
+<li><p>What happens when sediment supply exceeds transport capacity?</p>
+<div class="math notranslate nohighlight">
+\[Q_s &gt; Q_t\]</div>
+</li>
+<li><p>How is the excess sediment stored?</p>
+<p>Conceptually,</p>
+<div class="math notranslate nohighlight">
+\[Q_{\mathrm{dep}} \sim Q_s - Q_t\]</div>
+<p>subject to the specific transport formulation and conservation equations
+used by the model.</p>
+</li>
+</ol>
+<p>At a simple conceptual level,</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial \eta}{\partial t}
+=
+\text{uplift}
+-
+\text{erosion}
++
+\text{deposition}.\]</div>
+<p>The deposited sediment can then become part of an evolving stratigraphic
+record.</p>
+</section>
+<section id="key-distinction-for-future-lem-studies">
+<h2>13. Key distinction for future LEM studies<a class="headerlink" href="#key-distinction-for-future-lem-studies" title="Link to this heading"></a></h2>
+<p>The following distinction should be retained when reading LEM literature.</p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-number">Table 11 </span><span class="caption-text">Parameterization versus physical-process improvement</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Approach</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Change <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(n\)</span></p></td>
+<td><p>Changes the effective scaling of erosion with drainage area and slope.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Add sediment flux <span class="math notranslate nohighlight">\(Q_s\)</span></p></td>
+<td><p>Introduces sediment as an explicit control on incision.</p></td>
+</tr>
+<tr class="row-even"><td><p>Add tool effect</p></td>
+<td><p>Allows sediment to enhance bedrock abrasion.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Add cover effect</p></td>
+<td><p>Allows excessive sediment to suppress bedrock incision.</p></td>
+</tr>
+<tr class="row-even"><td><p>Add transport capacity <span class="math notranslate nohighlight">\(Q_t\)</span></p></td>
+<td><p>Provides a physical basis for determining whether sediment can be
+transported.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Compare <span class="math notranslate nohighlight">\(Q_s\)</span> and <span class="math notranslate nohighlight">\(Q_t\)</span></p></td>
+<td><p>Allows deposition to emerge when sediment supply exceeds transport
+capacity.</p></td>
+</tr>
+<tr class="row-even"><td><p>Conserve sediment mass</p></td>
+<td><p>Connects erosion, transport, deposition, and downstream sediment
+routing.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Add marine routing and storage</p></td>
+<td><p>Extends the LEM into a source-to-sink and stratigraphic framework.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="main-lesson-from-reference-18">
+<h2>14. Main lesson from Reference 18<a class="headerlink" href="#main-lesson-from-reference-18" title="Link to this heading"></a></h2>
+<p>The central lesson from Gasparini and Brandon (2011) is:</p>
+<blockquote>
+<div><p>A simple stream-power relationship can emerge as an approximation to a
+much more complicated sediment-dependent incision process.</p>
+</div></blockquote>
+<p>Therefore:</p>
+<blockquote>
+<div><p>Effective stream-power exponents should not automatically be treated as
+direct fingerprints of the underlying physical erosion mechanism.</p>
+</div></blockquote>
+<p>This prevents an overly simple interpretation:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>different exponent
+       =
+different physical process
+</pre></div>
+</div>
+<p>That equivalence is not generally valid.</p>
+</section>
+<section id="main-lesson-from-salles-et-al-2018">
+<h2>15. Main lesson from Salles et al. (2018)<a class="headerlink" href="#main-lesson-from-salles-et-al-2018" title="Link to this heading"></a></h2>
+<p>The central contribution relevant to stratigraphic modeling is broader:</p>
+<blockquote>
+<div><p>Landscape evolution can be represented as a connected sediment-routing
+problem rather than only as a topographic-incision problem.</p>
+</div></blockquote>
+<p>The important chain is:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>uplift
+   |
+   v
+erosion
+   |
+   v
+sediment production
+   |
+   v
+sediment flux
+   |
+   v
+transport capacity
+   |
+   v
+erosion / transport / deposition
+   |
+   v
+sediment redistribution
+   |
+   v
+sediment storage
+   |
+   v
+stratigraphy
+</pre></div>
+</div>
+</section>
+<section id="research-questions-to-carry-forward">
+<h2>16. Research questions to carry forward<a class="headerlink" href="#research-questions-to-carry-forward" title="Link to this heading"></a></h2>
+<p>For future Strat and LEM paper studies, ask:</p>
+<ol class="arabic simple">
+<li><p>What physical process is being represented?</p></li>
+<li><p>Is the process merely parameterized differently?</p></li>
+<li><p>Are the stream-power exponents being changed?</p></li>
+<li><p>Is sediment flux explicitly represented?</p></li>
+<li><p>Is transport capacity explicitly represented?</p></li>
+<li><p>Does deposition emerge from a sediment-mass balance?</p></li>
+<li><p>Is sediment conserved as it moves downstream?</p></li>
+<li><p>Can sediment be remobilized?</p></li>
+<li><p>Does the model connect erosion to deposition?</p></li>
+<li><p>Does it connect the terrestrial system to the basin?</p></li>
+<li><p>Does the final model produce an evolving stratigraphic record?</p></li>
+</ol>
+<p>This framework helps trace how LEMs have progressively developed from simple
+empirical erosion equations toward coupled sediment-routing and
+stratigraphic models.</p>
+</section>
+<section id="conceptual-summary">
+<h2>17. Conceptual summary<a class="headerlink" href="#conceptual-summary" title="Link to this heading"></a></h2>
+<p>The evolution can be summarized as:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>             EARLY LEM
+                |
+                v
+       Stream-power law
+         I = K A^m S^n
+                |
+                |
+     change m and n
+                |
+                v
+     better empirical
+          scaling
+                |
+                X
+        not necessarily
+      new physical process
+                |
+                v
+ SEDIMENT-DEPENDENT INCISION
+                |
+    +-----------+-----------+
+    |                       |
+tool effect             cover effect
+    |                       |
+    +-----------+-----------+
+                |
+                v
+         sediment flux Qs
+                |
+                v
+      transport capacity Qt
+                |
+        +-------+-------+
+        |               |
+      Qs &lt; Qt         Qs &gt; Qt
+        |               |
+    transport       deposition
+        |               |
+        +-------+-------+
+                |
+                v
+           source-to-sink
+                |
+                v
+           stratigraphy
+</pre></div>
+</div>
+</section>
+<section id="key-takeaway">
+<h2>Key takeaway<a class="headerlink" href="#key-takeaway" title="Link to this heading"></a></h2>
+<p>The major advancement is not simply changing power-law exponents.</p>
+<p>The deeper development is making sediment an explicit part of the physical
+system, allowing sediment supply, transport capacity, erosion, deposition,
+redistribution, and storage to interact.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Now the question is no longer simply <em>“what deposition
+equation does Badlands/Fastscape/Landlab use?”</em> but:</p>
+<p><strong>How did LEMs move from prescribing surface change with simple empirical
+power laws toward explicitly conserving and routing sediment, with
+deposition emerging from the competition between sediment supply and
+transport capacity?</strong></p>
+<p>That is the thread I would follow through
+<strong>Gasparini &amp; Brandon → Salles/Badlands → Davy &amp; Lague → Hobley/Yuan →
+Fastscape/Landlab</strong>, because it will let us identify <em>exactly</em> what each
+generation of LEM added rather than treating all “deposition models” as
+equivalent.</p>
+<p>Need a close look to explicitly distinguish <strong>“changed
+parameterization/exponents”</strong> from <strong>“introduced a new physical
+process.”</strong></p>
+</div>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading"></a></h2>
+<p>Salles, T., Ding, X., and Brocard, G. (2018).
+<code class="docutils literal notranslate"><span class="pre">pyBadlands:</span> <span class="pre">A</span> <span class="pre">framework</span> <span class="pre">to</span> <span class="pre">simulate</span> <span class="pre">sediment</span> <span class="pre">transport,</span> <span class="pre">landscape</span> <span class="pre">dynamics</span>
+<span class="pre">and</span> <span class="pre">basin</span> <span class="pre">stratigraphic</span> <span class="pre">evolution</span> <span class="pre">through</span> <span class="pre">space</span> <span class="pre">and</span> <span class="pre">time</span></code>.
+PLOS ONE, 13(4), e0195557.</p>
+<p><a class="reference external" href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0195557">https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0195557</a></p>
+<p>Gasparini, N. M., and Brandon, M. T. (2011).
+<code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">generalized</span> <span class="pre">power</span> <span class="pre">law</span> <span class="pre">approximation</span> <span class="pre">for</span> <span class="pre">fluvial</span> <span class="pre">incision</span> <span class="pre">of</span> <span class="pre">bedrock</span>
+<span class="pre">channels</span></code>.</p>
+<p><a class="reference external" href="https://doi.org/10.1029/2009JF001655">https://doi.org/10.1029/2009JF001655</a></p>
 </section>
 </section>
 
@@ -1092,7 +1239,7 @@ concepts are used, how the software is used, and how it can be developed.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="August_11_PR_response_Day_1.html" class="btn btn-neutral float-left" title="August 11, 2026, PR-1 response (Day1) PR #47: Cleanup of Inherited Commit History" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="August_13_2026_badland_day_3_deposition_algo_fastscape.html" class="btn btn-neutral float-left" title="August 13, 2026 – Badlands (Day 3): Deposition Processes and Exploring Fastscape and landlab_vis Documentation (Day 6)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

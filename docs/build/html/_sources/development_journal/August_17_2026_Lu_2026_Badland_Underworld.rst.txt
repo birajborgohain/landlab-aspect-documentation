@@ -1,0 +1,1186 @@
+
+August 17, 2026 Badlan (Day 6) Underworld-Badland ALE-IB Free-Surface Modeling Lu et al., 2026 (GMD)
+========================================================================================================
+
+**Focus:** Interpretation of two related Lu et al. papers and their
+implications for developing a scientific manuscript and numerical
+experiments with the ASPECT--Landlab coupling framework.
+
+The two papers are best viewed as a progression:
+
+.. math::
+
+   \boxed{
+   \text{true free surface}
+   \rightarrow
+   \text{surface-process coupling}
+   \rightarrow
+   \text{tectonic--landscape feedback}
+   }
+
+The first paper establishes the numerical foundation: a true
+free-surface treatment using an Arbitrary Lagrangian--Eulerian scheme
+with an internal boundary (ALE-IB). The second extends the framework to
+coupling tectonic deformation with erosion and deposition.
+
+The two papers are:
+
+-  Lu, N., Moresi, L., and Giordani, J. (2026).
+   ``A novel ALE scheme with the internal boundary for true free surface simulation in geodynamic models``.
+   *Geoscientific Model Development*, 19, 5191--5206. DOI:
+   ``10.5194/gmd-19-5191-2026``.
+-  Lu, N., Moresi, L., Giordani, J., and Knight, B. S. (2026).
+   ``A novel ALE scheme with the internal boundary for coupling tectonic and surface processes in geodynamic models``.
+   *Geoscientific Model Development*, 19, 5723--5741. DOI:
+   ``10.5194/gmd-19-5723-2026``.
+
+Two-paper conceptual progression
+-----------------------------------
+
+.. table:: Scientific progression
+
+   +-------------------+-----------------------+--------------------------+
+   | Paper             | Main numerical        | Relevance to             |
+   |                   | problem               | ASPECT--Landlab          |
+   +===================+=======================+==========================+
+   | Lu et al. (2026a) | Stable and accurate   | Surface motion, mesh     |
+   |                   | true free-surface     | deformation, stability,  |
+   |                   | evolution             | validation               |
+   +-------------------+-----------------------+--------------------------+
+   | Lu et al. (2026b) | Coupling tectonic     | Two-way                  |
+   |                   | deformation with      | tectonic--landscape      |
+   |                   | erosion and           | coupling                 |
+   |                   | deposition            |                          |
+   +-------------------+-----------------------+--------------------------+
+
+The first paper asks:
+
+   Can we accurately move the geodynamic free surface?
+
+The second asks:
+
+   What happens when a moving free surface is simultaneously modified by
+   tectonic deformation and surface processes?
+
+For ASPECT--Landlab, the natural next question is:
+
+   How accurately and efficiently can a finite-element geodynamic model
+   exchange deformation with a raster landscape-evolution model, and how
+   does the numerical coupling itself influence erosion, transport, and
+   deposition?
+
+1. Lu et al. (2026a): True free-surface simulation
+-----------------------------------------------------------------------------
+
+Scientific motivation
+---------------------
+
+Traditional geodynamic models often use simplified upper boundary
+conditions such as free-slip or no-slip. These do not explicitly allow
+the Earth's surface to deform as a physical free surface.
+
+The sticky-air approach can represent topography but introduces
+additional computational volume and can suffer from marker fluctuations
+and the ``drunken sailor`` or ``sloshing`` instability.
+
+The central contribution is:
+
+.. math:: \boxed{\text{ALE--IB = ALE + internal boundary}}
+
+The internal boundary represents the true free surface inside the
+computational domain while retaining an upper sticky-air-like region.
+
+Core free-surface update
+------------------------
+
+The free surface is represented by mesh nodes on
+:math:`\Gamma_{\rm fs}`:
+
+.. math::
+
+   \mathbf{X}^{n+1}
+   =
+   \mathbf{X}^{n}
+   +
+   \Delta t\,\mathbf{u}^{n}
+   \qquad
+   \text{on } \Gamma_{\rm fs}.
+
+This expresses the basic relation:
+
+.. math::
+
+   \text{surface displacement}
+   =
+   \text{surface velocity}
+   \times
+   \text{time interval}.
+
+Free-surface update sequence
+----------------------------
+
+The numerical workflow can be summarized as:
+
+.. code:: text
+
+   Solve Stokes equations
+             |
+             v
+       Obtain velocity
+             |
+             v
+       Advect free surface
+             |
+             v
+       Resample surface
+             |
+             v
+       Solve Laplace equation
+             |
+             v
+       Propagate mesh displacement
+             |
+             v
+       Update / remesh mesh
+             |
+             v
+       Continue simulation
+
+The mesh displacement is obtained from:
+
+.. math:: \nabla^2 D_z = 0.
+
+The important point for ASPECT--Landlab is that surface deformation must
+be propagated into the computational mesh while preserving mesh quality.
+
+Free-surface stabilization
+--------------------------
+
+Lu et al. investigate a Free Surface Stabilization Algorithm (FSSA) and
+timestep convergence. This is directly relevant to our ``n_substeps``
+work.
+
+Two different numerical questions should be separated:
+
+#. Is the free-surface update itself stable?
+#. How frequently should the surface-process operator interact with the
+   geodynamic operator?
+
+These are related but distinct numerical problems.
+
+Numerical experiments
+---------------------
+
+The first paper considers:
+
+-  sinusoidal topography relaxation;
+-  Rayleigh--Taylor instability;
+-  delamination;
+-  rising sphere;
+-  subduction.
+
+The sinusoidal relaxation case is especially useful for ASPECT--Landlab
+because an analytical solution is available:
+
+.. math::
+
+   w(x,t)
+   =
+   w(x,0)\exp\left(-\frac{t}{t^*}\right).
+
+This provides a clean validation problem.
+
+The paper also shows that higher-order elements can improve accuracy and
+that ALE-IB is robust for strongly asymmetric geometries.
+
+2. Lu et al. (2026b): Coupling tectonics and surface processes
+-----------------------------------------------------------------------------
+
+The second paper extends the free-surface framework to tectonic--surface
+coupling.
+
+The surface evolution equation is:
+
+.. math::
+
+   \frac{\partial h}{\partial t}
+   =
+   U
+   -
+   \nabla\cdot\mathbf{q}_r
+   -
+   \nabla\cdot\mathbf{q}_d,
+
+where :math:`h` is surface elevation, :math:`U` is tectonic uplift,
+:math:`\mathbf{q}_r` is fluvial sediment flux, and :math:`\mathbf{q}_d`
+is hillslope sediment flux.
+
+For ASPECT--Landlab this can be interpreted as:
+
+.. math::
+
+   \boxed{
+   \frac{\partial h}{\partial t}
+   =
+   u_z
+   -
+   \nabla\cdot\mathbf{q}_{surface}
+   }
+
+Coupling sequence
+-----------------
+
+The second paper's coupling workflow is:
+
+#. Solve the Stokes equations.
+#. Obtain the velocity field.
+#. Evaluate velocity on the surface.
+#. Transfer velocity to the surface-process model.
+#. Evolve the landscape through erosion and deposition.
+#. Transfer the modified surface back to the tectonic model.
+#. Remesh the tectonic domain.
+#. Continue the simulation.
+
+This is conceptually very close to the ASPECT--Landlab architecture.
+
+Two surfaces
+------------
+
+The paper distinguishes between:
+
+.. math::
+
+   T\text{-surface}
+   =
+   \text{tectonic-model surface}
+
+and:
+
+.. math::
+
+   S\text{-surface}
+   =
+   \text{surface-process-model surface}.
+
+The conceptual exchange is:
+
+.. code:: text
+
+   ASPECT
+      |
+      | velocity
+      v
+   T-surface
+      |
+      | transfer
+      v
+   Landlab
+      |
+      | erosion/deposition
+      v
+   S-surface
+      |
+      | transfer back
+      v
+   ASPECT surface
+
+3. Relevance to the ASPECT--Landlab implementation
+-----------------------------------------------------------------------------
+
+The major difference from the UWGeodynamics--Badlands implementation is
+the spatial-transfer mechanism.
+
+For ASPECT-to-Landlab transfer, the finite-element solution can be
+evaluated at Landlab points using deal.II ``RemotePointEvaluation``.
+
+For the reverse direction, the closest Landlab point can be assigned to
+an ASPECT surface degree of freedom:
+
+.. math::
+
+   j^*(i)
+   =
+   \operatorname*{arg\,min}_j
+   \left\|
+   \mathbf{x}_i^A-\mathbf{x}_j^L
+   \right\|^2,
+
+followed by:
+
+.. math::
+
+   \mathbf{u}_i^A
+   =
+   \mathbf{u}_{j^*(i)}^L.
+
+Therefore, the current ASPECT--Landlab coupling is spatially asymmetric.
+
+.. table:: Spatial transfer comparison
+
+   +--------------------+--------------------+---------------------------+
+   | Coupling           | Direction          | Transfer                  |
+   +====================+====================+===========================+
+   | UWGeo              | Underworld ->      | Cubic spline              |
+   | dynamics--Badlands | surface            | interpolation             |
+   +--------------------+--------------------+---------------------------+
+   | ASPECT--Landlab    | ASPECT -> Landlab  | FE point evaluation       |
+   +--------------------+--------------------+---------------------------+
+   | ASPECT--Landlab    | Landlab -> ASPECT  | Closest-point assignment  |
+   +--------------------+--------------------+---------------------------+
+
+This difference should be explicitly documented in a future manuscript.
+
+4. Connection to the current ``n_substeps`` investigation
+-----------------------------------------------------------------------------
+
+The second Lu et al. paper divides the tectonic timestep into smaller
+surface-process timesteps. This directly connects to our ``n_substeps``
+investigation.
+
+Let:
+
+.. math::
+
+   \Delta t_{\rm sub}
+   =
+   \frac{\Delta t}{N}.
+
+Then total tectonic displacement remains:
+
+.. math::
+
+   \sum_{k=1}^{N}
+   U\,\Delta t_{\rm sub}
+   =
+   N U \frac{\Delta t}{N}
+   =
+   U\Delta t.
+
+Therefore, changing ``n_substeps`` does not necessarily change the total
+tectonic uplift. If the final landscape changes, the difference can
+instead result from the frequency of interaction between tectonic and
+landscape operators.
+
+The coupling can be represented as:
+
+.. math::
+
+   \mathcal{I}_{A\rightarrow L}
+   \rightarrow
+   \mathcal{E}_{L}
+   \rightarrow
+   \mathcal{I}_{L\rightarrow A}.
+
+The central numerical question becomes:
+
+   How does the frequency of tectonic--surface-process coupling affect
+   the accuracy and convergence of landscape evolution?
+
+This connects the current ``n_substeps`` work directly to the
+literature.
+
+5. What should be reproduced in ASPECT--Landlab?
+---------------------------------------------------
+
+Topographic relaxation
+----------------------
+
+A first experiment should reproduce the sinusoidal relaxation problem.
+
+Possible tests include:
+
+-  free-surface evolution;
+-  hillslope diffusion;
+-  fluvial incision;
+-  erosion and deposition;
+-  sediment redistribution;
+-  comparison against an analytical solution.
+
+A useful parameter sweep is:
+
+.. math::
+
+   k_f =
+   0,\,
+   10^{-6},\,
+   10^{-5},\,
+   10^{-4}
+
+with a representative hillslope diffusion coefficient.
+
+The purpose is not simply to reproduce the paper, but to establish a
+controlled benchmark for the ASPECT--Landlab coupling.
+
+Fluvial erodibility
+-------------------
+
+Increasing fluvial erodibility should be examined through:
+
+-  incision depth;
+-  longitudinal profile shape;
+-  relief;
+-  drainage-network development;
+-  erosion rate;
+-  deposition rate.
+
+This provides a controlled Landlab sensitivity experiment.
+
+Continental collision
+---------------------
+
+A collision experiment can investigate:
+
+.. math::
+
+   \text{convergence}
+   \rightarrow
+   \text{shortening}
+   \rightarrow
+   \text{crustal thickening}
+   \rightarrow
+   \text{mountain building}
+   \rightarrow
+   \text{erosion}
+   \rightarrow
+   \text{sediment transport/deposition}.
+
+This represents an actively forced tectonic experiment rather than a
+purely numerical benchmark.
+
+6. What the papers leave open
+---------------------------------
+
+The papers provide a strong foundation but leave several opportunities
+for ASPECT--Landlab.
+
+#. The numerical consequences of different coupling frequencies are not
+   the central focus.
+#. Spatial resolution mismatch between the tectonic and landscape grids
+   is not systematically explored.
+#. The consequences of different transfer strategies deserve
+   quantitative investigation.
+#. The coupled framework can be extended toward more explicit sediment
+   routing and storage.
+#. A rift setting, with simultaneous uplift and subsidence, provides a
+   useful complementary application to collision.
+
+7. Proposed manuscript direction
+-----------------------------------
+
+The manuscript should not simply state:
+
+   We coupled ASPECT with Landlab.
+
+A stronger manuscript would ask a numerical-scientific question about
+the coupling.
+
+Possible titles include:
+
+   **Numerical accuracy and coupling-frequency effects in two-way
+   ASPECT--Landlab simulations of tectonic surface evolution**
+
+or:
+
+   **From tectonic deformation to sediment redistribution: numerical
+   assessment of two-way ASPECT--Landlab coupling**
+
+The manuscript can be organized into three levels.
+
+Level 1: Numerical verification
+-------------------------------
+
+Test whether ASPECT--Landlab reproduces a known free-surface solution.
+
+Use sinusoidal relaxation and measure:
+
+.. math::
+
+   E_{L_2}
+   =
+   \left[
+   \frac{
+   \sum_i
+   (h_i^{\rm numerical}-h_i^{\rm analytical})^2
+   }{
+   \sum_i
+   (h_i^{\rm analytical})^2
+   }
+   \right]^{1/2}.
+
+Also measure:
+
+-  maximum topographic error;
+-  RMSE;
+-  phase error;
+-  free-surface displacement;
+-  erosion/deposition error.
+
+Level 2: Coupling verification
+------------------------------
+
+Add Landlab surface processes and compare:
+
+.. table:: Suggested coupling cases
+
+   +-----------------+------------------------+---------------------------+
+   | Case            | Tectonic component     | Landlab component         |
+   +=================+========================+===========================+
+   | TR-TM           | ASPECT only            | None                      |
+   +-----------------+------------------------+---------------------------+
+   | TR-D            | ASPECT                 | Hillslope diffusion       |
+   +-----------------+------------------------+---------------------------+
+   | TR-F            | ASPECT                 | Fluvial erosion           |
+   +-----------------+------------------------+---------------------------+
+   | TR-FD           | ASPECT                 | Fluvial + diffusion       |
+   +-----------------+------------------------+---------------------------+
+
+Level 3: Scientific application
+-------------------------------
+
+Potential applications include:
+
+.. table:: Potential scientific experiments
+
+   +-------------------+-----------------------+--------------------------+
+   | Experiment        | Tectonic forcing      | Scientific question      |
+   +===================+=======================+==========================+
+   | Collision         | Compression           | How does erosion modify  |
+   |                   |                       | mountain growth?         |
+   +-------------------+-----------------------+--------------------------+
+   | Rift              | Extension             | How do uplift,           |
+   |                   |                       | subsidence, erosion and  |
+   |                   |                       | deposition interact?     |
+   +-------------------+-----------------------+--------------------------+
+   | Sedimentary basin | Uplift/subsidence     | How does tectonic        |
+   |                   |                       | deformation control      |
+   |                   |                       | sediment routing and     |
+   |                   |                       | deposition?              |
+   +-------------------+-----------------------+--------------------------+
+
+8. Why a rift experiment may be particularly powerful
+-----------------------------------------------------------------------------===
+
+A collision model is useful, but a rift experiment may provide a more
+distinct scientific application for ASPECT--Landlab.
+
+In a collision:
+
+.. math::
+
+   \text{convergence}
+   \rightarrow
+   \text{uplift}
+   \rightarrow
+   \text{erosion}.
+
+A rift produces both uplift and subsidence:
+
+.. math:: U_{\rm tectonic}(x,y,t)=u_z(x,y,t),
+
+with:
+
+.. math::
+
+   U_{\rm tectonic}>0
+   \qquad
+   \text{uplift}
+
+and:
+
+.. math::
+
+   U_{\rm tectonic}<0
+   \qquad
+   \text{subsidence}.
+
+The landscape therefore contains simultaneous sediment sources and
+sinks.
+
+The full feedback can be:
+
+.. math::
+
+   \boxed{
+   \text{extension}
+   \rightarrow
+   \text{faulting}
+   \rightarrow
+   \text{uplift/subsidence}
+   \rightarrow
+   \text{erosion/deposition}
+   \rightarrow
+   \text{sediment loading}
+   \rightarrow
+   \text{tectonic response}
+   }
+
+A possible rift question is:
+
+   How does sediment redistribution modify the topographic and tectonic
+   evolution of an actively deforming rift system?
+
+9. Sediment routing as a longer-term opportunity
+---------------------------------------------------
+
+The Lu et al. framework primarily represents surface processes through
+fluvial and hillslope terms.
+
+A more ambitious ASPECT--Landlab model could explicitly track sediment:
+
+.. math::
+
+   \frac{\partial h}{\partial t}
+   =
+   U
+   -
+   \nabla\cdot\mathbf{q}_s,
+
+where :math:`\mathbf{q}_s` is sediment flux.
+
+Distinguish sediment supply:
+
+.. math:: Q_s=\text{sediment supply}
+
+from transport capacity:
+
+.. math:: Q_t=\text{transport capacity}.
+
+If:
+
+.. math:: Q_s < Q_t,
+
+sediment can continue to move downstream.
+
+If:
+
+.. math:: Q_s > Q_t,
+
+the excess sediment is deposited.
+
+Conceptually:
+
+.. math::
+
+   Q_{\rm dep}
+   \sim
+   Q_s-Q_t
+   \qquad
+   \text{when } Q_s>Q_t.
+
+This moves the framework from a simple erosion model toward a
+source-to-sink sediment-routing model.
+
+10. Central research question
+---------------------------------
+
+The strongest central question from today's discussion is:
+
+.. math::
+
+   \boxed{
+   \text{How does the numerical coupling between tectonic deformation and
+   landscape evolution control the predicted evolution of topography,
+   erosion, and sediment deposition?}
+   }
+
+This can be divided into three questions.
+
+Question 1: Spatial coupling
+----------------------------
+
+How does the mismatch between the ASPECT finite-element discretization
+and the Landlab raster grid affect transferred tectonic velocity and
+landscape evolution?
+
+.. math::
+
+   \mathbf{u}_{ASPECT}
+   \rightarrow
+   \mathbf{u}_{Landlab}.
+
+Important parameters include:
+
+-  ASPECT mesh resolution;
+-  Landlab resolution;
+-  relative grid alignment;
+-  transfer method;
+-  sharpness of tectonic deformation.
+
+Question 2: Temporal coupling
+-----------------------------
+
+How does ``n_substeps`` affect the numerical solution?
+
+The working hypothesis is:
+
+.. math::
+
+   \boxed{
+   \text{Increasing coupling frequency reduces temporal
+   operator-splitting error}
+   }
+
+A useful test is:
+
+.. code:: text
+
+   n_substeps =
+       1
+       2
+       3
+       5
+       10
+       20
+       40
+       80
+
+Measure:
+
+-  final topography;
+-  maximum erosion;
+-  maximum deposition;
+-  cumulative erosion;
+-  cumulative deposition;
+-  sediment flux;
+-  drainage-network metrics.
+
+Question 3: Physical coupling
+-----------------------------
+
+How does erosion and deposition feed back onto tectonic deformation?
+
+.. math::
+
+   \text{tectonic deformation}
+   \rightarrow
+   \text{topography}
+   \rightarrow
+   \text{erosion}
+   \rightarrow
+   \text{sediment redistribution}
+   \rightarrow
+   \text{surface loading}
+   \rightarrow
+   \text{tectonic response}.
+
+11. Proposed numerical experiment matrix
+========================================
+
+.. table:: Proposed ASPECT--Landlab experiment matrix
+
+   +-----------+------------------+------------------+-------------------+
+   | E         | ASPECT           | Landlab          | Primary objective |
+   | xperiment |                  |                  |                   |
+   +===========+==================+==================+===================+
+   | E0        | Free surface     | None             | Verify tectonic   |
+   |           |                  |                  | free surface      |
+   +-----------+------------------+------------------+-------------------+
+   | E1        | Free surface     | Diffusion        | Verify hillslope  |
+   |           |                  |                  | coupling          |
+   +-----------+------------------+------------------+-------------------+
+   | E2        | Free surface     | Fluvial erosion  | Verify fluvial    |
+   |           |                  |                  | coupling          |
+   +-----------+------------------+------------------+-------------------+
+   | E3        | Free surface     | Fluvial +        | Full landscape    |
+   |           |                  | diffusion        | response          |
+   +-----------+------------------+------------------+-------------------+
+   | E4        | Collision        | Fluvial +        | Mountain-building |
+   |           |                  | diffusion        | feedback          |
+   +-----------+------------------+------------------+-------------------+
+   | E5        | Rift             | Fluvial +        | Uplift/subsidence |
+   |           |                  | diffusion        | and basin         |
+   |           |                  |                  | development       |
+   +-----------+------------------+------------------+-------------------+
+   | E6        | Rift/collision   | Sediment         | Source-to-sink    |
+   |           |                  | transport        | evolution         |
+   +-----------+------------------+------------------+-------------------+
+
+12. Numerical convergence experiment
+---------------------------------------
+
+Define a reference solution:
+
+.. math:: h_{\rm ref}=h_{N_{\rm ref}},
+
+where, for example,
+
+.. math::
+
+   N_{\rm ref}=40
+   \quad\text{or}\quad
+   80.
+
+Then calculate:
+
+.. math::
+
+   E_h(N)
+   =
+   \left[
+   \frac{1}{A}
+   \int_A
+   \left(
+   h_N-h_{\rm ref}
+   \right)^2
+   dA
+   \right]^{1/2}.
+
+Similarly:
+
+.. math:: E_E(N)=\left|E_N-E_{\rm ref}\right|
+
+and:
+
+.. math:: E_D(N)=\left|D_N-D_{\rm ref}\right|.
+
+The key analysis is whether numerical error decreases toward a converged
+solution as ``n_substeps`` increases.
+
+13. Spatial versus temporal coupling error
+---------------------------------------------
+
+We should explicitly distinguish two types of coupling error.
+
+Spatial coupling error:
+
+.. math::
+
+   E_{\rm spatial}
+   =
+   f(
+   \Delta x_A,
+   \Delta x_L,
+   \text{grid alignment},
+   \text{transfer method}
+   ).
+
+Temporal coupling error:
+
+.. math::
+
+   E_{\rm temporal}
+   =
+   f(
+   \Delta t,
+   n_{\rm substeps}
+   ).
+
+Therefore:
+
+.. math::
+
+   \boxed{
+   E_{\rm total}
+   =
+   E_{\rm spatial}
+   +
+   E_{\rm temporal}
+   +
+   E_{\rm physical}
+   }
+
+where ``E_physical`` represents differences caused by changes in the
+physical parameterization rather than numerical coupling.
+
+Separating these error sources could make the manuscript substantially
+stronger.
+
+14. Proposed manuscript figures ------------------------------
+
+Figure 1: Coupling architecture
+-------------------------------
+
+.. code:: text
+
+   ASPECT
+   finite-element solver
+    |
+    | velocity
+    v
+   RemotePointEvaluation
+    |
+    v
+   Landlab
+   landscape evolution
+    |
+    | elevation
+    v
+   ASPECT surface DoFs
+    |
+    v
+   next timestep
+
+Figure 2: Spatial-transfer test
+-------------------------------
+
+Compare different ASPECT and Landlab resolutions and grid alignments.
+
+Figure 3: Topographic relaxation
+--------------------------------
+
+Compare ASPECT--Landlab against the analytical solution.
+
+Figure 4: ``n_substeps`` convergence
+------------------------------------
+
+Plot RMSE, maximum topographic difference, erosion difference, and
+deposition difference against ``n_substeps``.
+
+Figure 5: Erosion/deposition
+----------------------------
+
+Show topography, erosion, deposition, and sediment flux.
+
+Figure 6: Tectonic application
+------------------------------
+
+Show ASPECT velocity, surface elevation, erosion, deposition, and
+strain/plasticity for a collision or rift experiment.
+
+Figure 7: Source-to-sink evolution
+----------------------------------
+
+Show:
+
+.. code:: text
+
+   uplift
+      |
+      v
+   erosion
+      |
+      v
+   sediment production
+      |
+      v
+   transport
+      |
+      v
+   deposition
+      |
+      v
+   basin filling
+
+15. What would make the manuscript genuinely new?
+---------------------------------------------------
+
+The manuscript should avoid presenting the contribution as merely:
+
+   ASPECT + Landlab coupling
+
+because the general concept of coupling geodynamics and landscape
+evolution already exists.
+
+The novelty should instead come from one or more of:
+
+#. **A different coupling architecture**
+
+   ASPECT finite-element point evaluation + Landlab raster surface
+   evolution.
+
+#. **A quantitative study of spatial-transfer error**
+
+   Especially the consequences of asymmetric ASPECT-to-Landlab and
+   Landlab-to-ASPECT transfer.
+
+#. **A quantitative study of temporal coupling**
+
+   ``n_substeps`` as a control on operator-splitting error.
+
+#. **A systematic sediment-routing experiment**
+
+   Moving beyond simple erosion/deposition to explicit sediment
+   transport.
+
+#. **A new tectonic setting**
+
+   For example, a rift where uplift and subsidence coexist.
+
+#. **A numerical convergence framework**
+
+   Demonstrating when the coupled solution becomes insensitive to grid
+   resolution and coupling frequency.
+
+16. Recommended manuscript hypothesis
+---------------------------------------
+
+The most testable hypothesis is:
+
+.. math::
+
+   \boxed{
+   \text{The predicted landscape and sediment distribution in a
+   two-way ASPECT--Landlab simulation depend systematically on both
+   spatial-transfer resolution and temporal coupling frequency.}
+   }
+
+A more specific version is:
+
+.. math::
+
+   \boxed{
+   \text{As }n_{\rm substeps}\text{ increases, the coupled solution
+   approaches a converged tectonic--landscape state, but the convergence
+   rate depends on spatial resolution and the transfer method between
+   ASPECT and Landlab.}
+   }
+
+17. Recommended experiment for immediate implementation
+-----------------------------------------------------------------------------
+A scientifically defensible sequence is:
+
+.. code:: text
+
+   STEP 1
+   ------
+   ASPECT sinusoidal topographic relaxation
+                |
+                v
+        analytical solution
+
+   STEP 2
+   ------
+   ASPECT + Landlab diffusion
+                |
+                v
+       numerical convergence
+
+   STEP 3
+   ------
+   ASPECT + Landlab fluvial erosion
+                |
+                v
+        erosion/deposition
+
+   STEP 4
+   ------
+   n_substeps = 1 ... 40/80
+                |
+                v
+       temporal convergence
+
+   STEP 5
+   ------
+   change ASPECT/Landlab resolution
+                |
+                v
+       spatial convergence
+
+   STEP 6
+   ------
+       tectonic collision or rift
+                |
+                v
+       full scientific experiment
+
+This gives a clean progression from **verification** to **numerical
+convergence** to **scientific application**.
+
+18. Key conclusions from today's discussion
+---------------------------------------------
+
+The two Lu et al. papers provide a useful roadmap for ASPECT--Landlab.
+
+First, Lu et al. (2026a) establishes that accurate free-surface
+evolution requires careful treatment of mesh motion, surface advection,
+and timestep stability.
+
+Second, Lu et al. (2026b) demonstrates that when surface processes are
+coupled to tectonic deformation, numerical differences in surface
+tracking can propagate into erosion and sediment distribution.
+
+Third, the ASPECT--Landlab coupling is numerically distinct from the
+Underworld--Badlands implementation because ASPECT-to-Landlab uses
+finite-element point evaluation, while the reverse transfer uses
+closest-point assignment.
+
+Fourth, this asymmetric spatial transfer creates a natural numerical
+research problem.
+
+Fifth, the current ``n_substeps`` investigation provides an equally
+important temporal numerical problem: how frequently the tectonic and
+landscape operators exchange information.
+
+The coupled problem can therefore be summarized as:
+
+.. math::
+
+   \boxed{
+   \underbrace{
+   \mathcal{I}_{A\rightarrow L}
+   }_{\text{spatial transfer}}
+   \rightarrow
+   \underbrace{
+   \mathcal{E}_{Landlab}
+   }_{\text{surface evolution}}
+   \rightarrow
+   \underbrace{
+   \mathcal{I}_{L\rightarrow A}
+   }_{\text{spatial transfer}}
+   \rightarrow
+   \underbrace{
+   \mathcal{S}_{ASPECT}
+   }_{\text{tectonic evolution}}
+   }
+
+with:
+
+.. math::
+
+   \Delta t_{\rm sub}
+   =
+   \frac{\Delta t_{\rm ASPECT}}
+   {n_{\rm substeps}}.
+
+19. Central question to carry forward
+------------------------------------------
+
+.. admonition:: Key research question
+
+   **How do spatial and temporal errors in the two-way ASPECT--Landlab
+   coupling propagate into predicted topography, erosion, sediment
+   transport, and deposition during tectonic landscape evolution?**
+
+This naturally leads to:
+
+.. math::
+
+   \boxed{
+   \text{spatial transfer}
+   \rightarrow
+   \text{temporal coupling}
+   \rightarrow
+   \text{landscape/sediment response}
+   }
+
+The long-term scientific extension is:
+
+.. math::
+
+   \boxed{
+   \text{tectonics}
+   \leftrightarrow
+   \text{topography}
+   \leftrightarrow
+   \text{erosion}
+   \leftrightarrow
+   \text{sediment transport}
+   \leftrightarrow
+   \text{deposition}
+   }
+
+This moves the ASPECT--Landlab framework toward a genuinely coupled
+tectonic--landscape--sedimentary system.
+
+References
+------------
+
+Lu, N., Moresi, L., and Giordani, J. (2026).
+``A novel ALE scheme with the internal boundary for true free surface simulation in geodynamic models``.
+*Geoscientific Model Development*, 19, 5191--5206. DOI:
+``10.5194/gmd-19-5191-2026``.
+
+Lu, N., Moresi, L., Giordani, J., and Knight, B. S. (2026).
+``A novel ALE scheme with the internal boundary for coupling tectonic and surface processes in geodynamic models``.
+*Geoscientific Model Development*, 19, 5723--5741. DOI:
+``10.5194/gmd-19-5723-2026``.

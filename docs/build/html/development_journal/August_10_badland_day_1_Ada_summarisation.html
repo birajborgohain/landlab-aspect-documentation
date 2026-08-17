@@ -17,11 +17,12 @@
       <script src="../_static/documentation_options.js?v=2709fde1"></script>
       <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       <script src="../_static/slides.js?v=4682ba28"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="PR-1 response (Day1) PR #47: Cleanup of Inherited Commit History" href="August_11_PR_response_Day_1.html" />
+    <link rel="next" title="August 11, 2026, PR-1 response (Day1) PR #47: Cleanup of Inherited Commit History" href="August_11_PR_response_Day_1.html" />
     <link rel="prev" title="August 9, 2026, landlab_vis (day 4) 2D Profile Analysis and Comparison" href="August_9_2026_landlab_viz_day_4.html" /> 
 </head>
 
@@ -320,10 +321,21 @@
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">August 10, 2026 – Badlands (Day 1) and Ada ASPECT–Landlab Analysis</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#main-activities">Main Activities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#badlands">1. Badlands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#badlands-initial-notes-on-fluvial-incision-sediment-flux-and-basin-sedimentation">Badlands: Initial Notes on Fluvial Incision, Sediment Flux, and Basin Sedimentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#initial-observation">Initial observation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#badlands-fluvial-formulation">Badlands fluvial formulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sediment-flux-as-a-control-on-incision">Sediment flux as a control on incision</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#from-incision-to-basin-sedimentation">From incision to basin sedimentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#comparison-with-fastscape">Comparison with FastScape</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#comparison-with-landlab-space">Comparison with Landlab / SPACE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#current-working-comparison">Current working comparison</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#what-particularly-catches-my-attention">What particularly catches my attention</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#badlands-flow-network-implementation">Badlands flow-network implementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ada-aspectlandlab-coupling">2. Ada ASPECT–Landlab Coupling</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="August_11_PR_response_Day_1.html">PR-1 response (Day1) PR #47: Cleanup of Inherited Commit History</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="August_11_PR_response_Day_1.html">August 11, 2026, PR-1 response (Day1) PR #47: Cleanup of Inherited Commit History</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="August_11_PR_response_Day_1.html#purpose">Purpose</a></li>
 <li class="toctree-l3"><a class="reference internal" href="August_11_PR_response_Day_1.html#problem-identified-by-the-reviewer">Problem Identified by the Reviewer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="August_11_PR_response_Day_1.html#initial-branch-state">Initial Branch State</a></li>
@@ -377,7 +389,7 @@
       </li>
   </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
         <a href="August_9_2026_landlab_viz_day_4.html" class="btn btn-neutral float-left" title="August 9, 2026, landlab_vis (day 4) 2D Profile Analysis and Comparison" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="August_11_PR_response_Day_1.html" class="btn btn-neutral float-right" title="PR-1 response (Day1) PR #47: Cleanup of Inherited Commit History" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="August_11_PR_response_Day_1.html" class="btn btn-neutral float-right" title="August 11, 2026, PR-1 response (Day1) PR #47: Cleanup of Inherited Commit History" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
   </div>
   <hr/>
 </div>
@@ -386,24 +398,339 @@
              
   <section id="august-10-2026-badlands-day-1-and-ada-aspectlandlab-analysis">
 <h1>August 10, 2026 – Badlands (Day 1) and Ada ASPECT–Landlab Analysis<a class="headerlink" href="#august-10-2026-badlands-day-1-and-ada-aspectlandlab-analysis" title="Link to this heading"></a></h1>
-<section id="main-activities">
-<h2>Main Activities<a class="headerlink" href="#main-activities" title="Link to this heading"></a></h2>
+<p>Main Activities</p>
 <p>I mainly worked on two tasks:</p>
-<ol class="arabic">
-<li><p><strong>Badlands</strong></p>
+<section id="badlands">
+<h2>1. Badlands<a class="headerlink" href="#badlands" title="Link to this heading"></a></h2>
 <p>I read through the Badlands documentation, source-code structure, and
 website to better understand the model, its implementation, and overall
 organization.</p>
-</li>
-<li><p><strong>Ada ASPECT–Landlab Coupling</strong></p>
+</section>
+<section id="badlands-initial-notes-on-fluvial-incision-sediment-flux-and-basin-sedimentation">
+<h2>Badlands: Initial Notes on Fluvial Incision, Sediment Flux, and Basin Sedimentation<a class="headerlink" href="#badlands-initial-notes-on-fluvial-incision-sediment-flux-and-basin-sedimentation" title="Link to this heading"></a></h2>
+</section>
+<section id="initial-observation">
+<h2>Initial observation<a class="headerlink" href="#initial-observation" title="Link to this heading"></a></h2>
+<p>While going through the Badlands website and documentation, one of the figures
+that particularly caught my attention was <strong>Fig. 4: Model space for stream
+power-based incision laws</strong>. The figure shows how the river incision rate
+depends on sediment flux and illustrates the different possible relationships
+between sediment transport and bed incision.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Figure 4: <em>Model space for stream power-based incision laws</em>.
+<a class="reference external" href="https://badlands.readthedocs.io/en/latest/proc.html">Click for details</a></p>
+</div>
+<p>This figure made me interested in understanding not only how Badlands calculates
+river incision, but also how the resulting sediment flux is subsequently used
+to model <strong>sediment transport, deposition, and ultimately sedimentary basin
+development</strong>.</p>
+<p>The central question I want to investigate is:</p>
+<blockquote>
+<div><p>How do the sediment-flux-dependent incision equations in Badlands
+contribute to the development of sedimentation in a basin, and how does
+this formulation differ from the deposition approaches implemented in
+FastScape and Landlab?</p>
+</div></blockquote>
+</section>
+<section id="badlands-fluvial-formulation">
+<h2>Badlands fluvial formulation<a class="headerlink" href="#badlands-fluvial-formulation" title="Link to this heading"></a></h2>
+<p>The Badlands documentation describes several formulations of river incision,
+ranging from <strong>detachment-limited</strong> to <strong>transport-limited</strong> behavior.</p>
+<p>In the basic detachment-limited formulation, incision is controlled primarily
+by the resistance of the bed to erosion. In contrast, the transport-limited
+formulation introduces a sediment transport capacity, <span class="math notranslate nohighlight">\(Q_t\)</span>, and
+compares the actual sediment flux, <span class="math notranslate nohighlight">\(Q_s\)</span>, with this capacity.</p>
+<p>The important quantity therefore becomes</p>
+<div class="math notranslate nohighlight">
+\[\frac{Q_s}{Q_t}.\]</div>
+<p>This ratio provides a useful way of thinking about the transition between
+erosion and deposition:
+* <span class="math notranslate nohighlight">\(Q_s \ll Q_t\)</span> corresponds approximately to detachment-limited
+behavior;</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(Q_s \approx Q_t\)</span> approaches transport-limited behavior;</p></li>
+<li><p><span class="math notranslate nohighlight">\(Q_s &gt; Q_t\)</span> indicates that the supplied sediment exceeds the local transport capacity and deposition can occur.</p></li>
+</ul>
+<p>Badlands therefore does not treat sediment flux simply as a passive output of
+erosion. Sediment flux can also modify the rate at which the river incises its
+bed.</p>
+<p>This is particularly interesting in the context of basin evolution because
+the same sediment generated upstream can subsequently become the material
+that is transported and deposited downstream.</p>
+</section>
+<section id="sediment-flux-as-a-control-on-incision">
+<h2>Sediment flux as a control on incision<a class="headerlink" href="#sediment-flux-as-a-control-on-incision" title="Link to this heading"></a></h2>
+<p>Badlands introduces a sediment-flux-dependent modification to the stream-power
+incision law:</p>
+<div class="math notranslate nohighlight">
+\[\dot{\epsilon}
+=
+\kappa f(Q_s)(PA)^m S^n,\]</div>
+<p>where <span class="math notranslate nohighlight">\(f(Q_s)\)</span> represents the dependence of incision on sediment flux.</p>
+<p>The documentation describes several possible formulations, including:</p>
+<ul class="simple">
+<li><p>a linear decline or under-capacity formulation;</p></li>
+<li><p>an almost-parabolic tool-and-cover formulation;</p></li>
+<li><p>a Turowski-type formulation;</p></li>
+<li><p>a saltation-abrasion formulation.</p></li>
+</ul>
+<p>This is one of the aspects that caught my attention because sediment has a
+dual role in the river system.</p>
+<p>At relatively low sediment flux, sediment can enhance erosion through a
+<strong>tool effect</strong>, in which transported grains contribute to bed abrasion or
+plucking.</p>
+<p>At higher sediment flux, sediment can begin to cover and protect the bed,
+producing a <strong>cover effect</strong> and reducing bedrock incision.</p>
+<p>Thus, sediment flux is not simply a quantity that is transported downstream.
+It can actively modify the erosion rate of the river itself.</p>
+<p>This creates a feedback:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>erosion
+   |
+   v
+sediment production
+   |
+   v
+sediment flux Qs
+   |
+   +--------------------+
+   |                    |
+   v                    v
+transport          modification of
+downstream         incision rate
+   |
+   v
+deposition
+   |
+   v
+basin sedimentation
+</pre></div>
+</div>
+<p>This feedback appears particularly relevant for understanding how a landscape
+evolves into a sedimentary basin.</p>
+</section>
+<section id="from-incision-to-basin-sedimentation">
+<h2>From incision to basin sedimentation<a class="headerlink" href="#from-incision-to-basin-sedimentation" title="Link to this heading"></a></h2>
+<p>The aspect I want to understand more deeply is how the incision formulation is
+connected to <strong>basin sedimentation</strong>.</p>
+<p>A river eroding an upstream landscape generates sediment. That sediment is
+transported through the drainage network. As the transport capacity changes
+with discharge, slope, and other parameters, sediment can either continue to
+be transported or begin to accumulate.</p>
+<p>Therefore, basin sedimentation can be viewed as the downstream consequence of
+the coupled evolution of:</p>
+<ol class="arabic simple">
+<li><p>bedrock erosion;</p></li>
+<li><p>sediment production;</p></li>
+<li><p>sediment transport;</p></li>
+<li><p>sediment storage;</p></li>
+<li><p>sediment deposition.</p></li>
+</ol>
+<p>This raises an important modeling question:</p>
+<blockquote>
+<div><p>Is Badlands primarily calculating deposition as a consequence of the
+difference between sediment supply and transport capacity, or is there
+an additional formulation controlling where and how sediment is deposited?</p>
+</div></blockquote>
+<p>This is something I want to examine directly in the Badlands implementation
+rather than assuming that all models use the same mathematical treatment.</p>
+</section>
+<section id="comparison-with-fastscape">
+<h2>Comparison with FastScape<a class="headerlink" href="#comparison-with-fastscape" title="Link to this heading"></a></h2>
+<p>Another point that caught my attention is the comparison with <strong>FastScape</strong>.</p>
+<p>My current understanding is that the deposition implementation in FastScape
+may be related to the formulation discussed by <strong>Yuan et al. (2019)</strong>.
+However, this is still a working hypothesis and needs to be verified by
+examining the FastScape equations and source code.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Braun and Willett, 2013: <em>A very efficient O(n), implicit and parallel
+method to solve the stream power equation governing fluvial incision and
+landscape evolution</em> – <em>Geomorphology</em>, 170–179,
+<a class="reference external" href="https://doi.org/10.1016/j.geomorph.2012.10.008">doi:10.1016/j.geomorph.2012.10.008</a>.</p>
+<p>Yuan, X. P., Braun, J., Guerit, L., Rouby, D., &amp; Cordonnier, G. (2019):
+<em>A new efficient method to solve the stream power law model taking into
+account sediment deposition</em> – <em>Journal of Geophysical Research: Earth
+Surface</em>, 124, 1346–1365,
+<a class="reference external" href="https://doi.org/10.1029/2018JF004867">doi:10.1029/2018JF004867</a>.</p>
+</div>
+<p>The question I want to investigate is therefore:</p>
+<blockquote>
+<div><p>Does FastScape calculate deposition using the same type of sediment-flux
+versus transport-capacity relationship used by Badlands, or does it use
+a fundamentally different mass-conservation/deposition formulation?</p>
+</div></blockquote>
+<p>In particular, I want to compare:</p>
+<ul class="simple">
+<li><p>how sediment flux is calculated;</p></li>
+<li><p>how transport capacity is defined;</p></li>
+<li><p>how erosion and sediment production are coupled;</p></li>
+<li><p>how deposition is triggered;</p></li>
+<li><p>whether deposition is calculated explicitly or through flux divergence;</p></li>
+<li><p>whether sediment thickness/storage is explicitly tracked;</p></li>
+<li><p>how sediment is routed downstream; and</p></li>
+<li><p>how these formulations affect basin-scale sediment accumulation.</p></li>
+</ul>
+</section>
+<section id="comparison-with-landlab-space">
+<h2>Comparison with Landlab / SPACE<a class="headerlink" href="#comparison-with-landlab-space" title="Link to this heading"></a></h2>
+<p>The third comparison that interests me is with the <strong>SPACE model implemented
+in Landlab</strong>.</p>
+<p>SPACE was specifically developed to simultaneously model bedrock erosion,
+sediment transport, and the evolution of an alluvial layer. The model
+conserves sediment in two reservoirs: the sediment stored on the bed and the
+sediment contained in the water column. It explicitly calculates erosion,
+entrainment, deposition, and sediment flux.</p>
+<p>This makes SPACE particularly interesting for comparison with Badlands.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Shobe, C. M., Tucker, G. E., &amp; Barnhart, K. R. (2017):
+<em>The SPACE 1.0 model: A Landlab component for 2-D calculation of sediment
+transport, bedrock erosion, and landscape evolution</em> — Geoscientific Model
+Development, 10, 4577–4604.</p>
+</div>
+<p>The SPACE formulation can be summarized conceptually as:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>bedrock erosion
+      |
+      v
+sediment entrainment
+      |
+      v
+sediment in water column
+      |
+      +---------&gt; downstream transport
+      |
+      v
+   deposition
+      |
+      v
+alluvial layer thickness
+</pre></div>
+</div>
+<p>The important difference is that SPACE explicitly evolves the sediment
+reservoir and alluvial thickness. The governing equations conserve sediment
+mass both in the water column and on the channel bed.</p>
+<p>In particular, SPACE writes the sediment-flux balance in terms of entrainment,
+bedrock erosion, deposition, and downstream sediment-flux divergence:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial (Q_s/w)}{\partial x}
+=
+E_s + (1-F_f)E_r - D_s.\]</div>
+<p>The evolution of sediment thickness is then described by</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial H}{\partial t}
+=
+\frac{D_s-E_s}{1-\phi}.\]</div>
+<p>This explicit treatment of sediment thickness is one of the features I want
+to compare carefully with the Badlands implementation.</p>
+<p>The SPACE paper emphasizes that the model uses an
+<strong>erosion–deposition framework</strong>, rather than relying only on an Exner-type
+flux-divergence formulation. It explicitly calculates sediment entrainment
+and deposition and allows the system to transition between
+detachment-limited, transport-limited, and mixed behavior.</p>
+<p>The paper also states that SPACE was designed to simultaneously evolve an
+alluvial layer and a bedrock bed and to operate over landscape-evolution
+spatial and temporal scales. This is directly relevant to the comparison I
+want to make with Badlands and FastScape.</p>
+<p>The paper describes SPACE as a model for simultaneous sediment transport and
+bedrock erosion, with explicit conservation of sediment mass and evolution
+of an alluvial layer. :contentReference[oaicite:0]{index=0}</p>
+</section>
+<section id="current-working-comparison">
+<h2>Current working comparison<a class="headerlink" href="#current-working-comparison" title="Link to this heading"></a></h2>
+<p>At this stage, I do <strong>not</strong> want to conclude that Badlands, FastScape, and
+SPACE use the same deposition algorithm. Instead, I see three potentially
+different approaches that need to be examined.</p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-number">Table 8 </span><span class="caption-text">Initial comparison to investigate</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 27.0%" />
+<col style="width: 27.0%" />
+<col style="width: 26.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Model</p></th>
+<th class="head"><p>Main question</p></th>
+<th class="head"><p>Sediment representation</p></th>
+<th class="head"><p>Deposition question</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Badlands</p></td>
+<td><p>How does <span class="math notranslate nohighlight">\(Q_s/Q_t\)</span> control incision and deposition?</p></td>
+<td><p>Sediment flux and transport capacity</p></td>
+<td><p>How is excess sediment converted into deposition?</p></td>
+</tr>
+<tr class="row-odd"><td><p>FastScape</p></td>
+<td><p>What formulation controls sediment deposition?</p></td>
+<td><p>To be investigated</p></td>
+<td><p>Is the formulation related to Yuan et al. (2019)?</p></td>
+</tr>
+<tr class="row-even"><td><p>Landlab / SPACE</p></td>
+<td><p>How are sediment and bedrock simultaneously conserved?</p></td>
+<td><p>Water-column sediment + alluvial layer + bedrock</p></td>
+<td><p>Explicit entrainment and deposition</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="what-particularly-catches-my-attention">
+<h2>What particularly catches my attention<a class="headerlink" href="#what-particularly-catches-my-attention" title="Link to this heading"></a></h2>
+<p>The most interesting aspect for me is that <strong>sediment is not simply the
+product of erosion</strong>.</p>
+<p>Instead, sediment can participate in a feedback system:</p>
+<div class="math notranslate nohighlight">
+\[\text{erosion}
+\rightarrow
+\text{sediment production}
+\rightarrow
+Q_s
+\rightarrow
+\text{incision modification}
+\rightarrow
+\text{transport}
+\rightarrow
+\text{deposition}
+\rightarrow
+\text{basin filling}.\]</div>
+<p>This suggests that understanding basin sedimentation requires understanding
+the coupling between <strong>erosion, sediment flux, transport capacity, and
+deposition</strong>, rather than examining the deposition equation in isolation.</p>
+<p>This is the direction I want to follow next: trace the equations from the
+Badlands stream-power incision formulation through the actual implementation
+of sediment transport and deposition, and then compare that implementation
+with FastScape and Landlab/SPACE.</p>
+</section>
+<section id="badlands-flow-network-implementation">
+<h2>Badlands flow-network implementation<a class="headerlink" href="#badlands-flow-network-implementation" title="Link to this heading"></a></h2>
+<p>Another part of the Badlands documentation that is relevant to this
+investigation is the flow-network implementation.</p>
+<p>Badlands computes the stream network over a <strong>TIN</strong> and uses a
+<strong>single-flow-direction (SFD)</strong> approximation in which water follows the
+steepest downslope path. The nodes are ordered using the
+<span class="math notranslate nohighlight">\(O(n)\)</span> method of Braun and Willett (2013).</p>
+<p>The documentation provides the following function:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">SFD_receivers</span><span class="p">(</span><span class="n">fillH</span><span class="p">,</span> <span class="n">elev</span><span class="p">,</span> <span class="n">neighbours</span><span class="p">,</span> <span class="n">edges</span><span class="p">,</span> <span class="n">distances</span><span class="p">,</span> <span class="n">globalIDs</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This function determines the downslope receiver of each TIN node by
+examining neighboring elevations and selecting the steepest downslope
+connection.</p>
+<p>The resulting flow network and node ordering are important because sediment
+flux must subsequently be routed through the drainage network.</p>
+<p>The Badlands source documentation shows that the flow-network implementation
+operates directly on the TIN and constructs an ordered stack of nodes for
+flow routing.</p>
+</section>
+<section id="ada-aspectlandlab-coupling">
+<h2>2. Ada ASPECT–Landlab Coupling<a class="headerlink" href="#ada-aspectlandlab-coupling" title="Link to this heading"></a></h2>
 <p>I continued investigating the Ada Lovelace Workshop ASPECT–Landlab
 coupling, focusing particularly on the <code class="docutils literal notranslate"><span class="pre">s2yr</span></code> conversion and the
 differences between runs with and without the conversion.</p>
 <p>I summarized the observed issues, including the numerical instability
 and parameter/unit-conversion differences, and communicated the findings
 to Daniel to get his feedback and comments on the setup.</p>
-</li>
-</ol>
 </section>
 </section>
 
@@ -412,7 +739,7 @@ to Daniel to get his feedback and comments on the setup.</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="August_9_2026_landlab_viz_day_4.html" class="btn btn-neutral float-left" title="August 9, 2026, landlab_vis (day 4) 2D Profile Analysis and Comparison" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="August_11_PR_response_Day_1.html" class="btn btn-neutral float-right" title="PR-1 response (Day1) PR #47: Cleanup of Inherited Commit History" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="August_11_PR_response_Day_1.html" class="btn btn-neutral float-right" title="August 11, 2026, PR-1 response (Day1) PR #47: Cleanup of Inherited Commit History" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
