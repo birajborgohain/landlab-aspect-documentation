@@ -19,3 +19,7 @@ This section summarizes the day-to-day development, implementation, testing, and
     August_10_badland_day_1_Ada_summarisation
     August_11_PR_response_Day_1
     August_12_badland_day2_landlab_vis_doc_day_5
+    August_13_2026_badland_day_3_deposition_algo_fastscape
+    August_14_2026_badland_day4__gasparni_brandon_2011_Salles_2011
+    August_16_2026_analytical_collision_rift
+    August_17_2026_Lu_2026_Badland_Underworld.rst
