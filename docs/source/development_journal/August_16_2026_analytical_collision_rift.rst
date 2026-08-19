@@ -5,11 +5,18 @@ August 16, 2026, Badland (Day 5) Rift setting and Topographic relaxation versus 
 
 
 
-The paper uses two important experiments with fundamentally different
+The Lu et al., 2026 paper uses two important experiments with fundamentally different
 purposes:
 
 * topographic relaxation (TR);
 * continental collision (CC).
+
+.. seealso::
+
+    Lu, N., Moresi, L., Giordani, J., and Knight, B. S. (2026).
+        ``A novel ALE scheme with the internal boundary for coupling tectonic and surface processes in geodynamic models``.
+        *Geoscientific Model Development*, 19, 5723--5741. DOI:
+        ``10.5194/gmd-19-5723-2026``.
 
 Topographic relaxation
 ----------------------

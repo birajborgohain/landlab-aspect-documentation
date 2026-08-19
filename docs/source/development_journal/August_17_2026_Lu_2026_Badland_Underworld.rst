@@ -1,6 +1,6 @@
 
-August 17, 2026 Badland  (Day 6) Underworld-Badland ALE-IB Free-Surface Modeling Lu et al., 2026 (GMD)
-========================================================================================================
+August 17, 2026 Badland  (Day 6) Underworld-Badland ALE-IB Free-Surface Modeling Lu et al., 2026 a,b (GMD)
+===========================================================================================================
 
 **Focus:** Interpretation of two related Lu et al. papers and their
 implications for developing a scientific manuscript and numerical
