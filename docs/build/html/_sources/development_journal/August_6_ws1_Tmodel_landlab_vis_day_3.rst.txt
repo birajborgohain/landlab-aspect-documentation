@@ -1,5 +1,5 @@
 
-August 6, 2026 Workstation 1 landlab-aspect setup and `landlab_vis` (day 3): Completing the Core Architecture and Preparing for Dataset I/O
+August 6, 2026 Workstation 1 landlab-aspect setup and ``landlab_vis`` (day 3): Completing the Core Architecture and Preparing for Dataset I/O
 ===================================================================================================================================================
 
 

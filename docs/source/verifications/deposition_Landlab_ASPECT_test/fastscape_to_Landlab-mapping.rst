@@ -15,15 +15,205 @@ rift basin development in a broader range of tectonic settings.
 | *Earth and Planetary Science Letters*, **657**, 119565.
 | DOI: https://doi.org/10.1016/j.epsl.2025.119565
 
+.. figure:: /_images/deposition/xue_etal_2025_fig_1_croped_rift.jpg
+   :width: 100%
+   :align: center
+
+   Figure 1 (b) from Xue et al., 2025
+   
+
+
 Figures
 --------
 .. figure:: /_images/deposition/depo_drainage_topo_combine_Landlab_Fastscape.png
    :width: 100%
    :align: center
 
+Random noise in intial topograpgy
+----------------------------------
 .. figure:: /_images/random_noise.png
    :width: 100%
    :align: center
+
+
+Landlab output (``landlab_00001.vtk`` to ``landlab_00052.vtk``) and Fastscape output (``topography_00000.vtk`` to ``topography_00050.vtk``) field (``topography``)
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+.. figure:: /_images/deposition/landlab_fastscape_xprofile.gif
+   :width: 100%
+   :align: center
+
+Landlab output (``landlab_00001.vtk`` to ``landlab_00052.vtk``) field (``sediment_deposit__thickness``)
+--------------------------------------------------------------------------------------------------------
+.. figure:: /_images/deposition/landlab_sediment_thickness_profile_animation.gif
+   :width: 100%
+   :align: center
+
+ASPECT output (``solution.pdv``) field (``sediment_thick``)
+--------------------------------------------------------------
+.. figure:: /_images/deposition/aspect_sediment_thickness_profile_comparison_animation.gif
+   :width: 100%
+   :align: center
+
+
+Landlab--FastScape Field Correspondence
+
+Fields That Match
+-----------------
+
+The following fields have a direct or potentially meaningful correspondence
+between Landlab and FastScape.
+
+.. list-table::
+   :header-rows: 1
+   :widths: 30 30 20 50
+
+   * - Landlab field
+     - FastScape field
+     - Match
+     - Interpretation
+   * - ``topographic__elevation``
+     - ``topography``
+     - **Direct**
+     - Surface/topographic elevation.
+   * - ``drainage_area``
+     - ``drainage_area``
+     - **Direct name match**
+     - Contributing drainage area.
+   * - ``surface_water__discharge``
+     - ``drainage_area``
+     - **Possibly related**
+     - These are not equivalent physical quantities. The numerical maximum
+       happens to be the same in this particular dataset, but this should not
+       be interpreted as a direct correspondence.
+
+The two strongest matches are therefore:
+
+.. code-block:: text
+
+   Landlab                         FastScape
+   ------------------------------------------------
+   topographic__elevation    <-->  topography
+   drainage_area             <-->  drainage_area
+
+
+Fields That Do Not Match
+------------------------
+
+The following fields currently have **no established correspondence** in the
+other model. They are therefore kept separate rather than being paired based
+only on similar names or numerical values.
+
+Landlab Fields Without a FastScape Match
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table::
+   :header-rows: 1
+   :widths: 45 55
+
+   * - Landlab field
+     - Description
+   * - ``sediment_deposit__thickness``
+     - Sediment deposit thickness; no corresponding FastScape field has been
+       identified.
+   * - ``sediment__flux``
+     - Sediment flux; no corresponding FastScape field has been identified.
+   * - ``sediment__influx``
+     - Sediment influx; no corresponding FastScape field has been identified.
+   * - ``sediment__outflux``
+     - Sediment outflux; no corresponding FastScape field has been identified.
+   * - ``topographic__steepest_slope``
+     - Topographic steepest slope; no corresponding FastScape field has been
+       identified.
+   * - ``water__depth``
+     - Water depth; no corresponding FastScape field has been identified.
+   * - ``flow__receiver_node``
+     - Flow receiver-node information; no corresponding FastScape field has
+       been identified.
+   * - ``flow__sink_flag``
+     - Flow sink information; no corresponding FastScape field has been
+       identified.
+   * - ``kd``
+     - Diffusivity-related field; no corresponding FastScape field has been
+       identified.
+   * - ``linear_diffusivity``
+     - Linear diffusivity; no corresponding FastScape field has been
+       identified.
+   * - ``flow__data_structure_delta``
+     - Flow data-structure information; no corresponding FastScape field has
+       been identified.
+   * - ``flow__link_to_receiver_node``
+     - Flow-link information; no corresponding FastScape field has been
+       identified.
+   * - ``flow__upstream_node_order``
+     - Upstream node ordering; no corresponding FastScape field has been
+       identified.
+   * - ``surface_water__discharge``
+     - Surface-water discharge; no corresponding FastScape field has been
+       identified.
+   * - ``water__unit_flux_in``
+     - Water unit flux; no corresponding FastScape field has been identified.
+
+
+FastScape Fields Without a Landlab Match
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table::
+   :header-rows: 1
+   :widths: 40 60
+
+   * - FastScape field
+     - Description
+   * - ``HHHHH``
+     - Constant field with a value of approximately ``0.01``; no corresponding
+       Landlab field has been identified.
+   * - ``basement``
+     - Basement elevation; no corresponding Landlab field has been identified.
+   * - ``erosion_rate``
+     - Erosion rate; no corresponding Landlab field has been identified.
+   * - ``total_erosion``
+     - Total erosion; no corresponding Landlab field has been identified.
+   * - ``catchment``
+     - Catchment information; no corresponding Landlab field has been
+       identified.
+   * - ``B``
+     - FastScape ``B`` field; no corresponding Landlab field has been
+       identified.
+   * - ``SL``
+     - Sea-level field; no corresponding Landlab field has been identified.
+
+
+Interpretation
+~~~~~~~~~~~~~~
+
+Only fields with an established physical correspondence should be compared
+quantitatively. Fields that have not been matched are retained separately
+until their physical definitions and units can be established.
+
+Summary
+-------
+
+At the current stage, the clearest field correspondences are:
+
+.. list-table::
+   :header-rows: 1
+   :widths: 35 35 30
+
+   * - Landlab
+     - FastScape
+     - Status
+   * - ``topographic__elevation``
+     - ``topography``
+     - **Direct match**
+   * - ``drainage_area``
+     - ``drainage_area``
+     - **Direct name match; numerical comparison still required**
+   * - Other listed fields
+     - Other listed fields
+     - **No direct match established**
+
+The ``drainage_area`` correspondence should be investigated further before
+using it for quantitative validation because the field names match but the
+reported numerical ranges are substantially different.
 
 
 Table of FastScape--ASPECT to Landlab--ASPECT Mapping

@@ -130,6 +130,13 @@
 </li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Deposition and Rift Basin Evolution</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#figures">Figures</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#random-noise-in-intial-topograpgy">Random noise in intial topograpgy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#landlab-output-landlab-00001-vtk-to-landlab-00052-vtk-and-fastscape-output-topography-00000-vtk-to-topography-00050-vtk-field-topography">Landlab output (<code class="docutils literal notranslate"><span class="pre">landlab_00001.vtk</span></code> to <code class="docutils literal notranslate"><span class="pre">landlab_00052.vtk</span></code>) and Fastscape output (<code class="docutils literal notranslate"><span class="pre">topography_00000.vtk</span></code> to <code class="docutils literal notranslate"><span class="pre">topography_00050.vtk</span></code>) field (<code class="docutils literal notranslate"><span class="pre">topography</span></code>)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#landlab-output-landlab-00001-vtk-to-landlab-00052-vtk-field-sediment-deposit-thickness">Landlab output (<code class="docutils literal notranslate"><span class="pre">landlab_00001.vtk</span></code> to <code class="docutils literal notranslate"><span class="pre">landlab_00052.vtk</span></code>) field (<code class="docutils literal notranslate"><span class="pre">sediment_deposit__thickness</span></code>)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aspect-output-solution-pdv-field-sediment-thick">ASPECT output (<code class="docutils literal notranslate"><span class="pre">solution.pdv</span></code>) field (<code class="docutils literal notranslate"><span class="pre">sediment_thick</span></code>)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fields-that-match">Fields That Match</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fields-that-do-not-match">Fields That Do Not Match</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#summary">Summary</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#table-of-fastscape-aspect-to-landlab-aspect-mapping">Table of FastScape–ASPECT to Landlab–ASPECT Mapping</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#time-stepping">Time stepping</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#uplift">Uplift</a></li>
@@ -183,7 +190,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_3_2026_WB.html#write-up-to-contribute-to-denial-agu-abstract-if-in-case">Write up to contribute to Denial AGU abstract (if in case)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../development_journal/August_4_landlab_vis.html">August 4, 2026, FastScape Benchmark Investigation and Transition from ParaView to <cite>landlab_vis</cite> (Day 1) a Reusable Landlab (.vtk files) Visualization Framework</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../development_journal/August_4_landlab_vis.html">August 4, 2026, FastScape Benchmark Investigation and Transition from ParaView to <code class="docutils literal notranslate"><span class="pre">landlab_vis</span></code> (Day 1) a Reusable Landlab (.vtk files) Visualization Framework</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_4_landlab_vis.html#overview">Overview</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_4_landlab_vis.html#investigation-of-fastscape-unit-handling">Investigation of FastScape Unit Handling</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_4_landlab_vis.html#evaluation-of-paraview-based-visualization">Evaluation of ParaView-Based Visualization</a></li>
@@ -198,7 +205,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_4_landlab_vis.html#next-steps">Next Steps</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../development_journal/August_5_2026_landlab_vis_day2.html">August 5, 2026 <cite>landlab_vis</cite> (day 2): A Python Visualization and Analysis Framework for Landlab and ASPECT Outputs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../development_journal/August_5_2026_landlab_vis_day2.html">August 5, 2026 <code class="docutils literal notranslate"><span class="pre">landlab_vis</span></code> (day 2): A Python Visualization and Analysis Framework for Landlab and ASPECT Outputs</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_5_2026_landlab_vis_day2.html#overview">Overview</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_5_2026_landlab_vis_day2.html#investigation-of-landlab-vtk-mesh-structure">Investigation of Landlab VTK Mesh Structure</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_5_2026_landlab_vis_day2.html#initial-assumption">Initial Assumption</a></li>
@@ -239,7 +246,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../development_journal/August_6_ws1_Tmodel_landlab_vis_day_3.html">August 6, 2026 Workstation 1 landlab-aspect setup and <cite>landlab_vis</cite> (day 3): Completing the Core Architecture and Preparing for Dataset I/O</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../development_journal/August_6_ws1_Tmodel_landlab_vis_day_3.html">August 6, 2026 Workstation 1 landlab-aspect setup and <code class="docutils literal notranslate"><span class="pre">landlab_vis</span></code> (day 3): Completing the Core Architecture and Preparing for Dataset I/O</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_6_ws1_Tmodel_landlab_vis_day_3.html#objective-1">Objective 1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_6_ws1_Tmodel_landlab_vis_day_3.html#local-macos-setup">Local (macOS) Setup</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_6_ws1_Tmodel_landlab_vis_day_3.html#remote-workstation-ws1">Remote Workstation (ws1)</a></li>
@@ -321,10 +328,21 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../development_journal/August_10_badland_day_1_Ada_summarisation.html">August 10, 2026 – Badlands (Day 1) and Ada ASPECT–Landlab Analysis</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_10_badland_day_1_Ada_summarisation.html#main-activities">Main Activities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_10_badland_day_1_Ada_summarisation.html#badlands">1. Badlands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_10_badland_day_1_Ada_summarisation.html#badlands-initial-notes-on-fluvial-incision-sediment-flux-and-basin-sedimentation">Badlands: Initial Notes on Fluvial Incision, Sediment Flux, and Basin Sedimentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_10_badland_day_1_Ada_summarisation.html#initial-observation">Initial observation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_10_badland_day_1_Ada_summarisation.html#badlands-fluvial-formulation">Badlands fluvial formulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_10_badland_day_1_Ada_summarisation.html#sediment-flux-as-a-control-on-incision">Sediment flux as a control on incision</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_10_badland_day_1_Ada_summarisation.html#from-incision-to-basin-sedimentation">From incision to basin sedimentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_10_badland_day_1_Ada_summarisation.html#comparison-with-fastscape">Comparison with FastScape</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_10_badland_day_1_Ada_summarisation.html#comparison-with-landlab-space">Comparison with Landlab / SPACE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_10_badland_day_1_Ada_summarisation.html#current-working-comparison">Current working comparison</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_10_badland_day_1_Ada_summarisation.html#what-particularly-catches-my-attention">What particularly catches my attention</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_10_badland_day_1_Ada_summarisation.html#badlands-flow-network-implementation">Badlands flow-network implementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_10_badland_day_1_Ada_summarisation.html#ada-aspectlandlab-coupling">2. Ada ASPECT–Landlab Coupling</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../development_journal/August_11_PR_response_Day_1.html">PR-1 response (Day1) PR #47: Cleanup of Inherited Commit History</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../development_journal/August_11_PR_response_Day_1.html">August 11, 2026, PR-1 response (Day1) PR #47: Cleanup of Inherited Commit History</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_11_PR_response_Day_1.html#purpose">Purpose</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_11_PR_response_Day_1.html#problem-identified-by-the-reviewer">Problem Identified by the Reviewer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_11_PR_response_Day_1.html#initial-branch-state">Initial Branch State</a></li>
@@ -349,10 +367,330 @@
 <li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_11_PR_response_Day_1.html#shared-library-issue">Shared Library Issue</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../development_journal/August_12_badland_day2_landlab_vis_doc_day_5.html">August 12, 2026 – Badlands Study (Day 2) and landlab_vis Documentation Development (Day 5)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../development_journal/August_12_badland_day2_landlab_vis_doc_day_5.html">August 12, 2026 – Badlands (Day 2): Alluvial and Marine Deposition and <code class="docutils literal notranslate"><span class="pre">landlab_vis</span></code> (Day 5) API Documentation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_12_badland_day2_landlab_vis_doc_day_5.html#main-activities">Main Activities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_12_badland_day2_landlab_vis_doc_day_5.html#badlands-day-2-website-documentation-and-algorithm-review">1. Badlands – Day 2: Website, Documentation, and Algorithm Review</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_12_badland_day2_landlab_vis_doc_day_5.html#alluvial-plain-forced-deposition">Alluvial plain forced deposition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_12_badland_day2_landlab_vis_doc_day_5.html#alluvial-deposition-versus-transport-limited-deposition">Alluvial deposition versus transport-limited deposition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_12_badland_day2_landlab_vis_doc_day_5.html#marine-deposition">Marine deposition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_12_badland_day2_landlab_vis_doc_day_5.html#the-broader-picture-emerging-from-badlands">The broader picture emerging from Badlands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_12_badland_day2_landlab_vis_doc_day_5.html#comparison-with-fastscape">Comparison with FastScape</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_12_badland_day2_landlab_vis_doc_day_5.html#comparison-with-landlab">Comparison with Landlab</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_12_badland_day2_landlab_vis_doc_day_5.html#landlab-erosiondeposition">Landlab <code class="docutils literal notranslate"><span class="pre">ErosionDeposition</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_12_badland_day2_landlab_vis_doc_day_5.html#landlab-simplesubmarinediffuser">Landlab <code class="docutils literal notranslate"><span class="pre">SimpleSubmarineDiffuser</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_12_badland_day2_landlab_vis_doc_day_5.html#a-conceptual-comparison">A conceptual comparison</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_12_badland_day2_landlab_vis_doc_day_5.html#what-particularly-caught-my-attention">What particularly caught my attention</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_12_badland_day2_landlab_vis_doc_day_5.html#questions-for-the-next-stage">Questions for the next stage</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_12_badland_day2_landlab_vis_doc_day_5.html#badlands">Badlands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_12_badland_day2_landlab_vis_doc_day_5.html#badlands-marine-system">Badlands marine system</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_12_badland_day2_landlab_vis_doc_day_5.html#fastscape">FastScape</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_12_badland_day2_landlab_vis_doc_day_5.html#landlab">Landlab</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_12_badland_day2_landlab_vis_doc_day_5.html#coupled-aspect-landlab">Coupled ASPECT–Landlab</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_12_badland_day2_landlab_vis_doc_day_5.html#current-interpretation">Current interpretation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_12_badland_day2_landlab_vis_doc_day_5.html#see-also">See also</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_12_badland_day2_landlab_vis_doc_day_5.html#landlab-vis-day-5-source-code-and-documentation">2. landlab_vis – Day 5: Source Code and Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../development_journal/August_13_2026_badland_day_3_deposition_algo_fastscape.html">August 13, 2026 – Badlands (Day 3): Deposition Processes and Exploring Fastscape and <code class="docutils literal notranslate"><span class="pre">landlab_vis</span></code> (Day 6) API Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_13_2026_badland_day_3_deposition_algo_fastscape.html#study-focus">Study focus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_13_2026_badland_day_3_deposition_algo_fastscape.html#fastscape-software-architecture">Fastscape software architecture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_13_2026_badland_day_3_deposition_algo_fastscape.html#fastscape-and-xarray-simlab">Fastscape and Xarray-simlab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_13_2026_badland_day_3_deposition_algo_fastscape.html#fastscape-model-hierarchy">Fastscape model hierarchy</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_13_2026_badland_day_3_deposition_algo_fastscape.html#bootstrap-model"><code class="docutils literal notranslate"><span class="pre">bootstrap_model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_13_2026_badland_day_3_deposition_algo_fastscape.html#basic-model"><code class="docutils literal notranslate"><span class="pre">basic_model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_13_2026_badland_day_3_deposition_algo_fastscape.html#sediment-model"><code class="docutils literal notranslate"><span class="pre">sediment_model</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_13_2026_badland_day_3_deposition_algo_fastscape.html#fastscape-spl-process">Fastscape <code class="docutils literal notranslate"><span class="pre">spl</span></code> process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_13_2026_badland_day_3_deposition_algo_fastscape.html#fastscape-uniformsedimentlayer">Fastscape <code class="docutils literal notranslate"><span class="pre">UniformSedimentLayer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_13_2026_badland_day_3_deposition_algo_fastscape.html#fastscape-marine-model">Fastscape <code class="docutils literal notranslate"><span class="pre">marine_model</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_13_2026_badland_day_3_deposition_algo_fastscape.html#fastscape-marine-parameters">Fastscape marine parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_13_2026_badland_day_3_deposition_algo_fastscape.html#comparison-with-landlab">Comparison with Landlab</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_13_2026_badland_day_3_deposition_algo_fastscape.html#landlab-erosiondeposition">Landlab <code class="docutils literal notranslate"><span class="pre">ErosionDeposition</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_13_2026_badland_day_3_deposition_algo_fastscape.html#landlab-simplesubmarinediffuser">Landlab <code class="docutils literal notranslate"><span class="pre">SimpleSubmarineDiffuser</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_13_2026_badland_day_3_deposition_algo_fastscape.html#badlands-fastscape-and-landlab">Badlands, Fastscape, and Landlab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_13_2026_badland_day_3_deposition_algo_fastscape.html#where-to-find-fastscape-sediment-deposition-code">Where to find Fastscape sediment-deposition code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_13_2026_badland_day_3_deposition_algo_fastscape.html#python-versus-fortran-versus-c">Python versus Fortran versus C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_13_2026_badland_day_3_deposition_algo_fastscape.html#best-approach-for-studying-the-code">Best approach for studying the code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_13_2026_badland_day_3_deposition_algo_fastscape.html#source-code-investigation-strategy">Source-code investigation strategy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_13_2026_badland_day_3_deposition_algo_fastscape.html#current-conceptual-understanding">Current conceptual understanding</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_13_2026_badland_day_3_deposition_algo_fastscape.html#badlands">Badlands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_13_2026_badland_day_3_deposition_algo_fastscape.html#fastscape">Fastscape</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_13_2026_badland_day_3_deposition_algo_fastscape.html#landlab">Landlab</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_13_2026_badland_day_3_deposition_algo_fastscape.html#what-particularly-caught-my-attention-today">What particularly caught my attention today</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_13_2026_badland_day_3_deposition_algo_fastscape.html#important-questions-for-the-next-stage">Important questions for the next stage</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_13_2026_badland_day_3_deposition_algo_fastscape.html#fastscape-fluvial-deposition">Fastscape fluvial deposition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_13_2026_badland_day_3_deposition_algo_fastscape.html#fastscape-sediment-storage">Fastscape sediment storage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_13_2026_badland_day_3_deposition_algo_fastscape.html#fastscape-marine-system">Fastscape marine system</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_13_2026_badland_day_3_deposition_algo_fastscape.html#badlands-comparison">Badlands comparison</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_13_2026_badland_day_3_deposition_algo_fastscape.html#landlab-comparison">Landlab comparison</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_13_2026_badland_day_3_deposition_algo_fastscape.html#aspect-landlab-coupling">ASPECT–Landlab coupling</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_13_2026_badland_day_3_deposition_algo_fastscape.html#current-conclusion">Current conclusion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_13_2026_badland_day_3_deposition_algo_fastscape.html#see-also">See also</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_13_2026_badland_day_3_deposition_algo_fastscape.html#landlab-vis-documentation-day-6">landlab_vis Documentation (Day 6)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_13_2026_badland_day_3_deposition_algo_fastscape.html#main-activities">Main activities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_13_2026_badland_day_3_deposition_algo_fastscape.html#python-basics">Python Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_13_2026_badland_day_3_deposition_algo_fastscape.html#important-documentation-style-decisions">Important documentation style decisions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_13_2026_badland_day_3_deposition_algo_fastscape.html#next-session">Next session</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../development_journal/August_14_2026_badland_day4__gasparni_brandon_2011_Salles_2011.html">August 14, 2026, Badland (Day 4) Gasparini &amp; Brandon (2011) and Salles et al. (2018) LEM, Sediment Transport, and the Evolution of Deposition Modeling</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_14_2026_badland_day4__gasparni_brandon_2011_Salles_2011.html#papers">Papers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_14_2026_badland_day4__gasparni_brandon_2011_Salles_2011.html#what-salles-et-al-2018-is-trying-to-do">1. What Salles et al. (2018) is trying to do</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_14_2026_badland_day4__gasparni_brandon_2011_Salles_2011.html#the-traditional-stream-power-approach">2. The traditional stream-power approach</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_14_2026_badland_day4__gasparni_brandon_2011_Salles_2011.html#what-reference-18-contributes">3. What Reference 18 contributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_14_2026_badland_day4__gasparni_brandon_2011_Salles_2011.html#why-this-is-not-simply-changing-m-and-n">4. Why this is NOT simply changing m and n</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_14_2026_badland_day4__gasparni_brandon_2011_Salles_2011.html#interpretation-of-the-effective-exponents">5. Interpretation of the effective exponents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_14_2026_badland_day4__gasparni_brandon_2011_Salles_2011.html#the-transition-toward-explicit-sediment-modeling">6. The transition toward explicit sediment modeling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_14_2026_badland_day4__gasparni_brandon_2011_Salles_2011.html#sediment-supply-versus-transport-capacity">7. Sediment supply versus transport capacity</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_14_2026_badland_day4__gasparni_brandon_2011_Salles_2011.html#case-1-q-s-q-t">Case 1: <span class="math notranslate nohighlight">\(Q_s &lt; Q_t\)</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_14_2026_badland_day4__gasparni_brandon_2011_Salles_2011.html#case-2-q-s-q-t">Case 2: <span class="math notranslate nohighlight">\(Q_s = Q_t\)</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_14_2026_badland_day4__gasparni_brandon_2011_Salles_2011.html#case-3-q-s-q-t">Case 3: <span class="math notranslate nohighlight">\(Q_s &gt; Q_t\)</span></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_14_2026_badland_day4__gasparni_brandon_2011_Salles_2011.html#why-this-matters-for-deposition-modeling">8. Why this matters for deposition modeling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_14_2026_badland_day4__gasparni_brandon_2011_Salles_2011.html#tool-effect-and-cover-effect">9. Tool effect and cover effect</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_14_2026_badland_day4__gasparni_brandon_2011_Salles_2011.html#tool-effect">Tool effect</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_14_2026_badland_day4__gasparni_brandon_2011_Salles_2011.html#cover-effect">Cover effect</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_14_2026_badland_day4__gasparni_brandon_2011_Salles_2011.html#what-salles-et-al-adds-beyond-the-incision-problem">10. What Salles et al. adds beyond the incision problem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_14_2026_badland_day4__gasparni_brandon_2011_Salles_2011.html#source-to-sink-perspective">11. Source-to-sink perspective</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_14_2026_badland_day4__gasparni_brandon_2011_Salles_2011.html#relevance-to-aspect-landlab-coupling">12. Relevance to ASPECT–Landlab coupling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_14_2026_badland_day4__gasparni_brandon_2011_Salles_2011.html#key-distinction-for-future-lem-studies">13. Key distinction for future LEM studies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_14_2026_badland_day4__gasparni_brandon_2011_Salles_2011.html#main-lesson-from-reference-18">14. Main lesson from Reference 18</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_14_2026_badland_day4__gasparni_brandon_2011_Salles_2011.html#main-lesson-from-salles-et-al-2018">15. Main lesson from Salles et al. (2018)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_14_2026_badland_day4__gasparni_brandon_2011_Salles_2011.html#research-questions-to-carry-forward">16. Research questions to carry forward</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_14_2026_badland_day4__gasparni_brandon_2011_Salles_2011.html#conceptual-summary">17. Conceptual summary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_14_2026_badland_day4__gasparni_brandon_2011_Salles_2011.html#key-takeaway">Key takeaway</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_14_2026_badland_day4__gasparni_brandon_2011_Salles_2011.html#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../development_journal/August_16_2026_analytical_collision_rift.html">August 16, 2026, Badland (Day 5) Rift setting and Topographic relaxation versus continental collision</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_16_2026_analytical_collision_rift.html#topographic-relaxation">Topographic relaxation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_16_2026_analytical_collision_rift.html#continental-collision">Continental collision</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_16_2026_analytical_collision_rift.html#fundamental-difference">Fundamental difference</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_16_2026_analytical_collision_rift.html#why-both-experiments-are-useful">Why both experiments are useful</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_16_2026_analytical_collision_rift.html#rift-setting-as-a-possible-third-experiment">Rift setting as a possible third experiment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_16_2026_analytical_collision_rift.html#why-rifting-is-different">Why rifting is different</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_16_2026_analytical_collision_rift.html#potential-sedimentary-feedback-in-a-rift">Potential sedimentary feedback in a rift</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_16_2026_analytical_collision_rift.html#why-the-paper-did-not-include-rifting">Why the paper did not include rifting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_16_2026_analytical_collision_rift.html#why-a-rift-experiment-would-be-scientifically-useful">Why a rift experiment would be scientifically useful</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_16_2026_analytical_collision_rift.html#the-word-inevitable-in-the-paper">The word “inevitable” in the paper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_16_2026_analytical_collision_rift.html#meaning-of-inevitable">Meaning of “inevitable”</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_16_2026_analytical_collision_rift.html#why-use-such-a-strong-word">Why use such a strong word?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_16_2026_analytical_collision_rift.html#relation-to-the-paper-s-motivation">Relation to the paper’s motivation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_16_2026_analytical_collision_rift.html#scientific-result-versus-authors-vision">Scientific result versus authors’ vision</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_16_2026_analytical_collision_rift.html#connection-to-the-aspectlandlab-n-substeps-investigation">Connection to the ASPECT–Landlab <code class="docutils literal notranslate"><span class="pre">n_substeps</span></code> investigation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_16_2026_analytical_collision_rift.html#key-conclusions">Key conclusions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../development_journal/August_17_2026_Lu_2026_Badland_Underworld.html">August 17, 2026 Badland  (Day 6) Underworld-Badland ALE-IB Free-Surface Modeling Lu et al., 2026 a,b (GMD)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_17_2026_Lu_2026_Badland_Underworld.html#two-paper-conceptual-progression">Two-paper conceptual progression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_17_2026_Lu_2026_Badland_Underworld.html#lu-et-al-2026a-true-free-surface-simulation">1. Lu et al. (2026a): True free-surface simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_17_2026_Lu_2026_Badland_Underworld.html#scientific-motivation">Scientific motivation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_17_2026_Lu_2026_Badland_Underworld.html#core-free-surface-update">Core free-surface update</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_17_2026_Lu_2026_Badland_Underworld.html#free-surface-update-sequence">Free-surface update sequence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_17_2026_Lu_2026_Badland_Underworld.html#free-surface-stabilization">Free-surface stabilization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_17_2026_Lu_2026_Badland_Underworld.html#numerical-experiments">Numerical experiments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_17_2026_Lu_2026_Badland_Underworld.html#lu-et-al-2026b-coupling-tectonics-and-surface-processes">2. Lu et al. (2026b): Coupling tectonics and surface processes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_17_2026_Lu_2026_Badland_Underworld.html#coupling-sequence">Coupling sequence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_17_2026_Lu_2026_Badland_Underworld.html#two-surfaces">Two surfaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_17_2026_Lu_2026_Badland_Underworld.html#relevance-to-the-aspect-landlab-implementation">3. Relevance to the ASPECT–Landlab implementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_17_2026_Lu_2026_Badland_Underworld.html#connection-to-the-current-n-substeps-investigation">4. Connection to the current <code class="docutils literal notranslate"><span class="pre">n_substeps</span></code> investigation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_17_2026_Lu_2026_Badland_Underworld.html#what-should-be-reproduced-in-aspect-landlab">5. What should be reproduced in ASPECT–Landlab?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_17_2026_Lu_2026_Badland_Underworld.html#topographic-relaxation">Topographic relaxation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_17_2026_Lu_2026_Badland_Underworld.html#fluvial-erodibility">Fluvial erodibility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_17_2026_Lu_2026_Badland_Underworld.html#continental-collision">Continental collision</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_17_2026_Lu_2026_Badland_Underworld.html#what-the-papers-leave-open">6. What the papers leave open</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_17_2026_Lu_2026_Badland_Underworld.html#proposed-manuscript-direction">7. Proposed manuscript direction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_17_2026_Lu_2026_Badland_Underworld.html#level-1-numerical-verification">Level 1: Numerical verification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_17_2026_Lu_2026_Badland_Underworld.html#level-2-coupling-verification">Level 2: Coupling verification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_17_2026_Lu_2026_Badland_Underworld.html#level-3-scientific-application">Level 3: Scientific application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_17_2026_Lu_2026_Badland_Underworld.html#why-a-rift-experiment-may-be-particularly-powerful">8. Why a rift experiment may be particularly powerful</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_17_2026_Lu_2026_Badland_Underworld.html#sediment-routing-as-a-longer-term-opportunity">9. Sediment routing as a longer-term opportunity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_17_2026_Lu_2026_Badland_Underworld.html#central-research-question">10. Central research question</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_17_2026_Lu_2026_Badland_Underworld.html#question-1-spatial-coupling">Question 1: Spatial coupling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_17_2026_Lu_2026_Badland_Underworld.html#question-2-temporal-coupling">Question 2: Temporal coupling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_17_2026_Lu_2026_Badland_Underworld.html#question-3-physical-coupling">Question 3: Physical coupling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_17_2026_Lu_2026_Badland_Underworld.html#proposed-numerical-experiment-matrix">11. Proposed numerical experiment matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_17_2026_Lu_2026_Badland_Underworld.html#numerical-convergence-experiment">12. Numerical convergence experiment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_17_2026_Lu_2026_Badland_Underworld.html#spatial-versus-temporal-coupling-error">13. Spatial versus temporal coupling error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_17_2026_Lu_2026_Badland_Underworld.html#figure-1-coupling-architecture">Figure 1: Coupling architecture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_17_2026_Lu_2026_Badland_Underworld.html#figure-2-spatial-transfer-test">Figure 2: Spatial-transfer test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_17_2026_Lu_2026_Badland_Underworld.html#figure-3-topographic-relaxation">Figure 3: Topographic relaxation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_17_2026_Lu_2026_Badland_Underworld.html#figure-4-n-substeps-convergence">Figure 4: <code class="docutils literal notranslate"><span class="pre">n_substeps</span></code> convergence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_17_2026_Lu_2026_Badland_Underworld.html#figure-5-erosion-deposition">Figure 5: Erosion/deposition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_17_2026_Lu_2026_Badland_Underworld.html#figure-6-tectonic-application">Figure 6: Tectonic application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_17_2026_Lu_2026_Badland_Underworld.html#figure-7-source-to-sink-evolution">Figure 7: Source-to-sink evolution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_17_2026_Lu_2026_Badland_Underworld.html#novality-in-manuscript">15. Novality in manuscript?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_17_2026_Lu_2026_Badland_Underworld.html#tentative-manuscript-hypothesis">16. Tentative manuscript hypothesis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_17_2026_Lu_2026_Badland_Underworld.html#likeley-experiment-for-immediate-implementation">17. Likeley experiment for immediate implementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_17_2026_Lu_2026_Badland_Underworld.html#key-conclusions-from-today-s-readings">18. Key conclusions from today’s readings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_17_2026_Lu_2026_Badland_Underworld.html#central-question-to-carry-forward">19. Central question to carry forward</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_17_2026_Lu_2026_Badland_Underworld.html#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../development_journal/August_18_2026_thieulot_G3_FANTOM-CASCADE.html">August 18, 2026, Thieulot et al. (2014): 3-D Coupled Tectonic–Landscape Evolution, FANTOM-CASCADE coupling</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_18_2026_thieulot_G3_FANTOM-CASCADE.html#paper">Paper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_18_2026_thieulot_G3_FANTOM-CASCADE.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_18_2026_thieulot_G3_FANTOM-CASCADE.html#key-contribution">Key contribution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_18_2026_thieulot_G3_FANTOM-CASCADE.html#numerical-coupling-architecture">Numerical coupling architecture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_18_2026_thieulot_G3_FANTOM-CASCADE.html#temporal-coupling-and-substepping">Temporal coupling and substepping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_18_2026_thieulot_G3_FANTOM-CASCADE.html#connection-to-the-aspectlandlab-n-substeps-experiment">Connection to the ASPECT–Landlab <code class="docutils literal notranslate"><span class="pre">n_substeps</span></code> experiment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_18_2026_thieulot_G3_FANTOM-CASCADE.html#coupling-frequency-convergence">Coupling-frequency convergence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_18_2026_thieulot_G3_FANTOM-CASCADE.html#spatial-coupling">Spatial coupling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_18_2026_thieulot_G3_FANTOM-CASCADE.html#persistent-versus-regenerated-landscape-surface">Persistent versus regenerated landscape surface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_18_2026_thieulot_G3_FANTOM-CASCADE.html#surface-grid-deformation-and-resolution">Surface-grid deformation and resolution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_18_2026_thieulot_G3_FANTOM-CASCADE.html#physical-experiments-in-the-paper">Physical experiments in the paper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_18_2026_thieulot_G3_FANTOM-CASCADE.html#nonlinear-response-to-erosion-efficiency">Nonlinear response to erosion efficiency</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_18_2026_thieulot_G3_FANTOM-CASCADE.html#three-dimensional-erosion-gradients">Three-dimensional erosion gradients</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_18_2026_thieulot_G3_FANTOM-CASCADE.html#limitations-of-the-study">Limitations of the study</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_18_2026_thieulot_G3_FANTOM-CASCADE.html#simplified-sediment-physics">Simplified sediment physics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_18_2026_thieulot_G3_FANTOM-CASCADE.html#simplified-discharge">Simplified discharge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_18_2026_thieulot_G3_FANTOM-CASCADE.html#simplified-incision-law">Simplified incision law</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_18_2026_thieulot_G3_FANTOM-CASCADE.html#limited-3-d-computational-resolution">Limited 3-D computational resolution</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_18_2026_thieulot_G3_FANTOM-CASCADE.html#relevance-to-the-aspectlandlab-project">Relevance to the ASPECT–Landlab project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_18_2026_thieulot_G3_FANTOM-CASCADE.html#potential-numerical-experiments">Potential numerical experiments</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_18_2026_thieulot_G3_FANTOM-CASCADE.html#stage-i-independent-verification">Stage I: Independent verification</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_18_2026_thieulot_G3_FANTOM-CASCADE.html#stage-ii-basic-coupling-verification">Stage II: Basic coupling verification</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_18_2026_thieulot_G3_FANTOM-CASCADE.html#stage-iii-temporal-convergence">Stage III: Temporal convergence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_18_2026_thieulot_G3_FANTOM-CASCADE.html#stage-iv-spatial-convergence">Stage IV: Spatial convergence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_18_2026_thieulot_G3_FANTOM-CASCADE.html#stage-v-scientific-experiments">Stage V: Scientific experiments</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_18_2026_thieulot_G3_FANTOM-CASCADE.html#connection-to-sediment-evolution">Connection to sediment evolution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_18_2026_thieulot_G3_FANTOM-CASCADE.html#potential-rift-application">Potential rift application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_18_2026_thieulot_G3_FANTOM-CASCADE.html#longer-term-scientific-direction">Longer-term scientific direction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_18_2026_thieulot_G3_FANTOM-CASCADE.html#most-important-connection-to-the-current-work">Most important connection to the current work</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_18_2026_thieulot_G3_FANTOM-CASCADE.html#future-scope">Future scope</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_18_2026_thieulot_G3_FANTOM-CASCADE.html#overall-assessment">Overall assessment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_18_2026_thieulot_G3_FANTOM-CASCADE.html#analytical-benchmark-and-parametric-analysis-framework">Analytical Benchmark and Parametric Analysis Framework</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_18_2026_thieulot_G3_FANTOM-CASCADE.html#whipple-and-meade-2004-analytical-surface-process-solution">Whipple and Meade (2004): Analytical Surface-Process Solution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_18_2026_thieulot_G3_FANTOM-CASCADE.html#section-5-2-parametric-investigation-and-characteristic-features">Section 5.2: Parametric Investigation and Characteristic Features</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_18_2026_thieulot_G3_FANTOM-CASCADE.html#objective-measurements">Objective Measurements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_18_2026_thieulot_G3_FANTOM-CASCADE.html#python-analysis-framework">Python Analysis Framework</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_18_2026_thieulot_G3_FANTOM-CASCADE.html#time-series-analysis">Time-Series Analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_18_2026_thieulot_G3_FANTOM-CASCADE.html#parameter-sweep-analysis">Parameter-Sweep Analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_18_2026_thieulot_G3_FANTOM-CASCADE.html#suggested-figures">Suggested Figures</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_18_2026_thieulot_G3_FANTOM-CASCADE.html#dimensionless-analysis">Dimensionless Analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_18_2026_thieulot_G3_FANTOM-CASCADE.html#steady-state-detection">Steady-State Detection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_18_2026_thieulot_G3_FANTOM-CASCADE.html#connection-to-aspect-landlab-coupling">Connection to ASPECT–Landlab Coupling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_18_2026_thieulot_G3_FANTOM-CASCADE.html#recommended-development-sequence">Recommended Development Sequence</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html">August 19, 2026 – Badlands (Day 7): Sediment Transport, Deposition, Stratigraphy, and Model Frameworks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#comparative-analysis-of-landscape-evolution-and-sedimentation-models">Comparative Analysis of Landscape-Evolution and Sedimentation Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#a-common-mathematical-foundation">1. A common mathematical foundation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#topography-evolves-through-competing-processes">1.1 Topography evolves through competing processes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#sediment-production-and-routing">1.2 Sediment production and routing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#drainage-and-topographic-gradients">1.3 Drainage and topographic gradients</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#the-most-important-distinction-erosion-versus-sediment-routing">2. The most important distinction: erosion versus sediment routing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#gasparini-brandon-sediment-as-a-control-on-incision">3. Gasparini &amp; Brandon: sediment as a control on incision</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#tool-effect">3.1 Tool effect</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#cover-effect">3.2 Cover effect</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#why-changing-m-and-n-is-not-the-same-thing">3.3 Why changing <code class="docutils literal notranslate"><span class="pre">m</span></code> and <code class="docutils literal notranslate"><span class="pre">n</span></code> is not the same thing</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#davy-lague-sediment-conservation-and-disequilibrium-transport">4. Davy &amp; Lague: sediment conservation and disequilibrium transport</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#transport-length">4.1 Transport length</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#relevance-to-tectonic-landscapes">4.2 Relevance to tectonic landscapes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#badlands-from-fluvial-erosion-to-source-to-sink-evolution">5. Badlands: from fluvial erosion to source-to-sink evolution</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#alluvial-plain-forced-deposition">5.1 Alluvial-plain forced deposition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#marine-deposition">5.2 Marine deposition</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#space-explicit-bedrock-and-alluvial-sediment-evolution">6. SPACE: explicit bedrock and alluvial sediment evolution</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#sediment-conservation">6.1 Sediment conservation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#evolution-of-the-alluvial-layer">6.2 Evolution of the alluvial layer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#mixed-bedrock-alluvial-channels">6.3 Mixed bedrock–alluvial channels</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#yuan-et-al-2019-efficient-solution-of-erosion-deposition-equations">7. Yuan et al. (2019): efficient solution of erosion–deposition equations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#fastscape-efficient-landscape-evolution-and-sediment-transport">8. FastScape: efficient landscape evolution and sediment transport</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#the-basic-model-architecture">8.1 The <code class="docutils literal notranslate"><span class="pre">basic_model</span></code> architecture</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#fastscape-sediment-model">8.2 FastScape sediment model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#fastscape-marine-model">8.3 FastScape marine model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#fastscape-language-architecture">8.4 FastScape language architecture</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#terrainbento-a-framework-for-comparing-landscape-evolution-models">9. Terrainbento: a framework for comparing landscape-evolution models</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#motivation">9.1 Motivation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#terrainbento-and-landlab">9.2 Terrainbento and Landlab</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#multiple-model-formulations">9.3 Multiple model formulations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#terrainbento-as-a-modular-architecture">9.4 Terrainbento as a modular architecture</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#terrainbento-and-sediment-modeling">9.5 Terrainbento and sediment modeling</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#terrainbento-and-aspect-landlab">10. Terrainbento and ASPECT–Landlab</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#a-major-architectural-lesson">10.1 A major architectural lesson</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#terrainbento-versus-aspect-landlab">10.2 Terrainbento versus ASPECT–Landlab</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#testing-philosophy-another-important-terrainbento-lesson">11. Testing philosophy: another important Terrainbento lesson</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#common-features-among-the-lems">12. Common features among the LEMs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#major-differences-among-the-models">13. Major differences among the models</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#major-conceptual-comparison">13.1 Major conceptual comparison</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#deposition-is-not-one-universal-process">14. Deposition is not one universal process</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#local-deposition">14.1 Local deposition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#supply-versus-transport-capacity">14.2 Supply versus transport capacity</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#terrestrial-versus-marine-deposition">14.3 Terrestrial versus marine deposition</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#why-space-is-particularly-interesting-for-a-rift-basin-experiment">15. Why SPACE is particularly interesting for a rift-basin experiment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#why-badlands-is-particularly-interesting-for-basin-stratigraphy">16. Why Badlands is particularly interesting for basin stratigraphy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#why-fastscape-is-particularly-interesting-for-geodynamic-coupling">17. Why FastScape is particularly interesting for geodynamic coupling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#why-terrainbento-matters-for-the-research-strategy">18. Why Terrainbento matters for the research strategy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#what-is-best-for-studying-a-rift-setting-sedimentary-basin">19. What is best for studying a rift-setting sedimentary basin?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#best-for-understanding-sediment-erosion-and-deposition-physics">19.1 Best for understanding sediment erosion and deposition physics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#best-for-basin-scale-source-to-sink-and-stratigraphic-evolution">19.2 Best for basin-scale source-to-sink and stratigraphic evolution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#best-for-efficient-geodynamic-coupling">19.3 Best for efficient geodynamic coupling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#best-for-comparing-alternative-formulations">19.4 Best for comparing alternative formulations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#best-combination-for-aspect-landlab">19.5 Best combination for ASPECT–Landlab</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#proposed-staged-development-for-aspect-landlab">20. Proposed staged development for ASPECT–Landlab</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#stage-1-simple-stream-power-erosion">20.1 Stage 1: simple stream-power erosion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#stage-2-add-deposition">20.2 Stage 2: add deposition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#stage-3-explicit-sediment-thickness">20.3 Stage 3: explicit sediment thickness</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#stage-4-add-transport-capacity">20.4 Stage 4: add transport capacity</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#stage-5-add-tectonic-subsidence-and-uplift">20.5 Stage 5: add tectonic subsidence and uplift</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#stage-6-add-sediment-loading-feedback">20.6 Stage 6: add sediment-loading feedback</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#why-the-rift-setting-is-scientifically-powerful">21. Why the rift setting is scientifically powerful</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#important-variables-for-the-rift-experiment">22. Important variables for the rift experiment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#a-common-comparison-framework-for-every-lem">23. A common comparison framework for every LEM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#the-evolution-of-lem-thinking">24. The evolution of LEM thinking</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#what-terrainbento-adds-to-this-evolution">25. What Terrainbento adds to this evolution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#implications-for-future-sediment-modeling">26. Implications for future sediment modeling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#future-grain-size-evolution">27. Future grain-size evolution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#research-opportunity-for-aspect-landlab">28. Research opportunity for ASPECT–Landlab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#final-interpretation">29. Final interpretation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development_journal/August_19_deposition_Badland_Day_7.html#main-takeaway-for-the-aspect-landlab-project">30. Main takeaway for the ASPECT–Landlab project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../development_journal/August_23_fastscape_reader_landlav_vis_day6.html">August 23, 2026 — Landlab-Vis Development <code class="docutils literal notranslate"><span class="pre">landlab_vis</span></code> (day 6)</a></li>
 </ul>
 </li>
 </ul>
@@ -401,21 +739,256 @@ rift basin development in a broader range of tectonic settings.</p>
 <div class="line"><em>Earth and Planetary Science Letters</em>, <strong>657</strong>, 119565.</div>
 <div class="line">DOI: <a class="reference external" href="https://doi.org/10.1016/j.epsl.2025.119565">https://doi.org/10.1016/j.epsl.2025.119565</a></div>
 </div>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../../_images/xue_etal_2025_fig_1_croped_rift.jpg"><img alt="../../_images/xue_etal_2025_fig_1_croped_rift.jpg" src="../../_images/xue_etal_2025_fig_1_croped_rift.jpg" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Figure 1 (b) from Xue et al., 2025</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <section id="figures">
 <h2>Figures<a class="headerlink" href="#figures" title="Link to this heading"></a></h2>
 <figure class="align-center">
 <a class="reference internal image-reference" href="../../_images/depo_drainage_topo_combine_Landlab_Fastscape.png"><img alt="../../_images/depo_drainage_topo_combine_Landlab_Fastscape.png" src="../../_images/depo_drainage_topo_combine_Landlab_Fastscape.png" style="width: 100%;" />
 </a>
 </figure>
+</section>
+<section id="random-noise-in-intial-topograpgy">
+<h2>Random noise in intial topograpgy<a class="headerlink" href="#random-noise-in-intial-topograpgy" title="Link to this heading"></a></h2>
 <figure class="align-center">
 <a class="reference internal image-reference" href="../../_images/random_noise.png"><img alt="../../_images/random_noise.png" src="../../_images/random_noise.png" style="width: 100%;" />
 </a>
 </figure>
 </section>
+<section id="landlab-output-landlab-00001-vtk-to-landlab-00052-vtk-and-fastscape-output-topography-00000-vtk-to-topography-00050-vtk-field-topography">
+<h2>Landlab output (<code class="docutils literal notranslate"><span class="pre">landlab_00001.vtk</span></code> to <code class="docutils literal notranslate"><span class="pre">landlab_00052.vtk</span></code>) and Fastscape output (<code class="docutils literal notranslate"><span class="pre">topography_00000.vtk</span></code> to <code class="docutils literal notranslate"><span class="pre">topography_00050.vtk</span></code>) field (<code class="docutils literal notranslate"><span class="pre">topography</span></code>)<a class="headerlink" href="#landlab-output-landlab-00001-vtk-to-landlab-00052-vtk-and-fastscape-output-topography-00000-vtk-to-topography-00050-vtk-field-topography" title="Link to this heading"></a></h2>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/landlab_fastscape_xprofile.gif"><img alt="../../_images/landlab_fastscape_xprofile.gif" src="../../_images/landlab_fastscape_xprofile.gif" style="width: 100%;" />
+</a>
+</figure>
+</section>
+<section id="landlab-output-landlab-00001-vtk-to-landlab-00052-vtk-field-sediment-deposit-thickness">
+<h2>Landlab output (<code class="docutils literal notranslate"><span class="pre">landlab_00001.vtk</span></code> to <code class="docutils literal notranslate"><span class="pre">landlab_00052.vtk</span></code>) field (<code class="docutils literal notranslate"><span class="pre">sediment_deposit__thickness</span></code>)<a class="headerlink" href="#landlab-output-landlab-00001-vtk-to-landlab-00052-vtk-field-sediment-deposit-thickness" title="Link to this heading"></a></h2>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/landlab_sediment_thickness_profile_animation.gif"><img alt="../../_images/landlab_sediment_thickness_profile_animation.gif" src="../../_images/landlab_sediment_thickness_profile_animation.gif" style="width: 100%;" />
+</a>
+</figure>
+</section>
+<section id="aspect-output-solution-pdv-field-sediment-thick">
+<h2>ASPECT output (<code class="docutils literal notranslate"><span class="pre">solution.pdv</span></code>) field (<code class="docutils literal notranslate"><span class="pre">sediment_thick</span></code>)<a class="headerlink" href="#aspect-output-solution-pdv-field-sediment-thick" title="Link to this heading"></a></h2>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/aspect_sediment_thickness_profile_comparison_animation.gif"><img alt="../../_images/aspect_sediment_thickness_profile_comparison_animation.gif" src="../../_images/aspect_sediment_thickness_profile_comparison_animation.gif" style="width: 100%;" />
+</a>
+</figure>
+<p>Landlab–FastScape Field Correspondence</p>
+</section>
+<section id="fields-that-match">
+<h2>Fields That Match<a class="headerlink" href="#fields-that-match" title="Link to this heading"></a></h2>
+<p>The following fields have a direct or potentially meaningful correspondence
+between Landlab and FastScape.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23.1%" />
+<col style="width: 23.1%" />
+<col style="width: 15.4%" />
+<col style="width: 38.5%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Landlab field</p></th>
+<th class="head"><p>FastScape field</p></th>
+<th class="head"><p>Match</p></th>
+<th class="head"><p>Interpretation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">topographic__elevation</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">topography</span></code></p></td>
+<td><p><strong>Direct</strong></p></td>
+<td><p>Surface/topographic elevation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">drainage_area</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">drainage_area</span></code></p></td>
+<td><p><strong>Direct name match</strong></p></td>
+<td><p>Contributing drainage area.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">surface_water__discharge</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">drainage_area</span></code></p></td>
+<td><p><strong>Possibly related</strong></p></td>
+<td><p>These are not equivalent physical quantities. The numerical maximum
+happens to be the same in this particular dataset, but this should not
+be interpreted as a direct correspondence.</p></td>
+</tr>
+</tbody>
+</table>
+<p>The two strongest matches are therefore:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Landlab                         FastScape
+------------------------------------------------
+topographic__elevation    &lt;--&gt;  topography
+drainage_area             &lt;--&gt;  drainage_area
+</pre></div>
+</div>
+</section>
+<section id="fields-that-do-not-match">
+<h2>Fields That Do Not Match<a class="headerlink" href="#fields-that-do-not-match" title="Link to this heading"></a></h2>
+<p>The following fields currently have <strong>no established correspondence</strong> in the
+other model. They are therefore kept separate rather than being paired based
+only on similar names or numerical values.</p>
+<section id="landlab-fields-without-a-fastscape-match">
+<h3>Landlab Fields Without a FastScape Match<a class="headerlink" href="#landlab-fields-without-a-fastscape-match" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 45.0%" />
+<col style="width: 55.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Landlab field</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sediment_deposit__thickness</span></code></p></td>
+<td><p>Sediment deposit thickness; no corresponding FastScape field has been
+identified.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sediment__flux</span></code></p></td>
+<td><p>Sediment flux; no corresponding FastScape field has been identified.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sediment__influx</span></code></p></td>
+<td><p>Sediment influx; no corresponding FastScape field has been identified.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sediment__outflux</span></code></p></td>
+<td><p>Sediment outflux; no corresponding FastScape field has been identified.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">topographic__steepest_slope</span></code></p></td>
+<td><p>Topographic steepest slope; no corresponding FastScape field has been
+identified.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">water__depth</span></code></p></td>
+<td><p>Water depth; no corresponding FastScape field has been identified.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">flow__receiver_node</span></code></p></td>
+<td><p>Flow receiver-node information; no corresponding FastScape field has
+been identified.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">flow__sink_flag</span></code></p></td>
+<td><p>Flow sink information; no corresponding FastScape field has been
+identified.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">kd</span></code></p></td>
+<td><p>Diffusivity-related field; no corresponding FastScape field has been
+identified.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">linear_diffusivity</span></code></p></td>
+<td><p>Linear diffusivity; no corresponding FastScape field has been
+identified.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">flow__data_structure_delta</span></code></p></td>
+<td><p>Flow data-structure information; no corresponding FastScape field has
+been identified.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">flow__link_to_receiver_node</span></code></p></td>
+<td><p>Flow-link information; no corresponding FastScape field has been
+identified.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">flow__upstream_node_order</span></code></p></td>
+<td><p>Upstream node ordering; no corresponding FastScape field has been
+identified.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">surface_water__discharge</span></code></p></td>
+<td><p>Surface-water discharge; no corresponding FastScape field has been
+identified.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">water__unit_flux_in</span></code></p></td>
+<td><p>Water unit flux; no corresponding FastScape field has been identified.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="fastscape-fields-without-a-landlab-match">
+<h3>FastScape Fields Without a Landlab Match<a class="headerlink" href="#fastscape-fields-without-a-landlab-match" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>FastScape field</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">HHHHH</span></code></p></td>
+<td><p>Constant field with a value of approximately <code class="docutils literal notranslate"><span class="pre">0.01</span></code>; no corresponding
+Landlab field has been identified.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">basement</span></code></p></td>
+<td><p>Basement elevation; no corresponding Landlab field has been identified.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">erosion_rate</span></code></p></td>
+<td><p>Erosion rate; no corresponding Landlab field has been identified.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">total_erosion</span></code></p></td>
+<td><p>Total erosion; no corresponding Landlab field has been identified.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">catchment</span></code></p></td>
+<td><p>Catchment information; no corresponding Landlab field has been
+identified.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">B</span></code></p></td>
+<td><p>FastScape <code class="docutils literal notranslate"><span class="pre">B</span></code> field; no corresponding Landlab field has been
+identified.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SL</span></code></p></td>
+<td><p>Sea-level field; no corresponding Landlab field has been identified.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="interpretation">
+<h3>Interpretation<a class="headerlink" href="#interpretation" title="Link to this heading"></a></h3>
+<p>Only fields with an established physical correspondence should be compared
+quantitatively. Fields that have not been matched are retained separately
+until their physical definitions and units can be established.</p>
+</section>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading"></a></h2>
+<p>At the current stage, the clearest field correspondences are:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35.0%" />
+<col style="width: 35.0%" />
+<col style="width: 30.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Landlab</p></th>
+<th class="head"><p>FastScape</p></th>
+<th class="head"><p>Status</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">topographic__elevation</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">topography</span></code></p></td>
+<td><p><strong>Direct match</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">drainage_area</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">drainage_area</span></code></p></td>
+<td><p><strong>Direct name match; numerical comparison still required</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>Other listed fields</p></td>
+<td><p>Other listed fields</p></td>
+<td><p><strong>No direct match established</strong></p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">drainage_area</span></code> correspondence should be investigated further before
+using it for quantitative validation because the field names match but the
+reported numerical ranges are substantially different.</p>
+</section>
 <section id="table-of-fastscape-aspect-to-landlab-aspect-mapping">
 <h2>Table of FastScape–ASPECT to Landlab–ASPECT Mapping<a class="headerlink" href="#table-of-fastscape-aspect-to-landlab-aspect-mapping" title="Link to this heading"></a></h2>
-<table class="docutils align-default" id="id1">
-<caption><span class="caption-number">Table 1 </span><span class="caption-text">FastScape–ASPECT to Landlab–ASPECT mapping</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">FastScape–ASPECT to Landlab–ASPECT mapping</span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
 <colgroup>
 <col style="width: 18.0%" />
 <col style="width: 28.0%" />
@@ -611,8 +1184,8 @@ Sediment diffusivity = -1
 </section>
 <section id="common-erosional-parameter-mapping">
 <h2>Common Erosional Parameter Mapping<a class="headerlink" href="#common-erosional-parameter-mapping" title="Link to this heading"></a></h2>
-<table class="docutils align-default" id="id2">
-<caption><span class="caption-number">Table 2 </span><span class="caption-text">FastScape erosional parameters and their Landlab equivalents</span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">FastScape erosional parameters and their Landlab equivalents</span><a class="headerlink" href="#id3" title="Link to this table"></a></caption>
 <colgroup>
 <col style="width: 35.0%" />
 <col style="width: 30.0%" />
@@ -662,8 +1235,8 @@ values should be passed directly as</p>
 per year to per second, resulting in values that are too small by a factor
 of approximately <span class="math notranslate nohighlight">\(3.16 \times 10^7\)</span>.</p>
 </div>
-<table class="docutils align-default" id="id3">
-<caption><span class="caption-number">Table 3 </span><span class="caption-text">Typical ranges of bedrock incision/uplift rates and linear hillslope diffusivities</span><a class="headerlink" href="#id3" title="Link to this table"></a></caption>
+<table class="docutils align-default" id="id4">
+<caption><span class="caption-number">Table 3 </span><span class="caption-text">Typical ranges of bedrock incision/uplift rates and linear hillslope diffusivities</span><a class="headerlink" href="#id4" title="Link to this table"></a></caption>
 <colgroup>
 <col style="width: 36.8%" />
 <col style="width: 31.6%" />
@@ -697,8 +1270,8 @@ of approximately <span class="math notranslate nohighlight">\(3.16 \times 10^7\)
 </section>
 <section id="deposition-parameter-mapping">
 <h2>Deposition Parameter Mapping<a class="headerlink" href="#deposition-parameter-mapping" title="Link to this heading"></a></h2>
-<table class="docutils align-default" id="id4">
-<caption><span class="caption-number">Table 4 </span><span class="caption-text">FastScape deposition parameters and their Landlab equivalents</span><a class="headerlink" href="#id4" title="Link to this table"></a></caption>
+<table class="docutils align-default" id="id5">
+<caption><span class="caption-number">Table 4 </span><span class="caption-text">FastScape deposition parameters and their Landlab equivalents</span><a class="headerlink" href="#id5" title="Link to this table"></a></caption>
 <colgroup>
 <col style="width: 35.0%" />
 <col style="width: 30.0%" />
@@ -732,8 +1305,8 @@ of approximately <span class="math notranslate nohighlight">\(3.16 \times 10^7\)
 </section>
 <section id="marine-parameter-mapping">
 <h2>Marine Parameter Mapping<a class="headerlink" href="#marine-parameter-mapping" title="Link to this heading"></a></h2>
-<table class="docutils align-default" id="id5">
-<caption><span class="caption-number">Table 5 </span><span class="caption-text">FastScape marine parameters and their Landlab equivalents</span><a class="headerlink" href="#id5" title="Link to this table"></a></caption>
+<table class="docutils align-default" id="id6">
+<caption><span class="caption-number">Table 5 </span><span class="caption-text">FastScape marine parameters and their Landlab equivalents</span><a class="headerlink" href="#id6" title="Link to this table"></a></caption>
 <colgroup>
 <col style="width: 35.0%" />
 <col style="width: 30.0%" />

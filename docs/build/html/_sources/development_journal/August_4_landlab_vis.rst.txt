@@ -1,4 +1,4 @@
-August 4, 2026, FastScape Benchmark Investigation and Transition from ParaView to `landlab_vis` (Day 1) a Reusable Landlab (.vtk files) Visualization Framework
+August 4, 2026, FastScape Benchmark Investigation and Transition from ParaView to ``landlab_vis`` (Day 1) a Reusable Landlab (.vtk files) Visualization Framework
 ==================================================================================================================================================================
 
 

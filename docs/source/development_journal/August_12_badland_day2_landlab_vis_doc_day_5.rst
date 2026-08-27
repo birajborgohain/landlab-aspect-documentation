@@ -1,4 +1,4 @@
-August 12, 2026 – Badlands (Day 2): Alluvial and Marine Deposition and landlab_vis Documentation Development (Day 5)
+August 12, 2026 – Badlands (Day 2): Alluvial and Marine Deposition and ``landlab_vis`` (Day 5) API Documentation 
 ======================================================================================================================
 
 Main Activities
