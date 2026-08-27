@@ -24,3 +24,6 @@ This section summarizes the day-to-day development, implementation, testing, and
     August_16_2026_analytical_collision_rift
     August_17_2026_Lu_2026_Badland_Underworld
     August_18_2026_thieulot_G3_FANTOM-CASCADE
+    August_19_deposition_Badland_Day_7
+    August_23_fastscape_reader_landlav_vis_day6
+    

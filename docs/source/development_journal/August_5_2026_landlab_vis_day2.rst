@@ -1,4 +1,4 @@
-August 5, 2026 `landlab_vis` (day 2): A Python Visualization and Analysis Framework for Landlab and ASPECT Outputs
+August 5, 2026 ``landlab_vis`` (day 2): A Python Visualization and Analysis Framework for Landlab and ASPECT Outputs
 =====================================================================================================================
 
 

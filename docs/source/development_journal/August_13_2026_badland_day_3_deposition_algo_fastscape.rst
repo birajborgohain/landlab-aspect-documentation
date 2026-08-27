@@ -1,5 +1,5 @@
-August 13, 2026 – Badlands (Day 3): Deposition Processes and Exploring Fastscape and landlab_vis Documentation (Day 6)
-=======================================================================================================================
+August 13, 2026 – Badlands (Day 3): Deposition Processes and Exploring Fastscape and ``landlab_vis`` (Day 6) API Documentation 
+===============================================================================================================================
 
 Study focus
 -----------
