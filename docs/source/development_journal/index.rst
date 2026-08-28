@@ -26,4 +26,7 @@ This section summarizes the day-to-day development, implementation, testing, and
     August_18_2026_thieulot_G3_FANTOM-CASCADE
     August_19_deposition_Badland_Day_7
     August_23_fastscape_reader_landlav_vis_day6
+    August_25_2026_field_class_landlab_vis_day7.rst
+    August_26_2026_field_plotting_landlab_vis_day8.rst
+    August_28_2026_ll_mesh_def_debugging.rst
     
