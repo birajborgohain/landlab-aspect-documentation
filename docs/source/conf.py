@@ -139,6 +139,11 @@ VerbatimBorderColor={rgb}{1,1,1}
 
 numfig = False
 
+html_js_files = [
+    'code-blocks.js',
+    'slides.js',
+]
+
 # latex_elements = {
 #     "sphinxsetup": r"""
 # verbatimwithframe=false,
@@ -242,3 +247,44 @@ extensions = [
 
 
 html_theme = "sphinx_rtd_theme"
+
+
+import os
+import shutil
+
+figure_sources = {
+    "0007": "/Users/biraj/cookbook_biraj/0007_20260910_asp310_landlab_pr43_3d_Xue3Dfastmodel-smaller_with_self_template_with_topography_with_field_sea0/outputs/0007_20260910_asp310_landlab_pr43_3d_Xue3Dfastmodel_smaller_with_self_template_with_topography_with_field_sea0/figure_landlab_vis",
+
+    "0006": "/Users/biraj/cookbook_biraj/0006_20260908_asp310_landlab_pr43_3D_Xue_3Dfastmodel-smaller_with_self_template_with_topography_with_field/outputs/lla_check_landlab_xue_self_template_with_topography_with_field/figure_landlab_vis",
+
+    "0005": "/Users/biraj/cookbook_biraj/0005_20260905_asp310_land_lla_check_3D_Ada_Tmodel_noWB_z_corrected/outputs/no_wb_z_corrected_3D_Ada_MAC_SA-INS/figure_landlab_vis",
+
+    "0004": "/Users/biraj/cookbook_biraj/0004_20260905_asp310_landlab_pr43_3D_Xue_3Dfastmodel-smaller_with_self_template_with_topography/outputs/lla_check_landlab_xue_self_template_with_topography/figure_landlab_vis",
+
+    "0001": "/Users/biraj/cookbook_biraj/0001_20260904_asp310_landlab_lla_check_2D_Ada_Tmodel_noWB_but_fault_in_prm_with_topography/figure_landlab_vis",
+
+    "0003": "/Users/biraj/cookbook_biraj/0003_20260904_asp310_fastsca_lla_check_3D_Xue_3Dfastmodel_smaller_with_topography/figure_landlab_vis",
+    
+    "0010": "/Users/biraj/cookbook_biraj/0010_20260913_asp310_fastscape_pr43_3D_Xue_3Dfastsmaller_with_topography_field_sea0/0010_20260913_field_sea0/figure_landlab_vis"
+}
+
+
+# Documentation directory
+docs_dir = os.path.dirname(__file__)
+
+destination_root = os.path.join(
+    docs_dir,
+    "figure_landlab_vis",
+)
+
+
+for run_name, source in figure_sources.items():
+
+    destination = os.path.join(
+        destination_root,
+        run_name,
+    )
+
+    if os.path.exists(source):
+        shutil.rmtree(destination, ignore_errors=True)
+        shutil.copytree(source, destination)

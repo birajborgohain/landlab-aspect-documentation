@@ -616,3 +616,320 @@ The native 3-D test is therefore a successful validation of the new
 ``ll_mesh_def`` Landlab coupling. The custom Liang model should be treated as
 a separate compatibility/conversion task rather than evidence that the PR
 coupling itself is failing.
+
+
+ASPECT–Landlab ll_mesh_def Compatibility and Working Configuration
+-----------------------------------------------------------------------
+
+.. note::
+
+   **Current working status:** The ASPECT–Landlab model now runs successfully on Daniel's ``ll_mesh_def`` branch using ASPECT 3.1.0-pre, deal.II 9.7.0, Landlab 2.11.0, and 23 MPI processes. The current working Liang model uses the new ``landlab_template.py`` interface for coupling, while Landlab VTK output is generated with the retained ``save_landlab_output()`` function because the current ``landlab.cc`` implementation does not call the template ``write_output()`` callback.
+
+Background
+----------
+
+The original Liang Landlab script used an older ASPECT–Landlab interface. During migration to Daniel's ``ll_mesh_def`` branch, the older ``landlab_template.py`` / ``LandLabTemplate`` interface and older ``cookbooks/landlab`` structure were not present. The current branch instead contains ``contrib/landlab/`` and the current Landlab coupling implementation. A current ``landlab_template.py`` was therefore introduced into ``contrib/python/scripts/`` and the Liang model was adapted to its interface.
+
+Landlab Python Environment
+--------------------------
+
+The Landlab environment is provided through ``contrib/landlab/``:
+
+.. code-block:: console
+
+   cd ~/software/aspect_ll_mesh_def
+   uv sync --project contrib/landlab/
+   source ./contrib/landlab/.venv/bin/activate
+
+The environment was verified with:
+
+.. code-block:: console
+
+   python -c "import landlab; print(landlab.__version__)"
+
+which reports:
+
+.. code-block:: text
+
+   2.11.0
+
+The Liang script also requires ``mpi4py`` and the environment was updated so that both Landlab and ``mpi4py`` can be imported successfully.
+
+New Landlab Template Interface
+------------------------------
+
+The current template is located at:
+
+.. code-block:: text
+
+   ~/software/aspect_ll_mesh_def/contrib/python/scripts/landlab_template.py
+
+The Liang script now imports:
+
+.. code-block:: python
+
+   from landlab_template import LandlabTemplate
+
+and uses:
+
+.. code-block:: python
+
+   class MyAspectLandlabModel(LandlabTemplate):
+
+The template provides the common callbacks used by the ASPECT coupling, including ``initialize()``, ``set_mesh_information()``, ``update_until()``, ``get_initial_topography()``, ``write_output()``, checkpoint functions, and ``export_aspect_callbacks()``.
+
+The template also initializes:
+
+.. code-block:: python
+
+   self.vtks = []
+
+Changes to ``update_until()``
+-----------------------------
+
+The old Liang ``update_until()`` interface was changed to:
+
+.. code-block:: python
+
+   def update_until(
+       self,
+       ASPECT_solution_at_Landlab_nodes_dict,
+       ASPECT_additional_info_dict
+   ):
+
+The ASPECT information is obtained from ``ASPECT_additional_info_dict``:
+
+.. code-block:: python
+
+   ASPECT_dim = ASPECT_additional_info_dict["ASPECT dimension"]
+   end_time = ASPECT_additional_info_dict["ASPECT model time"]
+   dt = ASPECT_additional_info_dict["ASPECT timestep size"]
+   self.current_time = end_time
+   self.timestep = ASPECT_additional_info_dict["ASPECT timestep number"]
+
+The old ``end_time`` function argument is no longer used.
+
+The old solution dictionary name:
+
+.. code-block:: python
+
+   ASPECT_fields_at_Landlab_nodes_dict
+
+was replaced with:
+
+.. code-block:: python
+
+   ASPECT_solution_at_Landlab_nodes_dict
+
+The ASPECT timestep size is now obtained directly from ASPECT rather than calculated from the old ``end_time`` interface.
+
+Timestep Type Modification
+---------------------------
+
+The current interface supplies the timestep number as a floating-point value. The old VTK filename format:
+
+.. code-block:: python
+
+   f"landlab_{self.timestep:04d}.vtk"
+
+therefore produced a ``ValueError`` because ``:04d`` requires an integer.
+
+The working code converts the timestep to an integer:
+
+.. code-block:: python
+
+   self.timestep = int(
+       ASPECT_additional_info_dict["ASPECT timestep number"]
+   )
+
+The existing filename format can then be used safely.
+
+Landlab Grid and Components
+---------------------------
+
+The working Liang model creates a 2.5 km spacing RasterModelGrid over a 300 km by 120 km physical domain.
+
+.. code-block:: python
+
+   x_extent = 300e3
+   y_extent = 120e3
+   spacing = 2500.0
+   ghost_nodes = 2
+
+The physical domain contains 120 X intervals and 48 Y intervals. Including the additional buffer/ghost treatment gives 123 columns and 51 rows, for a total of 6273 nodes.
+
+The lower-left corner is shifted by one grid spacing:
+
+.. code-block:: python
+
+   xy_of_lower_left=(-spacing, -spacing)
+
+The initial topography uses the Fastscape ``FlatSurface`` random-number approach:
+
+.. code-block:: python
+
+   seed = 1000
+   rs = np.random.RandomState(seed=seed)
+   self.elevation[:] = rs.rand(
+       self.model_grid.number_of_nodes
+   )
+
+The working run reports:
+
+.. code-block:: text
+
+   number of nodes: 6273
+
+The initialized Landlab components include ``LinearDiffuser``, ``FlowAccumulator``, ``ErosionDeposition``, ``SimpleSubmarineDiffuser``, and ``AdvectionSolverTVD``.
+
+The component parameters are converted using the template's ``self.seconds_in_year`` instead of the old ``self.s2yr`` variable.
+
+Output: ``write_output()`` versus ``save_landlab_output()``
+------------------------------------------------------------
+
+The current template contains:
+
+.. code-block:: python
+
+   def write_output(self, postprocess_dictionary, output_frequency):
+
+This function is designed to receive the ASPECT timestep number, model time, and output directory and then create the Landlab VTK output.
+
+However, inspection of ``source/mesh_deformation/landlab.cc`` showed that the current C++ implementation calls:
+
+.. code-block:: text
+
+   initialize
+   set_mesh_information
+   get_grid_x
+   get_grid_y
+   get_grid_z
+   update_until
+   get_initial_topography
+
+but does not call:
+
+.. code-block:: text
+
+   write_output
+
+Therefore, defining ``write_output()`` in the Python template does not currently cause Landlab VTK files to be generated.
+
+An attempt to call:
+
+.. code-block:: python
+
+   write_output(postprocess_dictionary, output_frequency)
+
+inside ``update_until()`` was incorrect because those variables are not arguments available to ``update_until()``. That call was removed.
+
+Working Alternative: ``save_landlab_output()``
+-----------------------------------------------
+
+The previously working ``save_landlab_output()`` function was retained as the current Landlab output mechanism.
+
+It:
+
+* finds the ASPECT output directories under ``outputs``;
+* selects the most recently modified ASPECT output directory;
+* creates the ``landlab`` subdirectory;
+* writes the current Landlab grid as a VTK file;
+* stores the model time and filename in ``self.vtks``; and
+* updates ``landlab.vtk.series``.
+
+The important modification for the new interface is the integer conversion in the filename:
+
+.. code-block:: python
+
+   filename = os.path.join(
+       output_directory,
+       f"landlab_{int(self.timestep):04d}.vtk"
+   )
+
+The current ``update_until()`` calls:
+
+.. code-block:: python
+
+   self.save_landlab_output()
+
+after the Landlab topography has been evolved and before returning the dimensional topographic change.
+
+Current Working Sequence
+------------------------
+
+The current working model follows this sequence:
+
+.. code-block:: text
+
+   ASPECT provides solution and auxiliary information
+                         |
+                         v
+                update_until()
+                         |
+                         +-- obtain ASPECT dimension
+                         +-- obtain ASPECT model time
+                         +-- obtain ASPECT timestep size
+                         +-- obtain ASPECT timestep number
+                         +-- determine ASPECT velocities
+                         +-- evolve Landlab components
+                         +-- calculate deposition/erosion change
+                         +-- save_landlab_output()
+                         +-- return dimensional change
+                         |
+                         v
+                    ASPECT continues
+
+Successful Run
+--------------
+
+The working ASPECT executable is:
+
+.. code-block:: text
+
+   /Users/biraj/software/aspect_ll_mesh_def/build/aspect-release
+
+It reports:
+
+.. code-block:: text
+
+   version 3.1.0-pre (ll_mesh_def, f3381ee50)
+   using deal.II 9.7.0
+   using Trilinos 16.2.0
+   using p4est 2.8.7
+   using Geodynamic World Builder 1.1.1
+   running in OPTIMIZED mode
+   running with 23 MPI processes
+
+The model successfully reaches Landlab initialization:
+
+.. code-block:: text
+
+   Creating RasterModelGrid ...
+   Creating topographic elevation ...
+   number of nodes: 6273
+   Done
+
+The model then successfully evolves the Landlab surface and produces elevation diagnostics. Landlab VTK output is generated by ``save_landlab_output()``.
+
+Final Summary
+-------------
+
+1. The new ``landlab_template.py`` interface was introduced and the Liang model was adapted to inherit from ``LandlabTemplate``.
+
+2. The old ``update_until()`` interface was replaced with the new solution and auxiliary dictionaries.
+
+3. ASPECT model time, timestep size, timestep number, and dimension are obtained from ``ASPECT_additional_info_dict``.
+
+4. ``ASPECT_fields_at_Landlab_nodes_dict`` was replaced by ``ASPECT_solution_at_Landlab_nodes_dict``.
+
+5. The old ``self.s2yr`` usage was replaced by ``self.seconds_in_year``.
+
+6. The ASPECT timestep number was converted to an integer for VTK filename formatting.
+
+7. The template ``write_output()`` function was investigated, but it cannot currently be used for output because the present ``landlab.cc`` implementation does not invoke that callback.
+
+8. The old ``save_landlab_output()`` function was retained and modified to work with the new timestep type. This function successfully creates the Landlab output directory, writes VTK files, and updates ``landlab.vtk.series``.
+
+9. The complete ASPECT–Landlab model now runs successfully with ASPECT 3.1.0-pre, deal.II 9.7.0, Landlab 2.11.0, and 23 MPI processes.
+
+10. The remaining development question is whether the intended ``ll_mesh_def`` design should add a C++ call to ``write_output()``, or whether ``save_landlab_output()`` should remain the working output mechanism.

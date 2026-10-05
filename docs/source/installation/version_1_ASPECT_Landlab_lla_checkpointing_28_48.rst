@@ -3278,3 +3278,618 @@ included below.
     echo "============================================================"
 
 
+with UV sync
+-------------
+
+.. code:: bash
+    
+    #!/bin/bash
+
+    set -e
+
+    # ============================================================
+    # ASPECT 3.1.0-pre Landlab Checkpointing Installation
+    #
+    # Exact commit:
+    #     28c914f482fe5d9bba409267d534e66ee5602ceb
+    #
+    # Short commit:
+    #     28c914f48
+    #
+    # Linux workstation installation
+    # ============================================================
+
+    ASPECT_VERSION="3.1.0-pre"
+    ASPECT_COMMIT="28c914f482fe5d9bba409267d534e66ee5602ceb"
+    ASPECT_SHORT_COMMIT="28c914f48"
+
+    REQUIRED_PYTHON_VERSION="3.12"
+    REQUIRED_DEAL_II_VERSION="9.7.0"
+
+    SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+
+    ASPECT_DIR="$SCRIPT_DIR/aspect-3.1.0-pre-lla-checkpointing-28c914f48-exact"
+    BUILD_DIR="$ASPECT_DIR/build"
+
+    ARCHIVE="$SCRIPT_DIR/28c914f48.tar.gz"
+
+    VENV="$ASPECT_DIR/.venv"
+    PYTHON="$VENV/bin/python"
+
+    ASPECT_EXECUTABLE="$BUILD_DIR/aspect-release"
+
+
+    # ============================================================
+    # Helper
+    # ============================================================
+
+    error_exit()
+    {
+        echo
+        echo "============================================================"
+        echo "ERROR"
+        echo "============================================================"
+        echo
+        echo "$1"
+        echo
+        exit 1
+    }
+
+
+    # ============================================================
+    # STEP 1
+    # Operating system
+    # ============================================================
+
+    echo "============================================================"
+    echo "STEP 1: Operating system"
+    echo "============================================================"
+
+    OS="$(uname -s)"
+
+    echo
+    echo "Operating system:"
+    echo "$OS"
+
+    if [ "$OS" != "Linux" ]; then
+        error_exit "This version of the installer is intended for Linux."
+    fi
+
+
+    # ============================================================
+    # STEP 2
+    # Check basic commands
+    # ============================================================
+
+    echo
+    echo "============================================================"
+    echo "STEP 2: Checking basic commands"
+    echo "============================================================"
+
+    for CMD in curl tar find grep sed; do
+
+        if command -v "$CMD" >/dev/null 2>&1; then
+            echo "FOUND: $CMD -> $(command -v "$CMD")"
+        else
+            error_exit "$CMD was not found."
+        fi
+
+    done
+
+
+    # ============================================================
+    # STEP 3
+    # Install / detect uv
+    # ============================================================
+
+    echo
+    echo "============================================================"
+    echo "STEP 3: Checking uv"
+    echo "============================================================"
+
+    if command -v uv >/dev/null 2>&1; then
+
+        echo
+        echo "uv already exists:"
+        which uv
+        uv --version
+
+    else
+
+        echo
+        echo "uv was not found."
+        echo "Installing uv..."
+
+        curl -LsSf https://astral.sh/uv/install.sh | sh
+
+        export PATH="$HOME/.local/bin:$PATH"
+
+        if ! command -v uv >/dev/null 2>&1; then
+            error_exit "uv installation failed."
+        fi
+
+        echo
+        echo "uv installed:"
+        which uv
+        uv --version
+
+    fi
+
+
+    # ============================================================
+    # STEP 4
+    # Download ASPECT
+    # ============================================================
+
+    echo
+    echo "============================================================"
+    echo "STEP 4: Download ASPECT"
+    echo "============================================================"
+
+    mkdir -p "$SCRIPT_DIR"
+
+    if [ ! -f "$ARCHIVE" ]; then
+
+        echo
+        echo "Downloading ASPECT commit:"
+        echo "$ASPECT_COMMIT"
+
+        curl -L \
+            -o "$ARCHIVE" \
+            "https://github.com/landlab-aspect/aspect/archive/$ASPECT_COMMIT.tar.gz"
+
+    else
+
+        echo
+        echo "ASPECT archive already exists:"
+        echo "$ARCHIVE"
+
+    fi
+
+
+    # ============================================================
+    # STEP 5
+    # Extract ASPECT
+    # ============================================================
+
+    echo
+    echo "============================================================"
+    echo "STEP 5: Extract ASPECT"
+    echo "============================================================"
+
+    if [ ! -d "$ASPECT_DIR" ]; then
+
+        tar -xzf "$ARCHIVE" -C "$SCRIPT_DIR"
+
+        EXTRACTED_DIR="$SCRIPT_DIR/aspect-$ASPECT_COMMIT"
+
+        if [ ! -d "$EXTRACTED_DIR" ]; then
+            error_exit "ASPECT extraction directory was not found."
+        fi
+
+        mv "$EXTRACTED_DIR" "$ASPECT_DIR"
+
+    else
+
+        echo
+        echo "ASPECT source already exists:"
+        echo "$ASPECT_DIR"
+
+    fi
+
+
+    # ============================================================
+    # STEP 6
+    # Verify ASPECT source
+    # ============================================================
+
+    echo
+    echo "============================================================"
+    echo "STEP 6: Verify ASPECT source"
+    echo "============================================================"
+
+    cd "$ASPECT_DIR"
+
+    if [ ! -f VERSION ]; then
+        error_exit "VERSION file was not found."
+    fi
+
+    FOUND_VERSION="$(tr -d '[:space:]' < VERSION)"
+
+    echo
+    echo "Expected:"
+    echo "$ASPECT_VERSION"
+
+    echo
+    echo "Found:"
+    echo "$FOUND_VERSION"
+
+    if [ "$FOUND_VERSION" != "$ASPECT_VERSION" ]; then
+        error_exit "ASPECT version does not match."
+    fi
+
+    echo
+    echo "Checking Landlab checkpointing implementation..."
+
+    if grep -q "resume_checkpoint" \
+        source/mesh_deformation/landlab.cc 2>/dev/null; then
+
+        echo "FOUND: resume_checkpoint"
+
+    else
+
+        error_exit \
+            "Expected Landlab checkpointing implementation was not found."
+
+    fi
+
+
+    # ============================================================
+    # STEP 7
+    # Create Python environment using uv
+    # ============================================================
+
+    echo
+    echo "============================================================"
+    echo "STEP 7: Creating Python environment"
+    echo "============================================================"
+
+    cd "$ASPECT_DIR"
+
+    echo
+    echo "Removing existing .venv if present..."
+
+    rm -rf "$VENV"
+
+    echo
+    echo "Creating Python $REQUIRED_PYTHON_VERSION environment..."
+
+    uv venv \
+        --python "$REQUIRED_PYTHON_VERSION" \
+        "$VENV"
+
+    if [ ! -x "$PYTHON" ]; then
+        error_exit "Python virtual environment was not created."
+    fi
+
+    echo
+    echo "Python:"
+    "$PYTHON" --version
+
+    echo
+    echo "Python executable:"
+    echo "$PYTHON"
+
+
+    # ============================================================
+    # STEP 8
+    # Install ASPECT Python dependencies
+    # ============================================================
+
+    echo
+    echo "============================================================"
+    echo "STEP 8: Running uv sync"
+    echo "============================================================"
+
+    cd "$ASPECT_DIR"
+
+    uv sync
+
+
+    # ============================================================
+    # STEP 9
+    # Verify Python packages
+    # ============================================================
+
+    echo
+    echo "============================================================"
+    echo "STEP 9: Verify Python environment"
+    echo "============================================================"
+
+    echo
+    echo "Python:"
+    "$PYTHON" --version
+
+    echo
+    echo "Landlab:"
+
+    "$PYTHON" -c \
+        "import landlab; print('Landlab:', landlab.__version__)"
+
+    echo
+    echo "mpi4py:"
+
+    "$PYTHON" -c \
+        "import mpi4py; print('mpi4py:', mpi4py.__version__)"
+
+    echo
+    echo "NumPy:"
+
+    "$PYTHON" -c \
+        "import numpy; print('NumPy:', numpy.__version__)"
+
+
+    # ============================================================
+    # STEP 10
+    # Load / identify compiler
+    # ============================================================
+
+    echo
+    echo "============================================================"
+    echo "STEP 10: Compiler"
+    echo "============================================================"
+
+    if ! command -v gcc >/dev/null 2>&1; then
+        error_exit "gcc was not found."
+    fi
+
+    if ! command -v g++ >/dev/null 2>&1; then
+        error_exit "g++ was not found."
+    fi
+
+    CC="$(command -v gcc)"
+    CXX="$(command -v g++)"
+
+    echo
+    echo "C compiler:"
+    echo "$CC"
+
+    "$CC" --version | head -1
+
+    echo
+    echo "C++ compiler:"
+    echo "$CXX"
+
+    "$CXX" --version | head -1
+
+
+    # ============================================================
+    # STEP 11
+    # MPI
+    # ============================================================
+
+    echo
+    echo "============================================================"
+    echo "STEP 11: MPI"
+    echo "============================================================"
+
+    if ! command -v mpirun >/dev/null 2>&1; then
+        error_exit "mpirun was not found."
+    fi
+
+    MPI_RUN="$(command -v mpirun)"
+
+    echo
+    echo "MPI:"
+    echo "$MPI_RUN"
+
+    "$MPI_RUN" --version | head -3
+
+
+    # ============================================================
+    # STEP 12
+    # CMake
+    # ============================================================
+
+    echo
+    echo "============================================================"
+    echo "STEP 12: CMake"
+    echo "============================================================"
+
+    if ! command -v cmake >/dev/null 2>&1; then
+        error_exit "cmake was not found."
+    fi
+
+    CMAKE="$(command -v cmake)"
+
+    echo
+    echo "CMake:"
+    echo "$CMAKE"
+
+    "$CMAKE" --version | head -1
+
+
+    # ============================================================
+    # STEP 13
+    # deal.II
+    # ============================================================
+
+    echo
+    echo "============================================================"
+    echo "STEP 13: deal.II"
+    echo "============================================================"
+
+    echo
+    echo "The installer needs the path to deal.II 9.7.0."
+
+    echo
+    read -r -p \
+        "Enter the full path to deal.II-v9.7.0: " \
+        DEAL_II_DIR
+
+    if [ ! -f \
+        "$DEAL_II_DIR/lib/cmake/deal.II/deal.IIConfig.cmake" ]; then
+
+        error_exit \
+            "deal.II installation was not found at:
+    $DEAL_II_DIR"
+
+    fi
+
+    echo
+    echo "deal.II:"
+    echo "$DEAL_II_DIR"
+
+
+    # ============================================================
+    # STEP 14
+    # Display selected environment
+    # ============================================================
+
+    echo
+    echo "============================================================"
+    echo "STEP 14: Selected build environment"
+    echo "============================================================"
+
+    echo
+    echo "ASPECT:"
+    echo "$ASPECT_DIR"
+
+    echo
+    echo "Compiler:"
+    echo "$CC"
+
+    echo
+    echo "C++ compiler:"
+    echo "$CXX"
+
+    echo
+    echo "MPI:"
+    echo "$MPI_RUN"
+
+    echo
+    echo "CMake:"
+    echo "$CMAKE"
+
+    echo
+    echo "deal.II:"
+    echo "$DEAL_II_DIR"
+
+    echo
+    echo "Python:"
+    echo "$PYTHON"
+
+    echo
+    echo "Python version:"
+    "$PYTHON" --version
+
+
+    # ============================================================
+    # STEP 15
+    # Create clean build directory
+    # ============================================================
+
+    echo
+    echo "============================================================"
+    echo "STEP 15: Creating clean build directory"
+    echo "============================================================"
+
+    rm -rf "$BUILD_DIR"
+
+    mkdir -p "$BUILD_DIR"
+
+    cd "$BUILD_DIR"
+
+
+    # ============================================================
+    # STEP 16
+    # Configure ASPECT
+    # ============================================================
+
+    echo
+    echo "============================================================"
+    echo "STEP 16: Configure ASPECT"
+    echo "============================================================"
+
+    "$CMAKE" \
+        -DCMAKE_C_COMPILER="$CC" \
+        -DCMAKE_CXX_COMPILER="$CXX" \
+        -DDEAL_II_DIR="$DEAL_II_DIR" \
+        -DASPECT_WITH_PYTHON=ON \
+        -DPython3_EXECUTABLE="$PYTHON" \
+        "$ASPECT_DIR"
+
+
+    # ============================================================
+    # STEP 17
+    # Build ASPECT
+    # ============================================================
+
+    echo
+    echo "============================================================"
+    echo "STEP 17: Build ASPECT"
+    echo "============================================================"
+
+    echo
+    echo "Building ASPECT..."
+
+    "$CMAKE" --build . --parallel
+
+
+    # ============================================================
+    # STEP 18
+    # Verify executable
+    # ============================================================
+
+    echo
+    echo "============================================================"
+    echo "STEP 18: Verify ASPECT"
+    echo "============================================================"
+
+    if [ ! -x "$ASPECT_EXECUTABLE" ]; then
+
+        error_exit \
+            "ASPECT executable was not created:
+    $ASPECT_EXECUTABLE"
+
+    fi
+
+    echo
+    echo "ASPECT executable:"
+    echo "$ASPECT_EXECUTABLE"
+
+    echo
+    echo "ASPECT version:"
+    "$ASPECT_EXECUTABLE" --version
+
+
+    # ============================================================
+    # STEP 19
+    # Final record
+    # ============================================================
+
+    echo
+    echo "============================================================"
+    echo "ASPECT INSTALLATION COMPLETE"
+    echo "============================================================"
+
+    echo
+    echo "ASPECT version:"
+    echo "$ASPECT_VERSION"
+
+    echo
+    echo "Exact commit:"
+    echo "$ASPECT_COMMIT"
+
+    echo
+    echo "Source:"
+    echo "$ASPECT_DIR"
+
+    echo
+    echo "Build:"
+    echo "$BUILD_DIR"
+
+    echo
+    echo "Executable:"
+    echo "$ASPECT_EXECUTABLE"
+
+    echo
+    echo "Python:"
+    echo "$PYTHON"
+
+    echo
+    echo "deal.II:"
+    echo "$DEAL_II_DIR"
+
+    echo
+    echo "MPI:"
+    echo "$MPI_RUN"
+
+    echo
+    echo "CMake:"
+    echo "$CMAKE"
+
+    echo
+    echo "============================================================"
+    echo "Installation finished successfully."
+    echo "============================================================"

@@ -1,4 +1,4 @@
-Installing ASPECT version:``ll_mesh_def`` Branch (ASPECT PR #7213) August 28, 2026
+In Mac Studio (WSmac NMT)``ll_mesh_def`` Branch (ASPECT PR #7213) August 28, 2026
 ================================================================================================
 
 .. note::

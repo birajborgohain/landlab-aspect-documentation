@@ -42,17 +42,257 @@ Landlab output (``landlab_00001.vtk`` to ``landlab_00052.vtk``) and Fastscape ou
    :width: 100%
    :align: center
 
-Landlab output (``landlab_00001.vtk`` to ``landlab_00052.vtk``) field (``sediment_deposit__thickness``)
---------------------------------------------------------------------------------------------------------
+
+
+3D Xue mdoel ``fastscape-ASPECT`` & ``landlab-ASPECT`` ``sea level = -2000``, set Compositional field methods = ``particle`` 
+---------------------------------------------------------------------------------------------------------------------------------
+Comparision between `sediment thicknes field` 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. figure:: /_images/deposition/aspect_sediment_thickness_profile_comparison_animation.gif
+   :width: 100%
+   :align: center
+
+Landlab output  field (``sediment_deposit__thickness``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. figure:: /_images/deposition/landlab_sediment_thickness_profile_animation.gif
    :width: 100%
    :align: center
 
-ASPECT output (``solution.pdv``) field (``sediment_thick``)
---------------------------------------------------------------
-.. figure:: /_images/deposition/aspect_sediment_thickness_profile_comparison_animation.gif
+3D Xue mdoel (landlab-ASPECT) ``sea level = -2000``, set Compositional field methods = ``field`` 
+------------------------------------------------------------------------------------------------
+Comparision between `sediment thicknes field` of Landlab and ASPECT output
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. figure:: ../../figure_landlab_vis/0006/lla_check_landlab-aspect_sediment_deposit__thickness_sediment_thick_x_middle_profile.gif
    :width: 100%
    :align: center
+
+Landlab output  field (``sediment_deposit__thickness``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. figure:: ../../figure_landlab_vis/0006/lla_check_only_landlab_sediment_deposit__thickness_x_middle_profile.gif
+   :width: 100%
+   :align: center
+
+
+
+3D Xue mdoel (landlab-ASPECT) ``sea level = 0``, set Compositional field methods = ``field`` 
+------------------------------------------------------------------------------------------------
+Comparision between `sediment thicknes field` of Landlab and ASPECT output
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. figure:: ../../figure_landlab_vis/0007/0007_20260910_landlab-aspect_sediment_deposit__thickness_sediment_thick_x_middle_profile.gif
+   :width: 100%
+   :align: center
+
+.. figure:: ../../figure_landlab_vis/0007/0007_20260910_only_landlab_sediment_deposit__thickness_x_middle_profile.gif
+   :width: 100%
+   :align: center
+
+
+3D Xue mdoel `(landlab-ASPECT)` ``sea level = 0``, set Compositional field methods = ``field`` 
+------------------------------------------------------------------------------------------------
+Comparision between `TOPOGRAPHY` of Landlab and ASPECT output
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. figure:: ../../figure_landlab_vis/0004/lla_check_landlab-aspect_topographic__elevation_topography_x_middle_profile.gif
+   :width: 100%
+   :align: center
+
+3D Xue mdoel `(fastscape-ASPECT)` ``sea level = 0``, set Compositional field methods = ``field`` 
+------------------------------------------------------------------------------------------------
+Comparision between `TOPOGRAPHY` of Landlab and ASPECT output
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. figure:: ../../figure_landlab_vis/0003/0003_20260904_fastscape-aspect_topography_x_middle_profile.gif
+   :width: 100%
+   :align: center
+
+Landlab-ASPECT vs Fastscape-ASPECT
+-------------------------------------
+.. figure:: ../../figure_landlab_vis/0010/0010_20260913_fastscape-aspect-landlab-aspect_sediment_thick_x_middle_profile.gif
+   :width: 100%
+   :align: center
+
+
+Yuan et al. (2019): Equations 3, 4, and 5
+================================================
+
+The following equations are transcribed from Section 2 of Yuan et al.
+(2019), *Linking continental erosion to marine sediment transport and
+deposition: A new implicit and O(N) method for inverse analysis*.
+
+Equation (3): Continental landscape evolution
+-----------------------------------------------
+
+Equation (3) combines the Stream Power Law (SPL) for fluvial erosion
+with the linear hillslope-diffusion equation:
+
+.. math::
+
+   \frac{\partial h}{\partial t}
+   =
+   U
+   -
+   K_f A^m S^n
+   +
+   K_C \nabla^2 h,
+   \qquad
+   \text{for } h \geq h_{\mathrm{sea}}.
+
+where:
+
+* :math:`h` is the topographic elevation (m).
+* :math:`t` is time (yr).
+* :math:`U` is the uplift rate (m/yr).
+* :math:`K_f` is the fluvial erodibility coefficient.
+* :math:`A` is the upstream drainage area (m²).
+* :math:`m` and :math:`n` are the Stream Power Law exponents.
+* :math:`S` is the slope in the steepest-descent direction of water flow.
+* :math:`K_C` is the continental hillslope transport coefficient (m²/yr).
+* :math:`\nabla^2 h` is the Laplacian of topography.
+* :math:`h_{\mathrm{sea}}` is sea-level elevation.
+
+The three terms on the right-hand side represent uplift, fluvial
+erosion, and hillslope diffusion:
+
+.. math::
+
+   \underbrace{U}_{\text{uplift}}
+   -
+   \underbrace{K_f A^m S^n}_{\text{fluvial erosion}}
+   +
+   \underbrace{K_C\nabla^2 h}_{\text{hillslope diffusion}}.
+
+Equation (4): Sediment flux exported from the continent
+---------------------------------------------------------
+
+The sediment flux at a point in the landscape is obtained by integrating
+the erosion rate over the upstream catchment area:
+
+.. math::
+
+   Q_S
+   =
+   \frac{\displaystyle \int_A \dot{e}\,\mathrm{d}A}{x\,y}.
+
+Here:
+
+* :math:`Q_S` is the sediment flux from the continental domain.
+* :math:`\dot{e}` is the erosion rate.
+* :math:`A` is the upstream catchment area.
+* :math:`\mathrm{d}A` is an elemental catchment area.
+* :math:`x` and :math:`y` are the horizontal dimensions of the cells used
+  to discretize the landscape.
+* :math:`x y` is the surface area of one discretization cell.
+
+For a discrete grid, the integral can be represented conceptually as:
+
+.. math::
+
+   Q_S
+   \approx
+   \frac{1}{x\,y}
+   \sum_{i\in A}\dot{e}_i\,\Delta A_i.
+
+The paper notes that the calculation can be performed in
+:math:`O(N)` operations using the node ordering employed to calculate
+drainage area in the FastScape algorithm.
+
+Equation (5): Marine sediment transport and deposition
+---------------------------------------------------------
+
+In the marine domain, where the topographic elevation is below sea
+level, the rate of elevation change is described by a diffusion equation
+with the continental sediment flux acting as a source term:
+
+.. math::
+
+   \frac{\partial h}{\partial t}
+   =
+   K_M\nabla^2 h
+   +
+   Q_S,
+   \qquad
+   \text{for } h < h_{\mathrm{sea}}.
+
+where:
+
+* :math:`h` is the marine topographic elevation (m).
+* :math:`t` is time (yr).
+* :math:`K_M` is the marine sediment transport coefficient (m²/yr).
+* :math:`\nabla^2 h` represents marine diffusive sediment transport.
+* :math:`Q_S` is the sediment flux supplied from the continental domain,
+  as calculated from Equation (4).
+* :math:`h_{\mathrm{sea}}` is sea-level elevation.
+
+Physical interpretation
+-----------------------
+
+The three equations form a source-to-sink chain:
+
+.. math::
+
+   \boxed{
+   \text{continental erosion}
+   \;\longrightarrow\;
+   Q_S
+   \;\longrightarrow\;
+   \text{marine transport and deposition}
+   }
+
+More explicitly, Equation (3) governs continental topographic evolution.
+Equation (4) converts the integrated continental erosion into a sediment
+flux. Equation (5) then uses that flux as a source term in the marine
+domain.
+
+Relation to the two-grain-size formulation
+--------------------------------------------
+
+Equation (5) is the simplified single-coefficient marine equation.
+Later in Section 2.4, the paper introduces separate silt and sand
+transport coefficients and derives the coupled two-grain-size equations
+as Equation (6).
+
+The continental source is partitioned into uncompacted silt and sand
+fluxes according to:
+
+.. math::
+
+   Q_1
+   =
+   \frac{Q_S f}{1-\phi_{1,0}},
+
+and
+
+.. math::
+
+   Q_2
+   =
+   \frac{Q_S(1-f)}{1-\phi_{2,0}},
+
+where :math:`f` is the silt fraction of the continental source,
+:math:`\phi_{1,0}` is the surface porosity of silt, and
+:math:`\phi_{2,0}` is the surface porosity of sand.
+
+Thus, Equations (3)--(5) provide the conceptual foundation for the
+later coupled marine sediment model:
+
+.. math::
+
+   \boxed{
+   \text{SPL + hillslope diffusion}
+   \xrightarrow{\text{Eq. (3)}}
+   \text{continental erosion}
+   \xrightarrow{\text{Eq. (4)}}
+   Q_S
+   \xrightarrow{\text{Eq. (5)}}
+   \text{marine transport/deposition}
+   }
+
+Source
+------
+
+X. P. Yuan et al. (2019), *Earth and Planetary Science Letters*, 524,
+115728, Section 2.3--2.4, pp. 3--4.
+
 
 
 Landlab--FastScape Field Correspondence

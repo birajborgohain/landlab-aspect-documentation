@@ -1,0 +1,605 @@
+
+
+###############  Global parameters###############
+set Dimension                              = 3
+set Start time                             = 0
+set End time                               = 1e6 # changed from origimal Xue et al., 2025 30e6
+set Resume computation                     = auto
+set Use years in output instead of seconds = true
+set Nonlinear solver scheme                = single Advection, iterated Newton Stokes
+set Nonlinear solver tolerance             = 1e-4
+set Max nonlinear iterations               = 50 # Normally set to 50 or 100
+set Max nonlinear iterations in pre-refinement = 10
+set CFL number                             = 0.5
+set Maximum time step                      = 20e3 # Normally set to 20 Kyr
+set Output directory                       = fastscape_sep_4_2026_changed_end_time_mesh_refinments_visu_1_topography
+set Timing output frequency                = 1
+set Pressure normalization                 = no
+set Adiabatic surface temperature          = 1517 #k
+
+############### Solver parameters ###############
+subsection Solver parameters
+  subsection Stokes solver parameters
+    set Stokes solver type                  = block AMG # block AMG
+    set Number of cheap Stokes solver steps = 4000
+    set Linear solver tolerance             = 1e-7  #was 1e5
+    set GMRES solver restart length         = 100
+    set Use full A block as preconditioner  = true
+  end
+
+  subsection Newton solver parameters
+    set Max pre-Newton nonlinear iterations      = 10
+    set SPD safety factor                        = 0.9
+    set Nonlinear Newton solver switch tolerance = 1e-4
+    set Max Newton line search iterations        = 5
+    set Maximum linear Stokes solver tolerance   = 1e-5
+    set Use Newton residual scaling method       = false
+    set Use Newton failsafe                      = true
+    set Stabilization preconditioner             = SPD
+    set Stabilization velocity block             = SPD
+    set Use Eisenstat Walker method for Picard iterations = false
+  end
+
+  subsection Advection solver parameters
+    set GMRES solver restart length = 50
+  end
+end
+
+############### Governing equations ###############
+subsection Formulation
+  set Formulation          = Boussinesq approximation
+  set Mass conservation    = incompressible
+end
+
+
+################ Model geometry ###############
+subsection Geometry model
+  set Model name = box
+  subsection Box
+    set X repetitions = 30
+    set Y repetitions = 12
+    set Z repetitions = 15
+    set X extent      = 300e3
+    set Y extent      = 120e3
+    set Z extent      = 150e3
+  end
+end
+
+
+############### mesh refinement ###############
+subsection Mesh refinement
+  set Initial global refinement                = 0 #3
+  set Initial adaptive refinement              = 1 #3 changed from originaly 3
+  set Time steps between mesh refinement       = 0 #5 changed from originaly 1
+  set Strategy                                 =  minimum refinement function, maximum refinement function
+  subsection Minimum refinement function
+    set Coordinate system   = cartesian
+    set Variable names      = x,y,z
+    set Function expression = if(z>=140e3, 3, if(z>120e3, 2, if(z>100e3, 1, 0)))
+  end
+
+  subsection Maximum refinement function
+    set Coordinate system   = cartesian
+    set Variable names      = x,y,z
+    set Function expression = if(z>=140e3, 3, if(z>120e3, 2, if(z>100e3, 1, 0)))
+  end
+end
+
+############### discretization ###############
+subsection Discretization
+  set Composition polynomial degree           = 2
+  set Stokes velocity polynomial degree       = 2
+  set Temperature polynomial degree           = 2
+end
+
+
+############### mesh deforamtion ###############
+# A normal free surface advection may become unstable when significant topography develops
+
+subsection Mesh deformation
+  set Mesh deformation boundary indicators = top : fastscape
+  set Additional tangential mesh velocity boundary indicators = left, right,front, back
+  
+  subsection Fastscape
+    set Number of fastscape timesteps per aspect timestep = 5
+    # Maximum timestep for FastScape
+    set Maximum timestep length = 5000
+    set Vertical exaggeration = -1
+    # How many levels FastScape should be refined above the maximum ASPECT surface resolution.
+    set Additional fastscape refinement = 1 # changed from 3
+    set Fastscape seed = 1000
+    # As the highest resolution at the surface is 3 in the mesh refinement function, we set this the same.
+    set Maximum surface refinement level = 1
+    # The difference between the lowest and highest refinement level at the surface. E.g., if three resolution
+    # levels are expected, this would be set to 0.
+    set Surface refinement difference = 0
+    set Use marine component = true
+    # Flag for having FastScape advect/uplift the surface. If the free surface is used
+    # in conjuction with FastScape, this can be set to false, then FastScape will only
+    # apply erosion/deposition to the surface and not advect or uplift it.
+    set Uplift and advect with fastscape = true
+    # Because no boundaries are periodic, no flux is prescribed, and no advection occurs in FastScape,
+    # we do not need ghost nodes.
+    set Use ghost nodes = true
+    # Node tolerance for how close an ASPECT node must be to the FastScape node for the value to be transferred
+    set Node tolerance = 0.001
+
+   # BC 1 is fixed and 0 is reflective
+   # Where 1 represents a fixed height boundary (though this can still be uplifted through uplift velocities), and 0 a
+   # reflective boundary. When two opposing boundaries are reflective (e.g., top and bottom are both zero)
+   # then the boundaries subsection Boundary conditions
+   # Note, iuess with reflective BC, no incision in the rift valley
+   subsection Boundary conditions    
+      set Front = 1
+      set Right  = 1
+      set Back = 1
+      set Left   = 1
+      # Flux per unit length through left boundary. Units: $\\{m^2/yr}$
+      #set Left mass flux = 0
+      #set Front mass flux = 0
+      #set Back mass flux = 0
+      # Whether to set the ghost nodes at the FastScape back and front boundary 
+      #to periodic even if 'Back' and 'Front' are set to fixed boundary.
+      #set Back front ghost nodes periodic = false
+      # Whether to set the ghost nodes at the FastScape right and left boundary 
+      # to periodic even if 'right' and 'left' are set to fixed boundary.
+      #set Left right ghost nodes periodic = false
+   end
+   
+   subsection Erosional parameters
+     set Drainage area exponent = 0.5
+     set Slope exponent = 1
+     # A negative value indicates varied flow. 10 is steepest descent, and 1 is uniform distribution.
+     #set Multi-direction slope exponent = -1
+     # Bedrock deposition coefficient. Higher values deposit more sediment
+     set Bedrock deposition coefficient = 1
+     # Deposition coefficient for sediment, -1 sets this to teh same as the bedrock deposition coefficient
+     set Sediment deposition coefficient = 1
+     # River incision rate for bedrock in the Stream Power Law
+     set Bedrock river incision rate = 1e-6
+     # River incision rate for sediment in the Stream Power Law. -1 sets this to the bedrock river incision rate
+     set Sediment river incision rate = 1e-6
+     # Transport coefficient (diffusivity) for bedrock
+     set Bedrock diffusivity = 1e-2
+     # Transport coefficient (diffusivity) for sediment. -1 sets this to the bedrock diffusivity
+     set Sediment diffusivity = -1
+     # Whether or not to use an erosional base level that differs from sea level. 
+     #set Use a fixed erosional base level = true
+     # When Use a fixed erosional base level is set to true, all ghost nodes of fixed 
+     # FastScape boundaries where no mass flux is specified by the user (FastScape boundary condition set to 1 
+     # and Left/Right/Bottom/Top mass flux set to 0) will be fixed to this elevation. The 
+     # reflecting boundaries (FastScape boundary condition set to 0) will not be affected, nor are the 
+     # boundaries where a mass flux is specified.
+     #set Erosional base level = 0
+   end
+
+   subsection Marine parameters
+   # Fastscape sea level (m), set relative to the ASPECT surface where
+   # a sea level of zero will represent the maximum Y (2D) or Z (3D) extent inside ASPECT.
+     set Sea level = -2000
+     # sand_surface_porosity
+     set Sand porosity = 0
+     # Porosity of silt
+     set Silt porosity = 0
+     # E-folding depth for the exponential of the sand porosity law
+     set Sand e-folding depth = 1e3
+     # E-folding depth for the exponential of the silt porosity law
+     set Silt e-folding depth = 1e3
+     # Ratio of sand to silt for material leaving continent
+     set Sand-silt ratio = 1  
+     # Depth averaging for the sand-silt equation
+     set Depth averaging thickness = 1e2
+     # Transport coefficient (diffusivity) for sand
+     set Sand transport coefficient = 200
+     set Silt transport coefficient = 200
+   end
+ end
+end
+
+############### boundary veolocity ###############
+subsection Boundary velocity model
+  set Prescribed velocity boundary indicators = left x: function, right x: function, bottom z: function
+end
+
+subsection Boundary velocity model
+  set Tangential velocity boundary indicators = front, back
+end
+
+# set total extension = 5 mm/yr
+subsection Boundary velocity model
+  subsection Function
+    set Variable names      = x,y,z
+    set Function constants  = out_vel=0.5, cm=0.01, yr=1, depth=150.e3, width=300.e3,
+    set Function expression = if (x<width/2., -1*out_vel/2*cm/yr, 1*out_vel/2*cm/yr); \
+                              0; \
+                              (out_vel*depth)/width*cm/yr;
+
+  end
+end
+
+############### compositional fields ###############
+# Number and names of compositional fields
+# The five compositional fields represent:
+# 1. The plastic strain that accumualates over time, with the initial plastic strain removed
+# 2. The plastic strain that accumulated over time, including the initial plastic strain values
+# 3. The upper crust
+# 4. The lower crust
+# 5. The mantle lithosphere
+# and a 'seed' placed in the mantle to help localize deformation.
+subsection Compositional fields
+  set Number of fields = 10
+  set Names of fields = sediment_age, \
+                        noninitial_plastic_strain, \
+                        plastic_strain, \
+                        viscous_strain, \
+                        sediment, \
+                        sediment_thick, \
+                        crust_upper, \
+                        crust_lower, \
+                        mantle_lithosphere, \
+                        asthenosphere
+  set Types of fields = generic, \
+                        strain, \
+                        strain, \
+                        strain, \
+                        chemical composition, \
+                        generic, \
+                        chemical composition, \
+                        chemical composition, \
+                        chemical composition, \
+                        chemical composition
+  set Compositional field methods = particles
+  set Mapped particle properties  = sediment_age: initial sediment_age, \
+                                    noninitial_plastic_strain: noninitial_plastic_strain, \
+                                    plastic_strain: plastic_strain, \
+                                    viscous_strain: viscous_strain, \
+                                    sediment: initial sediment, \
+                                    sediment_thick: initial sediment_thick, \
+                                    crust_upper: initial crust_upper, \
+                                    crust_lower: initial crust_lower, \
+                                    mantle_lithosphere: initial mantle_lithosphere, \
+                                    asthenosphere: initial asthenosphere
+end
+
+
+# Spatial domain of different compositional fields
+# 15: 0.2618, 30:0.5236, 45:0.7853,60:1.0472
+subsection Initial composition model
+  set Model name = function
+  subsection Function
+    set Variable names      = x,y,z
+    set Function constants  = weak_w=30.e3, width=300.e3, depth_bottom=100.e3, x_left= 0.e3, x_right=300.e3,\
+    			      pi= 3.1415926, ob=0.5236, max_p_strain=1, center_x =150e3, center_y=60e3, y_up= 105.e3, y_bottom=15.e3
+    set Function expression = 0; \
+                              0; \
+                              if(x>0.5*(width-weak_w)-center_y*tan(ob)+tan(ob)*y-0.5*weak_w*(1/cos(ob)-1) && y>y_bottom && y<y_up && \
+                              x<0.5*(width+weak_w)-center_y*tan(ob)+tan(ob)*y+0.5*weak_w*(1/cos(ob)-1) && z>depth_bottom, \
+                              max_p_strain*(sin(2*pi*(((x-center_x)*cos(ob)-(y-center_y)*sin(ob)+center_x)-0.5*width)/weak_w + 0.5*pi)+1)*rand_seed(42), 0);\
+                              if(x>0.5*(width-weak_w)-center_y*tan(ob)+tan(ob)*y-0.5*weak_w*(1/cos(ob)-1) && y>y_bottom && y<y_up && \
+                              x<0.5*(width+weak_w)-center_y*tan(ob)+tan(ob)*y+0.5*weak_w*(1/cos(ob)-1) && z>depth_bottom, \
+                              max_p_strain*(sin(2*pi*(((x-center_x)*cos(ob)-(y-center_y)*sin(ob)+center_x)-0.5*width)/weak_w + 0.5*pi)+1)*rand_seed(42), 0);\
+                              0; \
+                              0; \
+                              if(z>=130.e3, 1, 0); \
+                              if(z<130.e3 && z>=115.e3, 1, 0); \
+                              if(z<115.e3 && z>=50.e3, 1, 0); \
+                              if(z<50.e3, 1, 0);
+  end
+end
+
+# Composition: fixed on bottom (inflow boundary), free on sides and top
+#subsection Boundary composition model
+#  set Fixed composition boundary indicators = bottom
+#  set List of model names = initial composition
+#end
+ 
+# Composition boundary conditions
+# Fix only top to sediment so any deepening of basement is filled with sediment.
+# top of litho (>50km)
+subsection Boundary composition model
+  set Model name = function
+  set Fixed composition boundary indicators = top, bottom    # bottom
+  set Allow fixed composition on outflow boundaries = true
+
+# sediment_age,noninitial_plastic_strain, plastic_strain, viscous_strain,sediment, sediment_thick, 
+#crust_upper, crust_lower, mantle_lithosphere, ast
+
+  subsection Function
+    set Coordinate system   = cartesian
+    set Variable names      = x,y,z,t
+    set Function constants  = DZ = 150e3, SeaLevel = -2000 
+    set Function expression = if(z>140e3, t/1e6, 0); \
+                              0; \
+                              0; \
+                              0; \
+                              if(z>140e3, 1, 0); \ 
+                              if(z>140e3, DZ - SeaLevel -z, 0);  \ 
+                              0; \
+                              0; \
+                              0; \
+                              if(z==0.,1,0);
+  end
+end
+
+ 
+
+################ Temperature boundary conditions ###############
+# Top and bottom (fixed) temperatures are consistent with the initial temperature field
+# Note that while temperatures are specified for the model sides, these values are
+# not used as the sides are not specified "Fixed temperature boundaries".  Rather,
+# these boundaries are insulating (zero net heat flux).
+subsection Boundary temperature model
+  set Fixed temperature boundary indicators = bottom, top
+  set List of model names = box
+  subsection Box
+    set Bottom temperature =  1592.
+    set Top temperature    =  273
+  end
+end
+
+# Initial temperature field
+# Typical continental geotherm based on equations 4-6 from:
+#   D.S. Chapman (1986), "Thermal gradients in the continental crust",
+#   Geological Society of London Special Publications, v.24, p.63-70.
+# The initial constraints are:
+#   Surface Temperature  - upper crust (ts1) = 273 K
+#   Surface Heat Flow    - upper crust (qs1) = 0.065 mW/m^2
+#   Heat Production      - upper crust (A1)  = 1.50e-6 W/m^3;
+#   Heat Production      - lower crust (A2)  = 0.2e-6 W/m^3;
+#   Heat Production      - mantle (A3)       = 0.00e-6 W/m^3;
+#   Thermal Conductivity - all layers        = 2.5 (W/(m K));
+# To satisfy these constraints, the following values are required:
+#   Surface Temperature  - lower crust (ts2) = 673 K
+#                        - mantle (ts3)      = 874 K
+#   Surface Heat Flow    - lower crust (qs2) = 0.035 W/m^2;
+#                        - mantle      (qs3) = 0.032 W/m^2;
+# Initial temperature field
+subsection Initial temperature model
+  set List of model names = function
+  set List of model operators = add
+  subsection Function
+    set Variable names = x,y,z
+    set Function constants = h=150e3, ts1=273, ts2=673, ts3=874, ts4= 1567, \
+    			     upc=20.e3, lowc=15.e3, lm=65.e3, ast=50e3, \
+                             A1=1.5e-6, A2=0.2e-6, A3=0.0, \
+                             k1=2.5, k2=2.5, k3=3, \
+                             qs1=0.065, qs2=0.035, qs3=0.032, 			                   	      
+    set Function expression = if( (h-z)<=upc, \
+                                  ts1 + (qs1/k1)*(h-z) - (A1*(h-z)*(h-z))/(2.0*k1), \
+                                  if( (h-z)>upc && (h-z)<=upc+lowc, \
+                                      ts2 + (qs2/k2)*(h-z-upc) - (A2*(h-z-upc)*(h-z-upc))/(2.0*k2), \
+                                      if ((h-z)>upc+lowc && (h-z)<=upc+lowc+lm, \
+                                        ts3 + (qs3/k3)*(h-z-upc-lowc) - (A3*(h-z-upc-lowc)*(h-z-upc-lowc))/(2.0*k3), \
+                                        ts4 + 0.5e-3*(h-z-upc-lowc-lm)) ) );
+
+  end
+end
+
+# Constant internal heat production values (W/m^3) for background material
+# and compositional fields.
+subsection Heating model
+  set List of model names = compositional heating
+  subsection Compositional heating
+    set Use compositional field for heat production averaging =  0,  0, 0,  0, 0,  1,   1,  1,  1, 0,  0
+    set Compositional heating values = 0, 0, 0, 0, 0, 1.2e-6, 1.2e-6,  1.5e-6, 0.2e-6, 0, 0
+  end
+end
+
+################ Material model ###############
+# Rheology: Non-linear viscous flow and Drucker Prager Plasticity
+# Values for most rheological parameters are specified for a background material and
+# each compositional field.  Values for viscous deformation are based on dislocation
+# creep flow-laws, with distinct values for the upper crust (wet quartzite), lower
+# crust (wet anorthite) and mantle (dry olivine).  Table 1 of Naliboff and Buiter (2015),
+# Earth Planet. Sci. Lett., v.421, p. 58-67 contains values for each of these flow laws.     
+subsection Material model
+  set Model name = visco plastic
+    
+  # Harmonic averaging over the entire element
+  set Material averaging = harmonic average 
+
+  subsection Visco Plastic
+
+    # Reference temperature and viscosity
+    set Reference temperature = 273
+    #set Reference viscosity = 1e20
+    
+    # The minimum strain-rate helps limit large viscosities values that arise
+    # as the strain-rate approaches zero.
+    # The reference strain-rate is used on the first non-linear iteration
+    # of the first time step when the velocity has not been determined yet. 
+    # sediment_age,noninitial_plastic_strain, plastic_strain,  viscous_strain,sed1, sed2, upper, lower, mantle_lithosphere, ast
+    set Minimum strain rate = 1.e-20
+    set Reference strain rate = 1.e-20
+
+    # Limit the viscosity with minimum and maximum values
+    set Minimum viscosity = 1e19
+    set Maximum viscosity = 1e25
+
+    set Define thermal conductivities = true
+    set Thermal conductivities = 3, 3, 3, 3, 3, 2.1, 2.1, 2.5, 2.5, 3, 3
+    set Heat capacities               = 750
+    set Densities                     = background: 3300, \
+                                        sediment: 2500, \
+                                        crust_upper: 2700, \  
+                                        crust_lower: 2850, \
+                                        mantle_lithosphere: 3280, \
+                                        asthenosphere: 3300                                        
+    set Thermal expansivities         = 2.e-5
+
+    # Harmonic viscosity averaging
+    set Viscosity averaging scheme = harmonic
+
+    # Choose to have the viscosity (pre-yield) follow a dislocation
+    # diffusion or composite flow law.  Here, dislocation is selected
+    # so no need to specify diffusion creep parameters below, which are
+    # only used if "diffusion" or "composite" option is selected.
+    set Viscous flow law = composite
+
+    # Dislocation creep parameters for 
+    # 1. Background material/mantle (dry olivine)
+    #    Hirth & Kohlstedt (2004),  Geophys. Monogr. Am. Geophys. Soc., v.138, p.83-105.
+    #    "Rheology of the upper mantle and the mantle wedge:a view from the experimentalists"
+    # 2. Upper crust (wet quartzite)
+    #    Rutter & Brodie (2004), J. Struct. Geol., v.26, p.2011-2023.
+    #    "Experimental grain size-sensitive flow of hot-pressed Brazilian quartz aggregates"
+    # 3. Lower crust and weak seed (wet anorthite)
+    #    Gleason and Tullis (1995), Tectonophysics, v.472, p.213–225.
+    #    " A flow law for dislocation creep of quartz aggregates determined with the molten salt cell"
+    # Note that the viscous pre-factors below are scaled to plane strain from unixial strain experiments.
+    
+    # Dislocation creep 
+    set Prefactors for dislocation creep          =background: 6.52e-16, \
+                                                   sediment: 8.57e-28, \
+                                                   crust_upper: 8.57e-28, \
+                                                   crust_lower: 7.13e-18, \
+                                                   mantle_lithosphere: 6.52e-16, \
+                                                   asthenosphere: 6.52e-16
+
+    set Stress exponents for dislocation creep    =background: 3.5, \
+                                                   sediment: 4.0, \
+                                                   crust_upper: 4.0, \
+                                                   crust_lower: 3.0, \      
+                                                   mantle_lithosphere: 3.5, \
+                                                   asthenosphere: 3.5
+    set Activation energies for dislocation creep =background: 530.e3, \
+                                                    sediment: 530.e3, \
+                                                    crust_upper: 223.e3, \
+                                                    crust_lower: 345.e3, \
+                                                    mantle_lithosphere: 530.e3, \
+                                                    asthenosphere: 530.e3
+
+    set Activation volumes for dislocation creep  =background: 18.e-6, \
+                                                    sediment: 0, \
+                                                    crust_upper: 0, \
+                                                    crust_lower: 0, \
+                                                    mantle_lithosphere: 18.e-6, \
+                                                    asthenosphere: 18.e-6                                                  
+    # diffusion creep
+    set Prefactors for diffusion creep          =background: 1.5e-9, \
+                                                   sediment: 5.97e-19, \
+                                                   crust_upper: 5.97e-19, \
+                                                   crust_lower: 2.99e-25, \
+                                                   mantle_lithosphere: 2.25e-9, \
+                                                   asthenosphere: 1.5e-9
+
+    set Activation energies for diffusion creep =background: 480.e3, \
+                                                    sediment: 223.e3, \
+                                                    crust_upper: 223.e3, \
+                                                    crust_lower: 345.e3, \
+                                                    mantle_lithosphere: 530.e3, \
+                                                    asthenosphere: 480.e3
+
+    set Activation volumes for diffusion creep  =background: 6.e-6, \
+                                                    sediment: 0, \
+                                                    crust_upper: 0, \
+                                                    crust_lower: 38.e-6, \
+                                                    mantle_lithosphere: 6.e-6, \
+                                                    asthenosphere: 4.e-6
+    set Grain size exponents for diffusion creep  =background: 0, \
+                                                    sediment: 2, \
+                                                    crust_upper: 2, \
+                                                    crust_lower: 3, \
+                                                    mantle_lithosphere: 0, \
+                                                    asthenosphere: 0   
+
+    # sediment_age,noninitial_plastic_strain, plastic_strain,  viscous_strain,   sed1, sed2, upper, lower, mantle_lithosphere, ast
+    #set Prefactors for diffusion creep          = 1.5e-19, 1e-20, 1e-20, 1e-20, 1e-20, 5.97e-19, 5.97e-19, 5.97e-19, 2.99e-25, 2.25e-9, 1.5e-19
+    #set Stress exponents for diffusion creep    = 1.0
+    #set Activation energies for diffusion creep = 335.e3, 530.e3, 530.e3, 530.e3, 530.e3, 223.e3, 223.e3, 223.e3, 159.e3, 375.e3, 335.e3
+    #set Activation volumes for diffusion creep  = 4.e-6, 18.e-6, 18.e-6, 18.e-6, 18.e-6, 0., 0., 0., 38.e-6, 6.e-6, 4.e-6
+    #set Grain size                               = 1e-3
+    #set Grain size exponents for diffusion creep = 0., 1.0, 1.0, 1.0, 1.0, 2, 2, 2, 3, 0, 0
+    
+    set Angles of internal friction = 30.
+    set Cohesions = 20.e6
+
+    # The parameters below weaken the friction and cohesion by a
+    # a factor of 4 between plastic strain values of 0.5 and 1.5.
+    set Strain weakening mechanism                   = plastic weakening with plastic strain only
+    set Start plasticity strain weakening intervals  = 0.25
+    set End plasticity strain weakening intervals    = 1.5
+    set Cohesion strain weakening factors            = 0.25
+    set Friction strain weakening factors            = 0.25
+  end
+end
+
+
+
+################ Gravity model ################
+subsection Gravity model
+  set Model name = vertical
+
+  subsection Vertical
+    set Magnitude = 9.81
+  end
+end
+
+
+
+################ Post processing ################
+subsection Particles
+  set Minimum particles per cell  = 50
+  set Maximum particles per cell  = 200
+  set Load balancing strategy     = remove and add particles
+  set List of particle properties = initial composition, \
+                                    viscoplastic strain invariants, \
+                                    pT path, \
+                                    position
+  set Interpolation scheme        = quadratic least squares
+  subsection Interpolator
+    subsection Quadratic least squares
+       set Use quadratic least squares limiter = true
+       set Use boundary extrapolation = true
+     end
+  end
+  set Update ghost particles      = true
+  set Particle generator name     = reference cell
+  subsection Generator
+    subsection Reference cell
+      set Number of particles per cell per direction = 5
+    end
+  end
+end
+subsection Postprocess
+  set List of postprocessors = basic statistics, \
+                             composition statistics, \
+                             heat flux densities, \
+                             heat flux statistics, \
+                             mass flux statistics, \
+                             material statistics, \
+                             matrix statistics, \ 
+                             memory statistics, \
+                             particles, \
+                             pressure statistics, \
+                             temperature statistics, \
+                             topography, \
+                             velocity statistics, \
+                             visualization
+  subsection Particles
+    set Time between data output    = 30e6
+    set Data output format          = vtu
+  end
+
+  subsection Visualization
+    set Interpolate output            = true
+    #set Write higher order output    = true
+    set Output format                 = vtu #hdf5
+    set List of output variables      =  adiabat, material properties, heat flux map, named additional outputs, strain rate, \
+                                        principal stress, surface stress, maximum horizontal compressive stress, heating 
+    set Time between graphical output = 1
+    set Number of grouped files       = 6
+    set Point-wise stress and strain  = true
+  end
+
+  subsection Topography
+    set Output to file = true
+    set Time between text output = 1
+  end
+
+end
+
+# Checkpointing
+subsection Checkpointing
+  set Steps between checkpoint = 10
+end

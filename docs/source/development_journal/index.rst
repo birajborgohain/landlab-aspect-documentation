@@ -29,4 +29,12 @@ This section summarizes the day-to-day development, implementation, testing, and
     August_25_2026_field_class_landlab_vis_day7.rst
     August_26_2026_field_plotting_landlab_vis_day8.rst
     August_28_2026_ll_mesh_def_debugging.rst
+    Sept_2_2026_convert_2D_to_3D_Ada_model_with_WB.rst
+    Sept_3_2026_replace_WB_inprm_fault_in_2D_Tmodel.rst
+    sept_4_2026_2D_nearest_node_TModel.rst
+    sept_11_2026_sediment_deposit__thickness_landlab.rst
+    sept_12_sea_lebel_boundary_composition.rst
+    sept-15-2026_standalone_flexure.rst
+    sept-22-to-25_2026_comparision_fascstape_landlab_multiple_flow_routing.rst
+    Oct_3_2026_Day_2_Multi_flow_Routing_and_Marine_Sediment_Deposition_Landlab.rst
     
