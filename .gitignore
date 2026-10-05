@@ -1,0 +1,5 @@
+
+# Visualization/output files - do not commit
+*.vtu
+*.pvtu
+*.visit
